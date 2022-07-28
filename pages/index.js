@@ -12,11 +12,7 @@ export default function Home() {
         <meta name="description" content="Somenthing Legendary: It is in the solitude that legends are born." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className="py-6 max-w-4xl mx-auto min-h-screen">
-      <Menu />
       <Hero />
-      </main>
       <section className='bg-slate-300 py-6'>
       <div className="content">
       <h2 className='font-serif text-2xl text-black'>New section</h2>
