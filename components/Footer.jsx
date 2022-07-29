@@ -9,6 +9,7 @@ function Footer() {
     <div>
       <h3 className="font-bold">Company</h3>
       <a href="#">Mission</a>
+      <a href="#">Vision</a>
       <a href="#">Events</a>
     </div>
     <div>
