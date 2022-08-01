@@ -12,6 +12,11 @@ module.exports = {
         'sans': ['Raleway', ...defaultTheme.fontFamily.sans],
         'serif': ['Italiana', ...defaultTheme.fontFamily.serif],
       },
+      colors: {
+        'c1': '#8d6f57',
+        'c2': '#17777F',
+        'c3': '#325053',
+      },
     },
   },
   plugins: [],
