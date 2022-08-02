@@ -14,6 +14,22 @@ const Menu = () => {
       text: "About Us"
     },
     {
+      link: "#events",
+      text: "Events"
+    },
+    {
+      link: "#roadmap",
+      text: "Roadmap"
+    },
+    {
+      link: "#how-it-works",
+      text: "How it works"
+    },
+    {
+      link: "#contact",
+      text: "Contact"
+    },
+    {
       link: "whitepaper.pdf",
       text: "Whitepaper"
     },
