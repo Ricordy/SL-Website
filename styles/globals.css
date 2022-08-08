@@ -29,3 +29,6 @@ section .content, footer .content {
   justify-content: space-evenly;
   align-items: center;
 }
+label.animated {
+  @apply duration-300 transform transition-all absolute top-0 left-0 h-full flex items-center pl-0 text-base text-slate-300 group-focus-within:text-base peer-valid:text-base group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0
+}
