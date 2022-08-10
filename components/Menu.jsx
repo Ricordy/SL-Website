@@ -1,52 +1,75 @@
 import logo from '../public/logo.svg'
 import Image from 'next/image'
 import Link from 'next/link'
-
 import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { useTranslation } from 'next-i18next'
 
-const Menu = () => {
+const Menu = (props) => {
+  const { t } = useTranslation()
+  const router = useRouter();
+  const handleLocaleChange = (event) => {
+    const value = event.target.value;
+    router.push(router.route, router.asPath, {
+      locale: value,
+    });
+  };
 
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const itens = [
     {
       link: "#about-us",
-      text: "About Us"
+      text: t("about-us")
     },
     {
-      link: "#events",
-      text: "Events"
+      link: `${router.locale}/events`,
+      text: t("events")
     },
     {
       link: "#roadmap",
-      text: "Roadmap"
+      text: t("roadmap")
     },
     {
       link: "#how-it-works",
-      text: "How it works"
+      text: t("how-it-works")
     },
     {
       link: "#contact",
-      text: "Contact"
+      text: t("contact")
     },
     {
       link: "whitepaper.pdf",
-      text: "Whitepaper"
+      text: t("whitepaper")
     },
   ];
 
   return (
     <>
     <nav className=' bg-c1 md:flex z-10 sticky hidden min-w-full bg-dark_green justify-evenly gap-20 py-4'>
-      <div className='flex'>
-        <a href="#top" className='flex flex-row md:text-xl items-center'><Image src={logo} alt="Logo Something Legendary" className='w-20' /></a>
-      </div>
-      <div className="flex px-0">
-      <ul className='sm:flex sm:relative gap-4 items-center px-6'>
-        { itens.map(({link, text}, index) => {
-          return <li key={index}><a className='text-slate-300 hover:text-slate-200' href={link}>{text}</a></li>
-        })}
-      </ul>
+      <div className="flex content">
+        <div className='flex'>
+          <Link href="/" className='flex flex-row md:text-xl items-center'><Image src={logo} alt="Logo Something Legendary" className='w-20' /></Link>
+        </div>
+        <div className="flex px-0">
+        <ul className='sm:flex sm:relative gap-4 items-center px-6'>
+          { itens.map(({link, text}, index) => {
+            return <li key={index}><a className='text-slate-300 hover:text-slate-200' href={link}>{text}</a></li>
+          })}
+        </ul>
+        </div>
+        <div className="">
+        <select className="bg-transparent" onChange={handleLocaleChange} value={router.locale}>
+          {router.locales.map((l, i) => {
+            return (
+              <option key={i} 
+              defaultChecked={l === router.locale} value={l}>
+                {l}
+              </option>
+            );
+          })}
+          </select>
+        </div>
       </div>
     </nav>
     
@@ -93,6 +116,17 @@ const Menu = () => {
             }
             </ul>
           </div>
+          <div className="">
+          {router.locales.map((l, i) => {
+            return (
+              <span key={i} className={l === router.locale ? "text-bold" : ''}>
+                <Link href={router.asPath} locale={l}>
+                  {l}
+                </Link>
+              </span>
+            );
+          })}
+        </div>
         </section>
     
     </>

@@ -3,8 +3,15 @@ import Aboutus from '../components/Aboutus'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
+import { useRouter } from 'next/router'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from 'next-i18next'
 
 export default function Home() {
+  const { locale, locales, asPath } = useRouter();
+  const { t } = useTranslation()
+  
+
   return (
     <div className="">
       <Head>
@@ -12,7 +19,7 @@ export default function Home() {
         <meta name="description" content="Somenthing Legendary: It is in the solitude that legends are born." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero />
+      <Hero locale={locale}/>
       <Aboutus/>
       <Contact />
       <section className='bg-slate-300 py-6'>
@@ -28,4 +35,13 @@ export default function Home() {
       <Footer />
     </div>
   )
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "home", "hero"])),
+      // Will be passed to the page component as props
+    },
+  };
 }

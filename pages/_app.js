@@ -1,7 +1,16 @@
 import '../styles/globals.css'
+import { appWithTranslation } from 'next-i18next';
+import Menu from '../components/Menu';
+import { createContext } from "react";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+  return (
+    <>
+      <Menu />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
-export default MyApp
+export default appWithTranslation(MyApp);

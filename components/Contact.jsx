@@ -34,7 +34,7 @@ function Contact() {
         </div>
         <div className="flex flex-col relative group">
           <label htmlFor="name">Subject</label>
-          <select id="name" className="rounded p-1 mb-3 text-slate-600" {...register("name", { required: true })}>
+          <select id="name" className="py-1 w-full outline-none mb-3 text-xl text-slate-200 bg-transparent border-b border-b-white" {...register("name", { required: true })}>
           <option defaultValue="" value="">Choose an option</option>
           <option value="partnership">Partnership</option>
           <option value="general">General</option>
