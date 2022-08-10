@@ -73,7 +73,7 @@ const Menu = (props) => {
       </div>
     </nav>
     
-    <section className="bg-c1 flex fixed w-full z-20 md:hidden text-right drop-shadow-md bg-dark_green px-6 -my-12 py-2 items-center justify-between">
+    <section className="bg-c1 flex fixed w-full z-20 md:hidden text-right drop-shadow-md px-6 py-2 items-center justify-between">
         <div className="brand flex items-center">
           <Image src={logo} alt="Logo Something Legendary" className='w-20' />
         </div>
@@ -114,19 +114,22 @@ const Menu = (props) => {
               </li>
               })
             }
+              <li>
+                <div className="flex gap-2">
+                  {router.locales.map((l, i) => {
+                    return (
+                      <span key={i} className={l === router.locale ? "text-bold" : ''}>
+                        <Link className='text-slate-200' href={router.asPath} locale={l}>
+                          {l}
+                        </Link>
+                      </span>
+                    );
+                  })}
+                </div>
+              </li>
             </ul>
           </div>
-          <div className="">
-          {router.locales.map((l, i) => {
-            return (
-              <span key={i} className={l === router.locale ? "text-bold" : ''}>
-                <Link href={router.asPath} locale={l}>
-                  {l}
-                </Link>
-              </span>
-            );
-          })}
-        </div>
+          
         </section>
     
     </>
