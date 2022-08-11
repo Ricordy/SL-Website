@@ -18,14 +18,14 @@ export default function Home() {
       <Hero />
       <Aboutus/>
       <Contact />
-      <section className='bg-slate-300 py-6'>
-      <div className="content">
-      <h2 className='font-serif text-2xl text-black'>New section</h2>
-      </div>
-      </section>
       <section className=' bg-cyan-700 py-6'>
       <div className="content">
       <h2 className='font-serif text-2xl'>New section</h2>
+      </div>
+      </section>
+      <section className='bg-slate-300 py-6'>
+      <div className="content">
+      <h2 className='font-serif text-2xl text-black'>New section</h2>
       </div>
       </section>
       <Footer />
