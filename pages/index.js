@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Aboutus from '../components/Aboutus'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+import Mission from '../components/Mission'
 import Hero from '../components/Hero'
 import { useRouter } from 'next/router'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -17,6 +18,7 @@ export default function Home() {
       </Head>
       <Hero />
       <Aboutus/>
+      <Mission />
       <Contact />
       <section className=' bg-cyan-700 py-6'>
       <div className="content">

@@ -23,6 +23,14 @@ const Aboutus = () => {
       facebook: "#",
       linkedin: "#"
     },
+    { 
+      name: "Ipsum Lorem",
+      description: "CFO",
+      image: "https://api.lorem.space/image/face?w=128&h=128&hash=4F32C4CF",
+      twitter: "#",
+      facebook: "#",
+      linkedin: "#"
+    },
   ]
 
   return (
