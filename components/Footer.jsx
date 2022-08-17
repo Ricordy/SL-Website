@@ -2,6 +2,8 @@ import {FiTwitter} from "react-icons/fi"
 import {AiOutlineInstagram} from "react-icons/ai"
 import {GoMail} from "react-icons/go"
 import {TbBrandDiscord} from "react-icons/tb"
+import { BsMedium } from "react-icons/bs"
+import { AiOutlineYoutube } from "react-icons/ai" 
 import { useTranslation } from "next-i18next"
 
 function Footer() {
@@ -27,6 +29,8 @@ function Footer() {
         <div className="flex flex-row items-center gap-2"><AiOutlineInstagram /> Instagram</div>
         <div className="flex flex-row items-center gap-2"><GoMail /> E-mail</div>
         <div className="flex flex-row items-center gap-2"><TbBrandDiscord /> Discord</div>
+        <div className="flex flex-row items-center gap-2"><BsMedium /> Medium</div>
+        <div className="flex flex-row items-center gap-2"><AiOutlineYoutube /> YouTube</div>
       </div>
     </div>
   </div>
