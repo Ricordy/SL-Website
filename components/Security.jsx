@@ -4,7 +4,7 @@ import React from 'react'
 function Security() {
   const { t } = useTranslation('security');
   return (
-    <section id="security">
+    <section id="security" className='bg-slate-300 text-slate-800'>
       <div className="content">
       <h2 className="text-3xl mb-12 font-serif">{t("security.section-title")}</h2>
       <ul>
