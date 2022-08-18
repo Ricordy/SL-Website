@@ -31,6 +31,10 @@ const Menu = (props) => {
       text: t("roadmap")
     },
     {
+      link: `${router.locale != router.defaultLocale ? router.locale : ''}/the-process`,
+      text: t("the-process")
+    },
+    {
       link: `${router.locale != router.defaultLocale ? router.locale : ''}/security`,
       text: t("security")
     },

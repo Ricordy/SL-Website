@@ -20,8 +20,6 @@ export default function Home() {
       </Head>
       <Hero />
       <Aboutus/>
-      <Mission />
-      <Security />
       <HowItWorks />
       <Roadmap />
       <Contact />
@@ -43,7 +41,7 @@ export default function Home() {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common", "home", "hero", "security", "how-it-works", "roadmap"])),
+      ...(await serverSideTranslations(locale, ["common", "home", "hero", "how-it-works", "roadmap"])),
       // Will be passed to the page component as props
     },
   };
