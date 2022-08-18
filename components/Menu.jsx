@@ -19,23 +19,31 @@ const Menu = (props) => {
 
   const itens = [
     {
-      link: "#about-us",
+      link: "/#about-us",
       text: t("about-us")
     },
     {
-      link: `${router.locale}/events`,
+      link: `${router.locale != router.defaultLocale ? router.locale : ''}/events`,
       text: t("events")
     },
     {
-      link: "#roadmap",
+      link: "/#roadmap",
       text: t("roadmap")
     },
     {
-      link: "#how-it-works",
+      link: `${router.locale != router.defaultLocale ? router.locale : ''}/security`,
+      text: t("security")
+    },
+    {
+      link: `${router.locale != router.defaultLocale ? router.locale : ''}/mission`,
+      text: t("mission")
+    },
+    {
+      link: "/#how-it-works",
       text: t("how-it-works")
     },
     {
-      link: "#contact",
+      link: "/#contact",
       text: t("contact")
     },
     {
