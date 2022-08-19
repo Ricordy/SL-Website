@@ -8,6 +8,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Security from '../components/Security'
 import HowItWorks from '../components/HowItWorks'
 import Roadmap from '../components/Roadmap'
+import Newsletter from '../components/Newsletter'
 
 export default function Home() {
 
@@ -23,16 +24,7 @@ export default function Home() {
       <HowItWorks />
       <Roadmap />
       <Contact />
-      <section className=' bg-cyan-700 py-6'>
-      <div className="content">
-      <h2 className='font-serif text-2xl'>New section</h2>
-      </div>
-      </section>
-      <section className='bg-slate-300 py-6'>
-      <div className="content">
-      <h2 className='font-serif text-2xl text-black'>New section</h2>
-      </div>
-      </section>
+      <Newsletter />
       <Footer />
     </div>
   )
@@ -41,7 +33,7 @@ export default function Home() {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common", "home", "hero", "how-it-works", "roadmap"])),
+      ...(await serverSideTranslations(locale, ["common", "home", "hero", "how-it-works", "roadmap","newsletter"])),
       // Will be passed to the page component as props
     },
   };

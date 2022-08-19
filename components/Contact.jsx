@@ -5,8 +5,6 @@ function Contact() {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data);
 
-  console.log(watch("example")); // watch input value by passing the name of it
-
   return (
     <section id="contact" className="bg-c2">
     <div className="content">
