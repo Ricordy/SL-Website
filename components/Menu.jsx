@@ -17,6 +17,8 @@ const Menu = (props) => {
 
   const [isNavOpen, setIsNavOpen] = useState(false);
 
+  const defaultLinkClass = 'text-slate-300 hover:text-slate-200';
+
   const itens = [
     {
       link: "/#about-us",
@@ -52,7 +54,13 @@ const Menu = (props) => {
     },
     {
       link: "whitepaper.pdf",
-      text: t("whitepaper")
+      text: t("whitepaper"),
+      linkClass: "bg-slate-50 text-black p-2 rounded"
+    },
+    {
+      link: "https://somethinglegendary.io",
+      text: t("launch-app"),
+      linkClass: "bg-slate-50 text-black p-2 rounded"
     },
   ];
 
@@ -65,8 +73,10 @@ const Menu = (props) => {
         </div>
         <div className="flex px-0">
         <ul className='sm:flex sm:relative gap-4 items-center px-6'>
-          { itens.map(({link, text}, index) => {
-            return <li key={index}><a className='text-slate-300 hover:text-slate-200' href={link}>{text}</a></li>
+          { 
+            
+            itens.map(({link, text, linkClass}, index) => {
+            return <li key={index}><a className={linkClass ? linkClass : defaultLinkClass} href={link}>{text}</a></li>
           })}
         </ul>
         </div>
