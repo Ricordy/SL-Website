@@ -1,6 +1,13 @@
 {
-  "team": {
-    "ceo-name": "Lorem Ipsum",
-    "ceo-job-description": "CEO"
+  "about-us": {
+    "section-title": "About Us",
+    "who-we-are": "Who we are",
+    "team": {
+      "ceo-name": "Lorem Ipsum",
+      "ceo-job-description": "CEO"
+    },
+    "events": "Events",
+    "mission": "Mission",
+    "contact": "Contact"
   }
 }

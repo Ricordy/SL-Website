@@ -11,13 +11,17 @@ export default function Events() {
         <h1>{t("events.section-title")}</h1>
       </div>
     </section>
-  )
+  );
 }
 
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common","events"])),
+      ...(await serverSideTranslations(locale, [
+        "common",
+        "events",
+        "about-us",
+      ])),
     },
   };
 }
