@@ -32,7 +32,7 @@ function Footer() {
             <h3 className="font-bold pb-2 text-white text-opacity-70">
               {t("we-are-social")}
             </h3>
-            <Link href="http://twitter.com">
+            <Link href="http://twitter.com/">
               <a target="_blank" className="flex flex-row items-center gap-2">
                 <FiTwitter /> Twitter
               </a>
