@@ -25,7 +25,6 @@ export default function Home() {
       </Head>
       <Hero />
       <Aboutus />
-      <Mission />
       <HowItWorks />
       <Roadmap />
       <Contact />

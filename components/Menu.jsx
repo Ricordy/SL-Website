@@ -58,11 +58,11 @@ const Menu = (props) => {
       text: t("contact"),
     },
     {
-      link: "whitepaper.pdf",
+      link: "#",
       text: t("whitepaper"),
     },
     {
-      link: "https://somethinglegendary.io",
+      link: "https://finlab.somethinglegendary.io",
       text: t("launch-app"),
       linkClass: "bg-slate-50 text-black p-2 rounded",
     },
@@ -70,7 +70,7 @@ const Menu = (props) => {
 
   return (
     <>
-      <nav className=" bg-c1 md:flex z-10 sticky hidden min-w-full bg-dark_green justify-evenly gap-20 py-4">
+      <nav className=" bg-slate-900 md:flex z-10 sticky hidden min-w-full bg-dark_green justify-evenly gap-20 py-4">
         <div className="flex content">
           <div className="flex">
             <Link href="/" className="flex flex-row md:text-xl items-center">
