@@ -1,8 +1,22 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
+import { forwardRef } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
+
+const MyLink = forwardRef((props, ref) => {
+  let { href, children, ...rest } = props;
+  return (
+    <Link href={href}>
+      <a ref={ref} {...rest}>
+        {children}
+      </a>
+    </Link>
+  );
+});
+MyLink.displayName = "MyLink";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -32,41 +46,41 @@ export default function EventsMenu() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="#about-us"
+                <MyLink
+                  href="/#about-us"
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}
                 >
                   {t("about-us.who-we-are")}
-                </a>
+                </MyLink>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="#mission"
+                <MyLink
+                  href="/mission"
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}
                 >
                   {t("about-us.mission")}
-                </a>
+                </MyLink>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="#contact"
+                <MyLink
+                  href="/#contact"
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}
                 >
                   {t("about-us.contact")}
-                </a>
+                </MyLink>
               )}
             </Menu.Item>
           </div>

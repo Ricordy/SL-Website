@@ -21,40 +21,30 @@ const Menu = (props) => {
   const defaultLinkClass = "text-slate-300 hover:text-slate-200";
 
   const itens = [
-    // {
-    //   link: `${
-    //     router.locale != router.defaultLocale ? router.locale : ""
-    //   }/events`,
-    //   text: t("events"),
-    // },
     {
       link: "/#roadmap",
       text: t("roadmap"),
     },
     {
       link: `${
-        router.locale != router.defaultLocale ? router.locale : ""
+        router.locale != router.defaultLocale ? `/${router.locale}` : ""
       }/the-process`,
       text: t("the-process"),
     },
     {
       link: `${
-        router.locale != router.defaultLocale ? router.locale : ""
+        router.locale != router.defaultLocale ? `/${router.locale}` : ""
       }/security`,
       text: t("security"),
     },
-    // {
-    //   link: `${
-    //     router.locale != router.defaultLocale ? router.locale : ""
-    //   }/mission`,
-    //   text: t("mission"),
-    // },
     {
       link: "/#how-it-works",
       text: t("how-it-works"),
     },
     {
-      link: "/events",
+      link: `${
+        router.locale != router.defaultLocale ? `/${router.locale}` : ""
+      }/events`,
       text: t("events"),
     },
     {

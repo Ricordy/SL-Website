@@ -8,7 +8,9 @@ export default function Events() {
   return (
     <section>
       <div className="content">
-        <h1>{t("events.section-title")}</h1>
+        <h2 className="text-3xl mb-12 font-serif">
+          {t("events.section-title")}
+        </h2>
       </div>
     </section>
   );
