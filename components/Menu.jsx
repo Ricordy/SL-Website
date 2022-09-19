@@ -54,6 +54,10 @@ const Menu = (props) => {
       text: t("how-it-works"),
     },
     {
+      link: "/events",
+      text: t("events"),
+    },
+    {
       link: "#",
       text: t("whitepaper"),
     },
