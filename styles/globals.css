@@ -3,20 +3,21 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate-800 text-slate-100
+  @apply bg-slate-800 text-slate-100;
 }
 nav {
-  @apply max-w-4xl mx-auto py-6
+  @apply max-w-4xl mx-auto py-6;
 }
-section .content, footer .content {
-  @apply max-w-4xl mx-auto p-6
+section .content,
+footer .content {
+  @apply max-w-4xl mx-auto p-6;
 }
 /** Mobile menu **/
 .hideMenuNav {
   display: none;
 }
 .showMenuNav {
-  background: #17777F;
+  @apply bg-slate-900;
   display: block;
   position: absolute;
   width: 100%;
@@ -30,5 +31,5 @@ section .content, footer .content {
   align-items: center;
 }
 label.animated {
-  @apply duration-300 transform transition-all absolute top-0 left-0 h-full flex items-center pl-0 text-base text-slate-300 group-focus-within:text-base peer-valid:text-base group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0
+  @apply duration-300 transform transition-all absolute top-0 left-0 h-full flex items-center pl-0 text-base text-slate-300 group-focus-within:text-base peer-valid:text-base group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0;
 }

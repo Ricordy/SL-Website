@@ -1,12 +1,16 @@
 import logo from "../public/logo.svg";
+import logoWhite from "../public/logo-white.svg";
+import burguerWhite from "../public/burguer-menu-white.svg";
+import burguer from "../public/burguer-menu.svg";
 import Image from "next/image";
 import AboutUsMenu from "./AboutUsMenu";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import Button from "../components/Button";
 
-const Menu = (props) => {
+const Navbar = (props) => {
   const { t } = useTranslation();
   const router = useRouter();
   const handleLocaleChange = (event) => {
@@ -17,6 +21,11 @@ const Menu = (props) => {
   };
 
   const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const showNav = (e) => {
+    e.preventDefault();
+    setIsNavOpen(!isNavOpen);
+  };
 
   const defaultLinkClass = "text-slate-300 hover:text-slate-200";
 
@@ -60,37 +69,41 @@ const Menu = (props) => {
 
   return (
     <>
-      <nav className=" bg-slate-900 md:flex z-10 sticky hidden min-w-full bg-dark_green justify-evenly gap-20 py-4">
-        <div className="flex content">
-          <div className="flex">
-            <Link href="/" className="flex flex-row md:text-xl items-center">
+      <nav
+        className={`${
+          isNavOpen ? "bg-white" : ""
+        } md:flex z-10 sticky hidden min-w-full justify-evenly gap-20 py-4`}
+      >
+        <div className="flex content justify-around w-full">
+          <Link href="/" className="flex flex-row md:text-xl items-center">
+            <Image
+              src={isNavOpen ? logo : logoWhite}
+              alt="Logo Something Legendary"
+              className="w-20"
+            />
+          </Link>
+          <div className="flex gap-12 justify-between">
+            <button
+              className={`border-2 px-10 uppercase  font-semibold leading-none rounded-md border-white self-center py-2 ${
+                isNavOpen
+                  ? "border-primaryGreen text-primaryGreen"
+                  : "border-white text-white"
+              }`}
+            >
+              {t("Launch app")}
+            </button>
+            <button
+              className="border-none uppercase  font-semibold leading-none rounded-md"
+              onClick={(e) => showNav(e)}
+            >
               <Image
-                src={logo}
-                alt="Logo Something Legendary"
-                className="w-20"
+                className=" "
+                src={isNavOpen ? burguer : burguerWhite}
+                alt="menu"
               />
-            </Link>
+            </button>
           </div>
-          <div className="flex px-0">
-            <ul className="sm:flex sm:relative gap-4 items-center px-6">
-              <li>
-                <AboutUsMenu />
-              </li>
-              {itens.map(({ link, text, linkClass }, index) => {
-                return (
-                  <li key={index}>
-                    <a
-                      className={linkClass ? linkClass : defaultLinkClass}
-                      href={link}
-                    >
-                      {text}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div className="">
+          {/* <div className="">
             <select
               className="bg-transparent"
               onChange={handleLocaleChange}
@@ -108,11 +121,11 @@ const Menu = (props) => {
                 );
               })}
             </select>
-          </div>
+          </div> */}
         </div>
       </nav>
 
-      <section className="bg-c1 flex fixed w-full z-20 md:hidden text-right drop-shadow-md px-6 py-2 items-center justify-between">
+      <section className="bg-slate-900 flex fixed w-full z-20 md:hidden text-right drop-shadow-md px-6 py-2 items-center justify-between">
         <div className="brand flex items-center">
           <Image src={logo} alt="Logo Something Legendary" className="w-20" />
         </div>
@@ -147,7 +160,7 @@ const Menu = (props) => {
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           </div>
-          <ul className="flex flex-col items-center justify-between min-h-[250px] text-black">
+          <ul className="flex flex-col items-center justify-between min-h-[250px]">
             {itens.map(({ link, text }, index) => {
               return (
                 <li
@@ -187,4 +200,4 @@ const Menu = (props) => {
   );
 };
 
-export default Menu;
+export default Navbar;

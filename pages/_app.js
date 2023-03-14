@@ -1,13 +1,13 @@
-import '../styles/globals.css'
-import { appWithTranslation } from 'next-i18next';
-import Menu from '../components/Menu';
+import "../styles/globals.css";
+import { appWithTranslation } from "next-i18next";
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {
-
   return (
     <>
-      <Menu />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }
