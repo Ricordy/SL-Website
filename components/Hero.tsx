@@ -13,11 +13,11 @@ function Hero(props) {
     <section className="bg-slate-700 bg-[url('../public/hero-home.jpg')] bg-cover bg-no-repeat bg-center w-full flex flex-col min-h-screen items-center justify-between">
       <Navbar />
       <div className="flex w-full px-6 xl:px-0 max-w-7xl flex-col gap-6">
-        <p className="text-4xl w-1/2">
-          <span className="font-bold">Your classics</span> fever, into a dream
-          come true.
+        <p className="text-4xl w-1/3 uppercase">
+          <span className="font-bold">Your classics</span>
+          <br /> fever, into a dream come true.
         </p>
-        <p>
+        <p className="w-1/3">
           Discover the world of{" "}
           <span className="font-bold">investment in the classics</span> and
           follow the process <span className="font-bold">in real time</span>.

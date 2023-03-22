@@ -11,6 +11,7 @@ import { Button } from "../components/Button";
 import HighlightContent from "../components/HighlightContent";
 import { title } from "process";
 import Link from "next/link";
+import Carousel from "../components/Carousel";
 
 export default function Home() {
   return (
@@ -238,10 +239,7 @@ export default function Home() {
           height={75}
         />
       </div>
-
-      <Aboutus />
-      <HowItWorks />
-      <Roadmap />
+      <Carousel />
       <Contact />
       <Newsletter />
     </div>
