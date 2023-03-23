@@ -1,11 +1,10 @@
 import { Disclosure } from "@headlessui/react";
-import Image from "next/image";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 
 const Carousel = () => {
   return (
     <section className="flex gap-6 w-full justify-center items-start">
-      <div className="flex w-4/5 min-h-[528px] bg-cover bg-center bg-blue-200 bg-[url('../public/living-the-dream.jpg')]">
+      <div className="flex w-4/5 min-h-[528px] bg-cover bg-center bg-[url('../public/living-the-dream.jpg')]">
         {/* <Image
           className="object-fill"
           src="/living-the-dream.jpg"
@@ -27,7 +26,7 @@ const Carousel = () => {
             {({ open }) => (
               <>
                 <Disclosure.Button
-                  className={`flex rounded-md w-full justify-between px-4 py-2 text-left text-sm font-medium hover:bg-primaryGreen/70 hover:text-white/80 focus:outline-none focus-visible:ring focus-visible:ring-primaryGreen focus-visible:ring-opacity-75 border-b border-b-black ${
+                  className={`flex w-full justify-between px-4 py-2 text-left text-sm font-medium hover:bg-primaryGreen/70 hover:text-white/80 focus:outline-none focus-visible:ring focus-visible:ring-primaryGreen focus-visible:ring-opacity-75 border-b border-b-black ${
                     open ? "text-primaryGreen" : "text-black"
                   }`}
                 >
@@ -54,7 +53,7 @@ const Carousel = () => {
             {({ open }) => (
               <>
                 <Disclosure.Button
-                  className={`flex rounded-md w-full justify-between px-4 py-2 text-left text-sm font-medium hover:bg-primaryGreen/70 hover:text-white/80 focus:outline-none focus-visible:ring focus-visible:ring-primaryGreen focus-visible:ring-opacity-75 border-b border-b-black ${
+                  className={`flex w-full justify-between px-4 py-2 text-left text-sm font-medium hover:bg-primaryGreen/70 hover:text-white/80 focus:outline-none focus-visible:ring focus-visible:ring-primaryGreen focus-visible:ring-opacity-75 border-b border-b-black ${
                     open ? "text-primaryGreen" : "text-black"
                   }`}
                 >
@@ -82,7 +81,7 @@ const Carousel = () => {
             {({ open }) => (
               <>
                 <Disclosure.Button
-                  className={`flex rounded-md w-full justify-between px-4 py-2 text-left text-sm font-medium hover:bg-primaryGreen/70 hover:text-white/80 focus:outline-none focus-visible:ring focus-visible:ring-primaryGreen focus-visible:ring-opacity-75 border-b border-b-black ${
+                  className={`flex w-full justify-between px-4 py-2 text-left text-sm font-medium hover:bg-primaryGreen/70 hover:text-white/80 focus:outline-none focus-visible:ring focus-visible:ring-primaryGreen focus-visible:ring-opacity-75 border-b border-b-black ${
                     open ? "text-primaryGreen" : "text-black"
                   }`}
                 >

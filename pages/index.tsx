@@ -12,6 +12,8 @@ import HighlightContent from "../components/HighlightContent";
 import { title } from "process";
 import Link from "next/link";
 import Carousel from "../components/Carousel";
+import Posts from "../components/Posts";
+import Banner from "../components/Banner";
 
 export default function Home() {
   return (
@@ -196,7 +198,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex w-full max-w-7xl mx-auto mt-24 bg-slate-200 bg-[url('../public/safe-travel.jpg')] bg-cover min-h-[408px] items-center relative">
+      <section className="flex w-full max-w-7xl mx-auto mt-24 bg-slate-200 bg-[url('../public/banners/safe-travel.jpg')] bg-cover min-h-[408px] items-center relative">
         <div className="flex flex-col justify-around w-1/3 p-12 gap-12">
           <div className="flex flex-col gap-3">
             <h3 className="text-3xl font-bold uppercase">
@@ -240,8 +242,16 @@ export default function Home() {
         />
       </div>
       <Carousel />
-      <Contact />
-      <Newsletter />
+      <Posts />
+      <Banner
+        title="
+            Ready for a Classic Investment?"
+        subtitle="Do you already have everything you need to start daydreaming? 
+So relax and press the pedal."
+        linkLabel="Go to app"
+        linkUrl="https://beta.somethinglegendary.io"
+        image="/banners/ready-for-a-classic-investment.jpg"
+      />
     </div>
   );
 }

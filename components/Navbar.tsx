@@ -85,7 +85,7 @@ const Navbar = (props) => {
         onMouseLeave={() => (!isNavOpen ? setIsNavOn(false) : null)}
         className={`${
           isNavOn ? "bg-white" : ""
-        } flex max-w-full justify-center w-full px-6 xl:px-0`}
+        } flex max-w-full justify-center w-full p-6 xl:px-0`}
       >
         <div className="flex flex-col max-w-7xl items-center justify-center w-full">
           <div className="flex justify-between items-center w-full">

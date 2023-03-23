@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate-800 text-slate-100;
+  @apply bg-slate-800 text-white;
 }
-nav {
+/* nav {
   @apply max-w-4xl mx-auto py-6;
-}
+} */
 section .content,
 footer .content {
   @apply max-w-4xl mx-auto p-6;
