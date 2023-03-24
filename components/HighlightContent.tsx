@@ -39,7 +39,7 @@ const HighlightContent: FC<ContentProps> = ({
           </div>
           {children}
           <Link href={buttonLink}>
-            <a className="dark:border-primaryGreen dark:text-primaryGreen border p-1 px-3 text-sm self-start rounded-md text-primaryGreen">
+            <a className="uppercase dark:border-primaryGreen dark:text-primaryGreen dark:hover:text-white dark:hover:bg-primaryGreen hover:text-white hover:bg-primaryGreen border-2 py-1 px-8 text-sm self-start rounded-md text-primaryGreen">
               {buttonLabel}
             </a>
           </Link>

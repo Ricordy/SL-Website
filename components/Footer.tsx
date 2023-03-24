@@ -38,7 +38,7 @@ function Footer() {
           </div>
         </div>
         <div className="flex flex-col">
-          <h3 className="font-bold pb-2 text-white">{t("How it works")}</h3>
+          <h3 className="pb-2 text-white">{t("How it works")}</h3>
           <Link href="/help/how-to-invest">
             <a>{t("How to invest")}</a>
           </Link>
@@ -47,7 +47,7 @@ function Footer() {
           </Link>
         </div>
         <div className="flex flex-col">
-          <h3 className="font-bold pb-2 text-white">{t("Learn")}</h3>
+          <h3 className="pb-2 text-white">{t("Learn")}</h3>
           <Link href="/help/create-a-wallet">
             <a>Create a Wallet</a>
           </Link>
@@ -62,7 +62,7 @@ function Footer() {
           </Link>
         </div>
         <div className="flex flex-col">
-          <h3 className="font-bold pb-2 text-white">{t("About Us")}</h3>
+          <h3 className="pb-2 text-white">{t("About Us")}</h3>
           <Link href="/whitepaper">
             <a>{t("Whitepaper")}</a>
           </Link>
@@ -71,8 +71,8 @@ function Footer() {
           </Link>
         </div>
         <div className="flex flex-col">
-          <h3 className="font-bold pb-2 text-white">{t("Newsletter")}</h3>
-          <p>
+          <h3 className="pb-2 text-white">{t("Newsletter")}</h3>
+          <p className="text-white">
             Join our <span className="font-semibold">Legendary</span> mailing
             list.
           </p>
@@ -84,7 +84,7 @@ function Footer() {
               id="email"
               className="p-2 text-xs rounded-md"
             />
-            <Button className="self-end" variant="outline">
+            <Button className="self-end hover:bg-white" variant="outline">
               Subscribe
             </Button>
           </form>

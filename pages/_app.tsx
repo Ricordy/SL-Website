@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/swiper.css";
 import { appWithTranslation } from "next-i18next";
 import Layout from "../components/Layout";
 import { AppProps } from "next/app";

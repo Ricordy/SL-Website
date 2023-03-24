@@ -4,14 +4,18 @@ import { FC, ReactNode } from "react";
 
 interface BannerProps {
   title: string;
+  titleClassName?: string;
   subtitle: string;
+  subtitleClassName?: string;
   linkUrl: string;
   linkLabel?: string;
   image: string;
 }
 const Banner: FC<BannerProps> = ({
   title,
+  titleClassName,
   subtitle,
+  subtitleClassName,
   linkUrl,
   linkLabel,
   image,
@@ -21,11 +25,13 @@ const Banner: FC<BannerProps> = ({
       <div className="flex w-full max-w-7xl mx-auto">
         <div className="flex flex-col justify-around w-1/3 py-12 gap-12">
           <div className="flex flex-col gap-3">
-            <h3 className="text-3xl font-bold uppercase">{title}</h3>
-            <p>{subtitle}</p>
+            <h3 className={titleClassName ? titleClassName : null}>{title}</h3>
+            <p className={subtitleClassName ? subtitleClassName : "text-white"}>
+              {subtitle}
+            </p>
           </div>
           <Link href={linkUrl}>
-            <a className="text-slate-100 text-center uppercase border-2 font-semibold text-xs border-slate-100 rounded-md px-4 py-1 self-start">
+            <a className="text-slate-100 dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-white rounded-md px-8 py-1 self-start">
               {linkLabel ? linkLabel : "Know more"}
             </a>
           </Link>

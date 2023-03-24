@@ -1,0 +1,32 @@
+.swiper-container {
+  overflow: visible;
+}
+.swiper {
+  /* padding-bottom: 60px !important; */
+}
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 0px !important;
+}
+.swiper-pagination {
+  position: relative !important;
+  top: 0 !important;
+
+  /* bottom: -20px !important; */
+}
+
+/* .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+} */
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #000000 !important;
+}

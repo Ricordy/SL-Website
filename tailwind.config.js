@@ -10,11 +10,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Raleway", ...defaultTheme.fontFamily.sans],
+        sans: ["Kanit", ...defaultTheme.fontFamily.sans],
         serif: ["Italiana", ...defaultTheme.fontFamily.serif],
+        ubuntu: ["Ubuntu", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        ogBlack: "#333333",
+        ogBlack: "#535955",
         pureWhite: "#ffffff",
         offSand: "c1b7aa",
         classicLeather: "#443933",
@@ -23,9 +24,8 @@ module.exports = {
         mediumGrey: "#a2a2a2",
         primaryGreen: "#147454",
         primaryGold: "#C3A279",
-        c1: "#8d6f57",
-        c2: "#17777F",
-        c3: "#325053",
+        progressHighlight: "#2BDA9F",
+        progressBackground: "#DCDCDC",
       },
     },
   },

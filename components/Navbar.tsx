@@ -1,7 +1,8 @@
 import logo from "../public/logo.svg";
 import logoWhite from "../public/logo-white.svg";
-import burguerWhite from "../public/burguer-menu-white.svg";
-import burguer from "../public/burguer-menu.svg";
+import burguer from "../public/burguer-menu-white.svg";
+import burguerActive from "../public/burguer-menu.svg";
+import burguerHovered from "../public/burguer-menu-hover.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -114,11 +115,11 @@ const Navbar = (props) => {
                   className="border-none uppercase  font-semibold leading-none rounded-md"
                   onClick={(e) => showNav(e)}
                 >
-                  <Image
-                    className=" "
-                    src={isNavOn ? burguer : burguerWhite}
-                    alt="menu"
-                  />
+                  {isNavOn ? (
+                    <Image className=" " src={burguerActive} alt="menu" />
+                  ) : (
+                    <Image className=" " src={burguer} alt="menu" />
+                  )}
                 </button>
               </div>
               {/* <div className="">
