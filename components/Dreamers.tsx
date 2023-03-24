@@ -5,8 +5,8 @@ const Dreamers = (props) => {
   const { t } = useTranslation("hero");
 
   return (
-    <section className=" bg-black w-full flex flex-col items-center justify-around min-h-[250px]">
-      <h3 className="font-semibold uppercase pt-12">
+    <section className=" bg-dreamBlack w-full flex flex-col items-center justify-around min-h-[250px]">
+      <h3 className="text-white text-2xl uppercase pt-12 pb-6">
         Partners who dream with us.
       </h3>
       <div className="flex items-center gap-6 justify-between pb-24">

@@ -16,6 +16,7 @@ module.exports = {
       },
       colors: {
         ogBlack: "#535955",
+        dreamBlack: "#011013",
         pureWhite: "#ffffff",
         offSand: "c1b7aa",
         classicLeather: "#443933",
