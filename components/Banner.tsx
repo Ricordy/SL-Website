@@ -21,8 +21,10 @@ const Banner: FC<BannerProps> = ({
   image,
 }) => {
   return (
-    <section className="flex w-full mx-auto bg-black bg-[url('../public/banners/ready-for-a-classic-investment.jpg')] bg-contain bg-right bg-no-repeat min-h-[409px] items-center">
-      <div className="flex w-full max-w-7xl mx-auto">
+    <section
+      className={`flex w-full mx-auto bg-black  bg-cover bg-right bg-no-repeat min-h-[409px] items-center ${image}`}
+    >
+      <div className="flex w-full max-w-7xl mx-auto justify-start pl-24">
         <div className="flex flex-col justify-around w-1/3 py-12 gap-12">
           <div className="flex flex-col gap-3">
             <h3 className={titleClassName ? titleClassName : null}>{title}</h3>

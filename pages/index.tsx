@@ -1,6 +1,6 @@
 import Hero from "../components/Hero";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Dreamers from "../components/Dreamers";
+import Partners from "../components/Partners";
 import Image from "next/image";
 import HighlightContent from "../components/HighlightContent";
 import Link from "next/link";
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="">
       <Hero />
-      <Dreamers />
+      <Partners />
       <div className="flex flex-col -mt-12 gap-24">
         <HighlightContent
           title={<h3>Your dream project,</h3>}
@@ -196,7 +196,7 @@ export default function Home() {
               <br />
               safe investment.
             </h3>
-            <p>We have the seat belt of a racing car.</p>
+            <p className="text-white">We have the seat belt of a racing car.</p>
           </div>
           <Link href="/safe-investment">
             <a className="text-slate-100 text-center uppercase border-2 hover:bg-white dark:hover:bg-white hover:text-black dark:hover:text-black text-xs border-slate-100 rounded-md px-8 py-1 self-start">
@@ -242,7 +242,7 @@ export default function Home() {
 So relax and press the pedal."
         linkLabel="Go to app"
         linkUrl="https://beta.somethinglegendary.io"
-        image="/banners/ready-for-a-classic-investment.jpg"
+        image="bg-[url('/banners/ready-for-a-classic-investment.jpg')]"
       />
     </div>
   );

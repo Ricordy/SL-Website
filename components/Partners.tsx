@@ -1,14 +1,19 @@
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
+import { PartnerProps } from "../@types/partners";
 
-const Dreamers = (props) => {
+const Partners = ({
+  title = "Partners who dream with us.",
+  titleColor = "text-white",
+  bg = "bg-dreamBlack",
+}: PartnerProps) => {
   const { t } = useTranslation("hero");
 
   return (
-    <section className=" bg-dreamBlack w-full flex flex-col items-center justify-around min-h-[250px]">
-      <h3 className="text-white text-2xl uppercase pt-12 pb-6">
-        Partners who dream with us.
-      </h3>
+    <section
+      className={`w-full flex flex-col items-center justify-around min-h-[250px] ${bg}`}
+    >
+      <h3 className={`text-2xl uppercase pt-12 pb-6 ${titleColor}`}>{title}</h3>
       <div className="flex items-center gap-6 justify-between pb-24">
         <Image src="/brand/bosch.svg" alt="Bosch" width={149} height={36} />
         <Image src="/brand/kodak.svg" alt="Kodak" width={149} height={36} />
@@ -26,4 +31,4 @@ const Dreamers = (props) => {
   );
 };
 
-export default Dreamers;
+export default Partners;
