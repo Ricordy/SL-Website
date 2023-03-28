@@ -78,9 +78,13 @@ const HowItWorks = () => {
     <>
       <section className="w-full mx-auto max-w-7xl flex flex-col items-center">
         <div className="flex flex-col  w-full relative items-center justify-center bg-[url('/headers/how-it-works.jpg')] bg-cover bg-top bg-no-repeat min-h-[530px]">
-          <div className="flex flex-col z-10">
-            <h3 className="text-white">Invest in your dream in four steps</h3>
-            <p className="text-white">
+          <div className="flex flex-col z-10 w-1/3 items-center justify-center">
+            <h3 className="text-white text-center">
+              <span className="font-bold">Invest in your dream</span>
+              <br />
+              in four steps
+            </h3>
+            <p className="text-white text-center">
               You are four miles away from achieving the experience you have
               dreamed your whole life. Keep it going!
             </p>
@@ -97,11 +101,11 @@ const HowItWorks = () => {
                   key={category}
                   className={({ selected }) =>
                     classNames(
-                      "w-full py-2.5 border-b text-sm font-medium leading-5 text-black",
-                      "ring-white ring-opacity-60  focus:outline-none focus:ring-2",
+                      "w-full py-2.5 border-b text-md font-medium leading-5 text-black",
+                      "  focus:outline-none focus:ring-2",
                       selected
-                        ? "bg-white shadow border-b-2 border-black"
-                        : "text-tabInactive hover:bg-black/5 hover:border-b-2 hover:border-black hover:text-black"
+                        ? "bg-white ring-transparent border-b-4 border-black"
+                        : "text-tabInactive hover:bg-black/5 hover:border-b-4 hover:border-black hover:text-black"
                     )
                   }
                 >
