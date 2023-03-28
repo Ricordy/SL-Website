@@ -83,7 +83,9 @@ const Navbar = (props) => {
     <>
       <nav
         onMouseEnter={() => setIsNavOn(true)}
-        onMouseLeave={() => (!isNavOpen ? setIsNavOn(false) : null)}
+        onMouseLeave={() =>
+          !isNavOpen && router.route == "/" ? setIsNavOn(false) : null
+        }
         className={`${
           isNavOn ? "bg-white" : ""
         } flex max-w-full justify-center w-full p-6 xl:px-0`}
@@ -93,7 +95,7 @@ const Navbar = (props) => {
             <Link href="/" className="flex flex-row md:text-xl items-center">
               <a>
                 <Image
-                  src={isNavOn ? logo : logoWhite}
+                  src={isNavOn || router.route !== "/" ? logo : logoWhite}
                   alt="Logo Something Legendary"
                   className="w-20"
                 />
@@ -104,7 +106,7 @@ const Navbar = (props) => {
                 <Button
                   variant="outline"
                   className={`self-center ${
-                    isNavOn
+                    isNavOn || router.route !== "/"
                       ? "dark:border-primaryGreen dark:text-primaryGreen"
                       : ""
                   }`}
@@ -115,7 +117,7 @@ const Navbar = (props) => {
                   className="border-none uppercase  font-semibold leading-none rounded-md"
                   onClick={(e) => showNav(e)}
                 >
-                  {isNavOn ? (
+                  {isNavOn || router.route !== "/" ? (
                     <Image className=" " src={burguerActive} alt="menu" />
                   ) : (
                     <Image className=" " src={burguer} alt="menu" />

@@ -231,7 +231,7 @@ export default function Home() {
           height={75}
         />
       </div>
-      <Carousel className="mb-12" />
+      <Carousel id="1" className="mb-12" />
       <Accordion />
       <Posts />
       <Banner

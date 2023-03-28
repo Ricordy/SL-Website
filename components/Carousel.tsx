@@ -50,6 +50,7 @@ const CarouselItem = ({
 };
 
 interface CarouselProps {
+  id: string;
   className?: string;
 }
 
@@ -75,9 +76,7 @@ const items = [
   },
 ];
 
-const Carousel: FC<CarouselProps> = ({ className }) => {
-  const image = "https://source.unsplash.com/featured/300x201";
-  const images = new Array(6).fill({ url: image });
+const Carousel: FC<CarouselProps> = ({ id, className }) => {
   return (
     <section
       className={cn("mx-auto flex flex-col gap-12 w-full max-w-7xl", className)}
@@ -106,9 +105,12 @@ const Carousel: FC<CarouselProps> = ({ className }) => {
             // navigation={true}
             pagination={{
               clickable: true,
-              el: ".swiper-pagination",
+              el: `.swiper-pagination-${id}`,
             }}
-            navigation={{ nextEl: ".swiper-next", prevEl: ".swiper-prev" }}
+            navigation={{
+              nextEl: `.swiper-next-${id}`,
+              prevEl: `.swiper-prev-${id}`,
+            }}
             updateOnWindowResize
             observer
             observeParents
@@ -129,7 +131,7 @@ const Carousel: FC<CarouselProps> = ({ className }) => {
         </div>
       </div>
       <div className="flex gap-6 justify-center items-center  w-1/3 mx-auto">
-        <div className="flex relative swiper-prev">
+        <div className={`flex relative swiper-prev-${id}`}>
           <Image
             src="/icons/pagination-prev.svg"
             width={20}
@@ -137,8 +139,10 @@ const Carousel: FC<CarouselProps> = ({ className }) => {
             alt="Previous"
           />
         </div>
-        <div className="swiper-pagination flex justify-center items-center gap-1 text-black" />
-        <div className="swiper-next flex relative ">
+        <div
+          className={`flex justify-center items-center gap-1 text-black swiper-pagination-${id}`}
+        />
+        <div className={`flex relative swiper-next-${id}`}>
           <Image
             src="/icons/pagination-next.svg"
             width={20}

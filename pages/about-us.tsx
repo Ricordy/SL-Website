@@ -3,19 +3,24 @@ import Navbar from "../components/Navbar";
 import Image from "next/image";
 import Header from "../public/headers/about.jpg";
 import How from "../public/media/about-1.jpg";
+import Play from "../public/icons/play.svg";
 import Partners from "../components/Partners";
 import Banner from "../components/Banner";
 import Posts from "../components/Posts";
+import Carousel from "../components/Carousel";
+import Contact from "../components/Contact";
 
 const AboutUs = () => {
   return (
     <div className="">
       <Navbar />
-      <div className="flex w-full gap-12 mx-auto items-center flex-col max-w-7xl">
+      <div className="flex w-full gap-12 mx-auto  items-center flex-col max-w-7xl">
         <h3 className="font-light">A Legendary Oil Change!</h3>
         <h5>Know what&apos;s under the hood</h5>
-        <section className="flex w-full">
-          <Image alt="Video" src={Header} />
+        <section className="flex w-full relative justify-center bg-[url('/headers/about.jpg')] bg-cover bg-right bg-no-repeat min-h-[530px]">
+          <div className="absolute z-10 self-center">
+            <Image alt="Play" src={Play} />
+          </div>
         </section>
         <section className="flex gap-24 w-full my-24">
           <Image alt="How we became something" src={How} />
@@ -41,6 +46,8 @@ const AboutUs = () => {
           bg="bg-white"
           titleColor="text-primaryGrey"
         />
+        <Carousel id="1" />
+        <Carousel id="2" />
         <section className="flex flex-col min-h-[658px] justify-end pb-24 items-center gap-6 relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-center">
           <div className="flex flex-col pb-12">
             <h3 className="text-white text-center tracking-widest">
@@ -85,9 +92,11 @@ believe in safety?"
           linkLabel="Security Measures"
           linkUrl="/security"
           image="bg-[url('/banners/about-safety.jpg')]"
+          certificates={true}
         />
         <Posts />
       </div>
+      <Contact />
     </div>
   );
 };

@@ -28,6 +28,7 @@ module.exports = {
         primaryGrey: "#757C79",
         progressHighlight: "#2BDA9F",
         progressBackground: "#DCDCDC",
+        contactBackground: "#F7F7F7",
       },
     },
   },
