@@ -13,7 +13,6 @@ import Contact from "../components/Contact";
 const AboutUs = () => {
   return (
     <div className="">
-      <Navbar />
       <div className="flex w-full gap-12 mx-auto  items-center flex-col max-w-7xl">
         <h3 className="font-light">A Legendary Oil Change!</h3>
         <h5>Know what&apos;s under the hood</h5>
@@ -93,6 +92,7 @@ believe in safety?"
           linkUrl="/security"
           image="bg-[url('/banners/about-safety.jpg')]"
           certificates={true}
+          contentPadding={true}
         />
         <Posts />
       </div>

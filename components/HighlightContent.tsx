@@ -5,10 +5,10 @@ import Link from "next/link";
 
 interface ContentProps {
   title: ReactNode;
-  subtitle: ReactNode;
+  subtitle?: ReactNode;
   image: string;
-  buttonLink: string;
-  buttonLabel: string;
+  buttonLink?: string;
+  buttonLabel?: string;
   reverse?: boolean;
   children: ReactNode;
 }
@@ -38,11 +38,13 @@ const HighlightContent: FC<ContentProps> = ({
             {subtitle}
           </div>
           {children}
-          <Link href={buttonLink}>
-            <a className="uppercase dark:border-primaryGreen dark:text-primaryGreen dark:hover:text-white dark:hover:bg-primaryGreen hover:text-white hover:bg-primaryGreen border-2 py-1 px-8 text-sm self-start rounded-md text-primaryGreen">
-              {buttonLabel}
-            </a>
-          </Link>
+          {buttonLink && buttonLabel && (
+            <Link href={buttonLink}>
+              <a className="uppercase dark:border-primaryGreen dark:text-primaryGreen dark:hover:text-white dark:hover:bg-primaryGreen hover:text-white hover:bg-primaryGreen border-2 py-1 px-8 text-sm self-start rounded-md text-primaryGreen">
+                {buttonLabel}
+              </a>
+            </Link>
+          )}
         </div>
       </div>
     </section>

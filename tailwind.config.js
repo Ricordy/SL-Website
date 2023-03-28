@@ -29,6 +29,7 @@ module.exports = {
         progressHighlight: "#2BDA9F",
         progressBackground: "#DCDCDC",
         contactBackground: "#F7F7F7",
+        tabInactive: "#757C79",
       },
     },
   },

@@ -11,6 +11,7 @@ interface BannerProps {
   linkLabel?: string;
   image: string;
   certificates?: boolean;
+  contentPadding?: boolean;
 }
 const Banner: FC<BannerProps> = ({
   title,
@@ -21,14 +22,19 @@ const Banner: FC<BannerProps> = ({
   linkLabel,
   image,
   certificates,
+  contentPadding = false,
 }) => {
   return (
     <div className="flex w-full mx-auto flex-col">
       <section
         className={`flex w-full mx-auto bg-black relative  bg-cover bg-right bg-no-repeat min-h-[409px] items-center ${image}`}
       >
-        <div className="flex w-full relative z-10 max-w-7xl mx-auto justify-start pl-24">
-          <div className="flex flex-col justify-around w-1/3 py-12 gap-12">
+        <div className="flex w-full relative z-10 max-w-7xl mx-auto justify-start">
+          <div
+            className={`flex flex-col justify-around w-1/3 py-12 gap-12 ${
+              contentPadding ? "pl-24" : ""
+            }`}
+          >
             <div className="flex flex-col gap-3">
               <h3 className={titleClassName ? titleClassName : null}>
                 {title}
