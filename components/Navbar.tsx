@@ -33,7 +33,7 @@ const Navbar = (props) => {
   };
 
   const defaultLinkClass = "text-slate-300 hover:text-slate-200";
-
+  const transparentNavRoutes = ["/"];
   const itens = [
     {
       link: "/about-us",
@@ -155,14 +155,16 @@ const Navbar = (props) => {
                   {itens.map(({ link, text }, index) => {
                     return (
                       <li key={index} className="uppercase">
-                        <Link
-                          href={link}
-                          onClick={() => {
-                            setIsNavOpen(false);
-                            setIsNavOn(false);
-                          }}
-                        >
-                          <a className="text-slate-800">{text}</a>
+                        <Link href={link}>
+                          <a
+                            onClick={() => {
+                              setIsNavOpen(false);
+                              setIsNavOn(false);
+                            }}
+                            className="text-slate-800"
+                          >
+                            {text}
+                          </a>
                         </Link>
                       </li>
                     );

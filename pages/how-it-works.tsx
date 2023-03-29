@@ -8,6 +8,7 @@ import Link from "next/link";
 import HighlightContent from "../components/HighlightContent";
 import Posts from "../components/Posts";
 import Banner from "../components/Banner";
+import Carousel from "../components/how-it-works/Carousel";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -18,58 +19,90 @@ const HowItWorks = () => {
     "01. Launch the App": [
       {
         id: 1,
-        title: "Does drinking coffee make you smarter?",
-        date: "5h ago",
-        commentCount: 5,
-        shareCount: 2,
+        title: "Launch the App",
+        image: "/media/about-1.jpg",
         content: (
-          <section className="flex gap-24 w-full my-24">
-            <Image alt="How we became something" src={How} />
-            <div className="flex flex-col gap-6 w-1/2 max-w-md items-start justify-center">
-              <h3>Launch the App</h3>
-              <p>
-                Connect your wallet! Launch the app, connect your wallet and
-                choose your legendary classic! As easy as it sounds, and if you
-                don&apos;t have one, we show you how to create one.
-              </p>
-              <Link href="http://beta.somethinglegendary.io">
-                <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
-                  Go to app
-                </a>
-              </Link>
-            </div>
-          </section>
+          <>
+            <p>
+              The user clicks on launch App and enters the platform, then clicks
+              on connect wallet for which he must have one to be able to
+              connect, if not, redirect to create one. Don&apos;t know how to
+              create one? Click this link!
+            </p>
+            <Link href="http://beta.somethinglegendary.io">
+              <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
+                Go to app
+              </a>
+            </Link>
+          </>
         ),
       },
     ],
     "02.Buy an entry NFT": [
       {
         id: 1,
-        title: "Is tech making coffee better or worse?",
-        date: "Jan 7",
-        commentCount: 29,
-        shareCount: 16,
-        content: <h3>buy nft</h3>,
+        title: "Buy an entry NFT",
+        image: "/media/about-1.jpg",
+        content: (
+          <>
+            <p>
+              You&apos;re already connected and now you can view all over the
+              platform! To be able to interact with it and start investing, you
+              have to buy the entry ticket (NFT). After completing this process,
+              you&apos;re now part of the Something Legendary community and can
+              invest in your dream classic car.
+            </p>
+            <Link href="http://beta.somethinglegendary.io">
+              <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
+                Go to app
+              </a>
+            </Link>
+          </>
+        ),
       },
     ],
     "03.Select a project": [
       {
         id: 1,
-        title: "Ask Me Anything: 10 answers to your questions about coffee",
-        date: "2d ago",
-        commentCount: 9,
-        shareCount: 5,
-        content: <h3>select project</h3>,
+        title: "Select a project",
+        image: "/media/about-1.jpg",
+        content: (
+          <>
+            <p>
+              Now that you have visibility on the ON GOING projects, it remains
+              to choose which project you want to be part of and the amount you
+              want to invest. Choose wisely, don&apos;t let your personal tastes
+              influence your margins... or do, its your choice.
+            </p>
+            <Link href="http://beta.somethinglegendary.io">
+              <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
+                Go to app
+              </a>
+            </Link>
+          </>
+        ),
       },
     ],
     "04.Withdraw investment": [
       {
         id: 1,
-        title: "Ask Me Anything: 10 answers to your questions about coffee",
-        date: "2d ago",
-        commentCount: 9,
-        shareCount: 5,
-        content: <h3>withdraw</h3>,
+        title: "Withdraw investment",
+        image: "/media/about-1.jpg",
+        content: (
+          <>
+            <p>
+              Have you enjoyed the trip yet? Then it&apos;s time to withdraw
+              your investment funds! We hope that the entire follow-up of the
+              process has been to your liking. If you really liked the
+              destination, get ready to choose another one.
+            </p>
+            <Link href="http://beta.somethinglegendary.io">
+              <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
+                Go to app
+              </a>
+            </Link>
+          </>
+        ),
       },
     ],
   });
@@ -125,7 +158,18 @@ const HowItWorks = () => {
                   <ul>
                     {posts.map((post) => (
                       <li key={post.id} className="relative rounded-md p-3">
-                        {post.content}
+                        <section className="flex gap-24 w-full my-24">
+                          <div className="flex flex-col gap-6 w-1/3 max-w-md items-start justify-center">
+                            <h3>{post.title}</h3>
+                            {post.content}
+                          </div>
+                          <Image
+                            alt={post.title}
+                            src={post.image}
+                            width={592}
+                            height={566}
+                          />
+                        </section>
 
                         {/* <a
                           href="#"
@@ -155,6 +199,9 @@ const HowItWorks = () => {
             <Image alt="Play" src={Play} />
           </div>
         </section>
+      </section>
+      <section className="pt-24">
+        <Carousel id="1" />
       </section>
       <section className="flex flex-col gap-24">
         <h3 className="text-center py-12 text-4xl">The Mechanic todo list</h3>

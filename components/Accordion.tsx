@@ -15,7 +15,7 @@ const Accordion = () => {
       </div>
       <div className="flex flex-col pt-12 w-full gap-6">
         <div className="flex flex-col">
-          <h3 className="text-black text-3xl uppercase">Living the dream</h3>
+          <h3>Living the dream</h3>
           <h3>Making money from it</h3>
         </div>
 
