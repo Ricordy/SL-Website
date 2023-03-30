@@ -10,7 +10,7 @@ function Hero(props) {
   return (
     <section className="bg-black bg-[url('../public/hero-home.jpg')] bg-cover bg-no-repeat bg-center w-full flex flex-col min-h-screen items-center justify-between">
       <Navbar />
-      <div className="flex w-full px-6 xl:px-0 max-w-7xl flex-col gap-6">
+      <div className="flex w-full px-6 xl:px-0 max-w-screen-lg flex-col gap-6">
         <p className="text-4xl w-1/3 uppercase font-light tracking-widest text-white">
           <span className="font-bold ">Your classics</span>
           <br /> fever, into a dream come true.

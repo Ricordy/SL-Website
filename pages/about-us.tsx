@@ -9,11 +9,50 @@ import Banner from "../components/Banner";
 import Posts from "../components/Posts";
 import Carousel from "../components/Carousel";
 import Contact from "../components/Contact";
+import { PostItemProps } from "../@types/post";
 
 const AboutUs = () => {
+  const posts: PostItemProps[] = [
+    {
+      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      image: "/posts/post-1.jpg",
+      url: "/post/lorem-1",
+      children: (
+        <p className="text-ogBlack">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam...
+        </p>
+      ),
+    },
+    {
+      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      image: "/posts/post-2.jpg",
+      url: "/post/lorem-2",
+      children: (
+        <p className="text-ogBlack">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam...
+        </p>
+      ),
+    },
+    {
+      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      image: "/posts/post-3.jpg",
+      url: "/post/lorem-3",
+      children: (
+        <p className="text-ogBlack">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam...
+        </p>
+      ),
+    },
+  ];
   return (
     <div className="">
-      <div className="flex w-full gap-12 mx-auto  items-center flex-col max-w-7xl">
+      <div className="flex w-full gap-12 mx-auto  items-center flex-col max-w-screen-lg">
         <h3 className="font-light">A Legendary Oil Change!</h3>
         <h5>Know what&apos;s under the hood</h5>
         <section className="flex w-full relative justify-center bg-[url('/headers/about.jpg')] bg-cover bg-right bg-no-repeat min-h-[530px]">
@@ -94,7 +133,13 @@ believe in safety?"
           certificates={true}
           contentPadding={true}
         />
-        <Posts />
+        <Posts
+          className="py-24"
+          buttonMoreLink="/learn"
+          buttonMoreText="See more"
+          posts={posts}
+          title="Learn more"
+        />
       </div>
       <Contact />
     </div>

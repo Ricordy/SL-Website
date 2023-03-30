@@ -8,8 +8,47 @@ import Accordion from "../components/Accordion";
 import Posts from "../components/Posts";
 import Banner from "../components/Banner";
 import Carousel from "../components/Carousel";
+import { PostItemProps } from "../@types/post";
 
 export default function Home() {
+  const posts: PostItemProps[] = [
+    {
+      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      image: "/posts/post-1.jpg",
+      url: "/post/lorem-1",
+      children: (
+        <p className="text-ogBlack">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam...
+        </p>
+      ),
+    },
+    {
+      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      image: "/posts/post-2.jpg",
+      url: "/post/lorem-2",
+      children: (
+        <p className="text-ogBlack">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam...
+        </p>
+      ),
+    },
+    {
+      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      image: "/posts/post-3.jpg",
+      url: "/post/lorem-3",
+      children: (
+        <p className="text-ogBlack">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam...
+        </p>
+      ),
+    },
+  ];
   return (
     <div className="">
       <Hero />
@@ -113,7 +152,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex max-w-7xl mx-auto flex-col justify-center items-center gap-6">
+      <section className="flex max-w-screen-lg mx-auto flex-col justify-center items-center gap-6">
         <h3 className="text-black font-medium text-3xl text-center uppercase">
           How to invest in <span className=" font-thin">something</span>
           <br />
@@ -188,7 +227,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex w-full max-w-7xl mx-auto mt-24 bg-slate-200 bg-[url('../public/banners/safe-travel.jpg')] bg-cover min-h-[408px] items-center relative">
+      <section className="flex w-full max-w-screen-lg mx-auto mt-24 bg-slate-200 bg-[url('../public/banners/safe-travel.jpg')] bg-cover min-h-[408px] items-center relative">
         <div className="flex flex-col justify-around w-1/3 p-12 gap-12">
           <div className="flex flex-col gap-3">
             <h3 className="text-3xl uppercase text-white">
@@ -205,7 +244,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <div className="flex items-center justify-around w-full max-w-7xl mx-auto mb-12 py-6 bg-slate-50">
+      <div className="flex items-center justify-around w-full max-w-screen-lg mx-auto mb-12 py-6 bg-slate-50">
         <Image
           src="/certificates/certik.png"
           alt="Certik"
@@ -233,7 +272,13 @@ export default function Home() {
       </div>
       <Carousel id="1" className="mb-12" />
       <Accordion />
-      <Posts />
+      <Posts
+        posts={posts}
+        title="Learn more"
+        buttonMoreLink="/learn"
+        buttonMoreText="See More"
+        className="py-24"
+      />
       <Banner
         title="
             Ready for a Classic Investment?"

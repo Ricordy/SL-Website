@@ -90,7 +90,7 @@ const Navbar = (props) => {
           isNavOn || router.route != "/" ? "bg-white" : ""
         } flex max-w-full justify-center w-full p-6 xl:px-0`}
       >
-        <div className="flex flex-col max-w-7xl items-center justify-center w-full">
+        <div className="flex flex-col max-w-screen-lg items-center justify-center w-full">
           <div className="flex justify-between items-center w-full">
             <Link href="/" className="flex flex-row md:text-xl items-center">
               <a>
@@ -147,7 +147,7 @@ const Navbar = (props) => {
           </div>
           {isNavOpen && (
             <div
-              className="flex mt-24 self-center gap-6 justify-between max-w-7xl w-full"
+              className="flex mt-24 self-center gap-6 justify-between max-w-screen-lg w-full"
               id="menu"
             >
               <div className="flex w-full justify-end">

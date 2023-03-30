@@ -9,12 +9,48 @@ import HighlightContent from "../components/HighlightContent";
 import Posts from "../components/Posts";
 import Banner from "../components/Banner";
 import Carousel from "../components/how-it-works/Carousel";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import { classNames } from "../lib/utils";
+import { PostItemProps } from "../@types/post";
 
 const HowItWorks = () => {
+  const posts: PostItemProps[] = [
+    {
+      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      image: "/posts/post-1.jpg",
+      url: "/post/lorem-1",
+      children: (
+        <p className="text-ogBlack">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam...
+        </p>
+      ),
+    },
+    {
+      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      image: "/posts/post-2.jpg",
+      url: "/post/lorem-2",
+      children: (
+        <p className="text-ogBlack">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam...
+        </p>
+      ),
+    },
+    {
+      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      image: "/posts/post-3.jpg",
+      url: "/post/lorem-3",
+      children: (
+        <p className="text-ogBlack">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam...
+        </p>
+      ),
+    },
+  ];
   let [categories] = useState({
     "01. Launch the App": [
       {
@@ -261,7 +297,13 @@ const HowItWorks = () => {
           </p>
         </HighlightContent>
       </section>
-      <Posts />
+      <Posts
+        className="py-24"
+        title="Learn More"
+        posts={posts}
+        buttonMoreLink="/learn"
+        buttonMoreText="See More"
+      />
       <Banner
         title="
             Feel like you’re

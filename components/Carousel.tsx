@@ -27,7 +27,7 @@ const CarouselItem = ({
     <div className="flex flex-col w-full rounded-md bg-progressBackground">
       <div
         style={{ "--image-url": image } as React.CSSProperties}
-        className="flex flex-col justify-end items-center min-w-[412px] min-h-[394px] rounded-t-md bg-[image:var(--image-url)] bg-cover relative gap-3"
+        className="flex flex-col justify-end items-center min-h-[394px] rounded-t-md bg-[image:var(--image-url)] bg-cover relative gap-3"
       >
         <h4 className="z-10 uppercase text-3xl">{title}</h4>
         <div className="flex z-10 relative gap-3 pb-6 justify-around w-full">
@@ -79,7 +79,10 @@ const items = [
 const Carousel: FC<CarouselProps> = ({ id, className }) => {
   return (
     <section
-      className={cn("mx-auto flex flex-col gap-12 w-full max-w-7xl", className)}
+      className={cn(
+        "mx-auto flex flex-col gap-12 w-full max-w-screen-lg",
+        className
+      )}
     >
       <div className="flex gap-12">
         <div className="flex flex-col gap-6 w-2/6 justify-around">

@@ -15,7 +15,7 @@ const Contact = () => {
 
   return (
     <section className="w-full flex bg-contactBackground">
-      <div className="max-w-7xl px-24 py-24 mx-auto w-full flex gap-12">
+      <div className="max-w-screen-lg py-24 mx-auto w-full flex gap-12">
         <div className="flex w-3/5 flex-col gap-6">
           <h2 className="text-3xl uppercase text-black">
             Something in your legendary mind?

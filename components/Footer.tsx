@@ -23,7 +23,7 @@ function Footer() {
 
   return (
     <footer className="py-6 w-full bg-black flex flex-col">
-      <div className="mx-auto max-w-7xl w-full items-start flex justify-between border-b border-white pb-6 mb-6">
+      <div className="mx-auto max-w-screen-lg w-full items-start flex justify-between border-b border-white pb-6 mb-6">
         <div className="flex flex-col justify-center items-start gap-6">
           <Image src={LogoWhite} alt="Something Legendary Logo" />
           <div className="flex gap-3">
@@ -90,7 +90,7 @@ function Footer() {
           </form>
         </div>
       </div>
-      <div className="flex justify-between w-full max-w-7xl gap-2 mx-auto">
+      <div className="flex justify-between w-full max-w-screen-lg gap-2 mx-auto">
         <div className="flex gap-6">
           <Link href="/terms">
             <a>Terms and conditions</a>
