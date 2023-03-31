@@ -1,10 +1,10 @@
 import Link from "next/link";
-import Banner from "../components/Banner";
+import Banner from "../../components/Banner";
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
-import { classNames } from "../lib/utils";
-import Posts from "../components/Posts";
-import { PostItemProps } from "../@types/post";
+import { classNames } from "../../lib/utils";
+import Posts from "../../components/Posts";
+import { PostItemProps } from "../../@types/post";
 
 const Learn = () => {
   let posts: PostItemProps[] = [
@@ -12,7 +12,7 @@ const Learn = () => {
       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
       category: "For Beginners",
       image: "/posts/post-1.jpg",
-      url: "/post/lorem-1",
+      slug: "lorem-1",
       children: (
         <p className="text-ogBlack">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -25,7 +25,7 @@ const Learn = () => {
       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
       category: "For Beginners",
       image: "/posts/post-1.jpg",
-      url: "/post/lorem-1",
+      slug: "lorem-1",
       children: (
         <p className="text-ogBlack">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -38,7 +38,7 @@ const Learn = () => {
       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
       category: "Investment",
       image: "/posts/post-2.jpg",
-      url: "/post/lorem-2",
+      slug: "lorem-2",
       children: (
         <p className="text-ogBlack">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -51,7 +51,7 @@ const Learn = () => {
       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
       category: "Investment",
       image: "/posts/post-2.jpg",
-      url: "/post/lorem-2",
+      slug: "lorem-2",
       children: (
         <p className="text-ogBlack">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -64,7 +64,7 @@ const Learn = () => {
       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
       category: "Cars",
       image: "/posts/post-3.jpg",
-      url: "/post/lorem-3",
+      slug: "lorem-3",
       children: (
         <p className="text-ogBlack">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -77,7 +77,7 @@ const Learn = () => {
       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
       category: "Cars",
       image: "/posts/post-3.jpg",
-      url: "/post/lorem-3",
+      slug: "lorem-3",
       children: (
         <p className="text-ogBlack">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -90,7 +90,7 @@ const Learn = () => {
       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
       category: "News",
       image: "/posts/post-3.jpg",
-      url: "/post/lorem-3",
+      slug: "lorem-3",
       children: (
         <p className="text-ogBlack">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

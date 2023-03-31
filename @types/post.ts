@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { classNames } from "../lib/utils";
 
 export type PostProps = {
   posts: PostItemProps[];
@@ -12,7 +11,7 @@ export type PostProps = {
 export type PostItemProps = {
   image: string;
   title: string;
+  slug: string;
   category?: string;
   children: ReactNode;
-  url: string;
 };

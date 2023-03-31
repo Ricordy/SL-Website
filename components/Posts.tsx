@@ -4,17 +4,24 @@ import { FC } from "react";
 import { PostItemProps, PostProps } from "../@types/post";
 import { cn } from "../lib/utils";
 
-const PostItem: FC<PostItemProps> = ({ image, title, children, url }) => {
+const PostItem: FC<PostItemProps> = ({ image, title, children, slug }) => {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 relative">
       <Image src={image} alt={title} width={328} height={264} />
       <h3 className="text-2xl text-black">{title}</h3>
       {children}
-      <Link href={url}>
+      <Link href={`/learn/${slug}`}>
         <a className="text-primaryGreen text-center uppercase border-b-2 text-xs border-b-primaryGreen py-1 self-start">
           Know more
         </a>
       </Link>
+      <a
+        href={`/learn/${slug}`}
+        className={cn(
+          "absolute inset-0 rounded-md",
+          "ring-blue-400 focus:z-10 focus:outline-none focus:ring-2"
+        )}
+      />
     </div>
   );
 };
@@ -49,10 +56,10 @@ const Posts: FC<PostProps> = ({
         {posts &&
           posts.map((post) => (
             <PostItem
-              key={post.url}
+              key={post.slug}
               title={post.title}
               image={post.image}
-              url={post.url}
+              slug={post.slug}
             >
               {post.children}
             </PostItem>

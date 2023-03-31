@@ -15,7 +15,7 @@ export default function Home() {
     {
       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
       image: "/posts/post-1.jpg",
-      url: "/post/lorem-1",
+      slug: "lorem-1",
       children: (
         <p className="text-ogBlack">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -27,7 +27,7 @@ export default function Home() {
     {
       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
       image: "/posts/post-2.jpg",
-      url: "/post/lorem-2",
+      slug: "lorem-2",
       children: (
         <p className="text-ogBlack">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -39,7 +39,7 @@ export default function Home() {
     {
       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
       image: "/posts/post-3.jpg",
-      url: "/post/lorem-3",
+      slug: "lorem-3",
       children: (
         <p className="text-ogBlack">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

@@ -26,6 +26,7 @@ module.exports = {
         primaryGreen: "#147454",
         primaryGold: "#C3A279",
         primaryGrey: "#757C79",
+        secondaryGrey: "#535955",
         progressHighlight: "#2BDA9F",
         progressBackground: "#DCDCDC",
         contactBackground: "#F7F7F7",
