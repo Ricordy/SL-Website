@@ -155,59 +155,63 @@ const Navbar = (props) => {
           </div>
           {isNavOpen && (
             <div
-              className="flex mt-24 self-center gap-6 justify-between max-w-screen-lg w-full"
+              className="flex absolute w-1/2 bg-white mt-24 gap-6 justify-start right-0 top-0"
               id="menu"
             >
-              <div className="flex w-full justify-end">
-                <ul className="flex flex-col gap-6 w-2/6 text-left ">
-                  {itens.map(({ link, text }, index) => {
-                    return (
-                      <li key={index} className="uppercase">
-                        <Link href={link}>
-                          <a
-                            onClick={() => {
-                              setIsNavOpen(false);
-                              setIsNavOn(false);
-                            }}
-                            className="text-slate-800"
-                          >
-                            {text}
+              <div className="flex max-w-screen-lg w-full justify-start">
+                <div className="flex flex-col w-2/3 items-end justify-end">
+                  <div className="flex w-full p-12 justify-between ">
+                    <ul className="flex flex-col w-full gap-6 text-left">
+                      {itens.map(({ link, text }, index) => {
+                        return (
+                          <li key={index} className="uppercase">
+                            <Link href={link}>
+                              <a
+                                onClick={() => {
+                                  setIsNavOpen(false);
+                                  setIsNavOn(false);
+                                }}
+                                className="text-slate-800"
+                              >
+                                {text}
+                              </a>
+                            </Link>
+                          </li>
+                        );
+                      })}
+                      <li>
+                        <div className="border-b border-slate-800 w-full py-6 h-1" />
+                      </li>
+                      <li className="flex gap-6">
+                        <Link href="https://www.facebook.com">
+                          <a>
+                            <Image src={facebookIcon} alt="Facebook" />
+                          </a>
+                        </Link>
+                        <Link href="https://www.instagram.com">
+                          <a>
+                            <Image src={instagramIcon} alt="Instagram" />
+                          </a>
+                        </Link>
+                        <Link href="https://www.twitter.com">
+                          <a>
+                            <Image src={twitterIcon} alt="Twitter" />
                           </a>
                         </Link>
                       </li>
-                    );
-                  })}
-                  <li>
-                    <div className="border-b border-slate-800 w-full py-6 h-1" />
-                  </li>
-                  <li className="flex gap-6">
-                    <Link href="https://www.facebook.com">
-                      <a>
-                        <Image src={facebookIcon} alt="Facebook" />
-                      </a>
-                    </Link>
-                    <Link href="https://www.instagram.com">
-                      <a>
-                        <Image src={instagramIcon} alt="Instagram" />
-                      </a>
-                    </Link>
-                    <Link href="https://www.twitter.com">
-                      <a>
-                        <Image src={twitterIcon} alt="Twitter" />
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
-                <a
-                  href="#"
-                  className=""
-                  onClick={() => {
-                    setIsNavOpen(false);
-                    setIsNavOn(false);
-                  }}
-                >
-                  <Image src={close} alt="Close" />
-                </a>
+                    </ul>
+                    <a
+                      href="#"
+                      className=""
+                      onClick={() => {
+                        setIsNavOpen(false);
+                        setIsNavOn(false);
+                      }}
+                    >
+                      <Image src={close} alt="Close" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           )}
