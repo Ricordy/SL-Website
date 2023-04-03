@@ -5,9 +5,9 @@ import { FC, ReactNode } from "react";
 interface BannerProps {
   title: string;
   titleClassName?: string;
-  subtitle: string;
+  subtitle: ReactNode | null;
   subtitleClassName?: string;
-  linkUrl: string;
+  linkUrl?: string;
   linkLabel?: string;
   image: string;
   certificates?: boolean;
@@ -39,17 +39,25 @@ const Banner: FC<BannerProps> = ({
               <h3 className={titleClassName ? titleClassName : null}>
                 {title}
               </h3>
-              <p
-                className={subtitleClassName ? subtitleClassName : "text-white"}
-              >
-                {subtitle}
-              </p>
+              {subtitle && typeof subtitle == "string" ? (
+                <p
+                  className={
+                    subtitleClassName ? subtitleClassName : "text-white"
+                  }
+                >
+                  {subtitle}
+                </p>
+              ) : (
+                subtitle
+              )}
             </div>
-            <Link href={linkUrl}>
-              <a className="text-slate-100 dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-white rounded-md px-8 py-1 self-start">
-                {linkLabel ? linkLabel : "Know more"}
-              </a>
-            </Link>
+            {linkUrl && (
+              <Link href={linkUrl}>
+                <a className="text-slate-100 dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-white rounded-md px-8 py-1 self-start">
+                  {linkLabel ? linkLabel : "Know more"}
+                </a>
+              </Link>
+            )}
           </div>
         </div>
         {/* <div className="flex items-end overflow-hidden flex-col bg-red-200 w-full">

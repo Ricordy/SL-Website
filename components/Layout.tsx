@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 
 export default function Layout({ children }) {
   const router = useRouter();
+  const transparentNavRoutes = ["/", "/how-it-works"];
   return (
     <>
       <Head>
@@ -17,7 +18,7 @@ export default function Layout({ children }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {router.route != "/" && <Navbar />}
+      {!transparentNavRoutes.includes(router.route) && <Navbar />}
       <main className="bg-white">{children}</main>
       <Footer />
     </>

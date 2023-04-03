@@ -1,10 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./Button";
+import { ContactProps } from "../@types/contact";
 
-const Contact = () => {
+const Contact: FC<ContactProps> = ({ title = "Contact Us" }) => {
   const {
     register,
     handleSubmit,
@@ -17,9 +18,7 @@ const Contact = () => {
     <section className="w-full flex bg-contactBackground">
       <div className="max-w-screen-lg py-24 mx-auto w-full flex gap-12">
         <div className="flex w-3/5 flex-col gap-6">
-          <h2 className="text-3xl uppercase text-black">
-            Something in your legendary mind?
-          </h2>
+          <h2 className="text-3xl uppercase text-black">{title}</h2>
           <div className="flex flex-col gap-6">
             <div className="flex gap-3">
               <Image
@@ -98,7 +97,9 @@ const Contact = () => {
             </label>
           </div>
           <div className="flex md:col-span-2 justify-end">
-            <Button className="w-1/2">Submit</Button>
+            <Button className="dark:bg-black dark:text-white bg-black text-white w-1/2">
+              Submit
+            </Button>
           </div>
         </form>
       </div>

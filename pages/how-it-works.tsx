@@ -11,6 +11,7 @@ import Banner from "../components/Banner";
 import Carousel from "../components/how-it-works/Carousel";
 import { classNames } from "../lib/utils";
 import { PostItemProps } from "../@types/post";
+import Navbar from "../components/Navbar";
 
 const HowItWorks = () => {
   const posts: PostItemProps[] = [
@@ -145,10 +146,11 @@ const HowItWorks = () => {
 
   return (
     <>
-      <section className="w-full mx-auto max-w-7xl flex flex-col items-center">
-        <div className="flex flex-col  w-full relative items-center justify-center bg-[url('/headers/how-it-works.jpg')] bg-cover bg-top bg-no-repeat min-h-[530px]">
-          <div className="flex flex-col z-10 w-1/3 items-center justify-center">
-            <h3 className="text-white text-center">
+      <section className="w-full mx-auto min-h-screen gap-48  flex flex-col justify-start items-center bg-[url('/headers/how-it-works.jpg')] bg-cover bg-top bg-no-repeat">
+        <Navbar />
+        <div className="flex flex-col  w-full relative items-center justify-center">
+          <div className="flex flex-col z-10 md:w-1/3 gap-6 items-center justify-center">
+            <h3 className="text-white text-4xl text-center">
               <span className="font-bold">Invest in your dream</span>
               <br />
               in four steps
@@ -158,10 +160,11 @@ const HowItWorks = () => {
               dreamed your whole life. Keep it going!
             </p>
           </div>
-          <div className="bg-black/70 w-full absolute h-full z-1" />
         </div>
+
+        <div className="bg-black/70 w-full absolute h-full z-0" />
       </section>
-      <section className="relative -mt-24 px-24 max-w-7xl mx-auto">
+      <section className="relative -mt-72 z-20 px-24 max-w-7xl mx-auto">
         <div className="bg-white  rounded-md p-12">
           <Tab.Group>
             <Tab.List className="flex p-1">
@@ -170,10 +173,10 @@ const HowItWorks = () => {
                   key={category}
                   className={({ selected }) =>
                     classNames(
-                      "w-full py-2.5 border-b text-md font-medium leading-5 text-black",
+                      "w-full py-2.5 font-light  border-b text-lg  leading-5 text-black",
                       "  focus:outline-none focus:ring-2",
                       selected
-                        ? "bg-white ring-transparent border-b-4 border-black"
+                        ? "bg-white font-medium ring-transparent border-b-4 border-black"
                         : "text-tabInactive hover:bg-black/5 hover:border-b-4 hover:border-black hover:text-black"
                     )
                   }
@@ -182,12 +185,12 @@ const HowItWorks = () => {
                 </Tab>
               ))}
             </Tab.List>
-            <Tab.Panels className="mt-2">
+            <Tab.Panels className="mt-0">
               {Object.values(categories).map((posts, idx) => (
                 <Tab.Panel
                   key={idx}
                   className={classNames(
-                    " bg-white p-3",
+                    " bg-white p-1",
                     "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
                   )}
                 >

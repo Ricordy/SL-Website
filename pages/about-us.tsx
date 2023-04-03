@@ -141,7 +141,7 @@ believe in safety?"
           title="Learn more"
         />
       </div>
-      <Contact />
+      <Contact title="Something in your legendary mind?" />
     </div>
   );
 };

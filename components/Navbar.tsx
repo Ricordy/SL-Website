@@ -33,7 +33,7 @@ const Navbar = (props) => {
   };
 
   const defaultLinkClass = "text-slate-300 hover:text-slate-200";
-  const transparentNavRoutes = ["/"];
+  const transparentNavRoutes = ["/", "/how-it-works"];
   const itens = [
     {
       link: "/about-us",
@@ -74,7 +74,7 @@ const Navbar = (props) => {
       text: t("faqs"),
     },
     {
-      link: "/#contact-us",
+      link: "/contact-us",
       text: t("contact us"),
     },
   ];
@@ -84,18 +84,26 @@ const Navbar = (props) => {
       <nav
         onMouseEnter={() => setIsNavOn(true)}
         onMouseLeave={() =>
-          !isNavOpen && router.route == "/" ? setIsNavOn(false) : null
+          !isNavOpen && transparentNavRoutes.includes(router.route)
+            ? setIsNavOn(false)
+            : null
         }
         className={`${
-          isNavOn || router.route != "/" ? "bg-white" : ""
-        } flex max-w-full justify-center w-full p-6 xl:px-0`}
+          isNavOn || !transparentNavRoutes.includes(router.route)
+            ? "bg-white"
+            : "bg-transparent"
+        } flex relative z-10 max-w-full justify-center w-full p-6 xl:px-0`}
       >
         <div className="flex flex-col max-w-screen-lg items-center justify-center w-full">
           <div className="flex justify-between items-center w-full">
             <Link href="/" className="flex flex-row md:text-xl items-center">
               <a>
                 <Image
-                  src={isNavOn || router.route !== "/" ? logo : logoWhite}
+                  src={
+                    isNavOn || !transparentNavRoutes.includes(router.route)
+                      ? logo
+                      : logoWhite
+                  }
                   alt="Logo Something Legendary"
                   className="w-20"
                 />
@@ -106,7 +114,7 @@ const Navbar = (props) => {
                 <Button
                   variant="outline"
                   className={`self-center ${
-                    isNavOn || router.route !== "/"
+                    isNavOn || !transparentNavRoutes.includes(router.route)
                       ? "dark:border-primaryGreen dark:text-primaryGreen"
                       : ""
                   }`}
@@ -117,7 +125,7 @@ const Navbar = (props) => {
                   className="border-none uppercase  font-semibold leading-none rounded-md"
                   onClick={(e) => showNav(e)}
                 >
-                  {isNavOn || router.route !== "/" ? (
+                  {isNavOn || !transparentNavRoutes.includes(router.route) ? (
                     <Image className=" " src={burguerActive} alt="menu" />
                   ) : (
                     <Image className=" " src={burguer} alt="menu" />
