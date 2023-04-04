@@ -1,19 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC, ReactNode } from "react";
+import { cn } from "../lib/utils";
 
 interface BannerProps {
-  title: string;
+  className?: string;
+  title: ReactNode | string;
   titleClassName?: string;
   subtitle: ReactNode | null;
   subtitleClassName?: string;
   linkUrl?: string;
   linkLabel?: string;
   image: string;
+  height?: number;
   certificates?: boolean;
   contentPadding?: boolean;
 }
 const Banner: FC<BannerProps> = ({
+  className,
   title,
   titleClassName,
   subtitle,
@@ -21,28 +25,40 @@ const Banner: FC<BannerProps> = ({
   linkUrl,
   linkLabel,
   image,
+  height,
   certificates,
   contentPadding = false,
 }) => {
   return (
-    <div className="flex w-full mx-auto flex-col">
+    <div
+      className={cn(
+        "flex w-full bg-red-200 rounded-lg mx-auto flex-col",
+        className
+      )}
+    >
       <section
-        className={`flex w-full mx-auto bg-black relative  bg-cover bg-right bg-no-repeat min-h-[409px] items-center ${image}`}
+        className={`flex w-full mx-auto rounded-t-lg  bg-black relative  bg-cover bg-right bg-no-repeat min-h-[${
+          height ? height : "408"
+        }px] items-center ${image}`}
       >
         <div className="flex w-full relative z-10 max-w-screen-lg mx-auto justify-start">
           <div
-            className={`flex flex-col justify-around w-1/3 py-12 gap-12 ${
+            className={`flex flex-col justify-around w-2/3 py-12 gap-12 ${
               contentPadding ? "pl-24" : ""
             }`}
           >
             <div className="flex flex-col gap-3">
-              <h3 className={titleClassName ? titleClassName : null}>
-                {title}
-              </h3>
+              {typeof title == "string" ? (
+                <h3 className={titleClassName ? titleClassName : ""}>
+                  {title}
+                </h3>
+              ) : (
+                title
+              )}
               {subtitle && typeof subtitle == "string" ? (
                 <p
                   className={
-                    subtitleClassName ? subtitleClassName : "text-white"
+                    subtitleClassName ? subtitleClassName : "text-white w-1/3"
                   }
                 >
                   {subtitle}

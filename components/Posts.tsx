@@ -29,6 +29,7 @@ const PostItem: FC<PostItemProps> = ({ image, title, children, slug }) => {
 const Posts: FC<PostProps> = ({
   posts,
   title,
+  titleCentered = false,
   buttonMoreText,
   buttonMoreLink,
   className,
@@ -42,8 +43,14 @@ const Posts: FC<PostProps> = ({
         contentPadding ? "px-24" : ""
       )}
     >
-      <div className="flex w-full items-center justify-between">
-        <h3 className="text-black flex-1 text-2xl uppercase">{title}</h3>
+      <div className="flex w-full pb-12 items-center justify-between">
+        <h3
+          className={`text-black flex-1  text-2xl uppercase ${
+            titleCentered ? "text-center" : ""
+          }`}
+        >
+          {title}
+        </h3>
         {buttonMoreLink && buttonMoreText && (
           <Link href={buttonMoreLink}>
             <a className="uppercase dark:border-primaryGreen dark:text-primaryGreen dark:hover:text-white dark:hover:bg-primaryGreen hover:text-white hover:bg-primaryGreen border-2 py-1 px-8 text-sm self-start rounded-md text-primaryGreen">

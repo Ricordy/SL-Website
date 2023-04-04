@@ -3,7 +3,7 @@ import { ChevronUpIcon } from "@heroicons/react/20/solid";
 
 const Accordion = () => {
   return (
-    <section className="flex gap-6 w-full justify-center items-start">
+    <section className="flex gap-20 w-full justify-center items-start">
       <div className="flex w-4/5 min-h-[528px] bg-cover bg-center bg-[url('../public/living-the-dream.jpg')]">
         {/* <Image
           className="object-fill"
@@ -15,8 +15,8 @@ const Accordion = () => {
       </div>
       <div className="flex flex-col pt-12 w-full gap-6">
         <div className="flex flex-col">
-          <h3>Living the dream</h3>
-          <h3>Making money from it</h3>
+          <h3 className="uppercase font-light">Living the dream</h3>
+          <h3 className="uppercase">Making money from it</h3>
         </div>
 
         <div className="w-full max-w-md rounded-2xl">
@@ -28,8 +28,9 @@ const Accordion = () => {
                     open ? "text-primaryGreen" : "text-black"
                   }`}
                 >
-                  <span className="font-medium uppercase text-xl w-full">
-                    01. We buy the old
+                  <span className="font-medium uppercase text-xl w-full flex gap-6">
+                    <span>01.</span>
+                    <span>We buy the old</span>
                   </span>
                   <ChevronUpIcon
                     className={`${
@@ -55,8 +56,9 @@ const Accordion = () => {
                     open ? "text-primaryGreen" : "text-black"
                   }`}
                 >
-                  <span className="font-medium uppercase text-xl">
-                    02. We restore the classic
+                  <span className="font-medium uppercase text-xl flex gap-6">
+                    <span>02.</span>
+                    <span>We restore the classic</span>
                   </span>
                   <ChevronUpIcon
                     className={`${
@@ -83,8 +85,9 @@ const Accordion = () => {
                     open ? "text-primaryGreen" : "text-black"
                   }`}
                 >
-                  <span className="font-medium uppercase text-xl">
-                    03. We share the profits
+                  <span className="font-medium uppercase text-xl flex gap-6">
+                    <span>03.</span>
+                    <span>We share the profits</span>
                   </span>
                   <ChevronUpIcon
                     className={`${

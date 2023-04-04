@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 export type PostProps = {
   posts: PostItemProps[];
   title: string | ReactNode;
+  titleCentered?: boolean;
   buttonMoreText?: string;
   buttonMoreLink?: string;
   className?: string;

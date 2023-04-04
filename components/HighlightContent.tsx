@@ -24,7 +24,11 @@ const HighlightContent: FC<ContentProps> = ({
 }) => {
   return (
     <section className="w-full">
-      <div className={`flex items-center ${reverse ? "flex-row-reverse" : ""}`}>
+      <div
+        className={`flex gap-6 items-center ${
+          reverse ? "flex-row-reverse" : ""
+        }`}
+      >
         <Image
           className="rounded-md"
           src={image}
