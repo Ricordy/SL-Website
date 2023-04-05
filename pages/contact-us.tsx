@@ -7,13 +7,12 @@ const ContactUs = () => {
       <div className="flex flex-col mx-auto w-full">
         <Banner
           title="Now is the time to ride together"
-          titleClassName="text-white"
           subtitle={
             <p className="text-white">
-              Your <span className="font-semibold">dream</span> commands your{" "}
-              <span className="font-semibold">life</span>. It&apos;s time to put
+              Your <span className="font-medium">dream</span> commands your{" "}
+              <span className="font-medium">life</span>. It&apos;s time to put
               your hands on our steering wheel and follow your{" "}
-              <span className="font-semibold">legendary path</span>.
+              <span className="font-medium">legendary path</span>.
             </p>
           }
           image="bg-[url('/headers/contact-us.jpg')]"
