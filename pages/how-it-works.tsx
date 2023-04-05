@@ -314,7 +314,6 @@ const HowItWorks = () => {
         title="
             Feel like you’re
 already part of it?"
-        titleClassName="text-white"
         subtitle="So don't waste any more time and start living the classics experience now."
         linkLabel="Go to app"
         linkUrl="https://beta.somethinglegendary.io"
