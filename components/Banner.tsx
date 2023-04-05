@@ -30,26 +30,25 @@ const Banner: FC<BannerProps> = ({
   contentPadding = false,
 }) => {
   return (
-    <div
-      className={cn(
-        "flex w-full bg-red-200 rounded-lg mx-auto flex-col",
-        className
-      )}
-    >
+    <div className={cn("flex w-full rounded-lg mx-auto flex-col", className)}>
       <section
-        className={`flex w-full mx-auto rounded-t-lg  bg-black relative  bg-cover bg-right bg-no-repeat min-h-[${
+        className={`flex w-full mx-auto rounded-t-lg  bg-black relative  bg-cover bg-center bg-no-repeat min-h-[${
           height ? height : "408"
         }px] items-center ${image}`}
       >
         <div className="flex w-full relative z-10 max-w-screen-lg mx-auto justify-start">
           <div
-            className={`flex flex-col justify-around w-2/3 py-12 gap-12 ${
+            className={`flex flex-col justify-around w-full py-12 gap-12 ${
               contentPadding ? "pl-24" : ""
             }`}
           >
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col w-2/5 gap-3">
               {typeof title == "string" ? (
-                <h3 className={titleClassName ? titleClassName : ""}>
+                <h3
+                  className={
+                    titleClassName ? titleClassName : "uppercase text-white"
+                  }
+                >
                   {title}
                 </h3>
               ) : (
@@ -58,7 +57,7 @@ const Banner: FC<BannerProps> = ({
               {subtitle && typeof subtitle == "string" ? (
                 <p
                   className={
-                    subtitleClassName ? subtitleClassName : "text-white w-1/3"
+                    subtitleClassName ? subtitleClassName : "text-white"
                   }
                 >
                   {subtitle}
@@ -85,7 +84,7 @@ const Banner: FC<BannerProps> = ({
           layout="fill"
         />
       </div> */}
-        <div className="bg-gradient-to-r from-black/90  to-transparent w-full absolute h-[409px] z-1" />
+        <div className="bg-gradient-to-r from-black/90  to-transparent w-full absolute h-full z-1" />
       </section>
       {certificates && (
         <div className="flex items-center justify-around w-full max-w-screen-lg mx-auto py-6 bg-slate-50">

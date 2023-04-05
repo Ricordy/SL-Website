@@ -131,7 +131,7 @@ So relax and press the pedal."
                   key={category}
                   className={({ selected }) =>
                     classNames(
-                      "w-full py-2.5 text-md rounded-full font-medium leading-5 text-black",
+                      "w-full py-2.5 text-md uppercase rounded-full font-medium leading-5 text-black",
                       "  focus:outline-none focus:ring-2",
                       selected
                         ? "bg-primaryGreen ring-white ring-offset-2 ring-offset-primaryGreen/40 text-white dark:text-white"
@@ -153,6 +153,7 @@ So relax and press the pedal."
                   )}
                 >
                   <Posts
+                    className="pt-12"
                     posts={post}
                     title={Object.keys(categories).at(idx)}
                     buttonMoreLink={`/learn/${post

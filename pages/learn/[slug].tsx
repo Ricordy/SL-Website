@@ -105,15 +105,20 @@ const LearnDetail = () => {
   const [post] = posts.filter((post) => post.slug == slug);
   return (
     <section className="w-full mx-auto max-w-screen-lg">
-      <div className="flex gap-6">
-        <Image
-          src="/icons/arrow-left.svg"
-          width={34}
-          height={24}
-          alt="Arrow left"
-        />
-        <h2 className="text-secondaryGrey text-base">
-          <Link href="/learn">Learn More</Link> | {post?.category}
+      <div className="flex gap-3 pt-6">
+        <Link href="/learn">
+          <a className="text-secondaryGrey flex items-center gap-6">
+            <Image
+              src="/icons/arrow-left.svg"
+              width={34}
+              height={24}
+              alt="Arrow left"
+            />
+            <span className="uppercase">Learn More</span>
+          </a>
+        </Link>
+        <h2 className="text-secondaryGrey flex gap-3 text-base">
+          <span>|</span> <span className="uppercase">{post?.category}</span>
         </h2>
       </div>
       <div className="flex my-12 w-full max-w-screen-lg relative min-h-[394px]">
@@ -139,6 +144,7 @@ const LearnDetail = () => {
       <Posts
         className="py-24"
         title="Know more"
+        titleCentered={true}
         posts={posts.slice(0, 3)}
         buttonMoreLink="/learn"
         buttonMoreText="See more"

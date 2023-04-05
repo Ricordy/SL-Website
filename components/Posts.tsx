@@ -43,21 +43,21 @@ const Posts: FC<PostProps> = ({
         contentPadding ? "px-24" : ""
       )}
     >
-      <div className="flex w-full pb-12 items-center justify-between">
+      <div className="flex w-full pb-12 items-center relative justify-between">
         <h3
           className={`text-black flex-1  text-2xl uppercase ${
             titleCentered ? "text-center" : ""
           }`}
         >
           {title}
+          {buttonMoreLink && buttonMoreText && (
+            <Link href={buttonMoreLink}>
+              <a className="uppercase dark:border-primaryGreen dark:text-primaryGreen dark:hover:text-white dark:hover:bg-primaryGreen hover:text-white hover:bg-primaryGreen border-2 py-1 px-8 text-sm absolute right-0 rounded-md text-primaryGreen">
+                {buttonMoreText}
+              </a>
+            </Link>
+          )}
         </h3>
-        {buttonMoreLink && buttonMoreText && (
-          <Link href={buttonMoreLink}>
-            <a className="uppercase dark:border-primaryGreen dark:text-primaryGreen dark:hover:text-white dark:hover:bg-primaryGreen hover:text-white hover:bg-primaryGreen border-2 py-1 px-8 text-sm self-start rounded-md text-primaryGreen">
-              {buttonMoreText}
-            </a>
-          </Link>
-        )}
       </div>
       <div className="grid grid-cols-3 mt-12 gap-6 w-full justify-between">
         {posts &&

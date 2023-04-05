@@ -89,7 +89,7 @@ const Carousel: FC<CarouselProps> = ({ id, className }) => {
       <div className="flex gap-12">
         <div className="flex flex-col gap-6 w-2/6 justify-around">
           <h3 className="uppercase font-light">
-            Our <span className="font-semibold">ongoing</span> projects
+            Our <span className="font-medium">ongoing</span> projects
           </h3>
           <p>
             Made with love and a lot of passion for every detail, this is our

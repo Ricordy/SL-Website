@@ -55,7 +55,7 @@ export default function Home() {
       <Partners className="pt-12 pb-24" />
       <div className="flex flex-col -mt-12 gap-24">
         <HighlightContent
-          title={<h3>Your dream project,</h3>}
+          title={<h3 className="uppercase">Your dream project,</h3>}
           subtitle={
             <h3 className=" text-primaryGreen text-3xl uppercase tracking-widest">
               without leaving home.
@@ -70,7 +70,7 @@ export default function Home() {
             seem real but imagine the process of restoring a classic directly
             from your sofa in the living room, accompanying this restoration and
             still having the chance to profit from it.{" "}
-            <span className="font-semibold">
+            <span className=" font-medium">
               That&apos;s what we do, with distinction.
             </span>
           </p>
@@ -96,7 +96,7 @@ export default function Home() {
             your dreams live from the workshop where all the magic happens!
             Restoring a classic car is a labor of love that requires skill,
             patience, and dedication and we want you to{" "}
-            <span className="font-bold">feel it at your place</span>.
+            <span className="font-medium">feel it at your place</span>.
           </p>
         </HighlightContent>
         <HighlightContent

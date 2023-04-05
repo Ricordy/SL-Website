@@ -13,7 +13,7 @@ function Hero(props) {
       <div className="flex w-full px-6 xl:px-0 max-w-screen-lg flex-col gap-6">
         <p className="text-4xl w-2/3 uppercase font-light tracking-widest text-white">
           <span className="font-bold ">Your classics</span>
-          <br /> fever, into a<br /> dream come true.
+          <br /> fever, into a<br /> dream come true
         </p>
         <p className="w-2/3 font-ubuntu font-light text-white">
           Discover the world of{" "}

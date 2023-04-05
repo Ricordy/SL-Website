@@ -92,7 +92,7 @@ const Navbar = (props) => {
           isNavOn || !transparentNavRoutes.includes(router.route)
             ? "bg-white"
             : "bg-transparent"
-        } flex relative z-10 max-w-full justify-center w-full p-6 xl:px-0`}
+        } flex relative z-20 max-w-full justify-center w-full p-6 xl:px-0`}
       >
         <div className="flex flex-col max-w-screen-lg items-center justify-center w-full">
           <div className="flex justify-between items-center w-full">
@@ -155,7 +155,7 @@ const Navbar = (props) => {
           </div>
           {isNavOpen && (
             <div
-              className="flex absolute w-1/2 bg-white mt-24 gap-6 justify-start right-0 top-0"
+              className="flex absolute z-50 w-1/2 bg-white mt-24 gap-6 justify-start right-0 top-0"
               id="menu"
             >
               <div className="flex max-w-screen-lg w-full justify-start">
@@ -164,14 +164,14 @@ const Navbar = (props) => {
                     <ul className="flex flex-col w-full gap-6 text-left">
                       {itens.map(({ link, text }, index) => {
                         return (
-                          <li key={index} className="uppercase">
+                          <li key={index} className="uppercase w-full">
                             <Link href={link}>
                               <a
                                 onClick={() => {
                                   setIsNavOpen(false);
                                   setIsNavOn(false);
                                 }}
-                                className="text-slate-800"
+                                className="text-slate-800 block"
                               >
                                 {text}
                               </a>
