@@ -126,7 +126,7 @@ export default function Home() {
         </HighlightContent>
       </div>
       <section className="bg-[url('../public/map.svg')] bg-contain bg-no-repeat bg-center flex justify-center items-center my-36 min-h-[587px] gap-24">
-        <div className="flex justify-center items-center">
+        <div className="flex flex-col md:flex-row justify-center items-center">
           <div className="flex flex-col w-1/2 items-center gap-3">
             <h3 className="text-black text-3xl uppercase">
               The classics
@@ -137,7 +137,7 @@ export default function Home() {
               And the numbers speak for themselves.
             </p>
           </div>
-          <div className="flex gap-6 w-1/2 justify-center items-center">
+          <div className="flex flex-col md:flex-row gap-6 w-1/2 justify-center items-center">
             <div className="flex flex-col justify-center items-center gap-3">
               <h3 className="text-black text-4xl">$138M</h3>
               <p className="text-center text-ogBlack">
@@ -170,8 +170,8 @@ export default function Home() {
         <p className="text-ogBlack">
           It&apos;s easy. In just 4 steps you start earn your profits.
         </p>
-        <div className="flex gap-3 mt-12 flex-1 relative">
-          <div className="flex w-1/4 flex-col gap-6 relative p-6 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 after:border-slate-100 after:translate-y-1/2 after:h-full after:w-full after:absolute after:bottom-[130px] after:left-[132px]">
+        <div className="flex flex-col md:flex-row gap-3 mt-12 flex-1 relative">
+          <div className="flex md:w-1/4 flex-col gap-6 relative p-6 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 after:border-slate-100 after:translate-y-1/2 after:h-full after:w-full after:absolute after:bottom-[130px] after:left-[132px]">
             <h3 className="text-primaryGreen w-8 text-center text-2xl bg-slate-100 self-center p-2 leading-none justify-center rounded-sm z-10">
               1
             </h3>
@@ -196,7 +196,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex w-1/4 flex-col gap-6 relative p-6 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 after:border-slate-100 after:translate-y-1/2 after:h-full after:w-full after:absolute after:bottom-[130px] after:left-[132px]">
+          <div className="flex md:w-1/4 flex-col gap-6 relative p-6 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 after:border-slate-100 after:translate-y-1/2 after:h-full after:w-full after:absolute after:bottom-[130px] after:left-[132px]">
             <h3 className="text-primaryGreen  w-8 text-center  text-2xl bg-slate-100 self-center p-2 leading-none justify-center rounded-sm z-10">
               2
             </h3>
@@ -219,7 +219,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex w-1/4 flex-col gap-6 relative p-6 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 after:border-slate-100 after:translate-y-1/2 after:h-full after:w-full after:absolute after:bottom-[130px] after:left-[138px]">
+          <div className="flex md:w-1/4 flex-col gap-6 relative p-6 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 after:border-slate-100 after:translate-y-1/2 after:h-full after:w-full after:absolute after:bottom-[130px] after:left-[138px]">
             <h3 className="text-primaryGreen  w-8 text-center  text-2xl bg-slate-100 self-center p-2 leading-none justify-center rounded-sm z-10">
               3
             </h3>
@@ -233,7 +233,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex w-1/4 flex-col gap-6 bg-primaryGreen p-6 py-12 rounded-md">
+          <div className="flex md:w-1/4 flex-col gap-6 bg-primaryGreen p-6 py-12 rounded-md">
             <h3 className="text-primaryGreen  w-8 text-center text-2xl bg-slate-100 self-center p-2 leading-none justify-center rounded-sm  z-10">
               4
             </h3>

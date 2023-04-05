@@ -26,8 +26,10 @@ const CarouselItem = ({
   return (
     <div className="flex flex-col w-full rounded-md bg-progressBackground">
       <div
-        style={{ "--image-url": image } as React.CSSProperties}
-        className="flex flex-col justify-end items-center min-h-[394px] rounded-t-md bg-[image:var(--image-url)] bg-cover relative gap-3"
+        className={cn(
+          "flex flex-col justify-end items-center min-h-[394px] rounded-t-md bg-cover relative gap-3",
+          image
+        )}
       >
         <h4 className="z-10 uppercase text-3xl">{title}</h4>
         <div className="flex z-10 relative gap-3 pb-6 justify-around w-full">
@@ -57,20 +59,20 @@ interface CarouselProps {
 const items = [
   {
     title: "Maserati 3500 GT",
-    image: "url('../projects/car-1.jpg')",
+    image: "bg-[url('/projects/car-1.jpg')]",
     status: "Renewing",
     completion: "15",
   },
   {
     title: "Chevrolet 200",
-    image: "url('../projects/car-2.jpg')",
+    image: "bg-[url('/projects/car-2.jpg')]",
     status: "Renewing",
     completion: "45",
   },
   ,
   {
     title: "Chevrolet 300",
-    image: "url('../projects/car-2.jpg')",
+    image: "bg-[url('/projects/car-2.jpg')]",
     status: "Renewing",
     completion: "85",
   },

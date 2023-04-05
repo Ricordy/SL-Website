@@ -23,57 +23,57 @@ function Footer() {
 
   return (
     <footer className="py-6 w-full bg-black flex flex-col">
-      <div className="mx-auto max-w-screen-lg w-full items-start flex justify-between border-b border-white pb-6 mb-6">
+      <div className="mx-auto max-w-screen-lg w-full items-start flex flex-col md:flex-row justify-between border-b border-white pb-6 mb-6">
         <div className="flex flex-col justify-center items-start gap-6">
           <Image src={LogoWhite} alt="Something Legendary Logo" />
           <div className="flex gap-3">
             <Image src={Mail} alt="E-mail" />
             <Link href="mailto:info@somethinglegendary.com">
-              <a className="text-xs">info@somethinglegendary.com</a>
+              <a className="font-light text-xs">info@somethinglegendary.com</a>
             </Link>
           </div>
           <div className="flex gap-3">
             <Image src={Phone} alt="Phone" />
-            <span className="text-xs">+381 9999-9999</span>
+            <span className="text-xs font-light">+381 9999-9999</span>
           </div>
         </div>
         <div className="flex flex-col">
           <h3 className="pb-2 text-xl text-white">{t("How it works")}</h3>
           <Link href="/help/how-to-invest">
-            <a>{t("How to invest")}</a>
+            <a className="font-light">{t("How to invest")}</a>
           </Link>
           <Link href="/help/how-it-works">
-            <a>{t("How it works")}</a>
+            <a className="font-light">{t("How it works")}</a>
           </Link>
         </div>
         <div className="flex flex-col">
           <h3 className="pb-2 text-xl text-white">{t("Learn")}</h3>
           <Link href="/help/create-a-wallet">
-            <a>Create a Wallet</a>
+            <a className="font-light">Create a Wallet</a>
           </Link>
           <Link href="/help/what-is-nft">
-            <a>What is a NFT?</a>
+            <a className="font-light">What is a NFT?</a>
           </Link>
           <Link href="/help/how-to-invest">
-            <a>How to invest?</a>
+            <a className="font-light">How to invest?</a>
           </Link>
           <Link href="/help/news">
-            <a>News</a>
+            <a className="font-light">News</a>
           </Link>
         </div>
         <div className="flex flex-col">
           <h3 className="pb-2 text-xl text-white">{t("About Us")}</h3>
           <Link href="/whitepaper">
-            <a>{t("Whitepaper")}</a>
+            <a className="font-light">{t("Whitepaper")}</a>
           </Link>
           <Link href="/security">
-            <a>{t("Security")}</a>
+            <a className="font-light">{t("Security")}</a>
           </Link>
         </div>
         <div className="flex flex-col">
           <h3 className="pb-2 text-xl text-white">{t("Newsletter")}</h3>
           <p className="text-white">
-            Join our <span className="font-semibold">Legendary</span> mailing
+            Join our <span className="font-normal">Legendary</span> mailing
             list.
           </p>
           <form action="" className="flex flex-col mt-3 gap-3">
@@ -90,16 +90,16 @@ function Footer() {
           </form>
         </div>
       </div>
-      <div className="flex justify-between w-full max-w-screen-lg gap-2 mx-auto">
+      <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-lg gap-2 mx-auto">
         <div className="flex gap-6">
           <Link href="/terms">
-            <a>Terms and conditions</a>
+            <a className="font-light">Terms and conditions</a>
           </Link>
           <Link href="/legal">
-            <a>Legal</a>
+            <a className="font-light">Legal</a>
           </Link>
           <Link href="/terms">
-            <a>Pattents</a>
+            <a className="font-light">Pattents</a>
           </Link>
         </div>
         <div className="flex gap-3">
@@ -108,7 +108,7 @@ function Footer() {
               target="_blank"
               className="flex flex-row items-center gap-2 rounded-full border border-white p-2"
             >
-              <Image src={Discord} alt="Discord" />
+              <Image src={Discord} width={20} height={20} alt="Discord" />
             </a>
           </Link>
           <Link href="https://medium.com/@somethinglegendary">
@@ -116,7 +116,7 @@ function Footer() {
               target="_blank"
               className="flex flex-row items-center gap-2 rounded-full border border-white p-2"
             >
-              <Image src={Medium} alt="Medium" />
+              <Image src={Medium} width={20} height={20} alt="Medium" />
             </a>
           </Link>
           <Link href="http://facebbok.com/">
@@ -124,7 +124,7 @@ function Footer() {
               target="_blank"
               className="flex flex-row items-center gap-2 rounded-full border border-white p-2"
             >
-              <Image src={Facebook} alt="Facebook" />
+              <Image src={Facebook} width={20} height={20} alt="Facebook" />
             </a>
           </Link>
           <Link href="http://twitter.com/">
@@ -132,7 +132,7 @@ function Footer() {
               target="_blank"
               className="flex flex-row items-center gap-2 rounded-full border border-white p-2"
             >
-              <Image src={Twitter} alt="Twitter" />
+              <Image src={Twitter} width={20} height={20} alt="Twitter" />
             </a>
           </Link>
           <Link href="https://www.instagram.com/somethinglegendary1/">
@@ -140,7 +140,7 @@ function Footer() {
               target="_blank"
               className="flex flex-row items-center gap-2 rounded-full border border-white p-2"
             >
-              <Image src={Instagram} alt="Instagram" />
+              <Image src={Instagram} width={20} height={20} alt="Instagram" />
             </a>
           </Link>
         </div>
