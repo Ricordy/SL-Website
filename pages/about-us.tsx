@@ -142,6 +142,7 @@ believe in safety?"
           buttonMoreText="See more"
           posts={posts}
           title="Learn more"
+          titleCentered={true}
         />
       </div>
       <Contact title="Something in your legendary mind?" />

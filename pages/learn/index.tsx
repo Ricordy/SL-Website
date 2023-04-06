@@ -109,8 +109,9 @@ const Learn = () => {
   });
   return (
     <div className="flex flex-col">
-      <section className="flex w-full gap-12 mx-auto  items-center flex-col max-w-7xl">
+      <section className="flex w-full gap-12 mx-auto  items-center flex-col ">
         <Banner
+          className="max-w-screen-lg"
           title="
             Ready for a Classic Investment?"
           titleClassName="text-white"
@@ -122,10 +123,10 @@ So relax and press the pedal."
           contentPadding={true}
         />
       </section>
-      <section className="relative w-full px-24 max-w-7xl mx-auto">
-        <div className="rounded-md p-12">
+      <section className="relative flex w-full max-w-screen-lg mx-auto">
+        <div className="rounded-md py-12">
           <Tab.Group>
-            <Tab.List className="flex p-1 bg-black/10 rounded-full">
+            <Tab.List className="flex p-1 bg-black/10 mx-12 rounded-full">
               {Object.keys(categories).map((category) => (
                 <Tab
                   key={category}

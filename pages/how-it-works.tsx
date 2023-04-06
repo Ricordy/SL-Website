@@ -306,6 +306,7 @@ const HowItWorks = () => {
       <Posts
         className="py-24"
         title="Learn More"
+        titleCentered={true}
         posts={posts}
         buttonMoreLink="/learn"
         buttonMoreText="See More"
