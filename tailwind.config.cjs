@@ -31,6 +31,9 @@ module.exports = {
         progressBackground: "#DCDCDC",
         contactBackground: "#F7F7F7",
         tabInactive: "#757C79",
+        navbar: {
+          1: "rgba(9, 0, 0, 0)",
+        },
       },
     },
   },

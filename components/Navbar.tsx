@@ -5,7 +5,7 @@ import burguerActive from "../public/burguer-menu.svg";
 import burguerHovered from "../public/burguer-menu-hover.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { Button } from "./Button";
@@ -13,8 +13,12 @@ import close from "../public/close.svg";
 import facebookIcon from "../public/icons/facebook.svg";
 import twitterIcon from "../public/icons/twitter.svg";
 import instagramIcon from "../public/icons/instagram.svg";
+import { classNames, cn } from "../lib/utils";
 
-const Navbar = (props) => {
+interface NavBarProps {
+  className?: string;
+}
+const Navbar: FC<NavBarProps> = ({ className }) => {
   const { t } = useTranslation();
   const router = useRouter();
   const handleLocaleChange = (event) => {
@@ -88,11 +92,14 @@ const Navbar = (props) => {
             ? setIsNavOn(false)
             : null
         }
-        className={`${
-          isNavOn || !transparentNavRoutes.includes(router.route)
-            ? "bg-white"
-            : "bg-transparent"
-        } flex relative z-20 max-w-full justify-center w-full p-6 xl:px-0`}
+        className={cn(
+          `${
+            isNavOn || !transparentNavRoutes.includes(router.route)
+              ? "bg-white"
+              : "bg-gradient-to-b from-black to-navbar"
+          } flex relative z-20 h-[83px] max-w-full justify-center w-full p-6 xl:px-0`,
+          className
+        )}
       >
         <div className="flex flex-col max-w-screen-lg items-center justify-center w-full">
           <div className="flex justify-between items-center w-full">

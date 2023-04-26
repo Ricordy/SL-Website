@@ -6,15 +6,17 @@ import { cn } from "../lib/utils";
 
 const PostItem: FC<PostItemProps> = ({ image, title, children, slug }) => {
   return (
-    <div className="flex flex-col gap-6 relative">
+    <div className="flex flex-col gap-8 relative">
       <Image src={image} alt={title} width={328} height={264} />
-      <h3 className="text-2xl text-black">{title}</h3>
-      {children}
-      <Link href={`/learn/${slug}`}>
-        <a className="text-primaryGreen text-center uppercase border-b-2 text-xs border-b-primaryGreen py-1 self-start">
-          Know more
-        </a>
-      </Link>
+      <div className="flex flex-col gap-2">
+        <h3 className="text-2xl text-black">{title}</h3>
+        {children}
+        <Link href={`/learn/${slug}`}>
+          <a className="text-primaryGreen pt-2 text-center uppercase border-b-2 text-xs border-b-primaryGreen py-1 self-start">
+            Know more
+          </a>
+        </Link>
+      </div>
       <a
         href={`/learn/${slug}`}
         className={cn(
@@ -43,7 +45,7 @@ const Posts: FC<PostProps> = ({
         contentPadding ? "px-24" : ""
       )}
     >
-      <div className="flex w-full pb-12 items-center relative justify-between">
+      <div className="flex w-full pb-[72px] items-center relative justify-between">
         <h3
           className={`text-black flex-1  text-2xl uppercase ${
             titleCentered ? "text-center" : ""
@@ -59,7 +61,7 @@ const Posts: FC<PostProps> = ({
           )}
         </h3>
       </div>
-      <div className="grid grid-cols-3 mt-12 gap-6 w-full justify-between">
+      <div className="grid grid-cols-3 gap-6 w-full justify-between">
         {posts &&
           posts.map((post) => (
             <PostItem

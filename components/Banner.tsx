@@ -38,11 +38,11 @@ const Banner: FC<BannerProps> = ({
       >
         <div className="flex w-full relative z-10 max-w-screen-lg mx-auto justify-start">
           <div
-            className={`flex flex-col justify-around w-full py-12 gap-12 ${
+            className={`flex flex-col justify-around w-full gap-12 ${
               contentPadding ? "pl-24" : ""
             }`}
           >
-            <div className="flex flex-col w-2/5 gap-3">
+            <div className="flex flex-col w-2/5 gap-4">
               {typeof title == "string" ? (
                 <h3
                   className={
@@ -75,19 +75,10 @@ const Banner: FC<BannerProps> = ({
             )}
           </div>
         </div>
-        {/* <div className="flex items-end overflow-hidden flex-col bg-red-200 w-full">
-        <Image
-          src={image}
-          className="self-end"
-          alt={title}
-          objectFit="cover"
-          layout="fill"
-        />
-      </div> */}
         <div className="bg-gradient-to-r from-black/90  to-transparent w-full absolute h-full z-1" />
       </section>
       {certificates && (
-        <div className="flex items-center justify-around w-full max-w-screen-lg mx-auto py-6 bg-slate-50">
+        <div className="flex items-center justify-around w-full max-w-screen-lg mx-auto py-12 bg-slate-50">
           <Image
             src="/certificates/certik.png"
             alt="Certik"

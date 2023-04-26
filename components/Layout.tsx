@@ -19,7 +19,7 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {!transparentNavRoutes.includes(router.route) && <Navbar />}
-      <main className="bg-white">{children}</main>
+      <main className="bg-white max-w-[1440px] mx-auto">{children}</main>
       <Footer />
     </>
   );

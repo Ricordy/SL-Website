@@ -82,12 +82,12 @@ const Carousel: FC<CarouselProps> = ({ id, className }) => {
   return (
     <section
       className={cn(
-        "mx-auto flex flex-col gap-12 w-full max-w-screen-lg",
+        "mx-auto flex flex-col gap-8 w-full max-w-screen-lg",
         className
       )}
     >
       <div className="flex gap-12">
-        <div className="flex flex-col gap-6 w-2/6 justify-around">
+        <div className="flex flex-col pt-[72px] gap-8 w-2/6">
           <h3 className="uppercase font-light">
             Our <span className="font-medium">ongoing</span> projects
           </h3>
@@ -102,7 +102,7 @@ const Carousel: FC<CarouselProps> = ({ id, className }) => {
           </Link>
         </div>
 
-        <div className="  flex overflow-hidden swiper-wrapper ">
+        <div className="flex overflow-hidden swiper-wrapper ">
           <Swiper
             modules={[Navigation, Pagination, A11y]}
             className="swiper"

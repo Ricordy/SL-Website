@@ -18,10 +18,8 @@ const Partners = ({
         className
       )}
     >
-      <h3 className={`text-2xl uppercase pt-12 pb-12 ${titleColor}`}>
-        {title}
-      </h3>
-      <div className="flex items-center gap-24 justify-between pb-24">
+      <h3 className={`text-2xl uppercase ${titleColor}`}>{title}</h3>
+      <div className="flex items-center gap-24 justify-between">
         <Image src="/brand/bosch.svg" alt="Bosch" width={149} height={36} />
         <Image src="/brand/kodak.svg" alt="Kodak" width={64} height={76} />
         <Image src="/brand/porsche.svg" alt="Porshce" width={149} height={36} />

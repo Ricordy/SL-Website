@@ -1,10 +1,17 @@
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
+import { classNames, cn } from "../lib/utils";
+import { FC } from "react";
 
-const Accordion = () => {
+interface AccordionProps {
+  className?: string;
+}
+const Accordion: FC<AccordionProps> = ({ className }) => {
   return (
-    <section className="flex gap-20 w-full justify-center items-start">
-      <div className="flex w-4/5 min-h-[528px] bg-cover bg-center bg-[url('../public/living-the-dream.jpg')]">
+    <section
+      className={cn("flex gap-20 w-full justify-center items-start", className)}
+    >
+      <div className="flex w-4/5 min-h-[528px] rounded-md bg-cover bg-center bg-[url('../public/living-the-dream.jpg')]">
         {/* <Image
           className="object-fill"
           src="/living-the-dream.jpg"
@@ -13,12 +20,11 @@ const Accordion = () => {
           alt="Living the dream"
         /> */}
       </div>
-      <div className="flex flex-col pt-12 w-full gap-6">
+      <div className="flex flex-col pt-[52px] w-full gap-[52px]">
         <div className="flex flex-col">
           <h3 className="uppercase font-light">Living the dream</h3>
           <h3 className="uppercase">Making money from it</h3>
         </div>
-
         <div className="w-full max-w-md rounded-2xl">
           <Disclosure defaultOpen={true}>
             {({ open }) => (
@@ -41,9 +47,9 @@ const Accordion = () => {
                   />
                 </Disclosure.Button>
                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                  If you&apos;re unhappy with your purchase for any reason,
-                  email us within 90 days and we&apos;ll refund you in full, no
-                  questions asked.
+                  After a constant market analysis for the best classic, we go
+                  to the source of the question to buy the car in its current
+                  condition. Today&apos;s rust is tomorrow&apos;s gold!
                 </Disclosure.Panel>
               </>
             )}
@@ -98,7 +104,10 @@ const Accordion = () => {
                   />
                 </Disclosure.Button>
                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                  No.
+                  It seems complex but in fact it is a question of numbers and
+                  against data there are no arguments. We evaluate the amount
+                  spent versus the return on the sale and apply the percentage
+                  due proportional to the value of your investment!
                 </Disclosure.Panel>
               </>
             )}
