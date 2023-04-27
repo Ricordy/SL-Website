@@ -271,6 +271,7 @@ export default function Home() {
         </div>
       </section>
       <Banner
+        rounded={true}
         className="my-[132px] max-w-screen-lg"
         title={
           <h3 className="uppercase text-white">
@@ -299,6 +300,7 @@ export default function Home() {
         className="py-[132px]"
       />
       <Banner
+        className="mb-[72px]"
         title={
           <h3 className="text-white uppercase">
             Ready for a<br />

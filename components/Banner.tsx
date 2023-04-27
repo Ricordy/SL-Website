@@ -15,6 +15,7 @@ interface BannerProps {
   height?: number;
   certificates?: boolean;
   contentPadding?: boolean;
+  rounded?: boolean;
 }
 const Banner: FC<BannerProps> = ({
   className,
@@ -28,13 +29,17 @@ const Banner: FC<BannerProps> = ({
   height,
   certificates,
   contentPadding = false,
+  rounded = false,
 }) => {
   return (
-    <div className={cn("flex w-full rounded-lg mx-auto flex-col", className)}>
+    <div className={cn("flex w-full mx-auto flex-col", className)}>
       <section
-        className={`flex w-full mx-auto rounded-t-lg  bg-black relative  bg-cover bg-center bg-no-repeat min-h-[${
-          height ? height : "408"
-        }px] items-center ${image}`}
+        className={cn(
+          `flex w-full mx-auto py-24  bg-black relative  bg-cover bg-center bg-no-repeat min-h-[${
+            height ? height : "408"
+          }px] items-center ${image}`,
+          rounded ? "rounded-lg" : ""
+        )}
       >
         <div className="flex w-full relative z-10 max-w-screen-lg mx-auto justify-start">
           <div

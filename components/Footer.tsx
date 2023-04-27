@@ -22,67 +22,60 @@ function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="py-6 w-full bg-black flex flex-col">
-      <div className="mx-auto max-w-screen-lg w-full items-start flex flex-col md:flex-row justify-between border-b border-white pb-6 mb-6">
-        <div className="flex flex-col justify-center items-start gap-6">
+    <footer className="w-full bg-black flex flex-col">
+      <div className="mx-auto max-w-screen-lg w-full items-start flex flex-col md:flex-row justify-between border-b border-white pb-24">
+        <div className="flex text-sm flex-col font-normal justify-center items-start gap-2">
           <Image src={LogoWhite} alt="Something Legendary Logo" />
-          <div className="flex gap-3">
+          <div className="flex gap-2 mt-11">
             <Image src={Mail} alt="E-mail" />
             <Link href="mailto:info@somethinglegendary.com">
-              <a className="font-light text-xs">info@somethinglegendary.com</a>
+              <a className="">info@somethinglegendary.com</a>
             </Link>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-2">
             <Image src={Phone} alt="Phone" />
-            <span className="text-xs font-light">+381 9999-9999</span>
+            <span className="">+381 9999-9999</span>
           </div>
         </div>
-        <div className="flex flex-col">
-          <h3 className="pb-2 text-xl text-white">{t("How it works")}</h3>
+        <div className="flex flex-col gap-2 font-light">
+          <h3 className="text-base font-semibold uppercase text-white">
+            {t("How it works")}
+          </h3>
           <Link href="/help/how-to-invest">
-            <a className="font-light">{t("How to invest")}</a>
+            <a className="">{t("How to invest")}</a>
           </Link>
           <Link href="/help/how-it-works">
-            <a className="font-light">{t("How it works")}</a>
+            <a className="">{t("How it works")}</a>
           </Link>
         </div>
-        <div className="flex flex-col">
-          <h3 className="pb-2 text-xl text-white">{t("Learn")}</h3>
-          <Link href="/help/create-a-wallet">
-            <a className="font-light">Create a Wallet</a>
-          </Link>
-          <Link href="/help/what-is-nft">
-            <a className="font-light">What is a NFT?</a>
-          </Link>
-          <Link href="/help/how-to-invest">
-            <a className="font-light">How to invest?</a>
-          </Link>
-          <Link href="/help/news">
-            <a className="font-light">News</a>
-          </Link>
+        <div className="flex flex-col gap-2 font-light">
+          <h3 className="text-base font-semibold text-white uppercase">
+            {t("Learn")}
+          </h3>
+          <Link href="/help/create-a-wallet">Create a Wallet</Link>
+          <Link href="/help/what-is-nft">What is a NFT?</Link>
+          <Link href="/help/how-to-invest">How to invest?</Link>
+          <Link href="/help/news">News</Link>
         </div>
-        <div className="flex flex-col">
-          <h3 className="pb-2 text-xl text-white">{t("About Us")}</h3>
-          <Link href="/whitepaper">
-            <a className="font-light">{t("Whitepaper")}</a>
-          </Link>
-          <Link href="/security">
-            <a className="font-light">{t("Security")}</a>
-          </Link>
+        <div className="flex flex-col gap-8 text-base uppercase font-semibold">
+          <h3 className="text-base font-semibold text-white">
+            {t("About Us")}
+          </h3>
+          <Link href="/whitepaper">{t("Whitepaper")}</Link>
+          <Link href="/security">{t("Security")}</Link>
         </div>
-        <div className="flex flex-col">
-          <h3 className="pb-2 text-xl text-white">{t("Newsletter")}</h3>
-          <p className="text-white">
-            Join our <span className="font-normal">Legendary</span> mailing
-            list.
-          </p>
+        <div className="flex flex-col gap-2 font-light">
+          <h3 className="text-base font-semibold uppercase text-white">
+            {t("Newsletter")}
+          </h3>
+          <p className="text-white">Join our weekly mailing list.</p>
           <form action="" className="flex flex-col mt-3 gap-3">
             <input
               type="text"
-              placeholder="Your best e-mail"
+              placeholder="Your e-mail"
               name="email"
               id="email"
-              className="p-2 text-xs rounded-md"
+              className="p-2 mb-4 text-xs rounded-md"
             />
             <Button className="self-end hover:bg-white" variant="outline">
               Subscribe
@@ -90,7 +83,7 @@ function Footer() {
           </form>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-lg gap-2 mx-auto">
+      <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-lg gap-2 py-4 mx-auto">
         <div className="flex gap-6">
           <Link href="/terms">
             <a className="font-light">Terms and conditions</a>
