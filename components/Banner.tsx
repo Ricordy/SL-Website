@@ -31,20 +31,21 @@ const Banner: FC<BannerProps> = ({
   contentPadding = false,
   rounded = false,
 }) => {
+  const minHeight = height ? `min-h-[${height}px]` : "";
   return (
     <div className={cn("flex w-full mx-auto flex-col", className)}>
       <section
         className={cn(
-          `flex w-full mx-auto py-24  bg-black relative  bg-cover bg-center bg-no-repeat min-h-[${
-            height ? height : "408"
-          }px] items-center ${image}`,
-          rounded ? "rounded-lg" : ""
+          `flex w-full mx-auto py-24 bg-red-100 relative  bg-cover bg-center bg-no-repeat 
+           items-center ${image}`,
+          rounded ? "rounded-lg" : "",
+          height ? minHeight : "min-h-[408px]"
         )}
       >
         <div className="flex w-full relative z-10 max-w-screen-lg mx-auto justify-start">
           <div
-            className={`flex flex-col justify-around w-full gap-12 ${
-              contentPadding ? "pl-18" : ""
+            className={`flex  flex-col justify-around w-full gap-12 ${
+              contentPadding ? "pl-20" : ""
             }`}
           >
             <div className="flex flex-col w-2/5 gap-4">
@@ -80,7 +81,12 @@ const Banner: FC<BannerProps> = ({
             )}
           </div>
         </div>
-        <div className="bg-gradient-to-r from-black/90  to-transparent w-full absolute h-full z-1" />
+        <div
+          className={cn(
+            "bg-gradient-to-r from-black/90  to-transparent w-full absolute h-full z-1",
+            rounded ? "rounded-lg" : ""
+          )}
+        />
       </section>
       {certificates && (
         <div className="flex items-center justify-around w-full  mx-auto py-12 bg-slate-50">

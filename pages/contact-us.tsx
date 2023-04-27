@@ -6,7 +6,13 @@ const ContactUs = () => {
     <section className="w-full">
       <div className="flex flex-col mx-auto w-full">
         <Banner
-          title="Now is the time to ride together"
+          title={
+            <h3 className="text-white uppercase">
+              Now is the time to
+              <br />
+              ride together
+            </h3>
+          }
           subtitle={
             <p className="text-white">
               Your <span className="font-medium">dream</span> commands your{" "}
@@ -15,9 +21,10 @@ const ContactUs = () => {
               <span className="font-medium">legendary path</span>.
             </p>
           }
+          height={432}
           image="bg-[url('/headers/contact-us.jpg')]"
         />
-        <Contact title="Contact Us" />
+        <Contact title="Contact Us" className="pt-[72px] pb-[132px]" />
       </div>
     </section>
   );

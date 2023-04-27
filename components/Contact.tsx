@@ -16,8 +16,10 @@ const Contact: FC<ContactProps> = ({ title = "Contact Us", className }) => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <section className={cn("w-full flex bg-contactBackground", className)}>
-      <div className="max-w-screen-lg py-24 mx-auto w-full flex gap-12">
+    <section
+      className={cn("w-full flex py-24 bg-contactBackground", className)}
+    >
+      <div className="max-w-screen-lg  mx-auto w-full flex gap-12">
         <div className="flex w-3/5 flex-col gap-6">
           <h2 className="text-3xl uppercase text-black">{title}</h2>
           <div className="flex flex-col gap-6">

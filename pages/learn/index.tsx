@@ -107,32 +107,35 @@ const Learn = () => {
     Cars: posts.filter((post) => post.category == "Cars"),
     News: posts.filter((post) => post.category == "News"),
   });
+
   return (
     <div className="flex flex-col">
-      <section className="flex w-full gap-12 mx-auto  items-center flex-col ">
+      <section className="flex w-full gap-8 mx-auto  items-center flex-col ">
         <Banner
-          className="max-w-screen-lg"
+          className="max-w-screen-lg mt-[52px]"
           title="
             Ready for a Classic Investment?"
           titleClassName="text-white"
+          rounded={true}
+          height={505}
           subtitle="Do you already have everything you need to start daydreaming? 
 So relax and press the pedal."
           linkLabel="Go to app"
           linkUrl="https://beta.somethinglegendary.io"
-          image="bg-[url('/banners/ready-for-a-classic-investment.jpg')]"
+          image="bg-[url('/banners/learn-header.jpg')]"
           contentPadding={true}
         />
       </section>
       <section className="relative flex w-full max-w-screen-lg mx-auto">
-        <div className="rounded-md py-12">
+        <div className="rounded-md pt-8 pb-24">
           <Tab.Group>
-            <Tab.List className="flex p-1 bg-black/10 mx-12 rounded-full">
+            <Tab.List className="flex p-1 bg-contactBackground mx-12 rounded-full">
               {Object.keys(categories).map((category) => (
                 <Tab
                   key={category}
                   className={({ selected }) =>
                     classNames(
-                      "w-full py-2.5 text-md uppercase rounded-full font-medium leading-5 text-black",
+                      "w-full py-2.5 text-md uppercase rounded-full font-normal leading-5 text-black",
                       "  focus:outline-none focus:ring-2",
                       selected
                         ? "bg-primaryGreen ring-white ring-offset-2 ring-offset-primaryGreen/40 text-white dark:text-white"
@@ -163,6 +166,9 @@ So relax and press the pedal."
                       .split(" ")
                       .join("-")}`}
                     buttonMoreText="See more"
+                    buttonMoreBorderColor="border-black"
+                    buttonMoreTextColor="text-black hover:text-white"
+                    buttonMoreBgColor="hover:bg-black"
                   />
                   {/* <ul>
                     {posts.map((post) => (
