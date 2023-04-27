@@ -146,91 +146,92 @@ const HowItWorks = () => {
 
   return (
     <>
-      <section className="w-full mx-auto min-h-screen gap-48  flex flex-col justify-start items-center bg-[url('/headers/how-it-works.jpg')] bg-cover bg-top bg-no-repeat">
+      <section className="w-full mx-auto min-h-screen gap-[132px]  flex flex-col justify-start items-center bg-[url('/headers/how-it-works.jpg')] bg-contain bg-top bg-no-repeat">
         <Navbar />
-        <div className="flex flex-col  w-full relative items-center justify-center">
-          <div className="flex flex-col z-10 md:w-1/3 gap-6 items-center justify-center">
-            <h3 className="text-white font-light text-4xl uppercase text-center">
-              <span className="font-medium">Invest in your dream</span>
+        <div className="flex flex-col  w-full relative items-center">
+          <div className="flex flex-col z-10 md:w-1/2 w-full gap-4">
+            <h3 className="text-white font-normal w-full text-5xl uppercase text-center">
+              <span className="font-semibold ">Invest in your dream</span>
               <br />
               in four steps
             </h3>
             <p className="text-white text-center">
               You are four miles away from achieving the experience you have
+              <br />
               dreamed your whole life. Keep it going!
             </p>
           </div>
         </div>
+        <section className="relative z-20 max-w-[1210px] mx-auto">
+          <div className="bg-white  rounded-md p-[52px] shadow-md">
+            <Tab.Group>
+              <Tab.List className="flex">
+                {Object.keys(categories).map((category) => (
+                  <Tab
+                    key={category}
+                    className={({ selected }) =>
+                      classNames(
+                        "w-full py-4 font-normal tracking-wide  border-b text-2xl  leading-5 text-black",
+                        "  focus:outline-none focus:ring-2",
+                        selected
+                          ? "bg-white font-medium ring-transparent border-b-4 border-black"
+                          : "text-tabInactive hover:bg-black/5 hover:border-b-4 text-xl hover:border-black hover:text-black"
+                      )
+                    }
+                  >
+                    {category}
+                  </Tab>
+                ))}
+              </Tab.List>
+              <Tab.Panels className="mt-0">
+                {Object.values(categories).map((posts, idx) => (
+                  <Tab.Panel
+                    key={idx}
+                    className={classNames(
+                      " bg-white p-1",
+                      "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
+                    )}
+                  >
+                    <ul>
+                      {posts.map((post) => (
+                        <li key={post.id} className="relative rounded-md p-3">
+                          <section className="flex gap-24 w-full mt-[52px]">
+                            <div className="flex flex-col gap-8 w-1/3 max-w-md items-start justify-center">
+                              <h3 className="uppercase">{post.title}</h3>
+                              {post.content}
+                            </div>
+                            <Image
+                              alt={post.title}
+                              src={post.image}
+                              width={592}
+                              height={394}
+                            />
+                          </section>
 
-        <div className="bg-black/70 w-full absolute h-full z-0" />
-      </section>
-      <section className="relative -mt-72 z-20 px-24 max-w-7xl mx-auto">
-        <div className="bg-white  rounded-md p-12 shadow-md">
-          <Tab.Group>
-            <Tab.List className="flex p-1">
-              {Object.keys(categories).map((category) => (
-                <Tab
-                  key={category}
-                  className={({ selected }) =>
-                    classNames(
-                      "w-full py-2.5 font-light  border-b text-lg  leading-5 text-black",
-                      "  focus:outline-none focus:ring-2",
-                      selected
-                        ? "bg-white font-medium ring-transparent border-b-4 border-black"
-                        : "text-tabInactive hover:bg-black/5 hover:border-b-4 hover:border-black hover:text-black"
-                    )
-                  }
-                >
-                  {category}
-                </Tab>
-              ))}
-            </Tab.List>
-            <Tab.Panels className="mt-0">
-              {Object.values(categories).map((posts, idx) => (
-                <Tab.Panel
-                  key={idx}
-                  className={classNames(
-                    " bg-white p-1",
-                    "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
-                  )}
-                >
-                  <ul>
-                    {posts.map((post) => (
-                      <li key={post.id} className="relative rounded-md p-3">
-                        <section className="flex gap-24 w-full mt-24">
-                          <div className="flex flex-col gap-6 w-1/3 max-w-md items-start justify-center">
-                            <h3 className="uppercase">{post.title}</h3>
-                            {post.content}
-                          </div>
-                          <Image
-                            alt={post.title}
-                            src={post.image}
-                            width={592}
-                            height={566}
-                          />
-                        </section>
-
-                        {/* <a
+                          {/* <a
                           href="#"
                           className={classNames(
                             "absolute inset-0 rounded-md",
                             "ring-blue-400 focus:z-10 focus:outline-none focus:ring-2"
                           )}
                         /> */}
-                      </li>
-                    ))}
-                  </ul>
-                </Tab.Panel>
-              ))}
-            </Tab.Panels>
-          </Tab.Group>
-        </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </Tab.Panel>
+                ))}
+              </Tab.Panels>
+            </Tab.Group>
+          </div>
+        </section>
+        <div className="bg-black/70 w-full absolute h-[816px] z-0" />
       </section>
-      <section className="w-full max-w-7xl mx-auto flex flex-col items-center gap-6">
-        <div className="flex flex-col items-center pt-24 pb-6">
+
+      <section className="w-full max-w-[1210px] pt-24 mx-auto flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center gap-4  pb-8">
           <h3 className="text-black text-4xl uppercase">Know our process</h3>
           <p className="text-black">
-            Lorem ipsum dolor sit amet,consectetur adipisicing elit, sed do{" "}
+            The most important rules manual to achieve the dream.
           </p>
         </div>
         <section className="flex w-full relative justify-center bg-[url('/headers/about.jpg')] bg-cover bg-right bg-no-repeat min-h-[530px]">
@@ -239,69 +240,74 @@ const HowItWorks = () => {
           </div>
         </section>
       </section>
-      <section className="pt-24">
+      <section className="py-[52px] w-full max-w-[1210px] mx-auto">
         <Carousel id="1" />
       </section>
-      <section className="flex flex-col gap-24">
+      <section className="flex flex-col">
         <h3 className="text-center py-12 text-4xl uppercase">
-          The Mechanic todo list
+          What to expect from us
         </h3>
-        <HighlightContent
-          title={
-            <h3 className="uppercase">
-              <span className="text-primaryGreen">Daydreaming</span> with the
-              <br />
-              process <span className="text-primaryGreen">24/7</span>.
-            </h3>
-          }
-          image="/media/home-1.jpg"
-        >
-          <p className="text-ogBlack">
-            Have you considered the possibility of monitoring the project in
-            real time? We know it didn&apos;t, because until today it
-            hadn&apos;t been done yet! Something offers you the possibility to
-            follow the entire restoration directly from our garage! You are part
-            of our restoration and we want you to give your opinion on each step
-            taken.
-          </p>
-        </HighlightContent>
-        <HighlightContent
-          title={
-            <h3 className=" text-black text-3xl uppercase tracking-widest">
-              A <span className="text-primaryGreen">legendary community</span>
-              <br />
-              is waiting for you.
-            </h3>
-          }
-          image="/media/home-2.jpg"
-          reverse={true}
-        >
-          <p className="text-ogBlack">
-            If you thought you were alone in this world, we introduce you to
-            thousands of people interested in the world of classics whose vision
-            of the process is similar to yours. The passion for the classics has
-            never been so close and we are open to any enthusiast whose opinion
-            deserves to be shared.
-          </p>
-        </HighlightContent>
-        <HighlightContent
-          title={
-            <h3 className="text-3xl uppercase tracking-widest">
-              The distance that{" "}
-              <span className=" text-primaryGreen ">unites us</span>, from
-              digital to physycal events.
-            </h3>
-          }
-          image="/media/home-3.jpg"
-        >
-          <p className="text-ogBlack">
-            We are closer than you might think, we travel the world in the
-            biggest classic car events, in addition to being ambitious for
-            constant knowledge, we make a point of knowing the latest trends in
-            the market. Do you want to know where we&apos;re going to be in
-            2023? Check out our list of events!
-          </p>
-        </HighlightContent>
+        <div className="flex flex-col gap-24">
+          <HighlightContent
+            title={
+              <h3 className="uppercase font-medium">
+                <span className="text-primaryGreen">Daydreaming</span> with
+                <br />
+                the process <span className="text-primaryGreen">24/7</span>.
+              </h3>
+            }
+            image="/media/home-1.jpg"
+          >
+            <p className="text-ogBlack">
+              Have you considered the possibility of monitoring the project in
+              real time? We know it didn&apos;t, because until today it
+              hadn&apos;t been done yet! Something offers you the possibility to
+              follow the entire restoration directly from our garage! You are
+              part of our restoration and we want you to give your opinion on
+              each step taken.
+            </p>
+          </HighlightContent>
+          <HighlightContent
+            title={
+              <h3 className=" text-black text-3xl uppercase tracking-widest">
+                A <span className="text-primaryGreen">legendary community</span>
+                <br />
+                is waiting for you.
+              </h3>
+            }
+            image="/media/home-2.jpg"
+            reverse={true}
+          >
+            <p className="text-ogBlack">
+              If you thought you were alone in this world, we introduce you to
+              thousands of people interested in the world of classics whose
+              vision of the process is similar to yours. The passion for the
+              classics has never been so close and we are open to any enthusiast
+              whose opinion deserves to be shared.
+            </p>
+          </HighlightContent>
+          <HighlightContent
+            title={
+              <h3 className="text-3xl uppercase tracking-widest">
+                The distance that{" "}
+                <span className=" text-primaryGreen ">unites us</span>, from
+                digital to physycal events.
+              </h3>
+            }
+            image="/media/home-3.jpg"
+          >
+            <p className="text-ogBlack">
+              We are closer than you might think, we travel the world in the
+              biggest classic car events, in addition to being ambitious for
+              constant knowledge, we make a point of knowing the latest trends
+              in the market.
+            </p>
+            <p className="text-ogBlack">
+              Do you want to know where we&apos;re going to be in 2023? Check
+              out our list of events!
+            </p>
+          </HighlightContent>
+        </div>
       </section>
       <Posts
         className="py-24"
@@ -310,6 +316,9 @@ const HowItWorks = () => {
         posts={posts}
         buttonMoreLink="/learn"
         buttonMoreText="See More"
+        buttonMoreTextColor="text-black hover:text-white"
+        buttonMoreBorderColor="border-black"
+        buttonMoreBgColor="hover:bg-black"
       />
       <Banner
         title="

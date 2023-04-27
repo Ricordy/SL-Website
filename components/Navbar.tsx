@@ -117,10 +117,10 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
               </a>
             </Link>
             <div className="flex flex-col">
-              <div className="flex gap-12 justify-between">
+              <div className="flex gap-10 justify-center items-center">
                 <Button
                   variant="outline"
-                  className={`self-center ${
+                  className={`self-center p-0 h-[30px] w-[151px] ${
                     isNavOn || !transparentNavRoutes.includes(router.route)
                       ? "dark:border-primaryGreen dark:text-primaryGreen border-primaryGreen text-primaryGreen hover:bg-primaryGreen hover:text-white"
                       : ""
