@@ -20,7 +20,7 @@ const CarouselItem = ({ title, icon, description }: CarouselItemProps) => {
   return (
     <div className="flex flex-col w-full">
       <div className="flex flex-col justify-center items-center gap-3">
-        <Image src={icon} alt={title} width={25} height={25} />
+        <Image src={icon} alt={title} width={64} height={40} />
         <h4 className="text-black uppercase text-xs font-semibold">{title}</h4>
         <p className="text-center">{description}</p>
       </div>
@@ -36,39 +36,39 @@ interface CarouselProps {
 const items = [
   {
     title: "Disassembly",
-    icon: "/icons/car.svg",
+    icon: "/icons/disassembly.svg",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ",
+      "The first stage of restoring a classic car is disassembly, which involves taking apart the entire vehicle to assess the condition of each individual part. This includes removing the engine, transmission, body panels, interior components, and other parts. The goal of this stage is to identify which parts need repair or replacement.",
   },
   {
     title: "Inspection and Assessment",
-    icon: "/icons/alert.svg",
+    icon: "/icons/inspection-and-assessment.svg",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ",
+      "Once the car is disassembled, each part is inspected and assessed to determine its condition. Parts that are damaged or worn beyond repair are typically replaced, while parts that can be repaired are sent for restoration.",
   },
   {
     title: "Restoration",
-    icon: "/icons/trophy.svg",
+    icon: "/icons/restoration.svg",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ",
+      "During this stage, each component that needs repair or refurbishment is restored to its original condition. This includes cleaning, sanding, repainting, and polishing parts to ensure they look and function like new.",
   },
   {
     title: "Assembly",
-    icon: "/icons/trophy.svg",
+    icon: "/icons/assembly.svg",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ",
+      "Once all the parts have been restored, the vehicle is reassembled. This includes installing the engine and transmission, attaching the body panels, and installing the interior components.",
   },
   {
     title: "Testing and Adjustment",
-    icon: "/icons/trophy.svg",
+    icon: "/icons/testing-and-adjustment.svg",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ",
+      "After the car has been reassembled, it is tested to ensure everything is functioning properly. This includes checking the engine, brakes, suspension, and other systems. If any issues are found, adjustments are made to ensure the car is in optimal condition.",
   },
   {
     title: "Finishing and Detailing",
-    icon: "/icons/trophy.svg",
+    icon: "/icons/finishing-and-detailing.svg",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ",
+      "The final stage involves finishing touches and detailing. This includes adding final trim pieces, waxing and buffing the paint, and cleaning the interior. The goal is to make the car look as close to the original factory condition as possible.",
   },
 ];
 
