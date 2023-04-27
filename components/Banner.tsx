@@ -44,7 +44,7 @@ const Banner: FC<BannerProps> = ({
         <div className="flex w-full relative z-10 max-w-screen-lg mx-auto justify-start">
           <div
             className={`flex flex-col justify-around w-full gap-12 ${
-              contentPadding ? "pl-24" : ""
+              contentPadding ? "pl-18" : ""
             }`}
           >
             <div className="flex flex-col w-2/5 gap-4">
@@ -73,7 +73,7 @@ const Banner: FC<BannerProps> = ({
             </div>
             {linkUrl && (
               <Link href={linkUrl}>
-                <a className="text-slate-100 dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-white rounded-md px-8 py-1 self-start">
+                <a className="text-slate-100 dark:hover:bg-white dark:hover:text-black tracking-wide text-center uppercase border-2 text-sm font-medium border-white rounded-md px-8 py-1 self-start">
                   {linkLabel ? linkLabel : "Know more"}
                 </a>
               </Link>
@@ -83,7 +83,7 @@ const Banner: FC<BannerProps> = ({
         <div className="bg-gradient-to-r from-black/90  to-transparent w-full absolute h-full z-1" />
       </section>
       {certificates && (
-        <div className="flex items-center justify-around w-full max-w-screen-lg mx-auto py-12 bg-slate-50">
+        <div className="flex items-center justify-around w-full  mx-auto py-12 bg-slate-50">
           <Image
             src="/certificates/certik.png"
             alt="Certik"

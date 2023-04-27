@@ -122,7 +122,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                   variant="outline"
                   className={`self-center ${
                     isNavOn || !transparentNavRoutes.includes(router.route)
-                      ? "dark:border-primaryGreen dark:text-primaryGreen"
+                      ? "dark:border-primaryGreen dark:text-primaryGreen border-primaryGreen text-primaryGreen hover:bg-primaryGreen hover:text-white"
                       : ""
                   }`}
                 >
@@ -162,12 +162,12 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
           </div>
           {isNavOpen && (
             <div
-              className="flex absolute z-50 w-1/2 bg-white mt-24 gap-6 justify-start right-0 top-0"
+              className="flex absolute z-50 w-1/2 bg-white mt-[83px] pb-16 gap-8 justify-start right-0 top-0"
               id="menu"
             >
               <div className="flex max-w-screen-lg w-full justify-start">
                 <div className="flex flex-col w-2/3 items-end justify-end">
-                  <div className="flex w-full p-12 justify-between ">
+                  <div className="flex w-full pl-[72px] pt-24 gap-6 justify-between ">
                     <ul className="flex flex-col w-full gap-6 text-left">
                       {itens.map(({ link, text }, index) => {
                         return (
@@ -178,7 +178,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                                   setIsNavOpen(false);
                                   setIsNavOn(false);
                                 }}
-                                className="text-slate-800 block"
+                                className="text-slate-800 font-normal text-2xl tracking-wide block"
                               >
                                 {text}
                               </a>
@@ -187,7 +187,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                         );
                       })}
                       <li>
-                        <div className="border-b border-slate-800 w-full py-6 h-1" />
+                        <div className="border-b border-slate-800 w-full pt-12 pb-2 h-1" />
                       </li>
                       <li className="flex gap-6">
                         <Link href="https://www.facebook.com">

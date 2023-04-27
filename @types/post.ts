@@ -6,6 +6,9 @@ export type PostProps = {
   titleCentered?: boolean;
   buttonMoreText?: string;
   buttonMoreLink?: string;
+  buttonMoreTextColor?: string;
+  buttonMoreBorderColor?: string;
+  buttonMoreBgColor?: string;
   className?: string;
   contentPadding?: boolean;
 };

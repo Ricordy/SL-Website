@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./Button";
 import { ContactProps } from "../@types/contact";
+import { cn } from "../lib/utils";
 
-const Contact: FC<ContactProps> = ({ title = "Contact Us" }) => {
+const Contact: FC<ContactProps> = ({ title = "Contact Us", className }) => {
   const {
     register,
     handleSubmit,
@@ -15,7 +16,7 @@ const Contact: FC<ContactProps> = ({ title = "Contact Us" }) => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <section className="w-full flex bg-contactBackground">
+    <section className={cn("w-full flex bg-contactBackground", className)}>
       <div className="max-w-screen-lg py-24 mx-auto w-full flex gap-12">
         <div className="flex w-3/5 flex-col gap-6">
           <h2 className="text-3xl uppercase text-black">{title}</h2>
@@ -52,33 +53,33 @@ const Contact: FC<ContactProps> = ({ title = "Contact Us" }) => {
           </div>
         </div>
         <form
-          className="grid w-full grid-cols-1 sm:grid-cols-2 gap-4"
+          className="grid w-full grid-cols-1 sm:grid-cols-2 gap-8"
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="flex flex-col relative group">
             <input
               id="firstName"
-              placeholder="Your First Name"
+              placeholder="Name"
               className=" text-black w-full h-10 rounded-md text-normal px-2 bg-transparent outline-none border-2 border-black"
               required
               {...register("fisrtName", { required: true })}
             />
             {errors.firstName && <span>This field is required</span>}
             <label className="text-black hidden" htmlFor="firstName">
-              First Name
+              Name
             </label>
           </div>
           <div className="flex flex-col relative group">
             <input
               id="email"
-              placeholder="Your best e-mail"
+              placeholder="Your e-mail"
               required
               className=" text-black w-full h-10 rounded-md text-normal px-2 bg-transparent outline-none border-2 border-black"
               {...register("email", { required: true })}
             />
             {errors.email && <span>This field is required</span>}
             <label htmlFor="email" className="hidden">
-              E-mail
+              Your e-mail
             </label>
           </div>
 
@@ -86,20 +87,18 @@ const Contact: FC<ContactProps> = ({ title = "Contact Us" }) => {
             <textarea
               rows={4}
               id="message"
-              placeholder="Your message"
+              placeholder="Write something..."
               required
               className=" text-black w-full h-30 pt-1 rounded-md text-normal px-2 bg-transparent outline-none border-2 border-black"
               {...register("message", { required: true })}
             />
             {errors.message && <span>This field is required</span>}
             <label htmlFor="message" className="hidden">
-              Message
+              Write something...
             </label>
           </div>
           <div className="flex md:col-span-2 justify-end">
-            <Button className="dark:bg-black dark:text-white bg-black text-white w-1/2">
-              Submit
-            </Button>
+            <Button className="bg-black text-white w-1/2">Submit</Button>
           </div>
         </form>
       </div>

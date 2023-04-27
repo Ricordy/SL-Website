@@ -22,7 +22,7 @@ function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="w-full bg-black flex flex-col">
+    <footer className="w-full pt-[72px] bg-black flex flex-col">
       <div className="mx-auto max-w-screen-lg w-full items-start flex flex-col md:flex-row justify-between border-b border-white pb-24">
         <div className="flex text-sm flex-col font-normal justify-center items-start gap-2">
           <Image src={LogoWhite} alt="Something Legendary Logo" />

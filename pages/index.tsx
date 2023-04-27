@@ -300,7 +300,7 @@ export default function Home() {
         className="py-[132px]"
       />
       <Banner
-        className="mb-[72px]"
+        // className="mb-[72px]"
         title={
           <h3 className="text-white uppercase">
             Ready for a<br />

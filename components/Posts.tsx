@@ -34,6 +34,9 @@ const Posts: FC<PostProps> = ({
   titleCentered = false,
   buttonMoreText,
   buttonMoreLink,
+  buttonMoreTextColor,
+  buttonMoreBorderColor,
+  buttonMoreBgColor,
   className,
   contentPadding,
 }) => {
@@ -47,14 +50,27 @@ const Posts: FC<PostProps> = ({
     >
       <div className="flex w-full pb-[72px] items-center relative justify-between">
         <h3
-          className={`text-black flex-1  text-2xl uppercase ${
+          className={`text-black flex-1 font-medium  text-3xl uppercase ${
             titleCentered ? "text-center" : ""
           }`}
         >
           {title}
           {buttonMoreLink && buttonMoreText && (
             <Link href={buttonMoreLink}>
-              <a className="uppercase dark:border-primaryGreen dark:text-primaryGreen dark:hover:text-white dark:hover:bg-primaryGreen hover:text-white hover:bg-primaryGreen border-2 py-1 px-8 text-sm absolute right-0 rounded-md text-primaryGreen">
+              <a
+                className={cn(
+                  "uppercase  border-2 py-1 px-8 font-medium text-sm absolute right-0 rounded-md ",
+                  buttonMoreTextColor
+                    ? buttonMoreTextColor
+                    : "text-primaryGreen hover:text-white hover:bg-primaryGreen",
+                  buttonMoreBorderColor
+                    ? buttonMoreBorderColor
+                    : "border-primaryGreen hover:bg-primaryGreen hover:text-white",
+                  buttonMoreBgColor
+                    ? buttonMoreBgColor
+                    : "bg-white hover:bg-primaryGreen"
+                )}
+              >
                 {buttonMoreText}
               </a>
             </Link>

@@ -52,22 +52,25 @@ const AboutUs = () => {
   ];
   return (
     <div className="">
-      <div className="flex w-full gap-12 mx-auto  items-center flex-col max-w-screen-lg">
-        <div className="flex flex-col items-center pt-12 gap-3">
-          <h3 className="font-light uppercase">A Legendary Oil Change!</h3>
-          <h5 className="uppercase font-medium">
+      <div className="flex w-full gap-[132px] mx-auto  items-center flex-col max-w-[1210px]">
+        <div className="flex flex-col w-full items-center pt-[52px] gap-4">
+          <h3 className="font-light text-4xl uppercase">
+            A Legendary Oil Change!
+          </h3>
+          <h5 className="uppercase text-2xl font-medium">
             Know what&apos;s under the hood
           </h5>
+          <section className="flex w-full rounded-lg relative justify-center bg-[url('/headers/about.jpg')] bg-cover bg-right bg-no-repeat min-h-[530px]">
+            <div className="absolute z-10 self-center">
+              <Image alt="Play" src={Play} />
+            </div>
+          </section>
         </div>
-        <section className="flex w-full relative justify-center bg-[url('/headers/about.jpg')] bg-cover bg-right bg-no-repeat min-h-[530px]">
-          <div className="absolute z-10 self-center">
-            <Image alt="Play" src={Play} />
-          </div>
-        </section>
-        <section className="flex gap-24 w-full my-12">
+
+        <section className="flex gap-24 w-full">
           <Image alt="How we became something" src={How} />
-          <div className="flex flex-col gap-6 w-1/2 max-w-md items-start justify-center">
-            <h3>How we became something.</h3>
+          <div className="flex flex-col gap-8 w-1/2 max-w-md items-start justify-center">
+            <h3 className="uppercase">How we became something.</h3>
             <p>
               The real deal was like, João invested in classic cars on a
               personal basis and formed friendships with the owner of True
@@ -90,9 +93,9 @@ const AboutUs = () => {
         />
         <Carousel id="1" />
         <Carousel id="2" />
-        <section className="flex flex-col min-h-[658px] justify-end pb-16 items-center gap-6 relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-center">
-          <div className="flex flex-col gap-3 pb-12">
-            <h3 className="text-white uppercase text-center tracking-widest">
+        <section className="flex flex-col justify-end py-[132px] rounded-lg items-center gap-[52px] relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-no-repeat bg-center">
+          <div className="flex flex-col gap-3">
+            <h3 className="text-white text-4xl uppercase text-center tracking-widest">
               Our values are like
               <br />
               wedding vows
@@ -101,15 +104,15 @@ const AboutUs = () => {
               They&apos;re made to be unbroken and forever loyal.
             </h5>
           </div>
-          <div className="flex gap-6 justify-around px-12">
-            <div className="flex flex-col rounded-md w-1/3 bg-white gap-6 p-6 items-center">
+          <div className="flex gap-6 justify-around px-16">
+            <div className="flex flex-col rounded-md w-1/3 bg-white gap-4 p-8 px-10 items-center">
               <h3 className="text-2xl uppercase">Transparency</h3>
               <p className="text-center">
                 We walk side by side with our investors and share the dream in
                 real time so that every detail of the process counts!
               </p>
             </div>
-            <div className="flex flex-col rounded-md w-1/3 bg-white gap-6 p-6 items-center">
+            <div className="flex flex-col rounded-md w-1/3 bg-white gap-4 p-8 px-10 items-center">
               <h3 className="text-2xl uppercase">Commitment</h3>
               <p className="text-center">
                 100% safe investment, we value our community above everything
@@ -117,7 +120,7 @@ const AboutUs = () => {
                 our project.
               </p>
             </div>
-            <div className="flex flex-col rounded-md w-1/3 bg-white gap-6 p-6 items-center">
+            <div className="flex flex-col rounded-md w-1/3 bg-white gap-4 p-8 px-10 items-center">
               <h3 className="text-2xl uppercase">Quality</h3>
               <p className="text-center">
                 We only work with the best partners, whether they are workshop
@@ -127,8 +130,13 @@ const AboutUs = () => {
           </div>
         </section>
         <Banner
-          title="Why do we 
-believe in safety?"
+          title={
+            <h3 className="text-white uppercase">
+              Why do we
+              <br />
+              believe in safety?
+            </h3>
+          }
           subtitle="Imagine that our security tools are like a state-of-the-art safe. In our case, you don't need to imagine, they really are."
           linkLabel="Security Measures"
           linkUrl="/security"
@@ -137,15 +145,20 @@ believe in safety?"
           contentPadding={true}
         />
         <Posts
-          className="py-24"
           buttonMoreLink="/learn"
           buttonMoreText="See more"
+          buttonMoreTextColor="text-black hover:text-white"
+          buttonMoreBorderColor="border-black"
+          buttonMoreBgColor="hover:bg-black"
           posts={posts}
           title="Learn more"
           titleCentered={true}
         />
       </div>
-      <Contact title="Something in your legendary mind?" />
+      <Contact
+        className="mt-[132px]"
+        title="Something in your legendary mind?"
+      />
     </div>
   );
 };

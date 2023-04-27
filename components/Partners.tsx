@@ -14,11 +14,11 @@ const Partners = ({
   return (
     <section
       className={cn(
-        `w-full flex flex-col items-center justify-around min-h-[250px] ${bg}`,
+        `w-full flex flex-col items-center gap-8 justify-start ${bg}`,
         className
       )}
     >
-      <h3 className={`text-2xl uppercase ${titleColor}`}>{title}</h3>
+      <h3 className={`text-xl uppercase ${titleColor}`}>{title}</h3>
       <div className="flex items-center gap-24 justify-between">
         <Image src="/brand/bosch.svg" alt="Bosch" width={149} height={36} />
         <Image src="/brand/kodak.svg" alt="Kodak" width={64} height={76} />
