@@ -97,7 +97,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
             isNavOn || !transparentNavRoutes.includes(router.route)
               ? "bg-white"
               : "bg-gradient-to-b from-black to-navbar"
-          } flex relative z-20 h-[83px] max-w-full justify-center w-full p-6 xl:px-0`,
+          } flex relative  z-20 h-[83px] max-w-full justify-center w-full p-6 xl:px-0`,
           className
         )}
       >
@@ -120,7 +120,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
               <div className="flex gap-10 justify-center items-center">
                 <Button
                   variant="outline"
-                  className={`self-center p-0 h-[30px] w-[151px] ${
+                  className={`self-center border-white text-white p-0 h-[30px] w-[151px] ${
                     isNavOn || !transparentNavRoutes.includes(router.route)
                       ? "dark:border-primaryGreen dark:text-primaryGreen border-primaryGreen text-primaryGreen hover:bg-primaryGreen hover:text-white"
                       : ""

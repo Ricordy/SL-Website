@@ -77,7 +77,10 @@ function Footer() {
               id="email"
               className="p-2 mb-4 text-xs rounded-md"
             />
-            <Button className="self-end hover:bg-white" variant="outline">
+            <Button
+              className="self-end border-white hover:text-black text-white hover:bg-white"
+              variant="outline"
+            >
               Subscribe
             </Button>
           </form>
