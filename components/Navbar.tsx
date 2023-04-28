@@ -97,7 +97,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
             isNavOn || !transparentNavRoutes.includes(router.route)
               ? "bg-white"
               : "bg-gradient-to-b from-black to-navbar"
-          } flex relative  z-20 h-[83px] max-w-full justify-center w-full p-6 xl:px-0`,
+          } flex relative  z-20 h-[83px] max-w-[1440px] mx-auto justify-center w-full p-6 xl:px-0`,
           className
         )}
       >

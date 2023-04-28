@@ -7,9 +7,11 @@ import Play from "../public/icons/play.svg";
 import Partners from "../components/Partners";
 import Banner from "../components/Banner";
 import Posts from "../components/Posts";
-import Carousel from "../components/Carousel";
+import Carousel from "@/components/about-us/Carousel";
 import Contact from "../components/Contact";
 import { PostItemProps } from "../@types/post";
+import TrophyCarousel from "~/components/about-us/TrophyCarousel";
+import Slider from "~/components/about-us/Slider";
 
 const AboutUs = () => {
   const posts: PostItemProps[] = [
@@ -91,8 +93,12 @@ const AboutUs = () => {
           bg="bg-white"
           titleColor="text-primaryGrey"
         />
+      </div>
+      <div className="flex flex-col gap-[132px] py-[132px]">
         <Carousel id="1" />
-        <Carousel id="2" />
+        <TrophyCarousel id="2" />
+      </div>
+      <div className="flex flex-col w-full gap-[132px] mx-auto  items-center max-w-[1210px]">
         <section className="flex flex-col justify-end py-[132px] rounded-lg items-center gap-[52px] relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-no-repeat bg-center">
           <div className="flex flex-col gap-3">
             <h3 className="text-white text-4xl uppercase text-center tracking-widest">
@@ -104,15 +110,15 @@ const AboutUs = () => {
               They&apos;re made to be unbroken and forever loyal.
             </h5>
           </div>
-          <div className="flex gap-6 justify-around px-16">
-            <div className="flex flex-col rounded-md w-1/3 bg-white gap-4 p-8 px-10 items-center">
+          <div className="flex md:flex-row flex-col gap-6 justify-around px-16">
+            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 p-8 px-10 items-center">
               <h3 className="text-2xl uppercase">Transparency</h3>
               <p className="text-center">
                 We walk side by side with our investors and share the dream in
                 real time so that every detail of the process counts!
               </p>
             </div>
-            <div className="flex flex-col rounded-md w-1/3 bg-white gap-4 p-8 px-10 items-center">
+            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 p-8 px-10 items-center">
               <h3 className="text-2xl uppercase">Commitment</h3>
               <p className="text-center">
                 100% safe investment, we value our community above everything
@@ -120,7 +126,7 @@ const AboutUs = () => {
                 our project.
               </p>
             </div>
-            <div className="flex flex-col rounded-md w-1/3 bg-white gap-4 p-8 px-10 items-center">
+            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 p-8 px-10 items-center">
               <h3 className="text-2xl uppercase">Quality</h3>
               <p className="text-center">
                 We only work with the best partners, whether they are workshop
@@ -143,6 +149,7 @@ const AboutUs = () => {
           image="bg-[url('/banners/about-safety.jpg')]"
           certificates={true}
           contentPadding={true}
+          rounded={true}
         />
         <Posts
           buttonMoreLink="/learn"
@@ -155,6 +162,7 @@ const AboutUs = () => {
           titleCentered={true}
         />
       </div>
+
       <Contact
         className="mt-[132px]"
         title="Something in your legendary mind?"

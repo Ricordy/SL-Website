@@ -14,14 +14,12 @@ h3 {
 h5 {
   @apply text-black text-xl tracking-widest font-medium;
 }
-/* nav {
-  @apply max-w-4xl mx-auto py-6;
-} */
+
 section .content,
 footer .content {
   @apply max-w-4xl mx-auto p-6;
 }
-/** Mobile menu **/
+
 .hideMenuNav {
   display: none;
 }
