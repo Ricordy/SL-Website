@@ -5,107 +5,133 @@ import { Tab } from "@headlessui/react";
 import { classNames } from "../../lib/utils";
 import Posts from "../../components/Posts";
 import { PostItemProps } from "../../@types/post";
+import { GraphQLClient, gql } from "graphql-request";
 
-const Learn = () => {
-  let posts: PostItemProps[] = [
-    {
-      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      category: "For Beginners",
-      image: "/posts/post-1.jpg",
-      slug: "lorem-1",
-      children: (
-        <p className="text-ogBlack">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam...
-        </p>
-      ),
-    },
-    {
-      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      category: "For Beginners",
-      image: "/posts/post-1.jpg",
-      slug: "lorem-1",
-      children: (
-        <p className="text-ogBlack">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam...
-        </p>
-      ),
-    },
-    {
-      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      category: "Investment",
-      image: "/posts/post-2.jpg",
-      slug: "lorem-2",
-      children: (
-        <p className="text-ogBlack">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam...
-        </p>
-      ),
-    },
-    {
-      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      category: "Investment",
-      image: "/posts/post-2.jpg",
-      slug: "lorem-2",
-      children: (
-        <p className="text-ogBlack">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam...
-        </p>
-      ),
-    },
-    {
-      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      category: "Cars",
-      image: "/posts/post-3.jpg",
-      slug: "lorem-3",
-      children: (
-        <p className="text-ogBlack">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam...
-        </p>
-      ),
-    },
-    {
-      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      category: "Cars",
-      image: "/posts/post-3.jpg",
-      slug: "lorem-3",
-      children: (
-        <p className="text-ogBlack">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam...
-        </p>
-      ),
-    },
-    {
-      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      category: "News",
-      image: "/posts/post-3.jpg",
-      slug: "lorem-3",
-      children: (
-        <p className="text-ogBlack">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam...
-        </p>
-      ),
-    },
-  ];
+interface HygraphPostProps {
+  id: Number;
+  slug: string;
+  basic: {
+    title: string;
+  };
+  shortDescription: {
+    html: string;
+  };
+  image: {
+    url: string;
+  };
+  postCategory: string;
+  locale: string;
+}
+
+interface PostsProps {
+  posts: HygraphPostProps[];
+}
+
+const Learn = (props: PostsProps) => {
+  // let posts: PostItemProps[] = [
+  //   {
+  //     title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+  //     category: "For Beginners",
+  //     image: "/posts/post-1.jpg",
+  //     slug: "lorem-1",
+  //     children: (
+  //       <p className="text-ogBlack">
+  //         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  //         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+  //         minim veniam...
+  //       </p>
+  //     ),
+  //   },
+  //   {
+  //     title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+  //     category: "For Beginners",
+  //     image: "/posts/post-1.jpg",
+  //     slug: "lorem-1",
+  //     children: (
+  //       <p className="text-ogBlack">
+  //         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  //         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+  //         minim veniam...
+  //       </p>
+  //     ),
+  //   },
+  //   {
+  //     title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+  //     category: "Investment",
+  //     image: "/posts/post-2.jpg",
+  //     slug: "lorem-2",
+  //     children: (
+  //       <p className="text-ogBlack">
+  //         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  //         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+  //         minim veniam...
+  //       </p>
+  //     ),
+  //   },
+  //   {
+  //     title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+  //     category: "Investment",
+  //     image: "/posts/post-2.jpg",
+  //     slug: "lorem-2",
+  //     children: (
+  //       <p className="text-ogBlack">
+  //         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  //         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+  //         minim veniam...
+  //       </p>
+  //     ),
+  //   },
+  //   {
+  //     title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+  //     category: "cars",
+  //     image: "/posts/post-3.jpg",
+  //     slug: "lorem-3",
+  //     children: (
+  //       <p className="text-ogBlack">
+  //         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  //         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+  //         minim veniam...
+  //       </p>
+  //     ),
+  //   },
+  //   {
+  //     title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+  //     category: "cars",
+  //     image: "/posts/post-3.jpg",
+  //     slug: "lorem-3",
+  //     children: (
+  //       <p className="text-ogBlack">
+  //         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  //         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+  //         minim veniam...
+  //       </p>
+  //     ),
+  //   },
+  //   {
+  //     title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+  //     category: "News",
+  //     image: "/posts/post-3.jpg",
+  //     slug: "lorem-3",
+  //     children: (
+  //       <p className="text-ogBlack">
+  //         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  //         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+  //         minim veniam...
+  //       </p>
+  //     ),
+  //   },
+  // ];
+
+  let posts = props.posts;
+
   let [categories] = useState({
     "All Content": posts,
-    "For Beginners": posts.filter((post) => post.category == "For Beginners"),
-    Investment: posts.filter((post) => post.category == "Investment"),
-    Cars: posts.filter((post) => post.category == "Cars"),
-    News: posts.filter((post) => post.category == "News"),
+    "For Beginners": posts.filter(
+      (post) => post.postCategory == "For Beginners"
+    ),
+    Investment: posts.filter((post) => post.postCategory == "Investment"),
+    Cars: posts.filter((post) => post.postCategory == "cars"),
+    News: posts.filter((post) => post.postCategory == "news"),
   });
 
   return (
@@ -148,29 +174,32 @@ So relax and press the pedal."
               ))}
             </Tab.List>
             <Tab.Panels className="mt-2">
-              {Object.values(categories).map((post, idx) => (
-                <Tab.Panel
-                  key={idx}
-                  className={classNames(
-                    " bg-white p-3",
-                    "ring-white ring-opacity-60 ring-offset-2 ring-offset-primaryGreen focus:outline-none focus:ring-2"
-                  )}
-                >
-                  <Posts
-                    className="pt-12"
-                    posts={post}
-                    title={Object.keys(categories).at(idx)}
-                    buttonMoreLink={`/learn/${post
-                      .at(0)
-                      .category.toLocaleLowerCase()
-                      .split(" ")
-                      .join("-")}`}
-                    buttonMoreText="See more"
-                    buttonMoreBorderColor="border-black"
-                    buttonMoreTextColor="text-black hover:text-white"
-                    buttonMoreBgColor="hover:bg-black"
-                  />
-                  {/* <ul>
+              {Object.values(categories).map(
+                (post, idx) =>
+                  post!! && (
+                    <Tab.Panel
+                      key={idx}
+                      className={classNames(
+                        " bg-white p-3",
+                        "ring-white ring-opacity-60 ring-offset-2 ring-offset-primaryGreen focus:outline-none focus:ring-2"
+                      )}
+                    >
+                      <Posts
+                        className="pt-12"
+                        posts={post}
+                        title={Object.keys(categories).at(idx)}
+                        buttonMoreLink={`/learn/${post
+                          .at(0)
+                          ?.postCategory.toLocaleLowerCase()
+                          .split(" ")
+                          .join("-")}`}
+                        buttonMoreText="See more"
+                        buttonMoreBorderColor="border-black"
+                        buttonMoreTextColor="text-black hover:text-white"
+                        buttonMoreBgColor="hover:bg-black"
+                      />
+
+                      {/* <ul>
                     {posts.map((post) => (
                       <li key={post.id} className="relative rounded-md p-3">
                         <section className="flex gap-24 w-full my-12">
@@ -181,8 +210,9 @@ So relax and press the pedal."
                       </li>
                     ))}
                   </ul> */}
-                </Tab.Panel>
-              ))}
+                    </Tab.Panel>
+                  )
+              )}
             </Tab.Panels>
           </Tab.Group>
         </div>
@@ -192,3 +222,38 @@ So relax and press the pedal."
 };
 
 export default Learn;
+
+export async function getStaticProps({ locale, params }) {
+  const hygraph = new GraphQLClient(process.env.HYGRAPH_READ_ONLY_KEY, {
+    headers: {
+      Authorization: process.env.HYGRAPH_BEARER,
+    },
+  });
+
+  const { posts }: PostsProps = await hygraph.request(
+    gql`
+      query MyQuery {
+        posts {
+          id
+          slug
+          basic {
+            title
+          }
+          shortDescription {
+            html
+          }
+          image {
+            url
+          }
+          postCategory
+          locale
+        }
+      }
+    `
+  );
+  return {
+    props: {
+      posts,
+    },
+  };
+}

@@ -3,14 +3,23 @@ import Link from "next/link";
 import { FC } from "react";
 import { PostItemProps, PostProps } from "../@types/post";
 import { cn } from "../lib/utils";
+import DOMPurify from "isomorphic-dompurify";
 
 const PostItem: FC<PostItemProps> = ({ image, title, children, slug }) => {
+  const purifiedChildren = () => ({
+    __html: DOMPurify.sanitize(children as string),
+  });
+
   return (
     <div className="flex flex-col gap-8 relative">
       <Image src={image} alt={title} width={328} height={264} />
       <div className="flex flex-col gap-2">
         <h3 className="text-2xl text-black">{title}</h3>
-        {children}
+        <div
+          className="text-white"
+          dangerouslySetInnerHTML={purifiedChildren()}
+        ></div>
+
         <Link href={`/learn/${slug}`}>
           <a className="text-primaryGreen pt-2 text-center uppercase border-b-2 text-xs border-b-primaryGreen py-1 self-start">
             Know more
@@ -82,11 +91,11 @@ const Posts: FC<PostProps> = ({
           posts.map((post) => (
             <PostItem
               key={post.slug}
-              title={post.title}
-              image={post.image}
+              title={post.basic?.title}
+              image={post.image?.url}
               slug={post.slug}
             >
-              {post.children}
+              {post.shortDescription?.html}
             </PostItem>
           ))}
       </div>

@@ -9,47 +9,47 @@ import Banner from "../components/Banner";
 import Posts from "../components/Posts";
 import Carousel from "@/components/about-us/Carousel";
 import Contact from "../components/Contact";
-import { PostItemProps } from "../@types/post";
+import { PostItemProps, HygraphPostProps } from "../@types/post";
 import TrophyCarousel from "~/components/about-us/TrophyCarousel";
 import Slider from "~/components/about-us/Slider";
 
 const AboutUs = () => {
-  const posts: PostItemProps[] = [
+  const posts: HygraphPostProps[] = [
     {
-      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      image: "/posts/post-1.jpg",
+      basic: {
+        title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      },
+      image: {
+        url: "/posts/post-1.jpg",
+      },
       slug: "lorem-1",
-      children: (
-        <p className="text-ogBlack">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam...
-        </p>
-      ),
+      description: {
+        html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
+      },
     },
     {
-      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      image: "/posts/post-2.jpg",
+      basic: {
+        title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      },
+      image: {
+        url: "/posts/post-2.jpg",
+      },
       slug: "lorem-2",
-      children: (
-        <p className="text-ogBlack">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam...
-        </p>
-      ),
+      description: {
+        html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
+      },
     },
     {
-      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      image: "/posts/post-3.jpg",
+      basic: {
+        title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      },
+      image: {
+        url: "/posts/post-3.jpg",
+      },
       slug: "lorem-3",
-      children: (
-        <p className="text-ogBlack">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam...
-        </p>
-      ),
+      description: {
+        html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
+      },
     },
   ];
   return (

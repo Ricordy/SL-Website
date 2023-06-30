@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export type PostProps = {
-  posts: PostItemProps[];
+  posts: HygraphPostProps[];
   title: string | ReactNode;
   titleCentered?: boolean;
   buttonMoreText?: string;
@@ -17,5 +17,27 @@ export type PostItemProps = {
   title: string;
   slug: string;
   category?: string;
-  children: ReactNode;
+  children: string;
+};
+
+export type HygraphPostProps = {
+  id?: Number;
+  slug: string;
+  basic: {
+    title: string;
+  };
+  shortDescription?: {
+    html: string;
+  };
+  image: {
+    url: string;
+  };
+  postCategory?: string;
+  locale?: string;
+  description?: {
+    html: string;
+  };
+};
+export type PostsProps = {
+  posts: HygraphPostProps[];
 };

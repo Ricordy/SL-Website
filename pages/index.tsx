@@ -8,45 +8,45 @@ import Accordion from "../components/Accordion";
 import Posts from "../components/Posts";
 import Banner from "../components/Banner";
 import Carousel from "../components/Carousel";
-import { PostItemProps } from "../@types/post";
+import { HygraphPostProps, PostItemProps } from "../@types/post";
 
 export default function Home() {
-  const posts: PostItemProps[] = [
+  const posts: HygraphPostProps[] = [
     {
-      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      image: "/posts/post-1.jpg",
+      basic: {
+        title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      },
+      image: {
+        url: "/posts/post-1.jpg",
+      },
       slug: "lorem-1",
-      children: (
-        <p className="text-ogBlack">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam...
-        </p>
-      ),
+      description: {
+        html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
+      },
     },
     {
-      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      image: "/posts/post-2.jpg",
+      basic: {
+        title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      },
+      image: {
+        url: "/posts/post-2.jpg",
+      },
       slug: "lorem-2",
-      children: (
-        <p className="text-ogBlack">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam...
-        </p>
-      ),
+      description: {
+        html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
+      },
     },
     {
-      title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      image: "/posts/post-3.jpg",
+      basic: {
+        title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+      },
+      image: {
+        url: "/posts/post-3.jpg",
+      },
       slug: "lorem-3",
-      children: (
-        <p className="text-ogBlack">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam...
-        </p>
-      ),
+      description: {
+        html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
+      },
     },
   ];
   return (
