@@ -28,7 +28,7 @@ const CarouselItem = ({
   description,
 }: CarouselItemProps) => {
   return (
-    <div className="flex w-[900px] md:flex-row flex-col p-8 gap-4 rounded-md">
+    <div className="flex w-[900px] md:flex-row flex-col p-8 gap-4 rounded-md bg-[#F6F9F8]">
       <div className="flex flex-col items-start w-full md:w-1/2 pt-24">
         <h3 className="uppercase pb-1 text-primaryGreen">{title}</h3>
         <div className="flex gap-2 p-0 pb-4 leading-none font-light divide-x-2 divide-dreamBlack text-black">

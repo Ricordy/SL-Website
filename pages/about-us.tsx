@@ -63,9 +63,9 @@ const AboutUs = () => {
             Know what&apos;s under the hood
           </h5>
           <section className="flex w-full rounded-lg relative justify-center bg-[url('/headers/about.jpg')] bg-cover bg-right bg-no-repeat min-h-[530px]">
-            <div className="absolute z-10 self-center">
+            {/* <div className="absolute z-10 self-center">
               <Image alt="Play" src={Play} />
-            </div>
+            </div> */}
           </section>
         </div>
 

@@ -24,22 +24,22 @@ const CarouselItem = ({
   completion,
 }: CarouselItemProps) => {
   return (
-    <div className="flex flex-col w-full rounded-md bg-progressBackground">
+    <div className="flex flex-col w-max rounded-md bg-progressBackground">
       <div
         className={cn(
-          "flex flex-col justify-end items-center min-h-[394px] rounded-t-md bg-cover relative gap-3",
+          "flex flex-col justify-end items-center min-h-[394px] rounded-t-md  bg-cover relative gap-3 w-96",
           image
         )}
       >
         <h4 className="z-10 uppercase text-3xl">{title}</h4>
-        <div className="flex z-10 relative gap-3 pb-6 justify-around w-full">
+        <div className="flex z-10 relative  pb-6 justify-around w-full">
           <div className="flex">
             <div className="flex gap-3">
               <span>Status:</span>
               <span className="font-medium">{status}</span>
             </div>
           </div>
-          <div className="flex">{completion}% finished</div>
+          <div className="flex ">{completion}% finished</div>
         </div>
         <div className="flex z-0 absolute w-full min-h-[200px] bg-[url('../public/projects/car-gradient.svg')] bg-cover"></div>
       </div>
@@ -106,8 +106,8 @@ const Carousel: FC<CarouselProps> = ({ id, className }) => {
           <Swiper
             modules={[Navigation, Pagination, A11y]}
             className="swiper"
-            spaceBetween={24}
-            slidesPerView={2}
+            spaceBetween={30}
+            slidesPerView={1}
             // pagination={{ clickable: true }}
             // navigation={true}
             pagination={{

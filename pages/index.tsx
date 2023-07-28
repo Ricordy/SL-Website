@@ -261,7 +261,7 @@ export default function Home() {
                 expected profit margin
               </p>
 
-              <Link href="/try">
+              <Link href="http://www.somethinglegendary.io">
                 <a className="text-slate-100 text-center uppercase border-2 hover:bg-white dark:hover:bg-white hover:text-black dark:hover:text-black text-xs border-slate-100 rounded-md px-8 py-1 self-center">
                   Go to app
                 </a>
