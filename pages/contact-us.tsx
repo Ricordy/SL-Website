@@ -10,7 +10,7 @@ const ContactUs = () => {
             <h3 className="text-white uppercase">
               Now is the time to
               <br />
-              ride together
+              ride together!
             </h3>
           }
           subtitle={
