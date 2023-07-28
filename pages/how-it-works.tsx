@@ -75,7 +75,7 @@ const HowItWorks = () => {
         ),
       },
     ],
-    "02.Buy an entry NFT": [
+    "02. Buy an entry NFT": [
       {
         id: 1,
         title: "Buy an entry NFT",
@@ -98,7 +98,7 @@ const HowItWorks = () => {
         ),
       },
     ],
-    "03.Select a project": [
+    "03. Select a project": [
       {
         id: 1,
         title: "Select a project",
@@ -120,7 +120,7 @@ const HowItWorks = () => {
         ),
       },
     ],
-    "04.Withdraw investment": [
+    "04. Withdraw investment": [
       {
         id: 1,
         title: "Withdraw investment",
@@ -236,7 +236,7 @@ const HowItWorks = () => {
         </div>
         <section className="flex w-full relative justify-center bg-[url('/headers/about.jpg')] bg-cover bg-right bg-no-repeat min-h-[530px]">
           <div className="absolute z-10 self-center">
-            <Image alt="Play" src={Play} />
+            {/* <Image alt="Play" src={Play} /> */}
           </div>
         </section>
       </section>
