@@ -20,7 +20,7 @@ const CarouselItem = ({ title, icon, description }: CarouselItemProps) => {
   return (
     <div className="flex flex-col w-full">
       <div className="flex flex-col justify-center items-center gap-3 w-[350px]">
-        <Image src={icon} alt={title} width={64} height={64} />
+        <Image src={icon} alt={title} width={64} height={40} />
         <h4 className="text-black uppercase text-xs font-semibold">{title}</h4>
         <p className="text-center">{description}</p>
       </div>

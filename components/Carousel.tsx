@@ -80,12 +80,7 @@ const items = [
 
 const Carousel: FC<CarouselProps> = ({ id, className }) => {
   return (
-    <section
-      className={cn(
-        "mx-auto flex flex-col gap-8 w-full max-w-screen-lg",
-        className
-      )}
-    >
+    <section className={cn("flex flex-col gap-8 ml-[209px]", className)}>
       <div className="flex gap-12">
         <div className="flex flex-col pt-[72px] gap-8 w-2/6">
           <h3 className="uppercase font-light">
