@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { cn } from "~/lib/utils";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,6 +17,8 @@ interface CarouselItemProps {
   year: number;
   profit: number;
   description: string;
+  actualIndex: number;
+  selectedIndex: number;
 }
 
 const CarouselItem = ({
@@ -26,9 +28,16 @@ const CarouselItem = ({
   year,
   profit,
   description,
+  actualIndex,
+  selectedIndex,
 }: CarouselItemProps) => {
   return (
-    <div className="flex w-[900px] md:flex-row flex-col p-8 gap-4 rounded-md bg-[#F6F9F8]">
+    <div
+      className={cn(
+        "flex w-[900px] md:flex-row flex-col p-8 gap-4 rounded-md",
+        actualIndex === selectedIndex ? "bg-[#F6F9F8]" : ""
+      )}
+    >
       <div className="flex flex-col items-start w-full md:w-1/2 pt-24">
         <h3 className="uppercase pb-1 text-primaryGreen">{title}</h3>
         <div className="flex gap-2 p-0 pb-4 leading-none font-light divide-x-2 divide-dreamBlack text-black">
@@ -105,6 +114,9 @@ const items = [
 ];
 
 const TrophyCarousel: FC<CarouselProps> = ({ id, className }) => {
+  const [currentSwiper, setcurrentSwiper] = useState(0);
+  console.log("current swiper:", currentSwiper);
+
   return (
     <section className={cn("mx-auto flex flex-col gap-16 w-full", className)}>
       <div className="flex flex-col items-center w-full relative">
@@ -129,6 +141,7 @@ const TrophyCarousel: FC<CarouselProps> = ({ id, className }) => {
             observer
             observeParents
             initialSlide={0}
+            onSlideChange={(swiper) => setcurrentSwiper(swiper.activeIndex)}
             // loop={true}
           >
             {items.map((item, index) => (
@@ -141,6 +154,8 @@ const TrophyCarousel: FC<CarouselProps> = ({ id, className }) => {
                   year={item.year}
                   profit={item.profit}
                   description={item.description}
+                  actualIndex={index}
+                  selectedIndex={currentSwiper}
                 />
               </SwiperSlide>
             ))}
