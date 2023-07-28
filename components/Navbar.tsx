@@ -57,12 +57,12 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
     //   }/the-process`,
     //   text: t("the-process"),
     // },
-    {
-      link: `${
-        router.locale != router.defaultLocale ? `/${router.locale}` : ""
-      }/security`,
-      text: t("security"),
-    },
+    // {
+    //   link: `${
+    //     router.locale != router.defaultLocale ? `/${router.locale}` : ""
+    //   }/security`,
+    //   text: t("security"),
+    // },
     // {
     //   link: `${
     //     router.locale != router.defaultLocale ? `/${router.locale}` : ""

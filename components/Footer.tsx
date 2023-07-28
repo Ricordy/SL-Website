@@ -62,7 +62,7 @@ function Footer() {
             {t("About Us")}
           </h3>
           <Link href="/whitepaper">{t("Whitepaper")}</Link>
-          <Link href="/security">{t("Security")}</Link>
+          {/* <Link href="/security">{t("Security")}</Link> */}
         </div>
         <div className="flex flex-col gap-2 font-light">
           <h3 className="text-base font-semibold uppercase text-white">

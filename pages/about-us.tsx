@@ -145,7 +145,7 @@ const AboutUs = () => {
           }
           subtitle="Imagine that our security tools are like a state-of-the-art safe. In our case, you don't need to imagine, they really are."
           linkLabel="Security Measures"
-          linkUrl="/security"
+          // linkUrl="/security"
           image="bg-[url('/banners/about-safety.jpg')]"
           certificates={true}
           contentPadding={true}

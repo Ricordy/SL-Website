@@ -114,7 +114,7 @@ export default function Home() {
             </h3>
           }
           image="/media/home-3.jpg"
-          buttonLink="/security"
+          // buttonLink="/security"
           buttonLabel="Security Measures"
         >
           <p className="text-ogBlack font-medium">
