@@ -9,8 +9,9 @@ import Posts from "../components/Posts";
 import Banner from "../components/Banner";
 import Carousel from "../components/Carousel";
 import { HygraphPostProps, PostItemProps } from "../@types/post";
+import { GraphQLClient, gql } from "graphql-request";
 
-export default function Home() {
+export default function Home(props) {
   const posts: HygraphPostProps[] = [
     {
       basic: {
@@ -49,6 +50,8 @@ export default function Home() {
       },
     },
   ];
+
+  console.log("investments eheheheheh", props.investments);
   return (
     <>
       <div className="flex flex-col bg-dreamBlack gap-[132px]">
@@ -289,7 +292,7 @@ export default function Home() {
         contentPadding={true}
         certificates={true}
       />
-      <Carousel id="1" className="my-[132px]" />
+      <Carousel id="1" className="my-[132px]" items={props.investments} />
       <Accordion />
       <Posts
         posts={posts}
@@ -319,6 +322,48 @@ So relax and press the pedal."
 }
 
 export async function getStaticProps({ locale }) {
+  const hygraph = new GraphQLClient(process.env.HYGRAPH_READ_ONLY_KEY, {
+    headers: {
+      Authorization: process.env.HYGRAPH_BEARER,
+    },
+  });
+
+  const { investments } = await hygraph.request(
+    gql`
+      query ActiveInvestments {
+        investments(
+          orderBy: createdAt_DESC
+          where: { basicInvestment: { investmentStatus: Active } }
+        ) {
+          id
+          address
+
+          level {
+            basicLevel {
+              title
+            }
+          }
+          basicInvestment {
+            id
+            totalInvested
+            totalInvestment
+            investmentStatus
+            car {
+              basicInfo {
+                title
+                cover {
+                  id
+                  url
+                }
+              }
+              description
+            }
+          }
+        }
+      }
+    `
+  );
+
   return {
     props: {
       ...(await serverSideTranslations(locale, [
@@ -330,6 +375,7 @@ export async function getStaticProps({ locale }) {
         "newsletter",
         "about-us",
       ])),
+      investments,
       // Will be passed to the page component as props
     },
   };

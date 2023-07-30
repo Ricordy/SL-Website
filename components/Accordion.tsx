@@ -1,12 +1,13 @@
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import { classNames, cn } from "../lib/utils";
-import { FC } from "react";
+import { FC, useState } from "react";
 
 interface AccordionProps {
   className?: string;
 }
 const Accordion: FC<AccordionProps> = ({ className }) => {
+  const [ActiveIndex, setActiveIndex] = useState(0);
   return (
     <section
       className={cn("flex gap-20 w-full justify-center items-start", className)}

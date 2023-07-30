@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import { log } from "console";
 // import "swiper/css/navigation";
 
 interface CarouselItemProps {
@@ -26,9 +27,9 @@ const CarouselItem = ({
   return (
     <div className="flex flex-col w-max rounded-md bg-progressBackground">
       <div
+        style={{ backgroundImage: `url(${image})` }}
         className={cn(
-          "flex flex-col justify-end items-center min-h-[394px] rounded-t-md  bg-cover relative gap-3 w-96",
-          image
+          "flex flex-col justify-end items-center min-h-[394px] rounded-t-md  bg-cover relative gap-3 w-96"
         )}
       >
         <h4 className="z-10 uppercase text-3xl">{title}</h4>
@@ -54,31 +55,12 @@ const CarouselItem = ({
 interface CarouselProps {
   id: string;
   className?: string;
+  items?: any;
 }
 
-const items = [
-  {
-    title: "Maserati 3500 GT",
-    image: "bg-[url('/projects/car-1.jpg')]",
-    status: "Renewing",
-    completion: "15",
-  },
-  {
-    title: "Chevrolet 200",
-    image: "bg-[url('/projects/car-2.jpg')]",
-    status: "Renewing",
-    completion: "45",
-  },
-  ,
-  {
-    title: "Chevrolet 300",
-    image: "bg-[url('/projects/car-2.jpg')]",
-    status: "Renewing",
-    completion: "85",
-  },
-];
+const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
+  console.log("items", items);
 
-const Carousel: FC<CarouselProps> = ({ id, className }) => {
   return (
     <section className={cn("flex flex-col gap-8 ml-[209px]", className)}>
       <div className="flex gap-12">
@@ -122,10 +104,13 @@ const Carousel: FC<CarouselProps> = ({ id, className }) => {
             {items.map((item, index) => (
               <SwiperSlide key={index}>
                 <CarouselItem
-                  title={item.title}
-                  image={item.image}
-                  status={item.status}
-                  completion={item.completion}
+                  title={item.basicInvestment.car.basicInfo.title}
+                  image={item.basicInvestment.car.basicInfo.cover.url}
+                  status={item.basicInvestment.investmentStatus}
+                  completion={String(
+                    item.basicInvestment.totalInvested /
+                      item.basicInvestment.totalInvestment
+                  )}
                 />
               </SwiperSlide>
             ))}

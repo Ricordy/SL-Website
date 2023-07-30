@@ -22,7 +22,10 @@ const CarouselItem = ({ title, icon, description }: CarouselItemProps) => {
       <div className="flex flex-col justify-center items-center gap-3 w-[350px]">
         <Image src={icon} alt={title} width={64} height={40} />
         <h4 className="text-black uppercase text-xs font-semibold">{title}</h4>
-        <p className="text-center">{description}</p>
+        <p
+          className="text-center"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
       </div>
     </div>
   );
@@ -38,37 +41,37 @@ const items = [
     title: "Disassembly",
     icon: "/icons/disassembly.svg",
     description:
-      "The first stage of restoring a classic car is disassembly, which involves taking apart the entire vehicle to assess the condition of each individual part. This includes removing the engine, transmission, body panels, interior components, and other parts. The goal of this stage is to identify which parts need repair or replacement.",
+      "The first stage of restoring a classic car is disassembly, which <strong> involves taking apart the entire vehicle to assess the condition of each individual part. This includes removing the engine, transmission, body panels, interior components, and other parts. </strong>  The goal of this stage is to identify which parts need repair or replacement.",
   },
   {
     title: "Inspection and Assessment",
     icon: "/icons/inspection-and-assessment.svg",
     description:
-      "Once the car is disassembled, each part is inspected and assessed to determine its condition. Parts that are damaged or worn beyond repair are typically replaced, while parts that can be repaired are sent for restoration.",
+      " <b> Once the car is disassembled, each part is inspected and assessed to determine its condition. </b> Parts that are damaged or worn beyond repair are typically replaced, while parts that can be repaired are sent for restoration.",
   },
   {
     title: "Restoration",
     icon: "/icons/restoration.svg",
     description:
-      "During this stage, each component that needs repair or refurbishment is restored to its original condition. This includes cleaning, sanding, repainting, and polishing parts to ensure they look and function like new.",
+      "<strong> During this stage, each component that needs repair or refurbishment is restored to its original condition. </strong> This includes cleaning, sanding, repainting, and polishing parts to ensure they look and function like new.",
   },
   {
     title: "Assembly",
     icon: "/icons/assembly.svg",
     description:
-      "Once all the parts have been restored, the vehicle is reassembled. This includes installing the engine and transmission, attaching the body panels, and installing the interior components.",
+      "<strong> Once all the parts have been restored, the vehicle is reassembled. </strong> This includes installing the engine and transmission, attaching the body panels, and installing the interior components.",
   },
   {
     title: "Testing and Adjustment",
     icon: "/icons/testing-and-adjustment.svg",
     description:
-      "After the car has been reassembled, it is tested to ensure everything is functioning properly. This includes checking the engine, brakes, suspension, and other systems. If any issues are found, adjustments are made to ensure the car is in optimal condition.",
+      "<strong> After the car has been reassembled, it is tested to ensure everything is functioning properly. This includes checking the engine, brakes, suspension, and other systems. </strong> If any issues are found, adjustments are made to ensure the car is in optimal condition.",
   },
   {
     title: "Finishing and Detailing",
     icon: "/icons/finishing-and-detailing.svg",
     description:
-      "The final stage involves finishing touches and detailing. This includes adding final trim pieces, waxing and buffing the paint, and cleaning the interior. The goal is to make the car look as close to the original factory condition as possible.",
+      "<strong> The final stage involves finishing touches and detailing. This includes adding final trim pieces, waxing and buffing the paint, and cleaning the interior. </strong> The goal is to make the car look as close to the original factory condition as possible.",
   },
 ];
 
