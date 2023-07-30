@@ -62,11 +62,11 @@ const AboutUs = () => {
           <h5 className="uppercase text-2xl font-medium">
             Know what&apos;s under the hood
           </h5>
-          <section className="flex w-full rounded-lg relative justify-center bg-[url('/headers/about.jpg')] bg-cover bg-right bg-no-repeat min-h-[530px]">
-            {/* <div className="absolute z-10 self-center">
+          {/* <section className="flex w-full rounded-lg relative justify-center bg-[url('/headers/about.jpg')] bg-cover bg-right bg-no-repeat min-h-[530px]">
+            <div className="absolute z-10 self-center">
               <Image alt="Play" src={Play} />
-            </div> */}
-          </section>
+            </div>
+          </section> */}
         </div>
 
         <section className="flex gap-24 w-full">

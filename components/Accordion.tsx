@@ -30,6 +30,9 @@ const Accordion: FC<AccordionProps> = ({ className }) => {
             {({ open }) => (
               <>
                 <Disclosure.Button
+                  onMouseEnter={(event: React.MouseEvent<HTMLButtonElement>) =>
+                    event.currentTarget.click()
+                  }
                   className={`flex w-full justify-between px-4 py-2 text-left text-sm focus:outline-none focus-visible:ring focus-visible:ring-primaryGreen focus-visible:ring-opacity-75 border-b border-b-black ${
                     open ? "text-primaryGreen" : "text-black"
                   }`}
@@ -58,6 +61,9 @@ const Accordion: FC<AccordionProps> = ({ className }) => {
             {({ open }) => (
               <>
                 <Disclosure.Button
+                  onMouseEnter={(event: React.MouseEvent<HTMLButtonElement>) =>
+                    event.currentTarget.click()
+                  }
                   className={`flex w-full justify-between px-4 py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-primaryGreen focus-visible:ring-opacity-75 border-b border-b-black ${
                     open ? "text-primaryGreen" : "text-black"
                   }`}
@@ -87,6 +93,9 @@ const Accordion: FC<AccordionProps> = ({ className }) => {
             {({ open }) => (
               <>
                 <Disclosure.Button
+                  onMouseEnter={(event: React.MouseEvent<HTMLButtonElement>) =>
+                    event.currentTarget.click()
+                  }
                   className={`flex w-full justify-between px-4 py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-primaryGreen focus-visible:ring-opacity-75 border-b border-b-black ${
                     open ? "text-primaryGreen" : "text-black"
                   }`}
