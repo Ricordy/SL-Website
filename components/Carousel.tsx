@@ -29,7 +29,7 @@ const CarouselItem = ({
       <div
         style={{ backgroundImage: `url(${image})` }}
         className={cn(
-          "flex flex-col justify-end items-center min-h-[394px] rounded-t-md  bg-cover relative gap-3 w-96"
+          "flex flex-col justify-end items-center min-h-[394px] rounded-t-md  bg-cover relative gap-3 w-[416px]"
         )}
       >
         <h4 className="z-10 uppercase text-3xl">{title}</h4>
@@ -84,7 +84,7 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
             modules={[Navigation, Pagination, A11y]}
             className="swiper"
             spaceBetween={30}
-            slidesPerView={1}
+            slidesPerView={2}
             // pagination={{ clickable: true }}
             // navigation={true}
             pagination={{
