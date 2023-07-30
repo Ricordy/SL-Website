@@ -49,13 +49,14 @@ const CarouselItem = ({
             <span className="font-medium">{profit}</span>% profit
           </div>
         </div>
-        <p className="text-black w-full text-left">{description}</p>
+        <div
+          className="text-black w-full text-left"
+          dangerouslySetInnerHTML={{ __html: description }}
+        ></div>
       </div>
       <div
-        className={cn(
-          "flex w-1/2 justify-center rounded-md bg-cover relative",
-          image
-        )}
+        style={{ backgroundImage: `url(${image})` }}
+        className={cn("flex w-1/2 justify-center rounded-md bg-cover relative")}
       >
         <Image
           className="rounded-lg"
@@ -72,6 +73,7 @@ const CarouselItem = ({
 interface CarouselProps {
   id: string;
   className?: string;
+  items?: any;
 }
 
 const items = [
@@ -113,9 +115,9 @@ const items = [
   },
 ];
 
-const TrophyCarousel: FC<CarouselProps> = ({ id, className }) => {
+const TrophyCarousel: FC<CarouselProps> = ({ id, className, items }) => {
   const [currentSwiper, setcurrentSwiper] = useState(0);
-  console.log("current swiper:", currentSwiper);
+  console.log(items);
 
   return (
     <section className={cn("mx-auto flex flex-col gap-16 w-full", className)}>
@@ -148,12 +150,12 @@ const TrophyCarousel: FC<CarouselProps> = ({ id, className }) => {
               <SwiperSlide key={index} className="">
                 {/* <div className="bg-green-200">{`Slide ${index}`}</div> */}
                 <CarouselItem
-                  title={item.title}
-                  image={item.image}
-                  price={item.price}
+                  title={item.basicInvestment.car.basicInfo.title}
+                  image={item.basicInvestment.car.basicInfo.cover.url}
+                  price={item.soldBy}
                   year={item.year}
-                  profit={item.profit}
-                  description={item.description}
+                  profit={item.finalProfitRate}
+                  description={item.soldText?.html}
                   actualIndex={index}
                   selectedIndex={currentSwiper}
                 />

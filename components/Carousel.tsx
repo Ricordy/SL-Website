@@ -8,7 +8,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import { log } from "console";
 // import "swiper/css/navigation";
 
 interface CarouselItemProps {

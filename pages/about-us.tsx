@@ -12,8 +12,9 @@ import Contact from "../components/Contact";
 import { PostItemProps, HygraphPostProps } from "../@types/post";
 import TrophyCarousel from "~/components/about-us/TrophyCarousel";
 import Slider from "~/components/about-us/Slider";
+import { GraphQLClient, gql } from "graphql-request";
 
-const AboutUs = () => {
+const AboutUs = (props) => {
   const posts: HygraphPostProps[] = [
     {
       basic: {
@@ -96,7 +97,7 @@ const AboutUs = () => {
       </div>
       <div className="flex flex-col gap-[132px] py-[132px]">
         <Carousel id="1" />
-        <TrophyCarousel id="2" />
+        <TrophyCarousel id="2" items={props.investments} />
       </div>
       <div className="flex flex-col w-full gap-[132px] mx-auto  items-center max-w-[1210px]">
         <section className="flex flex-col justify-end py-[132px] rounded-lg items-center gap-[52px] relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-no-repeat bg-center">
@@ -172,3 +173,49 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
+export async function getStaticProps({ locale }) {
+  const hygraph = new GraphQLClient(process.env.HYGRAPH_READ_ONLY_KEY, {
+    headers: {
+      Authorization: process.env.HYGRAPH_BEARER,
+    },
+  });
+
+  const { investments } = await hygraph.request(
+    gql`
+      query ActiveInvestments {
+        investments(
+          orderBy: createdAt_DESC
+          where: { basicInvestment: { investmentStatus: Finished } }
+        ) {
+          id
+          address
+          finalProfitRate
+          soldBy
+          soldText {
+            html
+          }
+          basicInvestment {
+            car {
+              year
+              basicInfo {
+                title
+                cover {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+  console.log("investments", investments);
+
+  return {
+    props: {
+      investments,
+      // Will be passed to the page component as props
+    },
+  };
+}
