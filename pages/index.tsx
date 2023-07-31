@@ -328,7 +328,7 @@ export async function getStaticProps({ locale }) {
     },
   });
 
-  const { investments } = await hygraph.request(
+  const { investments }: any = await hygraph.request(
     gql`
       query ActiveInvestments {
         investments(
