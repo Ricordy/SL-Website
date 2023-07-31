@@ -153,7 +153,7 @@ const TrophyCarousel: FC<CarouselProps> = ({ id, className, items }) => {
                   title={item.basicInvestment.car.basicInfo.title}
                   image={item.basicInvestment.car.basicInfo.cover.url}
                   price={item.soldBy}
-                  year={item.year}
+                  year={item.basicInvestment.car.year}
                   profit={item.finalProfitRate}
                   description={item.soldText?.html}
                   actualIndex={index}
