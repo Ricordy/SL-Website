@@ -10,6 +10,7 @@ import Banner from "../components/Banner";
 import Carousel from "../components/Carousel";
 import { HygraphPostProps, PostItemProps } from "../@types/post";
 import { GraphQLClient, gql } from "graphql-request";
+import FlyoutMenu from "~/components/Accordion2-0";
 
 export default function Home(props) {
   const posts: HygraphPostProps[] = [
@@ -51,7 +52,6 @@ export default function Home(props) {
     },
   ];
 
-  console.log("investments eheheheheh", props.investments);
   return (
     <>
       <div className="flex flex-col bg-dreamBlack gap-[132px]">
@@ -293,7 +293,7 @@ export default function Home(props) {
         certificates={true}
       />
       <Carousel id="1" className="my-[132px]" items={props.investments} />
-      <Accordion />
+      <FlyoutMenu />
       <Posts
         posts={posts}
         title="Learn more"
