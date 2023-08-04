@@ -72,13 +72,13 @@ const Banner: FC<BannerProps> = ({
                 subtitle
               )}
             </div>
-            {linkUrl && (
+            {/* {linkUrl && (
               <Link href={linkUrl}>
                 <a className="text-slate-100 dark:hover:bg-white dark:hover:text-black tracking-wide text-center uppercase border-2 text-sm font-medium border-white rounded-md px-8 py-1 self-start">
                   {linkLabel ? linkLabel : "Know more"}
                 </a>
               </Link>
-            )}
+            )} */}
           </div>
         </div>
         <div

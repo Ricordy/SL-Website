@@ -70,7 +70,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
     //   text: t("events"),
     // },
     {
-      link: "/whitepaper",
+      link: "/whitepaper.pdf",
       text: t("whitepaper"),
     },
     {
@@ -172,7 +172,10 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                       {itens.map(({ link, text }, index) => {
                         return (
                           <li key={index} className="uppercase w-full">
-                            <Link href={link}>
+                            <Link
+                              href={link}
+                              target={text === "whitepaper" ? "_blank" : ""}
+                            >
                               <a
                                 onClick={() => {
                                   setIsNavOpen(false);
