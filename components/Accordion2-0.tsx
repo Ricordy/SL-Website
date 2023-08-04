@@ -82,6 +82,7 @@ export default function FlyoutMenu({ className }) {
                 as="div"
                 className="pt-6"
                 defaultOpen={index === 0 ? true : false}
+                key={index}
               >
                 {({ open }) => (
                   <>

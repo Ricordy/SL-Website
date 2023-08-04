@@ -293,7 +293,7 @@ export default function Home(props) {
         certificates={true}
       />
       <Carousel id="1" className="my-[132px]" items={props.investments} />
-      <FlyoutMenu />
+      <FlyoutMenu className={""} />
       <Posts
         posts={posts}
         title="Learn more"
