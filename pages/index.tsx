@@ -285,8 +285,8 @@ export default function Home(props) {
         }
         titleClassName="text-white uppercase"
         subtitle="We have the seat belt of a racing car."
-        linkUrl="/safe-investment"
-        linkLabel="Know more"
+        // linkUrl="/safe-investment"
+        // linkLabel="Know more"
         height={408}
         image="bg-[url('/banners/safe-travel.jpg')]"
         contentPadding={true}
