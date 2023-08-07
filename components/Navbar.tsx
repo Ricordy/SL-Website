@@ -172,8 +172,9 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                       {itens.map(({ link, text }, index) => {
                         return (
                           <li key={index} className="uppercase w-full">
-                            <Link
+                            <a
                               href={link}
+                              rel="noopener noreferrer"
                               target={text === "whitepaper" ? "_blank" : ""}
                             >
                               <a
@@ -185,7 +186,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                               >
                                 {text}
                               </a>
-                            </Link>
+                            </a>
                           </li>
                         );
                       })}

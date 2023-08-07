@@ -64,7 +64,7 @@ const HowItWorks = () => {
               The user clicks on launch App and enters the platform, then clicks
               on connect wallet for which he must have one to be able to
               connect, if not, redirect to create one. Don&apos;t know how to
-              create one? Click this link!
+              create one?
             </p>
             <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
@@ -302,10 +302,10 @@ const HowItWorks = () => {
               constant knowledge, we make a point of knowing the latest trends
               in the market.
             </p>
-            <p className="text-ogBlack">
+            {/* <p className="text-ogBlack">
               Do you want to know where we&apos;re going to be in 2023? Check
               out our list of events!
-            </p>
+            </p> */}
           </HighlightContent>
         </div>
       </section>
