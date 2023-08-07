@@ -15,6 +15,7 @@ interface CarouselItemProps {
   image: string;
   status: string;
   completion: string;
+  address: string;
 }
 
 const CarouselItem = ({
@@ -22,32 +23,38 @@ const CarouselItem = ({
   image,
   status,
   completion,
+  address,
 }: CarouselItemProps) => {
   return (
-    <div className="flex flex-col w-max rounded-md bg-progressBackground">
-      <div
-        style={{ backgroundImage: `url(${image})` }}
-        className={cn(
-          "flex flex-col justify-end items-center min-h-[394px] rounded-t-md  bg-cover relative gap-3 w-[416px]"
-        )}
-      >
-        <h4 className="z-10 uppercase text-3xl">{title}</h4>
-        <div className="flex z-10 relative  pb-6 justify-around w-full">
-          <div className="flex">
-            <div className="flex gap-3">
-              <span>Status:</span>
-              <span className="font-medium">{status}</span>
+    <Link
+      className="flex flex-col w-max rounded-md bg-progressBackground "
+      href={`${process.env.NEXT_PUBLIC_PLATFORM_URL}/investment/${address}`}
+    >
+      <div className="cursor-pointer">
+        <div
+          style={{ backgroundImage: `url(${image})` }}
+          className={cn(
+            "flex flex-col justify-end items-center min-h-[394px] rounded-t-md  bg-cover relative gap-3 w-[416px]"
+          )}
+        >
+          <h4 className="z-10 uppercase text-3xl">{title}</h4>
+          <div className="flex z-10 relative  pb-6 justify-around w-full">
+            <div className="flex">
+              <div className="flex gap-3">
+                <span>Status:</span>
+                <span className="font-medium">{status}</span>
+              </div>
             </div>
+            <div className="flex ">{completion}% finished</div>
           </div>
-          <div className="flex ">{completion}% finished</div>
+          <div className="flex z-0 absolute w-full min-h-[200px] bg-[url('../public/projects/car-gradient.svg')] bg-cover"></div>
         </div>
-        <div className="flex z-0 absolute w-full min-h-[200px] bg-[url('../public/projects/car-gradient.svg')] bg-cover"></div>
+        <div
+          className={`flex rounded-bl-md bg-progressHighlight h-3`}
+          style={{ width: `${completion}%` }}
+        ></div>
       </div>
-      <div
-        className={`flex rounded-bl-md bg-progressHighlight h-3`}
-        style={{ width: `${completion}%` }}
-      ></div>
-    </div>
+    </Link>
   );
 };
 
@@ -110,6 +117,7 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
                     item.basicInvestment.totalInvested /
                       item.basicInvestment.totalInvestment
                   )}
+                  address={item.address}
                 />
               </SwiperSlide>
             ))}
