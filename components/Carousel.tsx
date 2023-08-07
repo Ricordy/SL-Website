@@ -71,7 +71,7 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
             Made with love and a lot of passion for every detail, this is our
             atual range of products.
           </p>
-          <Link href="https://beta.somethinglegenary.io">
+          <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
             <a className="uppercase dark:border-primaryGreen dark:text-primaryGreen dark:hover:text-white dark:hover:bg-primaryGreen hover:text-white hover:bg-primaryGreen border-2 py-1 px-8 text-sm self-start rounded-md text-primaryGreen">
               Go to app
             </a>

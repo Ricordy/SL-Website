@@ -66,7 +66,7 @@ const HowItWorks = () => {
               connect, if not, redirect to create one. Don&apos;t know how to
               create one? Click this link!
             </p>
-            <Link href="http://beta.somethinglegendary.io">
+            <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
                 Go to app
               </a>
@@ -89,7 +89,7 @@ const HowItWorks = () => {
               you&apos;re now part of the Something Legendary community and can
               invest in your dream classic car.
             </p>
-            <Link href="http://beta.somethinglegendary.io">
+            <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
                 Go to app
               </a>
@@ -111,7 +111,7 @@ const HowItWorks = () => {
               want to invest. Choose wisely, don&apos;t let your personal tastes
               influence your margins... or do, its your choice.
             </p>
-            <Link href="http://beta.somethinglegendary.io">
+            <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
                 Go to app
               </a>
@@ -133,7 +133,7 @@ const HowItWorks = () => {
               process has been to your liking. If you really liked the
               destination, get ready to choose another one.
             </p>
-            <Link href="http://beta.somethinglegendary.io">
+            <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
                 Go to app
               </a>
