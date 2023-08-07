@@ -161,13 +161,14 @@ const AboutUs = (props) => {
           posts={posts}
           title="Learn more"
           titleCentered={true}
+          className="mb-[132px]"
         />
       </div>
 
-      <Contact
+      {/* <Contact
         className="mt-[132px]"
         title="Something in your legendary mind?"
-      />
+      /> */}
     </div>
   );
 };
