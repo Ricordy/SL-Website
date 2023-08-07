@@ -206,17 +206,17 @@ So relax and press the pedal."
                           buttonMoreBgColor="hover:bg-black"
                         />
                       )) || (
-                        <div className="text-black flex flex-col gap-[96px] mt-[96px] ">
+                        <section className="text-black flex flex-col mt-[96px] gap-[96px]  ">
                           {Object.values(categories).map(
                             (post, idx) =>
                               post.length > 0 && (
                                 <section
                                   className={
-                                    "mx-auto flex flex-col gap-16 w-full overflow-hidden"
+                                    "mx-auto flex flex-col gap-16 w-full overflow-hidden  "
                                   }
                                 >
                                   <h3
-                                    className={`text-black flex-1 font-medium  text-3xl uppercase mb-[96px] `}
+                                    className={`text-black flex-1 font-medium  text-3xl uppercase  `}
                                   >
                                     {Object.keys(categories).at(idx)}
                                   </h3>
@@ -256,7 +256,7 @@ So relax and press the pedal."
                                       ))}
                                     </SwiperSlide>
                                   </Swiper>
-                                  <div className="flex gap-6 justify-center items-center  w-1/5 mx-auto">
+                                  <div className="flex gap-6 justify-center items-center  w-full mx-auto">
                                     <div
                                       className={`flex relative cursor-pointer swiper-prev-${3}`}
                                     >
@@ -284,7 +284,7 @@ So relax and press the pedal."
                                 </section>
                               )
                           )}
-                        </div>
+                        </section>
                       )}
                       {/* <ul>
                     {posts.map((post) => (
