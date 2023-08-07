@@ -32,10 +32,10 @@ function Footer() {
               <a className="">info@somethinglegendary.com</a>
             </Link>
           </div>
-          <div className="flex gap-2">
+          {/* <div className="flex gap-2">
             <Image src={Phone} alt="Phone" />
             <span className="">+381 9999-9999</span>
-          </div>
+          </div> */}
         </div>
         <div className="flex flex-col gap-2 font-light">
           <h3 className="text-base font-semibold uppercase text-white">
