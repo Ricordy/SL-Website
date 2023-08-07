@@ -229,9 +229,9 @@ export default function Home(props) {
                   Ready to become legendary? Buy your entry ticket!
                 </p>
 
-                <Link href="/learn">
+                <Link href="https:\\beta.somethinglegendary.io">
                   <a className="text-primaryGreen text-center uppercase border-b-2 border-primaryGreen self-center text-xs font-medium tracking-wide">
-                    Learn more
+                    Buy it
                   </a>
                 </Link>
               </div>
