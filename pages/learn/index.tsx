@@ -166,7 +166,7 @@ So relax and press the pedal."
                   key={category}
                   className={({ selected }) =>
                     classNames(
-                      "w-full py-2.5 text-md uppercase rounded-full font-normal leading-5 text-black",
+                      "w-full py-2.5 text-md uppercase rounded-full font-normal leading-5 ",
                       "  focus:outline-none focus:ring-2",
                       selected
                         ? "bg-primaryGreen ring-white ring-offset-2 ring-offset-primaryGreen/40 text-white dark:text-white"

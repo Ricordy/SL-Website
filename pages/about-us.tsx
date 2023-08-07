@@ -149,7 +149,6 @@ const AboutUs = (props) => {
           // linkUrl="/security"
           image="bg-[url('/banners/about-safety.jpg')]"
           certificates={true}
-          contentPadding={true}
           rounded={true}
         />
         <Posts
