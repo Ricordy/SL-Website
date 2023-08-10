@@ -229,9 +229,9 @@ export default function Home(props) {
                   Ready to become legendary? Buy your entry ticket!
                 </p>
 
-                <Link href="/learn">
+                <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
                   <a className="text-primaryGreen text-center uppercase border-b-2 border-primaryGreen self-center text-xs font-medium tracking-wide">
-                    Learn more
+                    Buy it
                   </a>
                 </Link>
               </div>
@@ -264,7 +264,7 @@ export default function Home(props) {
                 expected profit margin
               </p>
 
-              <Link href="http://www.somethinglegendary.io">
+              <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
                 <a className="text-slate-100 text-center uppercase border-2 hover:bg-white dark:hover:bg-white hover:text-black dark:hover:text-black text-xs border-slate-100 rounded-md px-8 py-1 self-center">
                   Go to app
                 </a>
@@ -285,15 +285,15 @@ export default function Home(props) {
         }
         titleClassName="text-white uppercase"
         subtitle="We have the seat belt of a racing car."
-        linkUrl="/safe-investment"
-        linkLabel="Know more"
+        // linkUrl="/safe-investment"
+        // linkLabel="Know more"
         height={408}
         image="bg-[url('/banners/safe-travel.jpg')]"
         contentPadding={true}
         certificates={true}
       />
       <Carousel id="1" className="my-[132px]" items={props.investments} />
-      <FlyoutMenu />
+      <FlyoutMenu className={""} />
       <Posts
         posts={posts}
         title="Learn more"

@@ -23,7 +23,7 @@ const Contact: FC<ContactProps> = ({ title = "Contact Us", className }) => {
         <div className="flex w-3/5 flex-col gap-6">
           <h2 className="text-3xl uppercase text-black">{title}</h2>
           <div className="flex flex-col gap-6">
-            <div className="flex gap-3">
+            {/* <div className="flex gap-3">
               <Image
                 src="/icons/form-location.svg"
                 alt="Location"
@@ -40,7 +40,7 @@ const Contact: FC<ContactProps> = ({ title = "Contact Us", className }) => {
                 height={20}
               />
               <p>877-255-7945</p>
-            </div>
+            </div> */}
             <div className="flex gap-3">
               <Image
                 src="/icons/form-mail.svg"
@@ -49,7 +49,7 @@ const Contact: FC<ContactProps> = ({ title = "Contact Us", className }) => {
                 height={20}
               />
               <Link href="mailto:info@form.com">
-                <a className="text-black">info@form.com</a>
+                <a className="text-black">info@somethinglegendary.com</a>
               </Link>
             </div>
           </div>

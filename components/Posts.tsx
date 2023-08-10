@@ -5,7 +5,12 @@ import { PostItemProps, PostProps } from "../@types/post";
 import { cn } from "../lib/utils";
 import DOMPurify from "isomorphic-dompurify";
 
-const PostItem: FC<PostItemProps> = ({ image, title, children, slug }) => {
+export const PostItem: FC<PostItemProps> = ({
+  image,
+  title,
+  children,
+  slug,
+}) => {
   const purifiedChildren = () => ({
     __html: DOMPurify.sanitize(children as string),
   });

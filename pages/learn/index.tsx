@@ -3,9 +3,12 @@ import Banner from "../../components/Banner";
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import { classNames } from "../../lib/utils";
-import Posts from "../../components/Posts";
+import Posts, { PostItem } from "../../components/Posts";
 import { PostItemProps } from "../../@types/post";
 import { GraphQLClient, gql } from "graphql-request";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import Image from "next/image";
 
 interface HygraphPostProps {
   id: Number;
@@ -134,6 +137,8 @@ const Learn = (props: PostsProps) => {
     News: posts.filter((post) => post.postCategory == "news"),
   });
 
+  const [currentSwiper, setcurrentSwiper] = useState(0);
+
   return (
     <div className="flex flex-col">
       <section className="flex w-full gap-8 mx-auto  items-center flex-col ">
@@ -161,7 +166,7 @@ So relax and press the pedal."
                   key={category}
                   className={({ selected }) =>
                     classNames(
-                      "w-full py-2.5 text-md uppercase rounded-full font-normal leading-5 text-black",
+                      "w-full py-2.5 text-md uppercase rounded-full font-normal leading-5 ",
                       "  focus:outline-none focus:ring-2",
                       selected
                         ? "bg-primaryGreen ring-white ring-offset-2 ring-offset-primaryGreen/40 text-white dark:text-white"
@@ -184,21 +189,103 @@ So relax and press the pedal."
                         "ring-white ring-opacity-60 ring-offset-2 ring-offset-primaryGreen focus:outline-none focus:ring-2"
                       )}
                     >
-                      <Posts
-                        className="pt-12"
-                        posts={post}
-                        title={Object.keys(categories).at(idx)}
-                        buttonMoreLink={`/learn/${post
-                          .at(0)
-                          ?.postCategory.toLocaleLowerCase()
-                          .split(" ")
-                          .join("-")}`}
-                        buttonMoreText="See more"
-                        buttonMoreBorderColor="border-black"
-                        buttonMoreTextColor="text-black hover:text-white"
-                        buttonMoreBgColor="hover:bg-black"
-                      />
-
+                      {" "}
+                      {(idx !== 0 && (
+                        <Posts
+                          className="pt-12"
+                          posts={post}
+                          title={Object.keys(categories).at(idx)}
+                          buttonMoreLink={`/learn/${post
+                            .at(0)
+                            ?.postCategory.toLocaleLowerCase()
+                            .split(" ")
+                            .join("-")}`}
+                          //buttonMoreText="See more"
+                          buttonMoreBorderColor="border-black"
+                          buttonMoreTextColor="text-black hover:text-white"
+                          buttonMoreBgColor="hover:bg-black"
+                        />
+                      )) || (
+                        <section className="text-black flex flex-col mt-[96px] gap-[96px]  ">
+                          {Object.values(categories).map(
+                            (post, idx) =>
+                              post.length > 0 && (
+                                <section
+                                  className={
+                                    "mx-auto flex flex-col gap-16 w-full overflow-hidden  "
+                                  }
+                                >
+                                  <h3
+                                    className={`text-black flex-1 font-medium  text-3xl uppercase  `}
+                                  >
+                                    {Object.keys(categories).at(idx)}
+                                  </h3>
+                                  <Swiper
+                                    modules={[Navigation, Pagination, A11y]}
+                                    className="swiper"
+                                    spaceBetween={30}
+                                    slidesPerView={"auto"}
+                                    centeredSlides={true}
+                                    pagination={{
+                                      clickable: true,
+                                      el: `.swiper-pagination-${3}`,
+                                    }}
+                                    navigation={{
+                                      nextEl: `.swiper-next-${3}`,
+                                      prevEl: `.swiper-prev-${3}`,
+                                    }}
+                                    updateOnWindowResize
+                                    observer
+                                    observeParents
+                                    initialSlide={0}
+                                    onSlideChange={(swiper) =>
+                                      setcurrentSwiper(swiper.activeIndex)
+                                    }
+                                    // loop={true}
+                                  >
+                                    <SwiperSlide key={idx} className="">
+                                      {post.map((posti, idx) => (
+                                        <PostItem
+                                          image={posti.image.url}
+                                          title={posti.basic.title}
+                                          slug={posti.slug}
+                                          key={idx}
+                                        >
+                                          {posti.shortDescription.html}
+                                        </PostItem>
+                                      ))}
+                                    </SwiperSlide>
+                                  </Swiper>
+                                  <div className="flex gap-6 justify-center items-center  w-full mx-auto">
+                                    <div
+                                      className={`flex relative cursor-pointer swiper-prev-${3}`}
+                                    >
+                                      <Image
+                                        src="/icons/pagination-prev.svg"
+                                        width={20}
+                                        height={15}
+                                        alt="Previous"
+                                      />
+                                    </div>
+                                    <div
+                                      className={`flex justify-center items-center gap-1 text-black swiper-pagination-${3}`}
+                                    />
+                                    <div
+                                      className={`flex relative cursor-pointer swiper-next-${3}`}
+                                    >
+                                      <Image
+                                        src="/icons/pagination-next.svg"
+                                        width={20}
+                                        height={15}
+                                        alt="Next"
+                                      />
+                                    </div>
+                                  </div>
+                                </section>
+                              )
+                          )}
+                        </section>
+                      )}
                       {/* <ul>
                     {posts.map((post) => (
                       <li key={post.id} className="relative rounded-md p-3">
