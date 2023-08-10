@@ -120,7 +120,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
               <div className="flex gap-10 justify-center items-center">
                 <Button
                   variant="outline"
-                  className={`self-center border-white text-white p-0 h-[30px] w-[151px] ${
+                  className={`self-center hidden md:block border-white text-white p-0 h-[30px] w-[151px] ${
                     isNavOn || !transparentNavRoutes.includes(router.route)
                       ? "dark:border-primaryGreen dark:text-primaryGreen border-primaryGreen text-primaryGreen hover:bg-primaryGreen hover:text-white"
                       : ""
@@ -130,7 +130,10 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                 </Button>
                 <button
                   className="border-none uppercase  font-semibold leading-none rounded-md"
-                  onClick={(e) => showNav(e)}
+                  onClick={(e) => {
+                    setIsNavOpen((prev) => !prev);
+                    setIsNavOn(!isNavOpen);
+                  }}
                 >
                   {isNavOn || !transparentNavRoutes.includes(router.route) ? (
                     <Image className=" " src={burguerActive} alt="menu" />
@@ -162,12 +165,12 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
           </div>
           {isNavOpen && (
             <div
-              className="flex absolute z-50 w-1/2 bg-white mt-[83px] pb-16 gap-8 justify-start right-0 top-0"
+              className="flex absolute z-50 w-full min-h-screen md:min-h-0 md:w-1/2 bg-white mt-[83px] pb-16 gap-8 justify-start right-0 top-0"
               id="menu"
             >
               <div className="flex max-w-screen-lg w-full justify-start">
-                <div className="flex flex-col w-2/3 items-end justify-end">
-                  <div className="flex w-full pl-[72px] pt-24 gap-6 justify-between ">
+                <div className="flex flex-col md:w-2/3 items-start md:items-end justify-start  md:justify-end">
+                  <div className="flex w-full pl-[72px] pt-12 md:pt-24 gap-6 justify-between ">
                     <ul className="flex flex-col w-full gap-6 text-left">
                       {itens.map(({ link, text }, index) => {
                         return (
@@ -187,7 +190,17 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                         );
                       })}
                       <li>
-                        <div className="border-b border-slate-800 w-full pt-12 pb-2 h-1" />
+                        <Link href="https://beta.somethinglegendary.io">
+                          <Button
+                            variant="outline"
+                            className="md:hidden p-0 h-[30px] w-[151px] dark:border-primaryGreen dark:text-primaryGreen border-primaryGreen text-primaryGreen hover:bg-primaryGreen hover:text-white"
+                          >
+                            Launch App
+                          </Button>
+                        </Link>
+                      </li>
+                      <li>
+                        <div className="border-b border-slate-800 w-full pt-6 md:pt-12 pb-2 h-1" />
                       </li>
                       <li className="flex gap-6">
                         <Link href="https://www.facebook.com">

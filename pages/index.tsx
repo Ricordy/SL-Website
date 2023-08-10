@@ -54,9 +54,9 @@ export default function Home(props) {
 
   return (
     <>
-      <div className="flex flex-col bg-dreamBlack gap-[132px]">
+      <div className="flex flex-col bg-dreamBlack gap-28 md:gap-[132px]">
         <Hero />
-        <Partners className="pb-[202px]" />
+        <Partners className="pb-28 md:pb-[202px]" />
       </div>
       <div className="flex flex-col bg-white gap-[132px]">
         <HighlightContent
@@ -188,7 +188,7 @@ export default function Home(props) {
           It&apos;s easy. In just 4 steps you start earn your profits.
         </p>
         <div className="flex flex-col md:flex-row gap-3 mt-[52px] flex-1 relative">
-          <div className="flex md:w-1/4 flex-col gap-8 relative p-4 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 after:border-slate-100 after:translate-y-1/2 after:h-full after:w-full after:absolute after:bottom-[138px] after:left-[132px]">
+          <div className="flex md:w-1/4 flex-col gap-8 relative p-4 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 md:after:border-slate-100 md:after:translate-y-1/2 md:after:h-full md:after:w-full md:after:absolute md:after:bottom-[138px] md:after:left-[132px]">
             <h3 className="text-primaryGreen w-8 text-center text-2xl bg-slate-100 self-center p-2 leading-none justify-center rounded-sm z-10">
               1
             </h3>
@@ -214,7 +214,7 @@ export default function Home(props) {
               </div>
             </div>
           </div>
-          <div className="flex md:w-1/4 flex-col gap-8 relative p-6 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 after:border-slate-100 after:translate-y-1/2 after:h-full after:w-full after:absolute after:bottom-[138px] after:left-[132px]">
+          <div className="flex md:w-1/4 flex-col gap-8 relative p-6 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 after:border-slate-100 md:after:translate-y-1/2 md:after:h-full md:after:w-full md:after:absolute md:after:bottom-[138px] md:after:left-[132px]">
             <h3 className="text-primaryGreen  w-8 text-center  text-2xl bg-slate-100 self-center p-2 leading-none justify-center rounded-sm z-10">
               2
             </h3>
@@ -237,7 +237,7 @@ export default function Home(props) {
               </div>
             </div>
           </div>
-          <div className="flex md:w-1/4 flex-col gap-8 relative p-5 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 after:border-slate-100 after:translate-y-1/2 after:h-full after:w-full after:absolute after:bottom-[138px] after:left-[138px]">
+          <div className="flex md:w-1/4 flex-col gap-8 relative p-5 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 md:after:border-slate-100 md:after:translate-y-1/2 md:after:h-full md:after:w-full md:after:absolute md:after:bottom-[138px] md:after:left-[138px]">
             <h3 className="text-primaryGreen  w-8 text-center  text-2xl bg-slate-100 self-center p-2 leading-none justify-center rounded-sm z-10">
               3
             </h3>

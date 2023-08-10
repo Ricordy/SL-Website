@@ -28,7 +28,7 @@ const HighlightContent: FC<ContentProps> = ({
   overlap = false,
 }) => {
   return (
-    <section className={cn("w-full", className, overlap ? "-mt-20" : "")}>
+    <section className={cn("w-full", className, overlap ? "md:-mt-20" : "")}>
       <div
         className={`flex gap-16 items-center  ${
           reverse ? "flex-row-reverse ml-52" : "mr-52"
