@@ -56,10 +56,15 @@ export default function FlyoutMenu({ className }) {
   }
   return (
     <section
-      className={cn("flex gap-20 w-full justify-center items-start", className)}
+      className={cn(
+        "flex flex-col md:flex-row mt-16 md:mt-0 md:gap-20 w-full justify-center items-start",
+        className
+      )}
     >
       <div
-        className={cn("flex w-4/5 min-h-[528px] rounded-md bg-cover bg-center")}
+        className={cn(
+          " md:w-4/5 w-full min-h-[528px] md:rounded-md bg-cover bg-center"
+        )}
         style={{ backgroundImage: `url(${images[currentAccordion]})` }}
       >
         {/* <Image
@@ -70,7 +75,7 @@ export default function FlyoutMenu({ className }) {
           alt="Living the dream"
         /> */}
       </div>
-      <div className="flex flex-col pt-[52px] w-full gap-[52px]">
+      <div className="flex flex-col pt-16 md:pt-[52px] w-full gap-8 md:gap-[52px] px-6 md:px-0">
         <div className="flex flex-col">
           <h3 className="uppercase font-light">Living the dream</h3>
           <h3 className="uppercase">Making money from it</h3>

@@ -30,18 +30,18 @@ const HighlightContent: FC<ContentProps> = ({
   return (
     <section className={cn("w-full", className, overlap ? "md:-mt-20" : "")}>
       <div
-        className={`flex gap-16 items-center  ${
-          reverse ? "flex-row-reverse ml-52" : "mr-52"
+        className={`flex relative gap-8 md:gap-16 items-center flex-col md:flex-row  ${
+          reverse ? "md:flex-row-reverse md:ml-52" : "md:mr-52"
         }`}
       >
         <Image
-          className="rounded-md  absolute top-0"
+          className="md:rounded-md  absolute top-0"
           src={image}
           width={644}
           height={528}
           alt=""
         />
-        <div className="flex flex-col w-1/2 gap-8">
+        <div className="flex flex-col w-full md:p-0 px-6 md:w-1/2 gap-8">
           <div className="flex flex-col">
             {title}
             {subtitle}

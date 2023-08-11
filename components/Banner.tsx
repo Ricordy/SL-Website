@@ -36,9 +36,9 @@ const Banner: FC<BannerProps> = ({
     <div className={cn("flex w-full mx-auto flex-col", className)}>
       <section
         className={cn(
-          `flex w-full mx-auto py-24 bg-red-100 relative  bg-cover bg-center bg-no-repeat 
+          `flex w-full mx-auto md:py-24 relative  bg-cover bg-center bg-no-repeat 
            items-center ${image}`,
-          rounded ? "rounded-lg" : "",
+          rounded ? "md:rounded-lg" : "",
           height ? minHeight : "min-h-[408px]"
         )}
       >
@@ -89,7 +89,7 @@ const Banner: FC<BannerProps> = ({
         />
       </section>
       {certificates && (
-        <div className="flex items-center justify-around w-full  mx-auto py-12 bg-slate-50">
+        <div className="flex items-center md:px-0 px-6 justify-around w-full  mx-auto py-12 bg-slate-50">
           <Image
             src="/certificates/certik.png"
             alt="Certik"

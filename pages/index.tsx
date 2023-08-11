@@ -58,7 +58,7 @@ export default function Home(props) {
         <Hero />
         <Partners className="pb-28 md:pb-[202px]" />
       </div>
-      <div className="flex flex-col bg-white gap-[132px]">
+      <div className="flex flex-col bg-white gap-8 md:gap-[132px]">
         <HighlightContent
           overlap={true}
           title={<h3 className="uppercase">Your dream project,</h3>}
@@ -109,11 +109,10 @@ export default function Home(props) {
           title={
             <h3 className=" text-black text-3xl uppercase tracking-widest">
               The <span className="text-primaryGreen">only risk</span> is on the
-            </h3>
-          }
-          subtitle={
-            <h3 className=" text-black text-3xl uppercase tracking-widest">
-              car&apos;s paintwork!
+              <br className="hidden md:block" />{" "}
+              <span className=" text-black text-3xl uppercase tracking-widest">
+                car&apos;s paintwork!
+              </span>
             </h3>
           }
           image="/media/home-3.jpg"
@@ -131,20 +130,20 @@ export default function Home(props) {
           </p>
         </HighlightContent>
       </div>
-      <section className="bg-[url('../public/map.svg')] bg-contain bg-no-repeat bg-center flex justify-center items-center my-[132px] min-h-[587px] w-full gap-24">
+      <section className="bg-[url('../public/map.svg')] bg-cover md:bg-contain bg-no-repeat bg-center flex justify-center items-center my-16 md:my-[132px] md:min-h-[587px] w-full gap-24">
         <div className="flex flex-col mx-auto gap-6 max-w-screen-lg md:flex-row w-full justify-start items-start">
-          <div className="flex flex-col w-2/6 items-start gap-3">
-            <h3 className="text-black text-3xl uppercase">
+          <div className="flex flex-col md:w-2/6 w-full md:items-start items-center gap-3">
+            <h3 className="text-black px-6 text-3xl uppercase text-center md:text-left">
               The classics
-              <br /> market
-              <br />
+              <br className="hidden md:block" /> market{" "}
+              <br className="hidden md:block" />
               <span className="text-primaryGreen">has grown.</span>
             </h3>
             <p className="text-ogBlack">
               And the numbers speak for themselves.
             </p>
           </div>
-          <div className="flex flex-col w-1/6 justify-center items-center gap-3">
+          <div className="flex flex-col w-full md:w-1/6 justify-center items-center gap-3">
             <h3 className="text-black text-4xl">$138M</h3>
             <p className="text-center text-ogBlack">
               Most expensive
@@ -152,7 +151,7 @@ export default function Home(props) {
               car ever sold.
             </p>
           </div>
-          <div className="flex flex-col w-1/6 justify-center items-center gap-3">
+          <div className="flex flex-col w-full md:w-1/6 justify-center items-center gap-3">
             <h3 className="text-black text-4xl">193%</h3>
             <p className="text-ogBlack text-center">
               10 years
@@ -160,7 +159,7 @@ export default function Home(props) {
               growing.
             </p>
           </div>
-          <div className="flex flex-col w-1/6 gap-3 justify-center items-center">
+          <div className="flex flex-col w-full md:w-1/6 gap-3 justify-center items-center">
             <h3 className="text-black text-4xl">31Bi</h3>
             <p className="text-ogBlack text-center">
               amount sold
@@ -168,7 +167,7 @@ export default function Home(props) {
               in 2020.
             </p>
           </div>
-          <div className="flex flex-col w-1/6 gap-3 justify-center items-center">
+          <div className="flex flex-col w-full md:w-1/6 gap-3 justify-center items-center">
             <h3 className="text-black text-4xl">6M</h3>
             <p className="text-ogBlack text-center">
               number of classics
@@ -178,7 +177,7 @@ export default function Home(props) {
           </div>
         </div>
       </section>
-      <section className="flex max-w-screen-lg mx-auto flex-col justify-center items-center gap-8">
+      <section className="flex max-w-screen-lg mx-auto  flex-col justify-center items-center gap-8">
         <h3 className="text-black font-medium text-3xl text-center uppercase">
           How to invest in <span className=" font-thin">something</span>
           <br />
@@ -187,8 +186,8 @@ export default function Home(props) {
         <p className="text-ogBlack">
           It&apos;s easy. In just 4 steps you start earn your profits.
         </p>
-        <div className="flex flex-col md:flex-row gap-3 mt-[52px] flex-1 relative">
-          <div className="flex md:w-1/4 flex-col gap-8 relative p-4 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 md:after:border-slate-100 md:after:translate-y-1/2 md:after:h-full md:after:w-full md:after:absolute md:after:bottom-[138px] md:after:left-[132px]">
+        <div className="flex flex-col md:flex-row gap-3 mt-0 md:mt-[52px] flex-1 relative">
+          <div className="flex md:w-1/4 flex-col gap-8  relative p-4 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 md:after:border-slate-100 md:after:translate-y-1/2 md:after:h-full md:after:w-full md:after:absolute md:after:bottom-[138px] md:after:left-[132px]">
             <h3 className="text-primaryGreen w-8 text-center text-2xl bg-slate-100 self-center p-2 leading-none justify-center rounded-sm z-10">
               1
             </h3>
@@ -207,7 +206,7 @@ export default function Home(props) {
                   Don&apos;t have wallet?
                 </p>
                 <Link href="http://www.metamask.io" target="_blank">
-                  <a className="text-primaryGreen text-center uppercase border-b-2 border-primaryGreen self-center text-xs font-medium tracking-wide">
+                  <a className="text-primaryGreen md:mt-0 mt-6 text-center uppercase border-b-2 border-primaryGreen self-center text-xs font-medium tracking-wide">
                     Create it
                   </a>
                 </Link>
@@ -230,14 +229,14 @@ export default function Home(props) {
                 </p>
 
                 <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
-                  <a className="text-primaryGreen text-center uppercase border-b-2 border-primaryGreen self-center text-xs font-medium tracking-wide">
+                  <a className="text-primaryGreen md:mt-0 mt-6 text-center uppercase border-b-2 border-primaryGreen self-center text-xs font-medium tracking-wide">
                     Buy it
                   </a>
                 </Link>
               </div>
             </div>
           </div>
-          <div className="flex md:w-1/4 flex-col gap-8 relative p-5 py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 md:after:border-slate-100 md:after:translate-y-1/2 md:after:h-full md:after:w-full md:after:absolute md:after:bottom-[138px] md:after:left-[138px]">
+          <div className="flex md:w-1/4 flex-col gap-8 relative p-5 pb-24 md:py-12 rounded-md lg:after:content-[''] lg:after:border-t-2 md:after:border-slate-100 md:after:translate-y-1/2 md:after:h-full md:after:w-full md:after:absolute md:after:bottom-[138px] md:after:left-[138px]">
             <h3 className="text-primaryGreen  w-8 text-center  text-2xl bg-slate-100 self-center p-2 leading-none justify-center rounded-sm z-10">
               3
             </h3>
@@ -251,7 +250,7 @@ export default function Home(props) {
               </p>
             </div>
           </div>
-          <div className="flex md:w-1/4 flex-col gap-8 bg-primaryGreen p-6 py-12 rounded-md">
+          <div className="flex md:w-1/4 flex-col gap-8 bg-primaryGreen p-6 py-12 md:rounded-md">
             <h3 className="text-primaryGreen  w-8 text-center text-2xl bg-slate-100 self-center p-2 leading-none justify-center rounded-sm  z-10">
               4
             </h3>
@@ -275,7 +274,7 @@ export default function Home(props) {
       </section>
       <Banner
         rounded={true}
-        className="my-[132px] max-w-screen-lg"
+        className="md:my-[132px] max-w-screen-lg"
         title={
           <h3 className="uppercase text-white">
             Safe travel,
@@ -292,7 +291,7 @@ export default function Home(props) {
         contentPadding={true}
         certificates={true}
       />
-      <Carousel id="1" className="my-[132px]" items={props.investments} />
+      <Carousel id="1" className="md:my-[132px]" items={props.investments} />
       <FlyoutMenu className={""} />
       <Posts
         posts={posts}
