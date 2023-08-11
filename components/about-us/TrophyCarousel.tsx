@@ -34,12 +34,12 @@ const CarouselItem = ({
   return (
     <div
       className={cn(
-        "flex w-[900px] md:flex-row flex-col p-8 gap-4 rounded-md",
+        "flex md:w-[900px] w-[60vw] md:flex-row flex-col md:p-8 p-3 gap-4 rounded-md",
         actualIndex === selectedIndex ? "bg-[#F6F9F8]" : ""
       )}
     >
-      <div className="flex flex-col items-start w-full md:w-1/2 pt-24">
-        <h3 className="uppercase pb-1 text-primaryGreen">{title}</h3>
+      <div className="flex flex-col md:items-start w-full md:w-1/2 md:pt-24 items-left">
+        <h3 className="uppercase pb-1 text-primaryGreen text-left ">{title}</h3>
         <div className="flex gap-2 p-0 pb-4 leading-none font-light divide-x-2 divide-dreamBlack text-black">
           <div className="">{year}</div>
           <div className="pl-2">
@@ -56,7 +56,9 @@ const CarouselItem = ({
       </div>
       <div
         style={{ backgroundImage: `url(${image})` }}
-        className={cn("flex w-1/2 justify-center rounded-md bg-cover relative")}
+        className={cn(
+          "flex w-1/2 justify-center rounded-md bg-cover relative self-center"
+        )}
       >
         <Image
           className="rounded-lg"
@@ -122,7 +124,7 @@ const TrophyCarousel: FC<CarouselProps> = ({ id, className, items }) => {
   return (
     <section className={cn("mx-auto flex flex-col gap-16 w-full", className)}>
       <div className="flex flex-col items-center w-full relative">
-        <h3 className="uppercase pb-1">Legendary Trophy Room</h3>
+        <h3 className="uppercase pb-1 text-center">Legendary Trophy Room</h3>
         <h4 className="pb-[52px] text-black uppercase">Growing hot wheels</h4>
         <div className="flex overflow-hidden   swiper-wrapper ">
           <Swiper
