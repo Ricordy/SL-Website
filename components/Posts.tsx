@@ -26,7 +26,7 @@ export const PostItem: FC<PostItemProps> = ({
         ></div>
 
         <Link href={`/learn/${slug}`}>
-          <a className="text-primaryGreen pt-2 text-center uppercase border-b-2 text-xs border-b-primaryGreen py-1 self-start">
+          <a className="text-primaryGreen hidden md:block pt-2 text-center uppercase border-b-2 text-xs border-b-primaryGreen py-1 self-start">
             Know more
           </a>
         </Link>
@@ -73,7 +73,7 @@ const Posts: FC<PostProps> = ({
             <Link href={buttonMoreLink}>
               <a
                 className={cn(
-                  "uppercase  border-2 py-1 px-8 font-medium text-sm absolute right-0 rounded-md ",
+                  "uppercase hidden md:block  border-2 py-1 px-8 font-medium text-sm absolute right-0 rounded-md ",
                   buttonMoreTextColor
                     ? buttonMoreTextColor
                     : "text-primaryGreen hover:text-white hover:bg-primaryGreen",
