@@ -28,20 +28,6 @@ const Header = () => {
         <option value="zh-CN">🇨🇳 中文</option>
         <option value="sv">🇸🇪 Swedish</option>
       </select>
-
-      <style jsx>{`
-        a {
-          margin-right: 0.5rem;
-        }
-
-        a.active {
-          color: blue;
-        }
-
-        nav {
-          margin-bottom: 0.5rem;
-        }
-      `}</style>
     </header>
   );
 };
