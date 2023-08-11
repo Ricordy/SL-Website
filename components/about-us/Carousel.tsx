@@ -59,26 +59,31 @@ const CarouselItem = ({
   description,
 }: CarouselItemProps) => {
   return (
-    <div className="flex w-[850px] gap-14 rounded-md">
+    <div className="md:flex w-[850px] gap-14 rounded-md">
       <div
-        className={cn("flex w-1/2 rounded-md bg-cover relative gap-3 ", image)}
+        className={cn(
+          "flex w-1/2 rounded-md bg-cover relative md:flex-row flex-col gap-3 ",
+          image
+        )}
       >
         <Image
           src={image}
-          className="rounded-lg "
+          className="rounded-lg w-fit h-fit "
           width={440}
-          height={394}
+          height={600}
           alt="Gonçalo Severino"
         />
       </div>
-      <div className="flex flex-col justify-start items-start w-1/2 pt-[52px]">
-        <span className="text-tabInactive uppercase">{title}</span>
-        <h3 className="uppercase pb-8">
-          <span className="text-primaryGreen">{name}</span>
+      <div className="md:flex md:flex-col md:justify-start md:items-start w-1/2 pt-[52px]  ">
+        <span className="text-tabInactive uppercase  ">{title}</span>
+        <h3 className="uppercase pb-8   ">
+          <span className="text-primaryGreen ">{name}</span>
           <br />
           {lastName}
         </h3>
-        <p className="text-left">{description}</p>
+        <p className=" w-screen md:w-fit md:text-left text-justify">
+          {description}
+        </p>
       </div>
     </div>
   );
