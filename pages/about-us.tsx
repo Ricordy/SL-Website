@@ -55,7 +55,7 @@ const AboutUs = (props) => {
   ];
   return (
     <div className="">
-      <div className="flex w-full gap-[132px] mx-auto  items-center flex-col max-w-[1210px]">
+      <div className="text-center flex w-full gap-[132px] mx-auto  items-center flex-col max-w-[1210px]">
         <div className="flex flex-col w-full items-center pt-[52px] gap-4">
           <h3 className="font-light text-4xl uppercase">
             A Legendary Oil Change!
@@ -99,15 +99,15 @@ const AboutUs = (props) => {
         <Carousel id="1" />
         <TrophyCarousel id="2" items={props.investments} />
       </div>
-      <div className="flex flex-col w-full gap-[132px] mx-auto  items-center max-w-[1210px]">
-        <section className="flex flex-col justify-end py-[132px] rounded-lg items-center gap-[52px] relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-no-repeat bg-center">
+      <div className="flex flex-col md:w-full gap-[132px] md:mx-auto  md:items-center md:max-w-[1210px] max-w-fit">
+        <section className="flex flex-col justify-end py-[132px] rounded-lg items-center gap-[52px] relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-no-repeat bg-center ">
           <div className="flex flex-col gap-3">
             <h3 className="text-white text-4xl uppercase text-center tracking-widest">
               Our values are like
               <br />
               wedding vows
             </h3>
-            <h5 className="text-white uppercase text-xs font-light">
+            <h5 className="text-white text-center uppercase text-xs font-light">
               They&apos;re made to be unbroken and forever loyal.
             </h5>
           </div>
