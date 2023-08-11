@@ -299,7 +299,7 @@ export default function Home(props) {
         titleCentered={true}
         buttonMoreLink="/learn"
         buttonMoreText="See More"
-        className="py-[132px]"
+        className="md:py-[132px] py-16"
       />
       <Banner
         // className="mb-[72px]"
