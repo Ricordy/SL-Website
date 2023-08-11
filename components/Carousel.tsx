@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useEffect, useRef } from "react";
-import { cn, getCurrentBreakpoint } from "../lib/utils";
+import { cn } from "../lib/utils";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
