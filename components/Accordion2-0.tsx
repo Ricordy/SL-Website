@@ -39,7 +39,7 @@ export default function FlyoutMenu({ className }) {
     const buttonParent = button.parentElement.parentElement; // get the buttons parent (<dt> tag here)
     const parent = buttonParent.parentElement; // get the buttons parent parent (Disclosure as div here)
     const index = Array.prototype.indexOf.call(parent.children, buttonParent); // find the index of the button in container
-    console.log("index", index);
+    // console.log("index", index);
     for (let i = 0; i < AccordionRefs.current.length; i++) {
       // loop throug
       if (
