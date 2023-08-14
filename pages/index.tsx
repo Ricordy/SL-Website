@@ -56,8 +56,9 @@ export default function Home(props) {
     <>
       <div className="flex flex-col bg-dreamBlack gap-28 md:gap-[132px]">
         <Hero />
-        <Partners className="pb-28 md:pb-[202px]" />
       </div>
+      <Partners className="pb-20 md:pb-[202px]" posts={posts} />
+
       <div className="flex flex-col bg-white gap-8 md:gap-[132px]">
         <HighlightContent
           overlap={true}
@@ -293,15 +294,16 @@ export default function Home(props) {
       />
       <Carousel id="1" className="md:my-[132px]" items={props.investments} />
       <FlyoutMenu className={""} />
-      <Posts
+      {/* <Posts
         posts={posts}
         title="Learn more"
         titleCentered={true}
         buttonMoreLink="/learn"
         buttonMoreText="See More"
         className="md:py-[132px] py-16"
-      />
+      /> */}
       <Banner
+        className="hidden md:block"
         // className="mb-[72px]"
         title={
           <h3 className="text-white uppercase">
