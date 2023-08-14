@@ -1,7 +1,7 @@
 module.exports = {
   i18n: {
     defaultLocale: "en-US",
-    locales: ["en-US", "pt-PT", "fr", "de"]
+    locales: ["en-US", "pt-PT", "fr", "de"],
   },
-  react: { useSuspense: false }, // i18n vercel deploy error
+  reloadOnPrerender: process.env.NODE_ENV === 'development'
 };
