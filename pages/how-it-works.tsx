@@ -12,6 +12,8 @@ import Carousel from "../components/how-it-works/Carousel";
 import { classNames } from "../lib/utils";
 import { HygraphPostProps, PostItemProps } from "../@types/post";
 import Navbar from "../components/Navbar";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
 const HowItWorks = () => {
   const posts: HygraphPostProps[] = [
@@ -146,7 +148,7 @@ const HowItWorks = () => {
 
   return (
     <>
-      <section className="w-full mx-auto min-h-screen gap-[132px]  flex flex-col justify-start items-center bg-[url('/headers/how-it-works.jpg')] bg-contain bg-top bg-no-repeat">
+      <section className="w-full mx-auto min-h-screen gap-[132px]  flex flex-col justify-start items-center bg-[url('/headers/how-it-works.jpg')] md:bg-contain bg-cover bg-top bg-no-repeat">
         <Navbar />
         <div className="flex flex-col  w-full relative items-center">
           <div className="flex flex-col z-10 md:w-1/2 w-full gap-4">
@@ -163,7 +165,7 @@ const HowItWorks = () => {
           </div>
         </div>
         <section className="relative z-20 max-w-[1210px] mx-auto">
-          <div className="bg-white  rounded-md p-[52px] shadow-md">
+          <div className="bg-white  rounded-md p-[52px] shadow-md md:block hidden">
             <Tab.Group>
               <Tab.List className="flex">
                 {Object.keys(categories).map((category) => (
@@ -212,7 +214,6 @@ const HowItWorks = () => {
                           href="#"
                           className={classNames(
                             "absolute inset-0 rounded-md",
-                            "ring-blue-400 focus:z-10 focus:outline-none focus:ring-2"
                           )}
                         /> */}
                         </li>
@@ -223,13 +224,84 @@ const HowItWorks = () => {
               </Tab.Panels>
             </Tab.Group>
           </div>
+          <div className="bg-white  rounded-md p-[52px] shadow-md md:hidden block max-w-[414px] w-screen">
+            <Swiper
+              modules={[Navigation, Pagination, A11y]}
+              className="swiper"
+              spaceBetween={30}
+              slidesPerView={1}
+              // pagination={{ clickable: true }}
+              // navigation={true}
+              pagination={{
+                clickable: true,
+                el: `.swiper-pagination-${4}`,
+              }}
+              navigation={{
+                nextEl: `.swiper-next-${4}`,
+                prevEl: `.swiper-prev-${4}`,
+              }}
+              updateOnWindowResize
+              observer
+              observeParents
+              initialSlide={0}
+              // loop={true}
+            >
+              {Object.keys(categories).map((category) => (
+                <div
+                  key={category}
+                  className={
+                    "w-full py-4  tracking-wide  text-2xl  leading-5 text-black bg-white font-medium ring-transparent border-b-4 border-black"
+                  }
+                >
+                  {category}
+                </div>
+              ))}
+              {Object.values(categories).map((posts, idx) => (
+                <div
+                  key={idx}
+                  className={classNames(
+                    " bg-white p-1",
+                    "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
+                  )}
+                >
+                  <ul>
+                    {posts.map((post) => (
+                      <li key={post.id} className="relative rounded-md p-3">
+                        <section className="flex gap-24 w-full mt-[52px]">
+                          <div className="flex flex-col gap-8 w-1/3 max-w-md items-start justify-center">
+                            <h3 className="uppercase">{post.title}</h3>
+                            {post.content}
+                          </div>
+                          <Image
+                            alt={post.title}
+                            src={post.image}
+                            width={592}
+                            height={394}
+                          />
+                        </section>
+
+                        {/* <a
+                          href="#"
+                          className={classNames(
+                            "absolute inset-0 rounded-md",
+                          )}
+                        /> */}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </Swiper>
+          </div>
         </section>
         <div className="bg-black/70 w-full absolute h-[816px] z-0" />
       </section>
 
       <section className="w-full max-w-[1210px] pt-24 mx-auto flex flex-col items-center gap-6">
         <div className="flex flex-col items-center gap-4  pb-8">
-          <h3 className="text-black text-4xl uppercase">Know our process</h3>
+          <h3 className="text-black text-4xl uppercase md:text-start text-center">
+            Know our process
+          </h3>
           <p className="text-black">
             The most important rules manual to achieve the dream.
           </p>
@@ -240,8 +312,11 @@ const HowItWorks = () => {
           </div>
         </section>
       </section>
-      <section className="py-[52px] w-full max-w-[1210px] mx-auto">
-        <Carousel id="1" />
+      <section className="py-[52px] w-screen max-w-[420px] mx-auto md:hidden block ">
+        <Carousel id="1" slidesPerView={1} spaceBetween={30} />
+      </section>
+      <section className="py-[52px] w-full max-w-[1210px] mx-auto hidden md:block">
+        <Carousel id="1" slidesPerView={3} spaceBetween={100} />
       </section>
       <section className="flex flex-col">
         <h3 className="text-center py-12 text-4xl uppercase">
@@ -250,7 +325,7 @@ const HowItWorks = () => {
         <div className="flex flex-col gap-24">
           <HighlightContent
             title={
-              <h3 className="uppercase font-medium">
+              <h3 className="uppercase font-medium text-center md:text-start">
                 <span className="text-primaryGreen">Daydreaming</span> with
                 <br />
                 the process <span className="text-primaryGreen">24/7</span>.
@@ -258,7 +333,7 @@ const HowItWorks = () => {
             }
             image="/media/home-1.jpg"
           >
-            <p className="text-ogBlack">
+            <p className="text-ogBlack md:text-center text-start md:w-full w-screen ">
               Have you considered the possibility of monitoring the project in
               real time? We know it didn&apos;t, because until today it
               hadn&apos;t been done yet! Something offers you the possibility to
@@ -267,25 +342,49 @@ const HowItWorks = () => {
               each step taken.
             </p>
           </HighlightContent>
-          <HighlightContent
-            title={
-              <h3 className=" text-black text-3xl uppercase tracking-widest">
-                A <span className="text-primaryGreen">legendary community</span>
-                <br />
-                is waiting for you.
-              </h3>
-            }
-            image="/media/home-2.jpg"
-            reverse={true}
-          >
-            <p className="text-ogBlack">
-              If you thought you were alone in this world, we introduce you to
-              thousands of people interested in the world of classics whose
-              vision of the process is similar to yours. The passion for the
-              classics has never been so close and we are open to any enthusiast
-              whose opinion deserves to be shared.
-            </p>
-          </HighlightContent>
+          <div className=" hidden md:block">
+            <HighlightContent
+              title={
+                <h3 className=" text-black text-3xl uppercase tracking-widest">
+                  A{" "}
+                  <span className="text-primaryGreen">legendary community</span>
+                  <br />
+                  is waiting for you.
+                </h3>
+              }
+              image="/media/home-2.jpg"
+              reverse={true}
+            >
+              <p className="text-ogBlack  ">
+                If you thought you were alone in this world, we introduce you to
+                thousands of people interested in the world of classics whose
+                vision of the process is similar to yours. The passion for the
+                classics has never been so close and we are open to any
+                enthusiast whose opinion deserves to be shared.
+              </p>
+            </HighlightContent>
+          </div>
+          <div className=" md:hidden block">
+            <HighlightContent
+              title={
+                <h3 className=" text-black text-3xl uppercase tracking-widest">
+                  A{" "}
+                  <span className="text-primaryGreen">legendary community</span>
+                  <br />
+                  is waiting for you.
+                </h3>
+              }
+              image="/media/home-2.jpg"
+            >
+              <p className="text-ogBlack">
+                If you thought you were alone in this world, we introduce you to
+                thousands of people interested in the world of classics whose
+                vision of the process is similar to yours. The passion for the
+                classics has never been so close and we are open to any
+                enthusiast whose opinion deserves to be shared.
+              </p>
+            </HighlightContent>
+          </div>
           <HighlightContent
             title={
               <h3 className="text-3xl uppercase tracking-widest">

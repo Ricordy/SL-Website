@@ -34,6 +34,8 @@ const CarouselItem = ({ title, icon, description }: CarouselItemProps) => {
 interface CarouselProps {
   id: string;
   className?: string;
+  slidesPerView: number;
+  spaceBetween: number;
 }
 
 const items = [
@@ -75,7 +77,12 @@ const items = [
   },
 ];
 
-const Carousel: FC<CarouselProps> = ({ id, className }) => {
+const Carousel: FC<CarouselProps> = ({
+  id,
+  className,
+  slidesPerView,
+  spaceBetween,
+}) => {
   return (
     <section
       className={cn("mx-auto flex flex-col gap-12 w-full max-w-7xl", className)}
@@ -85,8 +92,8 @@ const Carousel: FC<CarouselProps> = ({ id, className }) => {
           <Swiper
             modules={[Navigation, Pagination, A11y]}
             className="swiper"
-            spaceBetween={100}
-            slidesPerView={3}
+            spaceBetween={spaceBetween}
+            slidesPerView={slidesPerView}
             // pagination={{ clickable: true }}
             // navigation={true}
             pagination={{
