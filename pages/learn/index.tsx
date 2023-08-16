@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import Image from "next/image";
 
+
 interface HygraphPostProps {
   id: Number;
   slug: string;

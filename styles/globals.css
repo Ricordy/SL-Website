@@ -23,6 +23,15 @@ footer .content {
 .hideMenuNav {
   display: none;
 }
+
+.slick-dots li button {
+       background-color: #2a2a2a !important;
+       
+}
+.slick-dots li.slick-active button{
+       background-color: #000000 !important;
+}
+
 .showMenuNav {
   @apply bg-slate-900;
   display: block;

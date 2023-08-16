@@ -14,6 +14,7 @@ import { HygraphPostProps, PostItemProps } from "../@types/post";
 import Navbar from "../components/Navbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Carousel as Slider } from "antd";
 
 const HowItWorks = () => {
   const posts: HygraphPostProps[] = [
@@ -224,74 +225,39 @@ const HowItWorks = () => {
               </Tab.Panels>
             </Tab.Group>
           </div>
-          <div className="bg-white  rounded-md p-[52px] shadow-md md:hidden block max-w-[414px] w-screen">
-            <Swiper
-              modules={[Navigation, Pagination, A11y]}
-              className="swiper"
-              spaceBetween={30}
-              slidesPerView={1}
-              // pagination={{ clickable: true }}
-              // navigation={true}
-              pagination={{
-                clickable: true,
-                el: `.swiper-pagination-${4}`,
-              }}
-              navigation={{
-                nextEl: `.swiper-next-${4}`,
-                prevEl: `.swiper-prev-${4}`,
-              }}
-              updateOnWindowResize
-              observer
-              observeParents
-              initialSlide={0}
-              // loop={true}
-            >
-              {Object.keys(categories).map((category) => (
-                <div
-                  key={category}
-                  className={
-                    "w-full py-4  tracking-wide  text-2xl  leading-5 text-black bg-white font-medium ring-transparent border-b-4 border-black"
-                  }
-                >
-                  {category}
-                </div>
-              ))}
-              {Object.values(categories).map((posts, idx) => (
-                <div
-                  key={idx}
-                  className={classNames(
-                    " bg-white p-1",
-                    "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
-                  )}
-                >
-                  <ul>
-                    {posts.map((post) => (
-                      <li key={post.id} className="relative rounded-md p-3">
-                        <section className="flex gap-24 w-full mt-[52px]">
-                          <div className="flex flex-col gap-8 w-1/3 max-w-md items-start justify-center">
-                            <h3 className="uppercase">{post.title}</h3>
-                            {post.content}
-                          </div>
-                          <Image
-                            alt={post.title}
-                            src={post.image}
-                            width={592}
-                            height={394}
-                          />
-                        </section>
 
-                        {/* <a
+          <div className="bg-white  rounded-md md:p-[52px] shadow-md md:hidden block max-w-[414px] w-screen">
+            <Slider className="pb-6">
+              {Object.values(categories).map((posts, idx) => (
+                <div>
+                  {posts.map((post) => (
+                    <div key={post.id} className="relative rounded-md p-3 ">
+                      <section className="flex flex-col-reverse gap-24 w-full mt-[52px] ">
+                        <div className="flex flex-col gap-8  max-w-md items-start justify-center">
+                          <h3 className="uppercase">
+                            {`0${idx + 1}.`} {post.title}
+                          </h3>
+                          {post.content}
+                        </div>
+                        <Image
+                          alt={post.title}
+                          src={post.image}
+                          width={592}
+                          height={394}
+                        />
+                      </section>
+
+                      {/* <a
                           href="#"
                           className={classNames(
                             "absolute inset-0 rounded-md",
                           )}
                         /> */}
-                      </li>
-                    ))}
-                  </ul>
+                    </div>
+                  ))}
                 </div>
               ))}
-            </Swiper>
+            </Slider>
           </div>
         </section>
         <div className="bg-black/70 w-full absolute h-[816px] z-0" />
