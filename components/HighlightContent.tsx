@@ -31,7 +31,7 @@ const HighlightContent: FC<ContentProps> = ({
     <section className={cn("w-full", className, overlap ? "md:-mt-20" : "")}>
       <div
         className={`flex flex-col md:flex-row gap-16 items-center  w-full  ${
-          reverse ? "md:flex-row-reverse ml-52" : "mr-52"
+          reverse ? "md:flex-row-reverse right-0 " : "mr-52"
         }`}
       >
         <div className=" md:block hidden">
