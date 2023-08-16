@@ -211,6 +211,7 @@ So relax and press the pedal."
                             (post, idx) =>
                               post.length > 0 && (
                                 <section
+                                  key={idx}
                                   className={
                                     "mx-auto flex flex-col gap-16 w-full overflow-hidden  "
                                   }

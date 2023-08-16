@@ -22,8 +22,8 @@ function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="w-full pt-[72px] bg-black flex flex-col">
-      <div className="mx-auto max-w-screen-lg w-full items-start flex flex-col md:flex-row justify-between border-b border-white pb-24">
+    <footer className="w-full py-8 md:pt-[72px] bg-black flex flex-col mb-1">
+      <div className="mx-auto md:px-0 px-6 max-w-screen-lg w-full items-start flex flex-col md:flex-row justify-between border-b md:border-white pb-6 gap-6 md:gap-0">
         <div className="flex text-sm flex-col font-normal justify-center items-start gap-2">
           <Image src={LogoWhite} alt="Something Legendary Logo" />
           <div className="flex gap-2 mt-11">
@@ -37,7 +37,7 @@ function Footer() {
             <span className="">+381 9999-9999</span>
           </div> */}
         </div>
-        <div className="flex flex-col gap-2 font-light">
+        <div className="flex flex-col gap-2 w-full font-light">
           <h3 className="text-base font-semibold uppercase text-white">
             {t("How it works")}
           </h3>
@@ -48,7 +48,7 @@ function Footer() {
             <a className="">{t("How it works")}</a>
           </Link>
         </div>
-        <div className="flex flex-col gap-2 font-light">
+        <div className="flex flex-col gap-2 w-full font-light">
           <h3 className="text-base font-semibold text-white uppercase">
             {t("Learn")}
           </h3>
@@ -57,14 +57,14 @@ function Footer() {
           <Link href="/help/how-to-invest">How to invest?</Link>
           <Link href="/help/news">News</Link>
         </div>
-        <div className="flex flex-col gap-8 text-base uppercase font-semibold">
+        <div className="flex flex-col gap-8 text-base w-full uppercase font-semibold">
           <h3 className="text-base font-semibold text-white">
             {t("About Us")}
           </h3>
           <Link href="/whitepaper">{t("Whitepaper")}</Link>
           {/* <Link href="/security">{t("Security")}</Link> */}
         </div>
-        <div className="flex flex-col gap-2 font-light">
+        <div className="flex flex-col gap-2 w-full font-light">
           <h3 className="text-base font-semibold uppercase text-white">
             {t("Newsletter")}
           </h3>
@@ -78,7 +78,7 @@ function Footer() {
               className="p-2 mb-4 text-xs rounded-md"
             />
             <Button
-              className="self-end border-white hover:text-black text-white hover:bg-white"
+              className="self-end w-full border-white hover:text-black text-white hover:bg-white"
               variant="outline"
             >
               Subscribe

@@ -210,7 +210,7 @@ export async function getStaticProps({ locale }) {
       }
     `
   );
-  console.log("investments", investments);
+  // console.log("investments", investments);
 
   return {
     props: {

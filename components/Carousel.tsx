@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useEffect, useRef } from "react";
@@ -8,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import { useBreakpoint } from "~/hooks/useBreakpoints";
 // import "swiper/css/navigation";
 
 interface CarouselItemProps {
@@ -65,12 +68,12 @@ interface CarouselProps {
 }
 
 const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
-  console.log("items", items);
+  const { isAboveMd } = useBreakpoint("md");
 
   return (
-    <section className={cn("flex flex-col gap-8 ml-[209px]", className)}>
-      <div className="flex gap-12">
-        <div className="flex flex-col pt-[72px] gap-8 w-2/6">
+    <section className={cn("flex flex-col gap-8 md:ml-[209px]", className)}>
+      <div className="flex md:flex-row flex-col gap-12">
+        <div className="flex flex-col py-6 md:pt-[72px] gap-8 w-full md:px-0 px-6 md:w-2/6">
           <h3 className="uppercase font-light">
             Our <span className="font-medium">ongoing</span> projects
           </h3>
@@ -90,7 +93,7 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
             modules={[Navigation, Pagination, A11y]}
             className="swiper"
             spaceBetween={30}
-            slidesPerView={2}
+            slidesPerView={isAboveMd ? 2 : 1}
             // pagination={{ clickable: true }}
             // navigation={true}
             pagination={{

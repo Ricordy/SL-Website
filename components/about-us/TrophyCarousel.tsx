@@ -119,7 +119,7 @@ const items = [
 
 const TrophyCarousel: FC<CarouselProps> = ({ id, className, items }) => {
   const [currentSwiper, setcurrentSwiper] = useState(0);
-  console.log(items);
+  // console.log(items);
 
   return (
     <section className={cn("mx-auto flex flex-col gap-16 w-full", className)}>
