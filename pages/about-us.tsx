@@ -90,7 +90,7 @@ const AboutUs = (props) => {
         <Carousel id="1" />
         <TrophyCarousel id="3" items={props.investments} />
       </div>
-      <div className="flex flex-col md:w-full md:gap-[132px] md:mx-auto  md:items-center md:max-w-[1210px] max-w-fit">
+      <div className="flex flex-col md:w-full md:gap-[132px] md:mx-auto  md:items-center md:max-w-[1210px]">
         <section className="flex flex-col justify-end py-12 md:py-[132px] md:rounded-lg items-center gap-[52px] relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-no-repeat bg-center ">
           <div className="flex flex-col gap-3">
             <h3 className="text-white text-4xl uppercase text-center tracking-widest">
@@ -103,14 +103,14 @@ const AboutUs = (props) => {
             </h5>
           </div>
           <div className="flex md:flex-row flex-col gap-6 justify-around px-16">
-            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 p-8 px-10 items-center">
+            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 p-8 items-center">
               <h3 className="text-2xl uppercase">Transparency</h3>
               <p className="text-center">
                 We walk side by side with our investors and share the dream in
                 real time so that every detail of the process counts!
               </p>
             </div>
-            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 p-8 px-10 items-center">
+            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 p-8 items-center">
               <h3 className="text-2xl uppercase">Commitment</h3>
               <p className="text-center">
                 100% safe investment, we value our community above everything
@@ -118,7 +118,7 @@ const AboutUs = (props) => {
                 our project.
               </p>
             </div>
-            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 p-8 px-10 items-center">
+            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 p-8 items-center">
               <h3 className="text-2xl uppercase">Quality</h3>
               <p className="text-center">
                 We only work with the best partners, whether they are workshop

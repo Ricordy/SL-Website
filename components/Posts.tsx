@@ -22,7 +22,7 @@ export const PostItem: FC<PostItemProps> = ({
   });
 
   return (
-    <div className="flex flex-col gap-8 md:w-full w-max relative">
+    <div className="flex flex-col gap-8 w-80 md:w-full relative">
       <Image
         src={image}
         alt={title}
@@ -30,7 +30,7 @@ export const PostItem: FC<PostItemProps> = ({
         height={264}
         className="w-full"
       />
-      <div className="flex flex-col gap-2 md:px-0 w-max">
+      <div className="flex flex-col w-full gap-2">
         <h3 className="text-2xl text-black text-center">{title}</h3>
         <div
           className="text-white"
@@ -129,14 +129,15 @@ const Posts: FC<PostProps> = ({
               modules={[Navigation, Pagination, A11y]}
               className="swiper w-full"
               spaceBetween={30}
-              slidesPerView={1}
+              slidesPerView="auto"
+              centeredSlides={true}
               pagination={{
                 clickable: true,
-                el: `.swiper-pagination-2`,
+                el: `.swiper-pagination-4`,
               }}
               navigation={{
-                nextEl: `.swiper-next-2`,
-                prevEl: `.swiper-prev-2`,
+                nextEl: `.swiper-next-4`,
+                prevEl: `.swiper-prev-4`,
               }}
               updateOnWindowResize
               observer
@@ -160,7 +161,7 @@ const Posts: FC<PostProps> = ({
           </div>
         </div>
         <div className="flex gap-6 justify-center items-center mx-auto">
-          <div className={`flex relative swiper-prev-2`}>
+          <div className={`flex relative swiper-prev-4`}>
             <Image
               src="/icons/pagination-prev.svg"
               width={20}
@@ -171,7 +172,7 @@ const Posts: FC<PostProps> = ({
           <div
             className={`flex justify-center items-center gap-1 text-black swiper-pagination-2`}
           />
-          <div className={`flex relative swiper-next-2`}>
+          <div className={`flex relative swiper-next-4`}>
             <Image
               src="/icons/pagination-next.svg"
               width={20}
