@@ -88,10 +88,10 @@ const AboutUs = (props) => {
       </div>
       <div className="flex flex-col gap-12 md:gap-[132px] md:py-[132px]">
         <Carousel id="1" />
-        <TrophyCarousel id="2" items={props.investments} />
+        <TrophyCarousel id="3" items={props.investments} />
       </div>
-      <div className="flex flex-col md:w-full gap-[132px] md:mx-auto  md:items-center md:max-w-[1210px] max-w-fit">
-        <section className="flex flex-col justify-end py-[132px] rounded-lg items-center gap-[52px] relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-no-repeat bg-center ">
+      <div className="flex flex-col md:w-full md:gap-[132px] md:mx-auto  md:items-center md:max-w-[1210px] max-w-fit">
+        <section className="flex flex-col justify-end py-12 md:py-[132px] md:rounded-lg items-center gap-[52px] relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-no-repeat bg-center ">
           <div className="flex flex-col gap-3">
             <h3 className="text-white text-4xl uppercase text-center tracking-widest">
               Our values are like

@@ -34,7 +34,7 @@ const CarouselItem = ({
   return (
     <div
       className={cn(
-        "flex md:w-[900px] w-[60vw] md:flex-row flex-col md:p-8 p-3 gap-4 rounded-md",
+        "flex md:w-[900px] w-[80vw] md:flex-row flex-col md:p-8 p-3 gap-4 rounded-md",
         actualIndex === selectedIndex ? "bg-[#F6F9F8]" : ""
       )}
     >
@@ -122,11 +122,15 @@ const TrophyCarousel: FC<CarouselProps> = ({ id, className, items }) => {
   // console.log(items);
 
   return (
-    <section className={cn("mx-auto flex flex-col gap-16 w-full", className)}>
+    <section
+      className={cn("mx-auto flex flex-col pb-12 md:gap-16 w-full", className)}
+    >
       <div className="flex flex-col items-center w-full relative">
         <h3 className="uppercase pb-1 text-center">Legendary Trophy Room</h3>
-        <h4 className="pb-[52px] text-black uppercase">Growing hot wheels</h4>
-        <div className="flex overflow-hidden   swiper-wrapper ">
+        <h4 className="pb-12 md:pb-[52px] text-black uppercase">
+          Growing hot wheels
+        </h4>
+        <div className="flex  swiper-wrapper ">
           <Swiper
             modules={[Navigation, Pagination, A11y]}
             className="swiper"
@@ -166,7 +170,7 @@ const TrophyCarousel: FC<CarouselProps> = ({ id, className, items }) => {
           </Swiper>
         </div>
       </div>
-      <div className="flex gap-6 justify-center items-center  w-1/5 mx-auto">
+      <div className="flex gap-6 justify-center items-center  md:w-1/5 mx-auto">
         <div className={`flex relative cursor-pointer swiper-prev-${id}`}>
           <Image
             src="/icons/pagination-prev.svg"
