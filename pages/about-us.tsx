@@ -55,7 +55,7 @@ const AboutUs = (props) => {
   ];
   return (
     <div className="">
-      <div className="text-center flex w-full gap-[132px] mx-auto  items-center flex-col max-w-[1210px]">
+      <div className="text-center flex w-full gap-12 md:gap-[132px] mx-auto  items-center flex-col max-w-[1210px]">
         <div className="flex flex-col w-full items-center pt-[52px] gap-4">
           <h3 className="font-light text-4xl uppercase">
             A Legendary Oil Change!
@@ -63,16 +63,11 @@ const AboutUs = (props) => {
           <h5 className="uppercase text-2xl font-medium">
             Know what&apos;s under the hood
           </h5>
-          {/* <section className="flex w-full rounded-lg relative justify-center bg-[url('/headers/about.jpg')] bg-cover bg-right bg-no-repeat min-h-[530px]">
-            <div className="absolute z-10 self-center">
-              <Image alt="Play" src={Play} />
-            </div>
-          </section> */}
         </div>
 
-        <section className="flex gap-24 w-full flex-col md:flex-row">
+        <section className="flex gap-12  md:gap-24 w-full flex-col md:flex-row">
           <Image alt="How we became something" src={How} />
-          <div className="flex flex-col  w-screen self-center text-center gap-8  max-w-md items-start justify-center">
+          <div className="flex flex-col px-6 md:px-0 w-screen self-center text-center gap-8  max-w-md items-start justify-center">
             <h3 className="uppercase">How we became something.</h3>
             <p className="text-justify">
               The real deal was like, João invested in classic cars on a
@@ -89,13 +84,9 @@ const AboutUs = (props) => {
             </p>
           </div>
         </section>
-        <Partners
-          title="ENTITIES THAT TRUST US"
-          bg="bg-white"
-          titleColor="text-primaryGrey"
-        />
+        <Partners title="ENTITIES THAT TRUST US" theme="white" />
       </div>
-      <div className="flex flex-col gap-[132px] py-[132px]">
+      <div className="flex flex-col gap-12 md:gap-[132px] md:py-[132px]">
         <Carousel id="1" />
         <TrophyCarousel id="2" items={props.investments} />
       </div>

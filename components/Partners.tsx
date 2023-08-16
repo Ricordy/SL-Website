@@ -10,8 +10,7 @@ import { useBreakpoint } from "~/hooks/useBreakpoints";
 
 const Partners = ({
   title = "Partners who dream with us.",
-  titleColor = "text-white",
-  bg = "bg-dreamBlack",
+  theme = "black",
   className,
   posts,
 }: PartnerProps) => {
@@ -21,12 +20,19 @@ const Partners = ({
   return (
     <section
       className={cn(
-        `w-full flex relative flex-col items-center gap-16 md:gap-8 justify-start ${bg}`,
+        `w-full flex relative flex-col items-center gap-16 md:gap-8 justify-start`,
+        theme == "black" ? "bg-dreamBlack" : "bg-white",
         className
       )}
     >
-      <div className="flex flex-col md:pb-[72px] gap-6 items-center relative justify-between">
-        <h3 id="partners-heading" className={`text-xl uppercase ${titleColor}`}>
+      <div className="flex flex-col pb-12 md:pb-[72px]  gap-6 items-center relative justify-between">
+        <h3
+          id="partners-heading"
+          className={cn(
+            "text-xl md:text-2xl uppercase px-2 md:px-0",
+            theme == "black" ? "text-white" : "text-primaryGrey"
+          )}
+        >
           {title}
         </h3>
         <div className="flex flex-col max-w-md w-full md:hidden gap-8">
@@ -35,8 +41,8 @@ const Partners = ({
               <Swiper
                 modules={[Navigation, Pagination, A11y]}
                 className="swiper max-w-sm"
-                spaceBetween={20}
-                slidesPerView={1}
+                spaceBetween={50}
+                slidesPerView="auto"
                 // watchOverflow={true}
                 centeredSlides={true}
                 pagination={{
@@ -54,7 +60,12 @@ const Partners = ({
                 // loop={true}
               >
                 <SwiperSlide className="w-full">
-                  <div className="h-[300px] w-[300px] bg-dreamBlack">
+                  <div
+                    className={cn(
+                      "h-[200px] w-[200px]",
+                      theme == "black" ? "bg-dreamBlack" : "bg-white"
+                    )}
+                  >
                     <Image
                       src="/brand/bosch.svg"
                       alt="Bosch"
@@ -67,7 +78,12 @@ const Partners = ({
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="w-full">
-                  <div className="h-[300px] w-[300px] bg-dreamBlack">
+                  <div
+                    className={cn(
+                      "h-[200px] w-[200px]",
+                      theme == "black" ? "bg-dreamBlack" : "bg-white"
+                    )}
+                  >
                     <Image
                       src="/brand/kodak.svg"
                       alt="Kodak"
@@ -79,7 +95,12 @@ const Partners = ({
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="w-full">
-                  <div className="h-[300px] w-[300px] bg-dreamBlack">
+                  <div
+                    className={cn(
+                      "h-[200px] w-[200px]",
+                      theme == "black" ? "bg-dreamBlack" : "bg-white"
+                    )}
+                  >
                     <Image
                       src="/brand/porsche.svg"
                       alt="Porshce"
@@ -91,7 +112,12 @@ const Partners = ({
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="w-full">
-                  <div className="h-[300px] w-[300px] bg-dreamBlack">
+                  <div
+                    className={cn(
+                      "h-[200px] w-[200px]",
+                      theme == "black" ? "bg-dreamBlack" : "bg-white"
+                    )}
+                  >
                     <Image
                       src="/brand/stihl.svg"
                       alt="Stihl"
@@ -102,9 +128,13 @@ const Partners = ({
                     />
                   </div>
                 </SwiperSlide>
-
                 <SwiperSlide className="w-full">
-                  <div className="h-[300px] w-[300px] bg-dreamBlack">
+                  <div
+                    className={cn(
+                      "h-[200px] w-[200px]",
+                      theme == "black" ? "bg-dreamBlack" : "bg-white"
+                    )}
+                  >
                     <Image
                       src="/brand/wolkswagen.svg"
                       alt="Wolkswagen"
@@ -116,7 +146,12 @@ const Partners = ({
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="w-full">
-                  <div className="h-[300px] w-[300px] bg-dreamBlack">
+                  <div
+                    className={cn(
+                      "h-[200px] w-[200px]",
+                      theme == "black" ? "bg-dreamBlack" : "bg-white"
+                    )}
+                  >
                     <Image
                       src="/brand/zeizz.svg"
                       alt="Zeizz"
@@ -141,11 +176,11 @@ const Partners = ({
               >
                 <path
                   d="M1.45446 8.48242L20.8408 8.48242L20.8408 6.66702L1.45446 6.66702L1.45446 8.48242Z"
-                  fill="white"
+                  fill={theme == "black" ? "white" : "black"}
                 />
                 <path
                   d="M5.92514 0.149999L6.84082 1.47524L1.97963 7.575L6.84082 13.6748L5.92514 15L0.000136324 7.575L5.92514 0.149999Z"
-                  fill="white"
+                  fill={theme == "black" ? "white" : "black"}
                 />
               </svg>
             </div>
@@ -162,11 +197,11 @@ const Partners = ({
               >
                 <path
                   d="M19.3864 6.51758L0 6.51758L-5.09513e-07 8.33298L19.3864 8.33298L19.3864 6.51758Z"
-                  fill="white"
+                  fill={theme == "black" ? "white" : "black"}
                 />
                 <path
                   d="M14.9157 14.85L14 13.5248L18.8612 7.425L14 1.32524L14.9157 1.37549e-07L20.8407 7.425L14.9157 14.85Z"
-                  fill="white"
+                  fill={theme == "black" ? "white" : "black"}
                 />
               </svg>
             </div>

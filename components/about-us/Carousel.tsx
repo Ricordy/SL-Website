@@ -8,14 +8,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import { NOMEM } from "dns";
 // import "swiper/css/navigation";
 
 interface CarouselItemProps {
   title: string;
   image: string;
-  status?: string;
-  completion?: string;
   name?: string;
   lastName?: string;
   description?: string;
@@ -52,17 +49,15 @@ However, it's my love for investing in and restoring classic cars that lead me t
 const CarouselItem = ({
   title,
   image,
-  status,
-  completion,
   name,
   lastName,
   description,
 }: CarouselItemProps) => {
   return (
-    <div className="md:flex w-[850px] gap-14 rounded-md">
+    <div className="flex md:flex-row w-full flex-col md:w-[850px] md:gap-12 md:rounded-md">
       <div
         className={cn(
-          "flex w-1/2 rounded-md bg-cover relative md:flex-row flex-col gap-3 ",
+          "flex w-[400px] md:w-1/2 items-center justify-center rounded-md bg-cover relative md:flex-row flex-col gap-3 ",
           image
         )}
       >
@@ -74,16 +69,14 @@ const CarouselItem = ({
           alt="Gonçalo Severino"
         />
       </div>
-      <div className="md:flex md:flex-col md:justify-start md:items-start w-1/2 pt-[52px]  ">
-        <span className="text-tabInactive uppercase  ">{title}</span>
-        <h3 className="uppercase pb-8   ">
+      <div className="flex flex-col md:justify-start w-full md:items-start md:w-1/2 pt-[52px] px-6 md:px-0 ">
+        <div className="text-tabInactive flex uppercase">{title}</div>
+        <h3 className="uppercase pb-8 flex w-full gap-1 justify-start ">
           <span className="text-primaryGreen ">{name}</span>
           <br />
-          {lastName}
+          <span>{lastName}</span>
         </h3>
-        <p className=" w-screen md:w-fit md:text-left text-justify">
-          {description}
-        </p>
+        <p className="w-full flex md:text-left text-justify">{description}</p>
       </div>
     </div>
   );
@@ -103,12 +96,12 @@ const Carousel: FC<CarouselProps> = ({ id, className }) => {
       )}
     >
       <div className="flex gap-12">
-        <div className="flex overflow-hidden swiper-wrapper ">
+        <div className="flex w-full swiper-wrapper ">
           <Swiper
             modules={[Navigation, Pagination, A11y]}
-            className="swiper"
+            className="swiper w-full"
             spaceBetween={30}
-            slidesPerView={"auto"}
+            slidesPerView="auto"
             centeredSlides={true}
             pagination={{
               clickable: true,
@@ -125,7 +118,7 @@ const Carousel: FC<CarouselProps> = ({ id, className }) => {
             // loop={true}
           >
             {chiefsInfo.map((item, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className="w-[400px]">
                 <CarouselItem
                   title={item.title}
                   image={item.image}
