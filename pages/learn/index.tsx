@@ -143,7 +143,7 @@ const Learn = (props: PostsProps) => {
     <div className="flex flex-col">
       <section className="flex w-full gap-8 mx-auto  items-center flex-col ">
         <Banner
-          className="max-w-screen-lg mt-[52px]"
+          className="max-w-screen-lg mt-[52px] hidden md:block"
           title="
             Ready for a Classic Investment?"
           titleClassName="text-white"
