@@ -82,30 +82,60 @@ export default function Home(props) {
             </span>
           </p>
         </HighlightContent>
-        <HighlightContent
-          title={
-            <h3 className=" text-black text-3xl uppercase tracking-widest">
-              The <span className="text-primaryGreen">only digital</span>
-            </h3>
-          }
-          subtitle={
-            <h3 className="text-black text-3xl uppercase tracking-widest">
-              <span className="text-primaryGreen">workshop</span> in the world!
-            </h3>
-          }
-          image="/media/home-2.jpg"
-          buttonLink="/how-it-works"
-          buttonLabel="How it works"
-          reverse={true}
-        >
-          <p className="text-ogBlack">
-            Imagine following the entire process of restoring the classic of
-            your dreams live from the workshop where all the magic happens!
-            Restoring a classic car is a labor of love that requires skill,
-            patience, and dedication and we want you to{" "}
-            <span className="font-medium">feel it at your place</span>.
-          </p>
-        </HighlightContent>
+        <div className=" hidden md:block">
+          <HighlightContent
+            title={
+              <h3 className=" text-black text-3xl uppercase tracking-widest">
+                The <span className="text-primaryGreen">only digital</span>
+              </h3>
+            }
+            subtitle={
+              <h3 className="text-black text-3xl uppercase tracking-widest">
+                <span className="text-primaryGreen">workshop</span> in the
+                world!
+              </h3>
+            }
+            image="/media/home-2.jpg"
+            buttonLink="/how-it-works"
+            buttonLabel="How it works"
+            reverse={true}
+          >
+            <p className="text-ogBlack">
+              Imagine following the entire process of restoring the classic of
+              your dreams live from the workshop where all the magic happens!
+              Restoring a classic car is a labor of love that requires skill,
+              patience, and dedication and we want you to{" "}
+              <span className="font-medium">feel it at your place</span>.
+            </p>
+          </HighlightContent>
+        </div>
+        <div className=" block md:hidden">
+          <HighlightContent
+            title={
+              <h3 className=" text-black text-3xl uppercase tracking-widest">
+                The <span className="text-primaryGreen">only digital</span>
+              </h3>
+            }
+            subtitle={
+              <h3 className="text-black text-3xl uppercase tracking-widest">
+                <span className="text-primaryGreen">workshop</span> in the
+                world!
+              </h3>
+            }
+            image="/media/home-2.jpg"
+            buttonLink="/how-it-works"
+            buttonLabel="How it works"
+          >
+            <p className="text-ogBlack">
+              Imagine following the entire process of restoring the classic of
+              your dreams live from the workshop where all the magic happens!
+              Restoring a classic car is a labor of love that requires skill,
+              patience, and dedication and we want you to{" "}
+              <span className="font-medium">feel it at your place</span>.
+            </p>
+          </HighlightContent>
+        </div>
+
         <HighlightContent
           title={
             <h3 className=" text-black text-3xl uppercase tracking-widest">
