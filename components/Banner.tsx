@@ -36,9 +36,9 @@ const Banner: FC<BannerProps> = ({
     <div className={cn("flex w-full mx-auto flex-col", className)}>
       <section
         className={cn(
-          `flex w-full mx-auto md:py-24 relative  bg-cover bg-center bg-no-repeat 
+          `flex w-full mx-auto md:py-24 relative -mt-1 md:mt-0 bg-cover bg-center bg-no-repeat 
            items-center ${image}`,
-          rounded ? "md:rounded-lg" : "",
+          rounded ? (certificates ? "md:rounded-t-lg" : "md:rounded-lg") : "",
           height ? minHeight : "min-h-[408px]"
         )}
       >
@@ -84,7 +84,7 @@ const Banner: FC<BannerProps> = ({
         <div
           className={cn(
             "bg-gradient-to-r from-black/90  to-transparent w-full absolute h-full z-1",
-            rounded ? "rounded-lg" : ""
+            rounded ? "md:rounded-lg" : ""
           )}
         />
       </section>
