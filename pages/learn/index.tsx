@@ -9,7 +9,9 @@ import { GraphQLClient, gql } from "graphql-request";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import Image from "next/image";
-
+import { Select } from "antd";
+import Slider from "~/components/about-us/Slider";
+import { Carousel as Slider2 } from "antd";
 
 interface HygraphPostProps {
   id: Number;
@@ -126,6 +128,12 @@ const Learn = (props: PostsProps) => {
   //   },
   // ];
 
+  const [currentMobilePosts, setcurrentMobilePosts] = useState("All Content");
+  const handleChange = (value: string) => {
+    setcurrentMobilePosts(value);
+    console.log(`selected ${value}`);
+  };
+
   let posts = props.posts;
 
   let [categories] = useState({
@@ -159,7 +167,7 @@ So relax and press the pedal."
         />
       </section>
       <section className="relative flex w-full max-w-screen-lg mx-auto">
-        <div className="rounded-md pt-8 pb-24">
+        <div className="rounded-md pt-8 pb-24 hidden md:block">
           <Tab.Group>
             <Tab.List className="flex p-1 bg-contactBackground mx-12 rounded-full">
               {Object.keys(categories).map((category) => (
@@ -304,6 +312,75 @@ So relax and press the pedal."
               )}
             </Tab.Panels>
           </Tab.Group>
+        </div>
+        <div className="w-full block md:hidden">
+          <Select
+            defaultValue="All Content"
+            style={{ width: 120 }}
+            onChange={handleChange}
+            options={[
+              { value: "All Content", label: "All Content" },
+              { value: "For Beginners", label: "For Beginners" },
+              { value: "Investment", label: "Investment" },
+              { value: "Cars", label: "Cars" },
+              { value: "News", label: "News" },
+            ]}
+          />
+          <h3 className="p-4">{currentMobilePosts}</h3>
+          <div className="w-full  ">
+            {(currentMobilePosts !== "All Content" && (
+              <div className=" mx-10 ">
+                <Slider2>
+                  {categories[currentMobilePosts].map((post, idx) => (
+                    <div key={idx} className="">
+                      <PostItem
+                        image={post.image.url}
+                        title={post.basic.title}
+                        slug={post.slug}
+                        key={idx}
+                      >
+                        {post.shortDescription.html}
+                      </PostItem>
+                    </div>
+                  ))}
+                </Slider2>
+              </div>
+            )) || (
+              <section className="text-black flex flex-col mt-[96px] gap-[96px]  ">
+                {Object.values(categories).map(
+                  (post, idx) =>
+                    post.length > 0 && (
+                      <section
+                        key={idx}
+                        className={
+                          " flex flex-col gap-16 w-full overflow-hidden items-center  "
+                        }
+                      >
+                        <h3
+                          className={`text-black flex-1 font-medium  text-3xl uppercase  `}
+                        >
+                          {Object.keys(categories).at(idx)}
+                        </h3>
+                        <div key={idx} className=" w-full  ">
+                          <Slider2>
+                            {post.map((posti, idx) => (
+                              <PostItem
+                                image={posti.image.url}
+                                title={posti.basic.title}
+                                slug={posti.slug}
+                                key={idx}
+                              >
+                                {posti.shortDescription.html}
+                              </PostItem>
+                            ))}
+                          </Slider2>
+                        </div>
+                      </section>
+                    )
+                )}
+              </section>
+            )}
+          </div>
         </div>
       </section>
     </div>
