@@ -16,7 +16,7 @@ interface CarouselItemProps {
   description: string;
 }
 
-const CarouselItem = ({ title, icon, description }: CarouselItemProps) => {
+export const CarouselItem = ({ title, icon, description }: CarouselItemProps) => {
   return (
     <div className="flex flex-col w-full">
       <div className="flex flex-col justify-center items-center gap-3 w-[350px]">
@@ -38,7 +38,7 @@ interface CarouselProps {
   spaceBetween: number;
 }
 
-const items = [
+export const items = [
   {
     title: "Disassembly",
     icon: "/icons/disassembly.svg",

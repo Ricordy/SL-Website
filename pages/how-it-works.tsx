@@ -8,13 +8,18 @@ import Link from "next/link";
 import HighlightContent from "../components/HighlightContent";
 import Posts from "../components/Posts";
 import Banner from "../components/Banner";
-import Carousel from "../components/how-it-works/Carousel";
+import Carousel, {
+  CarouselItem,
+  items,
+} from "../components/how-it-works/Carousel";
 import { classNames } from "../lib/utils";
 import { HygraphPostProps, PostItemProps } from "../@types/post";
 import Navbar from "../components/Navbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Carousel as Slider } from "antd";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 
 const HowItWorks = () => {
   const posts: HygraphPostProps[] = [
@@ -278,8 +283,53 @@ const HowItWorks = () => {
           </div>
         </section>
       </section>
-      <section className="py-[52px] w-screen max-w-[420px] mx-auto md:hidden block ">
-        <Carousel id="1" slidesPerView={1} spaceBetween={30} />
+      <section className="py-[52px]  mx-auto md:hidden block self-center text-black text-center">
+        {/* <Carousel id="1" slidesPerView={1} spaceBetween={30} /> */}
+        <Splide
+          options={{
+            rewind: true,
+            width: "100%",
+            height: "600px",
+            fixedHeight: "200px",
+
+            gap: "1rem",
+            perPage: 4,
+            breakpoints: {
+              640: {
+                perPage: 2,
+                gap: ".7rem",
+                height: "6rem",
+              },
+              480: {
+                perPage: 1,
+                gap: ".7rem",
+                height: "6rem",
+              },
+            },
+          }}
+        >
+          {items.map((item, index) => (
+            <SplideSlide
+              key={index}
+              className="flex items-center justify-center"
+            >
+              <CarouselItem
+                title={item.title}
+                icon={item.icon}
+                description={item.description}
+              />
+            </SplideSlide>
+          ))}
+        </Splide>
+        {/* <Slider className="pb-6">
+          {items.map((item, index) => (
+            <CarouselItem
+              title={item.title}
+              icon={item.icon}
+              description={item.description}
+            />
+          ))}
+        </Slider> */}
       </section>
       <section className="py-[52px] w-full max-w-[1210px] mx-auto hidden md:block">
         <Carousel id="1" slidesPerView={3} spaceBetween={100} />
@@ -385,15 +435,17 @@ const HowItWorks = () => {
         buttonMoreBorderColor="border-black"
         buttonMoreBgColor="hover:bg-black"
       />
-      <Banner
-        title="
+      <div className=" hidden md:block">
+        <Banner
+          title="
             Feel like you’re
 already part of it?"
-        subtitle="So don't waste any more time and start living the classics experience now."
-        linkLabel="Go to app"
-        linkUrl="https://beta.somethinglegendary.io"
-        image="bg-[url('/banners/ready-for-a-classic-investment.jpg')]"
-      />
+          subtitle="So don't waste any more time and start living the classics experience now."
+          linkLabel="Go to app"
+          linkUrl="https://beta.somethinglegendary.io"
+          image="bg-[url('/banners/ready-for-a-classic-investment.jpg')]"
+        />
+      </div>
     </>
   );
 };
