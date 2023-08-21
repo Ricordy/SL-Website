@@ -5,6 +5,10 @@ import { cn } from "../lib/utils";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Navigation, Pagination } from "swiper";
 import { useBreakpoint } from "~/hooks/useBreakpoints";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 // or only core styles
 // import "@splidejs/react-splide/css/core";
 
@@ -37,32 +41,33 @@ const Partners = ({
         </h3>
         <div className="flex flex-col max-w-md w-full md:hidden gap-8">
           <div className="flex md:flex-row flex-col gap-12">
-            <div className="flex swiper-wrapper ">
+            <div className="flex w-full swiper-wrapper ">
               <Swiper
                 modules={[Navigation, Pagination, A11y]}
-                className="swiper max-w-sm"
-                spaceBetween={50}
+                className="swiper w-full"
+                spaceBetween={30}
                 slidesPerView="auto"
                 // watchOverflow={true}
                 centeredSlides={true}
                 pagination={{
                   clickable: true,
-                  el: `.swiper-pagination-2`,
+                  el: `.swiper-pagination-20`,
                 }}
                 navigation={{
-                  nextEl: `.swiper-next-2`,
-                  prevEl: `.swiper-prev-2`,
+                  enabled: true,
+                  nextEl: `.swiper-next-20`,
+                  prevEl: `.swiper-prev-20`,
                 }}
-                // updateOnWindowResize
+                updateOnWindowResize
                 observer
                 observeParents
                 initialSlide={0}
                 // loop={true}
               >
-                <SwiperSlide className="w-full">
+                <SwiperSlide className="w-[400px]">
                   <div
                     className={cn(
-                      "h-[200px] w-[200px]",
+                      "flex  h-[200px] w-[200px]",
                       theme == "black" ? "bg-dreamBlack" : "bg-white"
                     )}
                   >
@@ -165,8 +170,8 @@ const Partners = ({
               </Swiper>
             </div>
           </div>
-          <div className="flex gap-6 justify-center items-center mx-auto">
-            <div className={`flex relative swiper-prev-2`}>
+          <div className="flex gap-6 justify-center items-center  md:w-1/5 mx-auto">
+            <div className={`relative flex cursor-pointer swiper-prev-20`}>
               <svg
                 width="21"
                 height="15"
@@ -185,9 +190,9 @@ const Partners = ({
               </svg>
             </div>
             <div
-              className={`flex justify-center items-center gap-1 text-white swiper-pagination-2`}
+              className={`flex justify-center items-center gap-1 text-black swiper-pagination-20`}
             />
-            <div className={`flex relative swiper-next-2`}>
+            <div className={`flex relative cursor-pointer swiper-next-20`}>
               <svg
                 width="21"
                 height="15"

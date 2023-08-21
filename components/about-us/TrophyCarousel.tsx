@@ -78,45 +78,6 @@ interface CarouselProps {
   items?: any;
 }
 
-const items = [
-  {
-    title: "Maserati 3500 GT",
-    image: "/projects/car-1.jpg",
-    price: 350000,
-    year: 1968,
-    profit: 20,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ",
-  },
-  {
-    title: "Chevrolet 200",
-    image: "/projects/car-2.jpg",
-    price: 350000,
-    year: 1968,
-    profit: 20,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ",
-  },
-  {
-    title: "Chevrolet 300",
-    image: "/projects/car-2.jpg",
-    price: 350000,
-    year: 1968,
-    profit: 20,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ",
-  },
-  {
-    title: "Chevrolet 300",
-    image: "/projects/car-2.jpg",
-    price: 350000,
-    year: 1968,
-    profit: 20,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ",
-  },
-];
-
 const TrophyCarousel: FC<CarouselProps> = ({ id, className, items }) => {
   const [currentSwiper, setcurrentSwiper] = useState(0);
   // console.log(items);
