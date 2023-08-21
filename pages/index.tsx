@@ -289,7 +289,7 @@ export default function Home(props) {
               Withdraw investment
             </h3>
             <div className="flex flex-col gap-6 self-start flex-1 justify-between">
-              <p className="text-white">
+              <p className="text-white text-center">
                 Expect the expected! Get a sense of the time margin versus the
                 expected profit margin
               </p>
