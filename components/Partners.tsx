@@ -29,7 +29,7 @@ const Partners = ({
         className
       )}
     >
-      <div className="flex flex-col pb-12 md:pb-[72px]  gap-6 items-center relative justify-between">
+      <div className="flex w-full flex-col pb-12 md:pb-[72px]  gap-6 items-center relative justify-between">
         <h3
           id="partners-heading"
           className={cn(
@@ -39,136 +39,134 @@ const Partners = ({
         >
           {title}
         </h3>
-        <div className="flex flex-col max-w-md w-full md:hidden gap-8">
-          <div className="flex md:flex-row flex-col gap-12">
-            <div className="flex w-full swiper-wrapper ">
-              <Swiper
-                modules={[Navigation, Pagination, A11y]}
-                className="swiper w-full"
-                spaceBetween={30}
-                slidesPerView="auto"
-                // watchOverflow={true}
-                centeredSlides={true}
-                pagination={{
-                  clickable: true,
-                  el: `.swiper-pagination-20`,
-                }}
-                navigation={{
-                  enabled: true,
-                  nextEl: `.swiper-next-20`,
-                  prevEl: `.swiper-prev-20`,
-                }}
-                updateOnWindowResize
-                observer
-                observeParents
-                initialSlide={0}
-                // loop={true}
-              >
-                <SwiperSlide className="w-[400px]">
-                  <div
-                    className={cn(
-                      "flex  h-[200px] w-[200px]",
-                      theme == "black" ? "bg-dreamBlack" : "bg-white"
-                    )}
-                  >
-                    <Image
-                      src="/brand/bosch.svg"
-                      alt="Bosch"
-                      // width={149}
-                      // height={36}
-                      className="w-[149px]"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="w-full">
-                  <div
-                    className={cn(
-                      "h-[200px] w-[200px]",
-                      theme == "black" ? "bg-dreamBlack" : "bg-white"
-                    )}
-                  >
-                    <Image
-                      src="/brand/kodak.svg"
-                      alt="Kodak"
-                      layout="fill"
-                      objectFit="contain"
-                      // width={64}
-                      // height={76}
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="w-full">
-                  <div
-                    className={cn(
-                      "h-[200px] w-[200px]",
-                      theme == "black" ? "bg-dreamBlack" : "bg-white"
-                    )}
-                  >
-                    <Image
-                      src="/brand/porsche.svg"
-                      alt="Porshce"
-                      // width={149}
-                      // height={36}
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="w-full">
-                  <div
-                    className={cn(
-                      "h-[200px] w-[200px]",
-                      theme == "black" ? "bg-dreamBlack" : "bg-white"
-                    )}
-                  >
-                    <Image
-                      src="/brand/stihl.svg"
-                      alt="Stihl"
-                      // width={149}
-                      // height={36}
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="w-full">
-                  <div
-                    className={cn(
-                      "h-[200px] w-[200px]",
-                      theme == "black" ? "bg-dreamBlack" : "bg-white"
-                    )}
-                  >
-                    <Image
-                      src="/brand/wolkswagen.svg"
-                      alt="Wolkswagen"
-                      // width={60}
-                      // height={60}
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="w-full">
-                  <div
-                    className={cn(
-                      "h-[200px] w-[200px]",
-                      theme == "black" ? "bg-dreamBlack" : "bg-white"
-                    )}
-                  >
-                    <Image
-                      src="/brand/zeizz.svg"
-                      alt="Zeizz"
-                      // width={60}
-                      // height={60}
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                </SwiperSlide>
-              </Swiper>
-            </div>
+        <div className="flex flex-col  w-full md:hidden gap-8">
+          <div className="flex w-full swiper-wrapper ">
+            <Swiper
+              modules={[Navigation, Pagination, A11y]}
+              className="swiper w-full"
+              spaceBetween={30}
+              slidesPerView="auto"
+              // watchOverflow={true}
+              centeredSlides={true}
+              pagination={{
+                clickable: true,
+                el: `.swiper-pagination-20`,
+              }}
+              navigation={{
+                enabled: true,
+                nextEl: `.swiper-next-20`,
+                prevEl: `.swiper-prev-20`,
+              }}
+              updateOnWindowResize
+              observer
+              observeParents
+              initialSlide={0}
+              // loop={true}
+            >
+              <SwiperSlide className="w-[400px]">
+                <div
+                  className={cn(
+                    "flex  h-[200px] w-[200px]",
+                    theme == "black" ? "bg-dreamBlack" : "bg-white"
+                  )}
+                >
+                  <Image
+                    src="/brand/bosch.svg"
+                    alt="Bosch"
+                    // width={149}
+                    // height={36}
+                    className="w-[149px]"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="w-full">
+                <div
+                  className={cn(
+                    "h-[200px] w-[200px]",
+                    theme == "black" ? "bg-dreamBlack" : "bg-white"
+                  )}
+                >
+                  <Image
+                    src="/brand/kodak.svg"
+                    alt="Kodak"
+                    layout="fill"
+                    objectFit="contain"
+                    // width={64}
+                    // height={76}
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="w-full">
+                <div
+                  className={cn(
+                    "h-[200px] w-[200px]",
+                    theme == "black" ? "bg-dreamBlack" : "bg-white"
+                  )}
+                >
+                  <Image
+                    src="/brand/porsche.svg"
+                    alt="Porshce"
+                    // width={149}
+                    // height={36}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="w-full">
+                <div
+                  className={cn(
+                    "h-[200px] w-[200px]",
+                    theme == "black" ? "bg-dreamBlack" : "bg-white"
+                  )}
+                >
+                  <Image
+                    src="/brand/stihl.svg"
+                    alt="Stihl"
+                    // width={149}
+                    // height={36}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="w-full">
+                <div
+                  className={cn(
+                    "h-[200px] w-[200px]",
+                    theme == "black" ? "bg-dreamBlack" : "bg-white"
+                  )}
+                >
+                  <Image
+                    src="/brand/wolkswagen.svg"
+                    alt="Wolkswagen"
+                    // width={60}
+                    // height={60}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="w-full">
+                <div
+                  className={cn(
+                    "h-[200px] w-[200px]",
+                    theme == "black" ? "bg-dreamBlack" : "bg-white"
+                  )}
+                >
+                  <Image
+                    src="/brand/zeizz.svg"
+                    alt="Zeizz"
+                    // width={60}
+                    // height={60}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
           <div className="flex gap-6 justify-center items-center  md:w-1/5 mx-auto">
             <div className={`relative flex cursor-pointer swiper-prev-20`}>
