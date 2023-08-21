@@ -314,25 +314,56 @@ So relax and press the pedal."
           </Tab.Group>
         </div>
         <div className="w-full block md:hidden">
-          <Select
-            defaultValue="All Content"
-            style={{ width: 120 }}
-            onChange={handleChange}
-            options={[
-              { value: "All Content", label: "All Content" },
-              { value: "For Beginners", label: "For Beginners" },
-              { value: "Investment", label: "Investment" },
-              { value: "Cars", label: "Cars" },
-              { value: "News", label: "News" },
-            ]}
-          />
+          <h3
+            className={`text-black flex-1 font-extrabold  text-3xl uppercase  `}
+          >
+            <Select
+              defaultValue="All Content"
+              className=" text-3xl"
+              style={{ width: "100%" }}
+              bordered={false}
+              onChange={handleChange}
+              dropdownStyle={{ background: "#000000", color: "#FFFFFF" }}
+              options={[
+                {
+                  value: "All Content",
+                  label: "All Content",
+                },
+                { value: "For Beginners", label: "For Beginners" },
+                { value: "Investment", label: "Investment" },
+                { value: "Cars", label: "Cars" },
+                { value: "News", label: "News" },
+              ]}
+            />
+          </h3>
+
           <h3 className="p-4">{currentMobilePosts}</h3>
           <div className="w-full  ">
             {(currentMobilePosts !== "All Content" && (
               <div className=" mx-10 ">
-                <Slider2>
+                <Swiper
+                  modules={[Navigation, Pagination, A11y]}
+                  className="swiper"
+                  spaceBetween={20}
+                  slidesPerView={1}
+                  // pagination={{ clickable: true }}
+                  // navigation={true}
+                  pagination={{
+                    clickable: true,
+                    el: `.swiper-pagination-${11}`,
+                  }}
+                  navigation={{
+                    nextEl: `.swiper-next-${11}`,
+                    prevEl: `.swiper-prev-${11}`,
+                  }}
+                  updateOnWindowResize
+                  observer
+                  observeParents
+                  initialSlide={0}
+                  // loop={true}
+                >
                   {categories[currentMobilePosts].map((post, idx) => (
-                    <div key={idx} className="">
+                    <SwiperSlide key={idx} className="">
                       <PostItem
                         image={post.image.url}
                         title={post.basic.title}
@@ -341,9 +372,9 @@ So relax and press the pedal."
                       >
                         {post.shortDescription.html}
                       </PostItem>
-                    </div>
+                    </SwiperSlide>
                   ))}
-                </Slider2>
+                </Swiper>
               </div>
             )) || (
               <section className="text-black flex flex-col mt-[96px] gap-[96px]  ">
@@ -362,18 +393,40 @@ So relax and press the pedal."
                           {Object.keys(categories).at(idx)}
                         </h3>
                         <div key={idx} className=" w-full  ">
-                          <Slider2>
+                          <Swiper
+                            modules={[Navigation, Pagination, A11y]}
+                            className="swiper"
+                            spaceBetween={20}
+                            slidesPerView={1}
+                            // pagination={{ clickable: true }}
+                            // navigation={true}
+                            pagination={{
+                              clickable: true,
+                              el: `.swiper-pagination-${10}`,
+                            }}
+                            navigation={{
+                              nextEl: `.swiper-next-${10}`,
+                              prevEl: `.swiper-prev-${10}`,
+                            }}
+                            updateOnWindowResize
+                            observer
+                            observeParents
+                            initialSlide={0}
+                            // loop={true}
+                          >
                             {post.map((posti, idx) => (
-                              <PostItem
-                                image={posti.image.url}
-                                title={posti.basic.title}
-                                slug={posti.slug}
-                                key={idx}
-                              >
-                                {posti.shortDescription.html}
-                              </PostItem>
+                              <SwiperSlide key={idx} className="">
+                                <PostItem
+                                  image={posti.image.url}
+                                  title={posti.basic.title}
+                                  slug={posti.slug}
+                                  key={idx}
+                                >
+                                  {posti.shortDescription.html}
+                                </PostItem>
+                              </SwiperSlide>
                             ))}
-                          </Slider2>
+                          </Swiper>
                         </div>
                       </section>
                     )
