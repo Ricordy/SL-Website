@@ -326,7 +326,9 @@ So relax and press the pedal."
                 onChange={(e) => handleChange(e.target.value)}
               >
                 {Object.keys(categories).map((category) => (
-                  <option value={category}> {category}</option>
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
                 ))}
               </select>
             </div>

@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import "../styles/swiper.css";
-import { appWithTranslation } from "next-i18next";
 import Layout from "../components/Layout";
 import { AppProps } from "next/app";
 
@@ -14,4 +13,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default appWithTranslation(MyApp);
+export default MyApp;

@@ -397,15 +397,15 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, [
-        "common",
-        "home",
-        "hero",
-        "how-it-works",
-        "roadmap",
-        "newsletter",
-        "about-us",
-      ])),
+      // ...(await serverSideTranslations(locale, [
+      //   "common",
+      //   "home",
+      //   "hero",
+      //   "how-it-works",
+      //   "roadmap",
+      //   "newsletter",
+      //   "about-us",
+      // ])),
       investments,
       // Will be passed to the page component as props
     },
