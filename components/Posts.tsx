@@ -22,7 +22,7 @@ export const PostItem: FC<PostItemProps> = ({
   });
 
   return (
-    <div className="flex flex-col gap-8 w-80 md:w-full relative">
+    <div className="flex flex-col gap-8 w-80 md:w-full relative ">
       <Image
         src={image}
         alt={title}
