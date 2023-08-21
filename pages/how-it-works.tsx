@@ -284,52 +284,7 @@ const HowItWorks = () => {
         </section>
       </section>
       <section className="py-[52px]  mx-auto md:hidden block self-center text-black text-center">
-        {/* <Carousel id="1" slidesPerView={1} spaceBetween={30} /> */}
-        <Splide
-          options={{
-            rewind: true,
-            width: "100%",
-            height: "600px",
-            fixedHeight: "200px",
-
-            gap: "1rem",
-            perPage: 4,
-            breakpoints: {
-              640: {
-                perPage: 2,
-                gap: ".7rem",
-                height: "6rem",
-              },
-              480: {
-                perPage: 1,
-                gap: ".7rem",
-                height: "6rem",
-              },
-            },
-          }}
-        >
-          {items.map((item, index) => (
-            <SplideSlide
-              key={index}
-              className="flex items-center justify-center"
-            >
-              <CarouselItem
-                title={item.title}
-                icon={item.icon}
-                description={item.description}
-              />
-            </SplideSlide>
-          ))}
-        </Splide>
-        {/* <Slider className="pb-6">
-          {items.map((item, index) => (
-            <CarouselItem
-              title={item.title}
-              icon={item.icon}
-              description={item.description}
-            />
-          ))}
-        </Slider> */}
+        <Carousel id="1" slidesPerView={1} spaceBetween={0} />
       </section>
       <section className="py-[52px] w-full max-w-[1210px] mx-auto hidden md:block">
         <Carousel id="1" slidesPerView={3} spaceBetween={100} />
