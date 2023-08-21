@@ -188,7 +188,10 @@ const Partners = ({
               </svg>
             </div>
             <div
-              className={`flex justify-center items-center gap-1 text-black swiper-pagination-20`}
+              className={cn(
+                "flex justify-center items-center gap-1  swiper-pagination-20",
+                theme == "black" ? "text-white" : "text-black"
+              )}
             />
             <div className={`flex relative cursor-pointer swiper-next-20`}>
               <svg

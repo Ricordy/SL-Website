@@ -17,7 +17,10 @@ const Contact: FC<ContactProps> = ({ title = "Contact Us", className }) => {
 
   return (
     <section
-      className={cn("w-full flex py-24 bg-contactBackground", className)}
+      className={cn(
+        "w-full flex py-24 lg:px-0 px-6 bg-contactBackground",
+        className
+      )}
     >
       <div className="max-w-screen-lg  mx-auto w-full flex md:flex-row flex-col gap-12">
         <div className="flex w-3/5 flex-col gap-6">

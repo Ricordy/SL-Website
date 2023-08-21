@@ -44,7 +44,7 @@ const Banner: FC<BannerProps> = ({
       >
         <div className="flex w-full relative z-10 max-w-screen-lg mx-auto justify-start">
           <div
-            className={`flex  flex-col md:px-0 px-6 py-8 md:py-0 justify-around w-full gap-12 ${
+            className={`flex  flex-col lg:px-0 px-6 py-8 md:py-0 justify-around w-full gap-12 ${
               contentPadding ? "pl-20" : ""
             }`}
           >
@@ -60,6 +60,7 @@ const Banner: FC<BannerProps> = ({
               ) : (
                 title
               )}
+
               {subtitle && typeof subtitle == "string" ? (
                 <p
                   className={
