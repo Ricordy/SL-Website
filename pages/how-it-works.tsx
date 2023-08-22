@@ -234,7 +234,7 @@ const HowItWorks = () => {
           <div className="bg-white  rounded-md md:p-[52px] shadow-md md:hidden block max-w-[414px] w-screen">
             <Slider className="pb-6">
               {Object.values(categories).map((posts, idx) => (
-                <div>
+                <div key={idx}>
                   {posts.map((post) => (
                     <div key={post.id} className="relative rounded-md p-3 ">
                       <section className="flex flex-col-reverse gap-24 w-full mt-[52px] ">

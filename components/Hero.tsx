@@ -8,7 +8,7 @@ function Hero(props) {
   const { t } = useTranslation("hero");
 
   return (
-    <section className="bg-black bg-[url('../public/hero-home.jpg')] bg-cover md:bg-contain bg-no-repeat md:bg-top bg-right w-full relative flex flex-col min-h-screen items-center justify-between">
+    <section className="bg-black bg-[url('../public/hero-home.jpg')] bg-cover bg-no-repeat md:bg-top bg-right w-full relative flex flex-col min-h-screen items-center justify-between">
       <Navbar className="lg:mb-[132px]" />
       <div className="flex w-full px-6 xl:px-0 z-10 max-w-screen-lg flex-col gap-[52px] justify-between h-full ">
         <p className="text-2xl md:text-4xl w-full md:w-2/3 md:leading-[48px] pt-3 md:pt-[52px] uppercase font-light tracking-[4px] text-white">
