@@ -151,6 +151,132 @@ const Learn = (props: PostsProps) => {
 
   const [currentSwiper, setcurrentSwiper] = useState(0);
 
+  const MySlider = (props: any) => {
+    const { isMultiple } = props;
+
+    return (
+      <div>
+        {(isMultiple &&
+          Object.values(categories).map(
+            (post, idx) =>
+              post.length > 0 &&
+              Object.keys(categories).at(idx) !== "All Content" && (
+                <section
+                  key={idx}
+                  className={
+                    " flex flex-col gap-16 w-full overflow-hidden items-center  "
+                  }
+                >
+                  <h3
+                    className={`text-black flex-1 font-medium  text-3xl uppercase  `}
+                  >
+                    {Object.keys(categories).at(idx)}
+                  </h3>
+                  <div className="flex flex-col gap-4">
+                    <div key={idx} className=" w-full  ">
+                      <Swiper
+                        modules={[Navigation, Pagination, A11y]}
+                        className="swiper w-full"
+                        spaceBetween={30}
+                        slidesPerView="auto"
+                        centeredSlides={true}
+                        // pagination={{ clickable: true }}
+                        // navigation={true}
+                        pagination={{
+                          clickable: true,
+                          el: `.swiper-pagination-${10 + idx}`,
+                        }}
+                        navigation={{
+                          nextEl: `.swiper-next-${10 + idx}`,
+                          prevEl: `.swiper-prev-${10 + idx}`,
+                        }}
+                        updateOnWindowResize
+                        observer
+                        observeParents
+                        initialSlide={0}
+                        // loop={true}
+                      >
+                        {post.map((posti, idx) => (
+                          <SwiperSlide key={idx} className="">
+                            <PostItem
+                              image={posti.image.url}
+                              title={posti.basic.title}
+                              slug={posti.slug}
+                              key={idx}
+                            >
+                              {posti.shortDescription.html}
+                            </PostItem>
+                          </SwiperSlide>
+                        ))}
+                      </Swiper>
+                    </div>
+                    <div className="flex gap-6 justify-center items-center mx-auto">
+                      <div className={`flex relative swiper-prev-${10 + idx}`}>
+                        <Image
+                          src="/icons/pagination-prev.svg"
+                          width={20}
+                          height={15}
+                          alt="Previous"
+                        />
+                      </div>
+                      <div
+                        className={`flex justify-center items-center gap-1 text-black swiper-pagination-${
+                          10 + idx
+                        }`}
+                      />
+                      <div className={`flex relative swiper-next-${10 + idx}`}>
+                        <Image
+                          src="/icons/pagination-next.svg"
+                          width={20}
+                          height={15}
+                          alt="Next"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              )
+          )) || (
+          <Swiper
+            modules={[Navigation, Pagination, A11y]}
+            className="swiper  w-full"
+            spaceBetween={30}
+            slidesPerView="auto"
+            // pagination={{ clickable: true }}
+            // navigation={true}
+            centeredSlides={true}
+            pagination={{
+              clickable: true,
+              el: `.swiper-pagination-11`,
+            }}
+            navigation={{
+              nextEl: `.swiper-next-11`,
+              prevEl: `.swiper-prev-11`,
+            }}
+            updateOnWindowResize
+            observer
+            observeParents
+            initialSlide={0}
+            // loop={true}
+          >
+            {categories[currentMobilePosts].map((post, idx) => (
+              <SwiperSlide key={idx} className="w-full ">
+                <PostItem
+                  image={post.image.url}
+                  title={post.basic.title}
+                  slug={post.slug}
+                  key={idx}
+                >
+                  {post.shortDescription.html}
+                </PostItem>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div className="flex flex-col">
       <section className="flex w-full gap-8 mx-auto  items-center flex-col ">
@@ -333,159 +459,7 @@ So relax and press the pedal."
           </h3>
 
           <div className="w-full p-6 ">
-            {(currentMobilePosts !== "All Content" && (
-              <div>
-                <div className="  flex   swiper-wrapper  ">
-                  <Swiper
-                    modules={[Navigation, Pagination, A11y]}
-                    className="swiper  w-full"
-                    spaceBetween={30}
-                    slidesPerView="auto"
-                    // pagination={{ clickable: true }}
-                    // navigation={true}
-                    centeredSlides={true}
-                    pagination={{
-                      clickable: true,
-                      el: `.swiper-pagination-11`,
-                    }}
-                    navigation={{
-                      nextEl: `.swiper-next-11`,
-                      prevEl: `.swiper-prev-11`,
-                    }}
-                    updateOnWindowResize
-                    observer
-                    observeParents
-                    initialSlide={0}
-                    // loop={true}
-                  >
-                    {categories[currentMobilePosts].map((post, idx) => (
-                      <SwiperSlide key={idx} className="w-full ">
-                        <PostItem
-                          image={post.image.url}
-                          title={post.basic.title}
-                          slug={post.slug}
-                          key={idx}
-                        >
-                          {post.shortDescription.html}
-                        </PostItem>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </div>
-                <div className="flex gap-6 justify-center items-center mx-auto">
-                  <div className={`flex relative swiper-prev-11`}>
-                    <Image
-                      src="/icons/pagination-prev.svg"
-                      width={20}
-                      height={15}
-                      alt="Previous"
-                    />
-                  </div>
-                  <div
-                    className={`flex justify-center items-center gap-1 text-black swiper-pagination-11`}
-                  />
-                  <div className={`flex relative swiper-next-11`}>
-                    <Image
-                      src="/icons/pagination-next.svg"
-                      width={20}
-                      height={15}
-                      alt="Next"
-                    />
-                  </div>
-                </div>
-              </div>
-            )) || (
-              <section className="text-black flex flex-col mt-[96px] gap-[96px]  ">
-                {Object.values(categories).map(
-                  (post, idx) =>
-                    post.length > 0 &&
-                    Object.keys(categories).at(idx) !== "All Content" && (
-                      <section
-                        key={idx}
-                        className={
-                          " flex flex-col gap-16 w-full overflow-hidden items-center  "
-                        }
-                      >
-                        <h3
-                          className={`text-black flex-1 font-medium  text-3xl uppercase  `}
-                        >
-                          {Object.keys(categories).at(idx)}
-                        </h3>
-                        <div className="flex flex-col gap-4">
-                          <div key={idx} className=" w-full  ">
-                            <Swiper
-                              modules={[Navigation, Pagination, A11y]}
-                              className="swiper w-full"
-                              spaceBetween={30}
-                              slidesPerView="auto"
-                              centeredSlides={true}
-                              // pagination={{ clickable: true }}
-                              // navigation={true}
-                              pagination={{
-                                clickable: true,
-                                el: `.swiper-pagination-${10 + idx}`,
-                              }}
-                              navigation={{
-                                nextEl: `.swiper-next-${10 + idx}`,
-                                prevEl: `.swiper-prev-${10 + idx}`,
-                              }}
-                              updateOnWindowResize
-                              observer
-                              observeParents
-                              initialSlide={0}
-                              // loop={true}
-                            >
-                              {post.map((posti, idx) => (
-                                <SwiperSlide key={idx} className="">
-                                  <PostItem
-                                    image={posti.image.url}
-                                    title={posti.basic.title}
-                                    slug={posti.slug}
-                                    key={idx}
-                                  >
-                                    {posti.shortDescription.html}
-                                  </PostItem>
-                                </SwiperSlide>
-                              ))}
-                            </Swiper>
-                          </div>
-                          <div className="flex gap-6 justify-center items-center mx-auto">
-                            <div
-                              className={`flex relative swiper-prev-${
-                                10 + idx
-                              }`}
-                            >
-                              <Image
-                                src="/icons/pagination-prev.svg"
-                                width={20}
-                                height={15}
-                                alt="Previous"
-                              />
-                            </div>
-                            <div
-                              className={`flex justify-center items-center gap-1 text-black swiper-pagination-${
-                                10 + idx
-                              }`}
-                            />
-                            <div
-                              className={`flex relative swiper-next-${
-                                10 + idx
-                              }`}
-                            >
-                              <Image
-                                src="/icons/pagination-next.svg"
-                                width={20}
-                                height={15}
-                                alt="Next"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </section>
-                    )
-                )}
-              </section>
-            )}
+            <MySlider isMultiple={currentMobilePosts === "All Content"} />
           </div>
         </div>
       </section>
