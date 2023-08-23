@@ -304,7 +304,7 @@ const HowItWorks = () => {
             }
             image="/media/home-1.jpg"
           >
-            <p className="text-ogBlack md:text-center text-start md:w-full w-screen ">
+            <p className="text-ogBlack  md:w-full w-screen ">
               Have you considered the possibility of monitoring the project in
               real time? We know it didn&apos;t, because until today it
               hadn&apos;t been done yet! Something offers you the possibility to

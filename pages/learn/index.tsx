@@ -152,7 +152,7 @@ const Learn = (props: PostsProps) => {
   const [currentSwiper, setcurrentSwiper] = useState(0);
 
   const MySlider = (props: any) => {
-    const { isMultiple } = props;
+    const { isMultiple, isPcSize } = props;
 
     return (
       <div>
@@ -164,73 +164,81 @@ const Learn = (props: PostsProps) => {
                 <section
                   key={idx}
                   className={
-                    " flex flex-col gap-16 w-full overflow-hidden items-center  "
+                    " flex flex-col gap-16 w-full  items-center mb-6  max-w-screen-lg  "
                   }
                 >
                   <h3
-                    className={`text-black flex-1 font-medium  text-3xl uppercase  `}
+                    className={`text-black flex-1 font-medium  text-3xl uppercase mt-6 `}
                   >
                     {Object.keys(categories).at(idx)}
                   </h3>
                   <div className="flex flex-col gap-4">
-                    <div key={idx} className=" w-full  ">
-                      <Swiper
-                        modules={[Navigation, Pagination, A11y]}
-                        className="swiper w-full"
-                        spaceBetween={30}
-                        slidesPerView="auto"
-                        centeredSlides={true}
-                        // pagination={{ clickable: true }}
-                        // navigation={true}
-                        pagination={{
-                          clickable: true,
-                          el: `.swiper-pagination-${10 + idx}`,
-                        }}
-                        navigation={{
-                          nextEl: `.swiper-next-${10 + idx}`,
-                          prevEl: `.swiper-prev-${10 + idx}`,
-                        }}
-                        updateOnWindowResize
-                        observer
-                        observeParents
-                        initialSlide={0}
-                        // loop={true}
-                      >
-                        {post.map((posti, idx) => (
-                          <SwiperSlide key={idx} className="">
-                            <PostItem
-                              image={posti.image.url}
-                              title={posti.basic.title}
-                              slug={posti.slug}
-                              key={idx}
-                            >
-                              {posti.shortDescription.html}
-                            </PostItem>
-                          </SwiperSlide>
-                        ))}
-                      </Swiper>
-                    </div>
-                    <div className="flex gap-6 justify-center items-center mx-auto">
-                      <div className={`flex relative swiper-prev-${10 + idx}`}>
-                        <Image
-                          src="/icons/pagination-prev.svg"
-                          width={20}
-                          height={15}
-                          alt="Previous"
-                        />
-                      </div>
-                      <div
-                        className={`flex justify-center items-center gap-1 text-black swiper-pagination-${
-                          10 + idx
-                        }`}
-                      />
-                      <div className={`flex relative swiper-next-${10 + idx}`}>
-                        <Image
-                          src="/icons/pagination-next.svg"
-                          width={20}
-                          height={15}
-                          alt="Next"
-                        />
+                    <div className="flex flex-col w-full gap-8" key={idx}>
+                      <div className="flex md:flex-row flex-col gap-12">
+                        <div className="flex swiper-wrapper max-w-[100vw]">
+                          <Swiper
+                            modules={[Navigation, Pagination, A11y]}
+                            className="swiper w-full"
+                            spaceBetween={30}
+                            slidesPerView="auto"
+                            centeredSlides={true}
+                            // pagination={{ clickable: true }}
+                            // navigation={true}
+                            pagination={{
+                              clickable: true,
+                              el: `.swiper-pagination-${10 + idx}`,
+                            }}
+                            navigation={{
+                              nextEl: `.swiper-next-${10 + idx}`,
+                              prevEl: `.swiper-prev-${10 + idx}`,
+                            }}
+                            updateOnWindowResize
+                            observer
+                            observeParents
+                            initialSlide={0}
+                            // loop={true}
+                          >
+                            {post.map((posti, idx) => (
+                              <SwiperSlide key={idx} className="w-full">
+                                <PostItem
+                                  image={posti.image.url}
+                                  title={posti.basic.title}
+                                  slug={posti.slug}
+                                  key={idx}
+                                >
+                                  {posti.shortDescription.html}
+                                </PostItem>
+                              </SwiperSlide>
+                            ))}
+                          </Swiper>
+                        </div>
+                        <div className="flex gap-6 justify-center items-center mx-auto">
+                          <div
+                            className={`flex relative swiper-prev-${10 + idx}`}
+                          >
+                            <Image
+                              src="/icons/pagination-prev.svg"
+                              width={20}
+                              height={15}
+                              alt="Previous"
+                            />
+                          </div>
+                          <div
+                            className={`flex justify-center items-center gap-1 text-black swiper-pagination-${
+                              10 + idx
+                            }`}
+                          />
+                          <div
+                            className={`flex relative swiper-next-${10 + idx}`}
+                          >
+                            <Image
+                              src="/icons/pagination-next.svg"
+                              width={20}
+                              height={15}
+                              alt="Next"
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -241,7 +249,7 @@ const Learn = (props: PostsProps) => {
             modules={[Navigation, Pagination, A11y]}
             className="swiper  w-full"
             spaceBetween={30}
-            slidesPerView="auto"
+            slidesPerView={"auto"}
             // pagination={{ clickable: true }}
             // navigation={true}
             centeredSlides={true}
@@ -296,7 +304,7 @@ So relax and press the pedal."
         />
       </section>
       <section className="relative flex w-full max-w-screen-lg mx-auto">
-        <div className="rounded-md pt-8 pb-24 hidden md:block">
+        <div className="rounded-md pt-8 pb-24 hidden md:block max-w-screen-lg">
           <Tab.Group>
             <Tab.List className="flex p-1 bg-contactBackground mx-12 rounded-full">
               {Object.keys(categories).map((category) => (
@@ -324,7 +332,7 @@ So relax and press the pedal."
                       key={idx}
                       className={classNames(
                         " bg-white p-3",
-                        "ring-white ring-opacity-60 ring-offset-2 ring-offset-primaryGreen focus:outline-none focus:ring-2"
+                        "ring-white ring-opacity-60 ring-offset-2 ring-offset-primaryGreen focus:outline-none focus:ring-2 w-full"
                       )}
                     >
                       {" "}
@@ -347,57 +355,61 @@ So relax and press the pedal."
                         <section className="text-black flex flex-col mt-[96px] gap-[96px]  ">
                           {Object.values(categories).map(
                             (post, idx) =>
-                              post.length > 0 && (
+                              post.length > 0 &&
+                              idx !== 0 && (
                                 <section
                                   key={idx}
                                   className={
-                                    "mx-auto flex flex-col gap-16 w-full overflow-hidden  "
+                                    "mx-auto flex flex-col gap-16 w-full   "
                                   }
                                 >
                                   <h3
-                                    className={`text-black flex-1 font-medium  text-3xl uppercase  `}
+                                    className={`text-black flex-1 font-medium  text-3xl uppercase text-left `}
                                   >
                                     {Object.keys(categories).at(idx)}
                                   </h3>
-                                  <Swiper
-                                    modules={[Navigation, Pagination, A11y]}
-                                    className="swiper"
-                                    spaceBetween={30}
-                                    slidesPerView={"auto"}
-                                    centeredSlides={true}
-                                    pagination={{
-                                      clickable: true,
-                                      el: `.swiper-pagination-${3}`,
-                                    }}
-                                    navigation={{
-                                      nextEl: `.swiper-next-${3}`,
-                                      prevEl: `.swiper-prev-${3}`,
-                                    }}
-                                    updateOnWindowResize
-                                    observer
-                                    observeParents
-                                    initialSlide={0}
-                                    onSlideChange={(swiper) =>
-                                      setcurrentSwiper(swiper.activeIndex)
-                                    }
-                                    // loop={true}
-                                  >
-                                    <SwiperSlide key={idx} className="">
+                                  <div className="flex swiper-wrapper">
+                                    <Swiper
+                                      modules={[Navigation, Pagination, A11y]}
+                                      className=" swiper w-full"
+                                      spaceBetween={40}
+                                      slidesPerView={3}
+                                      pagination={{
+                                        clickable: true,
+                                        el: `.swiper-pagination-${1100 + idx}`,
+                                      }}
+                                      navigation={{
+                                        nextEl: `.swiper-next-${1100 + idx}`,
+                                        prevEl: `.swiper-prev-${1100 + idx}`,
+                                      }}
+                                      updateOnWindowResize
+                                      observer
+                                      observeParents
+                                      initialSlide={0}
+                                    >
                                       {post.map((posti, idx) => (
-                                        <PostItem
-                                          image={posti.image.url}
-                                          title={posti.basic.title}
-                                          slug={posti.slug}
+                                        <SwiperSlide
                                           key={idx}
+                                          className=" min-w-[300px]"
                                         >
-                                          {posti.shortDescription.html}
-                                        </PostItem>
+                                          <PostItem
+                                            image={posti.image.url}
+                                            title={posti.basic.title}
+                                            slug={posti.slug}
+                                            key={idx}
+                                          >
+                                            {posti.shortDescription.html}
+                                          </PostItem>
+                                        </SwiperSlide>
                                       ))}
-                                    </SwiperSlide>
-                                  </Swiper>
-                                  <div className="flex gap-6 justify-center items-center  w-full mx-auto">
+                                    </Swiper>
+                                  </div>
+
+                                  <div className="flex gap-6 justify-center items-center  mx-auto">
                                     <div
-                                      className={`flex relative cursor-pointer swiper-prev-${3}`}
+                                      className={`flex relative cursor-pointer swiper-prev-${
+                                        1100 + idx
+                                      }`}
                                     >
                                       <Image
                                         src="/icons/pagination-prev.svg"
@@ -407,10 +419,14 @@ So relax and press the pedal."
                                       />
                                     </div>
                                     <div
-                                      className={`flex justify-center items-center gap-1 text-black swiper-pagination-${3}`}
+                                      className={`flex justify-center items-center gap-1 text-black swiper-pagination-${
+                                        1100 + idx
+                                      }`}
                                     />
                                     <div
-                                      className={`flex relative cursor-pointer swiper-next-${3}`}
+                                      className={`flex relative cursor-pointer swiper-next-${
+                                        1100 + idx
+                                      }`}
                                     >
                                       <Image
                                         src="/icons/pagination-next.svg"
@@ -425,6 +441,7 @@ So relax and press the pedal."
                           )}
                         </section>
                       )}
+                      {/* <MySlider isMultiple={idx === 0} isPcSize /> */}
                       {/* <ul>
                     {posts.map((post) => (
                       <li key={post.id} className="relative rounded-md p-3">
@@ -448,7 +465,7 @@ So relax and press the pedal."
           >
             <div>
               <select
-                className="text-black flex-1 font-extrabold  text-3xl uppercase  "
+                className="text-black flex-1 font-extrabold  text-3xl uppercase text-center "
                 onChange={(e) => handleChange(e.target.value)}
               >
                 {Object.keys(categories).map((category) => (
@@ -461,7 +478,10 @@ So relax and press the pedal."
           </h3>
 
           <div className="w-full p-6 ">
-            <MySlider isMultiple={currentMobilePosts === "All Content"} />
+            <MySlider
+              isMultiple={currentMobilePosts === "All Content"}
+              isPcSize={false}
+            />
           </div>
         </div>
       </section>

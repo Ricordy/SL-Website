@@ -22,18 +22,18 @@ export const PostItem: FC<PostItemProps> = ({
   });
 
   return (
-    <div className="flex flex-col gap-8 w-80 md:w-full relative ">
+    <div className="flex flex-col gap-8 w-80 md:w-full relative  ">
       <Image
         src={image}
         alt={title}
         width={328}
         height={264}
-        className="w-full"
+        className="w-full rounded-md"
       />
       <div className="flex flex-col w-full gap-2">
-        <h3 className="text-2xl text-black text-center">{title}</h3>
+        <h3 className="text-2xl text-black text-left">{title}</h3>
         <div
-          className="text-white"
+          className="text-white text-left"
           dangerouslySetInnerHTML={purifiedChildren()}
         ></div>
 
