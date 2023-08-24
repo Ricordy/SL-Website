@@ -30,7 +30,7 @@ const CarouselItem = ({
 }: CarouselItemProps) => {
   return (
     <Link
-      className="flex flex-col w-max rounded-md bg-progressBackground "
+      className="flex flex-col w-max max-w-[80vw]  rounded-md bg-progressBackground "
       href={`${process.env.NEXT_PUBLIC_PLATFORM_URL}/investment/${address}`}
     >
       <div className="cursor-pointer">
@@ -48,7 +48,7 @@ const CarouselItem = ({
                 <span className="font-medium">{status}</span>
               </div>
             </div>
-            <div className="flex ">{completion}% finished</div>
+            <div className="flex ">Progress: {completion}%</div>
           </div>
           <div className="flex z-0 absolute w-full min-h-[200px] bg-[url('../public/projects/car-gradient.svg')] bg-cover"></div>
         </div>
@@ -92,7 +92,8 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
           <Swiper
             modules={[Navigation, Pagination, A11y]}
             className="swiper"
-            spaceBetween={30}
+            spaceBetween={25}
+            centeredSlides={isAboveMd ? false : true}
             slidesPerView={isAboveMd ? 2 : 1}
             // pagination={{ clickable: true }}
             // navigation={true}

@@ -72,7 +72,7 @@ export default function Home(props) {
           buttonLink="/about-us"
           buttonLabel="About Us"
         >
-          <p className="text-ogBlack">
+          <p className="text-ogBlack md:max-w-[500px] p-6 md:p-0 text-justify md:text-left">
             The opportunity to travel across borders, we know it doesn&apos;t
             seem real but imagine the process of restoring a classic directly
             from your sofa in the living room, accompanying this restoration and
@@ -100,7 +100,7 @@ export default function Home(props) {
             buttonLabel="How it works"
             reverse={true}
           >
-            <p className="text-ogBlack">
+            <p className="text-ogBlack  md:max-w-[500px] p-6 md:p-0 text-justify md:text-left">
               Imagine following the entire process of restoring the classic of
               your dreams live from the workshop where all the magic happens!
               Restoring a classic car is a labor of love that requires skill,
@@ -126,7 +126,7 @@ export default function Home(props) {
             buttonLink="/how-it-works"
             buttonLabel="How it works"
           >
-            <p className="text-ogBlack">
+            <p className="text-ogBlack  p-6  ">
               Imagine following the entire process of restoring the classic of
               your dreams live from the workshop where all the magic happens!
               Restoring a classic car is a labor of love that requires skill,
@@ -153,7 +153,7 @@ export default function Home(props) {
           <p className="text-ogBlack font-medium">
             And even that is covered by the ACP!
           </p>
-          <p className="text-ogBlack">
+          <p className="text-ogBlack  md:max-w-[500px] p-6 md:p-0 text-justify md:text-left ">
             Classic cars have a timeless appeal and a limited supply, which
             means that their value may appreciate over time. Additionally,
             classic cars can be enjoyed and used while they appreciate in value,
@@ -323,15 +323,18 @@ export default function Home(props) {
         certificates={true}
       />
       <Carousel id="1" className="md:my-[132px]" items={props.investments} />
-      <FlyoutMenu className={""} />
-      {/* <Posts
-        posts={posts}
-        title="Learn more"
-        titleCentered={true}
-        buttonMoreLink="/learn"
-        buttonMoreText="See More"
-        className="md:py-[132px] py-16"
-      /> */}
+      <FlyoutMenu className={" pb-[132px] md:pb-0 "} />
+      <div className="hidden md:block">
+        <Posts
+          posts={posts}
+          title="Learn more"
+          titleCentered={true}
+          buttonMoreLink="/learn"
+          buttonMoreText="See More"
+          className="md:py-[132px] py-16"
+        />
+      </div>
+
       <Banner
         className="hidden md:block"
         // className="mb-[72px]"

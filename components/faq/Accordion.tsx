@@ -90,9 +90,9 @@ const Accordion: FC<AccordionProps> = ({ className }) => {
           </>
         )}
       </Disclosure>
-      <Button className="mt-[52px]" variant="outline">
+      {/* <Button className="mt-[52px]" variant="outline">
         See more
-      </Button>
+      </Button> */}
     </div>
   );
 };

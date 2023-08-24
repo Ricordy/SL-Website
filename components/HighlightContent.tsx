@@ -61,7 +61,7 @@ const HighlightContent: FC<ContentProps> = ({
           {children}
           {buttonLink && buttonLabel && (
             <Link href={buttonLink}>
-              <a className="uppercase font-medium tracking-wide dark:border-primaryGreen dark:text-primaryGreen dark:hover:text-white dark:hover:bg-primaryGreen hover:text-white hover:bg-primaryGreen border-2 py-1 px-8 text-sm self-start rounded-md text-primaryGreen">
+              <a className="uppercase font-medium tracking-wide dark:border-primaryGreen dark:text-primaryGreen dark:hover:text-white dark:hover:bg-primaryGreen hover:text-white hover:bg-primaryGreen border-2 py-1 px-8 text-sm self-start rounded-md text-primaryGreen ml-6 md:ml-0">
                 {buttonLabel}
               </a>
             </Link>

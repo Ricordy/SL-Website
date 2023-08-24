@@ -179,7 +179,7 @@ const HowItWorks = () => {
                     key={category}
                     className={({ selected }) =>
                       classNames(
-                        "w-full py-4 font-normal tracking-wide  border-b text-2xl  leading-5 text-black",
+                        "w-full py-4 font-normal tracking-wide  border-b text-2xl  leading-5 text-black whitespace-nowrap",
                         "  focus:outline-none focus:ring-2",
                         selected
                           ? "bg-white font-medium ring-transparent border-b-4 border-black"
@@ -273,7 +273,7 @@ const HowItWorks = () => {
           <h3 className="text-black text-4xl uppercase md:text-start text-center">
             Know our process
           </h3>
-          <p className="text-black">
+          <p className="text-black px-4 md:px-0">
             The most important rules manual to achieve the dream.
           </p>
         </div>
@@ -296,7 +296,7 @@ const HowItWorks = () => {
         <div className="flex flex-col gap-24">
           <HighlightContent
             title={
-              <h3 className="uppercase font-medium text-center md:text-start">
+              <h3 className="uppercase font-medium text-center md:text-start ">
                 <span className="text-primaryGreen">Daydreaming</span> with
                 <br />
                 the process <span className="text-primaryGreen">24/7</span>.
@@ -304,7 +304,7 @@ const HowItWorks = () => {
             }
             image="/media/home-1.jpg"
           >
-            <p className="text-ogBlack  md:w-full w-screen ">
+            <p className="text-ogBlack md:max-w-[500px] p-6 md:p-0 text-justify md:text-left ">
               Have you considered the possibility of monitoring the project in
               real time? We know it didn&apos;t, because until today it
               hadn&apos;t been done yet! Something offers you the possibility to
@@ -316,7 +316,7 @@ const HowItWorks = () => {
           <div className=" hidden md:block">
             <HighlightContent
               title={
-                <h3 className=" text-black text-3xl uppercase tracking-widest">
+                <h3 className=" text-black text-3xl uppercase tracking-widest md:max-w-[500px] p-6 md:p-0 text-justify md:text-left">
                   A{" "}
                   <span className="text-primaryGreen">legendary community</span>
                   <br />
@@ -326,7 +326,7 @@ const HowItWorks = () => {
               image="/media/home-2.jpg"
               reverse={true}
             >
-              <p className="text-ogBlack  ">
+              <p className="text-ogBlack md:max-w-[500px] p-6 md:p-0 text-justify md:text-left  ">
                 If you thought you were alone in this world, we introduce you to
                 thousands of people interested in the world of classics whose
                 vision of the process is similar to yours. The passion for the
@@ -338,7 +338,7 @@ const HowItWorks = () => {
           <div className=" md:hidden block">
             <HighlightContent
               title={
-                <h3 className=" text-black text-3xl uppercase tracking-widest">
+                <h3 className=" text-black text-3xl uppercase tracking-widest md:max-w-[500px] p-6 md:p-0  md:text-left">
                   A{" "}
                   <span className="text-primaryGreen">legendary community</span>
                   <br />
@@ -347,7 +347,7 @@ const HowItWorks = () => {
               }
               image="/media/home-2.jpg"
             >
-              <p className="text-ogBlack">
+              <p className="text-ogBlack md:max-w-[500px] p-6 md:p-0 text-justify md:text-left">
                 If you thought you were alone in this world, we introduce you to
                 thousands of people interested in the world of classics whose
                 vision of the process is similar to yours. The passion for the
@@ -358,7 +358,7 @@ const HowItWorks = () => {
           </div>
           <HighlightContent
             title={
-              <h3 className="text-3xl uppercase tracking-widest">
+              <h3 className="text-3xl uppercase tracking-widest md:max-w-[500px] p-6 md:p-0  md:text-left">
                 The distance that{" "}
                 <span className=" text-primaryGreen ">unites us</span>, from
                 digital to physycal events.
@@ -366,7 +366,7 @@ const HowItWorks = () => {
             }
             image="/media/home-3.jpg"
           >
-            <p className="text-ogBlack">
+            <p className="text-ogBlack md:max-w-[500px] p-6 md:p-0 text-justify md:text-left">
               We are closer than you might think, we travel the world in the
               biggest classic car events, in addition to being ambitious for
               constant knowledge, we make a point of knowing the latest trends

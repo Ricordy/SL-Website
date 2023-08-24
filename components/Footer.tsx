@@ -23,10 +23,10 @@ function Footer() {
 
   return (
     <footer className="w-full py-8 md:pt-[72px] bg-black flex flex-col mb-1">
-      <div className="mx-auto md:px-0 px-6 max-w-screen-lg w-full items-start flex flex-col md:flex-row justify-between border-b md:border-white pb-6 gap-6 md:gap-0">
-        <div className="flex text-sm flex-col font-normal justify-center items-start gap-2">
+      <div className="mx-auto md:px-0 px-6 max-w-screen-lg w-full items-start flex flex-col md:flex-row justify-evenly border-b md:border-white pb-6 gap-6 md:gap-0 bg-red-400">
+        <div className="flex text-sm flex-col font-normal justify-center items-start gap-2 bg-sky-900">
           <Image src={LogoWhite} alt="Something Legendary Logo" />
-          <div className="flex gap-2 mt-11">
+          <div className="flex gap-2 mt-11 bg-lime-900">
             <Image src={Mail} alt="E-mail" />
             <Link href="mailto:info@somethinglegendary.com">
               <a className="">info@somethinglegendary.com</a>
@@ -37,7 +37,7 @@ function Footer() {
             <span className="">+381 9999-9999</span>
           </div> */}
         </div>
-        <div className="flex flex-col gap-2 w-full font-light">
+        <div className="flex flex-col gap-2 w-fit min-w-[20%] font-light bg-sky-900">
           <h3 className="text-base font-semibold uppercase text-white">
             {t("How it works")}
           </h3>
@@ -48,7 +48,7 @@ function Footer() {
             <a className="">{t("How it works")}</a>
           </Link>
         </div>
-        <div className="flex flex-col gap-2 w-full font-light">
+        <div className="flex flex-col gap-2 w-fit min-w-[20%] font-light bg-sky-900">
           <h3 className="text-base font-semibold text-white uppercase">
             {t("Learn")}
           </h3>
@@ -57,14 +57,14 @@ function Footer() {
           <Link href="/help/how-to-invest">How to invest?</Link>
           <Link href="/help/news">News</Link>
         </div>
-        <div className="flex flex-col gap-8 text-base w-full uppercase font-semibold">
+        <div className="flex flex-col gap-8 text-base w-fit min-w-[20%] uppercase font-semibold bg-sky-900">
           <h3 className="text-base font-semibold text-white">
             {t("About Us")}
           </h3>
           <Link href="/whitepaper">{t("Whitepaper")}</Link>
           {/* <Link href="/security">{t("Security")}</Link> */}
         </div>
-        <div className="flex flex-col gap-2 w-full font-light">
+        <div className="flex flex-col gap-2 w-fit min-w-[20%] font-light bg-sky-900">
           <h3 className="text-base font-semibold uppercase text-white">
             {t("Newsletter")}
           </h3>
@@ -86,7 +86,7 @@ function Footer() {
           </form>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-lg gap-2 py-4 mx-auto">
+      <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-lg gap-2 py-4 mx-auto bg-sky-900">
         <div className="flex gap-6">
           <Link href="/terms">
             <a className="font-light">Terms and conditions</a>

@@ -67,9 +67,9 @@ const AboutUs = (props) => {
 
         <section className="flex gap-12  md:gap-24 w-full flex-col md:flex-row">
           <Image alt="How we became something" src={How} />
-          <div className="flex flex-col px-6 md:px-0 w-screen self-center text-center gap-8  max-w-md items-start justify-center">
+          <div className="flex flex-col px-6 md:px-0 w-screen self-center text-left gap-8  max-w-md items-start justify-center">
             <h3 className="uppercase">How we became something.</h3>
-            <p className="text-justify">
+            <p className="text-left">
               The real deal was like, João invested in classic cars on a
               personal basis and formed friendships with the owner of True
               Legend, João Dias. Gonçalo was a financial mediator and the

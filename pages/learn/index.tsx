@@ -245,41 +245,64 @@ const Learn = (props: PostsProps) => {
                 </section>
               )
           )) || (
-          <Swiper
-            modules={[Navigation, Pagination, A11y]}
-            className="swiper  w-full"
-            spaceBetween={30}
-            slidesPerView={"auto"}
-            // pagination={{ clickable: true }}
-            // navigation={true}
-            centeredSlides={true}
-            pagination={{
-              clickable: true,
-              el: `.swiper-pagination-11`,
-            }}
-            navigation={{
-              nextEl: `.swiper-next-11`,
-              prevEl: `.swiper-prev-11`,
-            }}
-            updateOnWindowResize
-            observer
-            observeParents
-            initialSlide={0}
-            // loop={true}
-          >
-            {categories[currentMobilePosts].map((post, idx) => (
-              <SwiperSlide key={idx} className="w-full ">
-                <PostItem
-                  image={post.image.url}
-                  title={post.basic.title}
-                  slug={post.slug}
-                  key={idx}
-                >
-                  {post.shortDescription.html}
-                </PostItem>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="flex flex-col gap-3">
+            <Swiper
+              modules={[Navigation, Pagination, A11y]}
+              className="swiper  w-full"
+              spaceBetween={30}
+              slidesPerView={"auto"}
+              // pagination={{ clickable: true }}
+              // navigation={true}
+              centeredSlides={true}
+              pagination={{
+                clickable: true,
+                el: `.swiper-pagination-50`,
+              }}
+              navigation={{
+                nextEl: `.swiper-next-50`,
+                prevEl: `.swiper-prev-50`,
+              }}
+              updateOnWindowResize
+              observer
+              observeParents
+              initialSlide={0}
+              // loop={true}
+            >
+              {categories[currentMobilePosts].map((post, idx) => (
+                <SwiperSlide key={idx} className="w-full ">
+                  <PostItem
+                    image={post.image.url}
+                    title={post.basic.title}
+                    slug={post.slug}
+                    key={idx}
+                  >
+                    {post.shortDescription.html}
+                  </PostItem>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <div className="flex gap-6 justify-center items-center mx-auto">
+              <div className={`flex relative swiper-prev-${50}`}>
+                <Image
+                  src="/icons/pagination-prev.svg"
+                  width={20}
+                  height={15}
+                  alt="Previous"
+                />
+              </div>
+              <div
+                className={`flex justify-center items-center gap-1 text-black swiper-pagination-${50}`}
+              />
+              <div className={`flex relative swiper-next-${50}`}>
+                <Image
+                  src="/icons/pagination-next.svg"
+                  width={20}
+                  height={15}
+                  alt="Next"
+                />
+              </div>
+            </div>
+          </div>
         )}
       </div>
     );
@@ -465,7 +488,7 @@ So relax and press the pedal."
           >
             <div>
               <select
-                className="text-black flex-1 font-extrabold  text-3xl uppercase text-center "
+                className="text-black flex-1 font-medium  text-3xl uppercase text-center "
                 onChange={(e) => handleChange(e.target.value)}
               >
                 {Object.keys(categories).map((category) => (
