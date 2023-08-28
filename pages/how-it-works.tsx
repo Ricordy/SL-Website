@@ -155,7 +155,7 @@ const HowItWorks = () => {
     <>
       <section className="w-full mx-auto min-h-screen gap-[132px]  flex flex-col justify-start items-center bg-[url('/headers/how-it-works.jpg')] md:bg-contain bg-cover bg-top bg-no-repeat">
         <Navbar />
-        <div className="flex flex-col  w-full relative items-center">
+        <div className="flex flex-col  w-full relative items-center px-6 md:px-0">
           <div className="flex flex-col z-10 md:w-1/2 w-full gap-4">
             <h3 className="text-white font-normal w-full text-5xl uppercase text-center">
               <span className="font-semibold ">Invest in your dream</span>
@@ -349,7 +349,7 @@ const HowItWorks = () => {
               <p className="text-ogBlack md:max-w-[500px] p-6 md:p-0 text-justify md:text-left">
                 If you thought you were alone in this world, we introduce you to
                 thousands of people interested in the world of classics whose
-                vision of the process is similar to yours. The passion for the
+                vision of the process is similar to yours. The passion for
                 classics has never been so close and we are open to any
                 enthusiast whose opinion deserves to be shared.
               </p>

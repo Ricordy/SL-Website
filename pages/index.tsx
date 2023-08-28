@@ -138,7 +138,7 @@ export default function Home(props) {
             buttonLabel="How it works"
           >
             <p className="text-ogBlack  md:max-w-[500px] p-6 md:p-0 text-justify md:text-left">
-              Follow the entire process of restoring the classic of your dreams
+              Follow the entire process of restoring the classic of your dreams,
               live from the workshop where all the magic happens! Restoring a
               classic car is a labor of love that requires skill, patience, and
               dedication and we want you to embrace it{" "}

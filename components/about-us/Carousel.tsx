@@ -53,7 +53,7 @@ const CarouselItem = ({
   description,
 }: CarouselItemProps) => {
   return (
-    <div className="flex md:flex-row w-full flex-col md:w-[850px] md:gap-12 md:rounded-md">
+    <div className="flex md:flex-row w-full flex-col md:w-[850px] md:gap-12 gap-8 md:rounded-md">
       <div
         className={cn(
           "flex w-[400px] md:w-1/2 items-center justify-center align-top rounded-md bg-cover relative md:flex-row flex-col gap-3 ",

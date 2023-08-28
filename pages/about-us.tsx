@@ -67,7 +67,7 @@ const AboutUs = (props) => {
           <Image alt="How we became something" src={How} />
           <div className="flex flex-col px-6 md:px-0 w-screen self-center text-left gap-8  max-w-md items-start justify-center">
             <h3 className="uppercase">How we became something.</h3>
-            <p className="text-left">
+            <p className="md:text-left text-justify">
               It all started when three acquaintances realized they could do
               something legendary together. João has invested in classic cars
               for years, and all his experience comes with a lot of know-how and
