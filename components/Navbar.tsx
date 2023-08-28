@@ -70,7 +70,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
     //   text: t("events"),
     // },
     {
-      link: "/whitepaper.pdf",
+      link: "/Something-Legendary-Whitepaper.pdf",
       text: t("whitepaper"),
     },
     {
