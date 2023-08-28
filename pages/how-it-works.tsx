@@ -114,9 +114,9 @@ const HowItWorks = () => {
             <p>
               Now that you have access to the Ongoing Projects, the next step is
               to select the project you wish to join and determine the amount
-              you'd like to invest. Make your decision thoughtfully, considering
-              the potential impact on your returns. Or choose a car you like...
-              it&apos;s up to you!
+              you&apos;d like to invest. Make your decision thoughtfully,
+              considering the potential impact on your returns. Or choose a car
+              you like... it&apos;s up to you!
             </p>
             <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
@@ -135,10 +135,10 @@ const HowItWorks = () => {
         content: (
           <>
             <p>
-              Have you had a good time on the trip? If you have, it's time to
-              take out your investment funds! We hope you've been pleased with
-              how everything's been going. And if you really enjoyed the
-              destination, get ready to pick another one.
+              Have you had a good time on the trip? If you have, it&apos;s time
+              to take out your investment funds! We hope you&apos;ve been
+              pleased with how everything&apos;s been going. And if you really
+              enjoyed the destination, get ready to pick another one.
             </p>
             <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">

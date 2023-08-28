@@ -111,7 +111,7 @@ const Posts: FC<PostProps> = ({
         <div className="grid grid-cols-3 gap-6 w-full justify-between">
           {posts &&
             posts.map((post, idx) => (
-              <div>
+              <div key={idx}>
                 {maxPosts && idx < maxPosts && (
                   <PostItem
                     key={post.slug}

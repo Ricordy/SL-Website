@@ -71,13 +71,13 @@ const AboutUs = (props) => {
               It all started when three acquaintances realized they could do
               something legendary together. João has invested in classic cars
               for years, and all his experience comes with a lot of know-how and
-              do's and dont&apos;s. His investments led him to João Dias, owner
-              of True Legend, an established garage and well-known for being
-              specialists in classic's restoration. Gonçalo, the Web 3.0 expert,
-              recognized that investing in classic cars didn't need to follow
-              the traditional path. He saw the potential for a simpler approach,
-              one that didn't require a substantial initial investment or
-              extensive hours of dedication.
+              do&apos;s and dont&apos;s. His investments led him to João Dias,
+              owner of True Legend, an established garage and well-known for
+              being specialists in classic&apos;s restoration. Gonçalo, the Web
+              3.0 expert, recognized that investing in classic cars didn&apos;t
+              need to follow the traditional path. He saw the potential for a
+              simpler approach, one that didn&apos;t require a substantial
+              initial investment or extensive hours of dedication.
             </p>
           </div>
         </section>
