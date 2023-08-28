@@ -92,8 +92,8 @@ const Banner: FC<BannerProps> = ({
       {certificates && (
         <div className="flex items-center md:px-0 px-6 justify-around w-full  mx-auto py-12 bg-slate-50">
           <Image
-            src="/certificates/certik.png"
-            alt="Certik"
+            src="/certificates/cmvm.png"
+            alt="cmvm"
             width={235}
             height={91}
           />
@@ -112,6 +112,12 @@ const Banner: FC<BannerProps> = ({
           <Image
             src="/certificates/acp.png"
             alt="Automóvel Club de Portugal"
+            width={123}
+            height={75}
+          />
+          <Image
+            src="/certificates/innovarisk.png"
+            alt="innovarisk"
             width={123}
             height={75}
           />
