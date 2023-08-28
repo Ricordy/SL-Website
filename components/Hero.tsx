@@ -18,7 +18,7 @@ function Hero(props) {
         </p>
         <p className="w-full md:w-2/3 font-ubuntu md:leading-7 font-light text-white">
           Discover the world of{" "}
-          <span className="font-bold">investment in the classics</span>
+          <span className="font-bold">investment in classics</span>
           <br className="hidden md:block" /> and follow the process{" "}
           <span className="font-bold">in real time</span>.
         </p>
