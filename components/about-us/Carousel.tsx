@@ -32,9 +32,9 @@ His intrigue extended to cryptocurrencies and NFTs, areas where he aimed to stan
     name: "João",
     lastName: "Fernandes",
     image: "/chiefs/joao.jpg",
-    description: `João is a businessman of diverse passions, he's always been interested in classic cars. As an accomplished entrepreneur and investor, he's spearheaded successful ventures spanning architecture, restaurants, real estate, and even co-founded a UK-listed stem cell company. His Web3 consulting endeavor reflects their inclination for tech innovation.
+    description: `João is a businessman of diverse passions, he's always been interested in classic cars. As an accomplished entrepreneur and investor, he's spearheaded successful ventures spanning architecture, restaurants, real estate, and even co-founded a UK-listed stem cell company. His Web 3.0 consulting endeavor reflects their inclination for tech innovation.
 The extensive global travels and business ventures have fostered adaptability to diverse markets and cultures. Serving as Albania's honorary consul emphasizes the commitment to community engagement.
-However, it's his passion for restoring classic cars that ignited the creation of Something Legendary. By merging their classic car proficiency with Web3 technology, they aspire to revolutionize the industry, leaving a potent, positive legacy on a global scale.`,
+However, it's his passion for restoring classic cars that ignited the creation of Something Legendary. By merging their classic car proficiency with Web 3.0 technology, they aspire to revolutionize the industry, leaving a potent, positive legacy on a global scale.`,
   },
   {
     title: "Classic cars especialist",

@@ -109,7 +109,7 @@ export default function Home(props) {
             reverse={true}
           >
             <p className="text-ogBlack  md:max-w-[500px] p-6 md:p-0 text-justify md:text-left">
-              Follow the entire process of restoring the classic of your dreams
+              Follow the entire process of restoring the classic of your dreams,
               live from the workshop where all the magic happens! Restoring a
               classic car is a labor of love that requires skill, patience, and
               dedication and we want you to embrace it{" "}
@@ -155,7 +155,7 @@ export default function Home(props) {
             <h3 className=" text-black text-3xl uppercase tracking-widest px-6 md:px-0">
               <span className="text-primaryGreen">Flaws?</span> Only on the{" "}
               <br />
-              car&apos;s <span className="text-primaryGreen">paintwork</span> .
+              car&apos;s <span className="text-primaryGreen">paintwork</span>.
               <br className="hidden md:block" />{" "}
               <span className=" text-black text-3xl uppercase tracking-widest"></span>
             </h3>
@@ -360,7 +360,7 @@ export default function Home(props) {
         }
         titleClassName="text-white"
         subtitle="Do you already have everything you need to start daydreaming? 
-So relax and press the pedal."
+If so, relax and press the pedal."
         linkLabel="Launch app"
         linkUrl="https://beta.somethinglegendary.io"
         image="bg-[url('/banners/ready-for-a-classic-investment.jpg')]"

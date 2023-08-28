@@ -136,7 +136,7 @@ const HowItWorks = () => {
           <>
             <p>
               Have you had a good time on the trip? If you have, it&apos;s time
-              to take out your investment funds! We hope you&apos;ve been
+              to withdraw your investment funds! We hope you&apos;ve been
               pleased with how everything&apos;s been going. And if you really
               enjoyed the destination, get ready to pick another one.
             </p>
@@ -306,10 +306,10 @@ const HowItWorks = () => {
             <p className="text-ogBlack md:max-w-[500px] p-6 md:p-0 text-justify md:text-left ">
               Have you considered the possibility of monitoring the project in
               real time? We know you haven&apos;t, because until today it
-              hasn&apos;t been done yet! Something offers you the possibility to
-              follow the entire restoration directly from our garage! You are
-              part of our restoration and we want you to give your opinion on
-              each step taken.
+              hasn&apos;t been done yet! Something Legendary offers you the
+              possibility to follow the entire restoration directly from our
+              garage! You are part of our restoration and we want you to give
+              your opinion on each step taken.
             </p>
           </HighlightContent>
           <div className=" hidden md:block">
@@ -328,7 +328,7 @@ const HowItWorks = () => {
               <p className="text-ogBlack md:max-w-[500px] p-6 md:p-0 text-justify md:text-left  ">
                 If you thought you were alone in this world, we introduce you to
                 thousands of people interested in the world of classics whose
-                vision of the process is similar to yours. The passion for the
+                vision of the process is similar to yours. The passion for
                 classics has never been so close, and we are open to any
                 enthusiast deserving of having their opinion shared.
               </p>

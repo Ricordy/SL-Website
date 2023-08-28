@@ -104,7 +104,7 @@ const AboutUs = (props) => {
               <h3 className="text-2xl uppercase">Transparency</h3>
               <p className="text-center">
                 We walk side by side with our investors and share the dream in
-                real time so that every detail of the process counts!
+                real time so that every detail of the process counts.
               </p>
             </div>
             <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 p-8 items-center">
