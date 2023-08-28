@@ -173,25 +173,66 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                   <div className="flex w-full pl-[72px] pt-12 md:pt-24 gap-6 justify-between ">
                     <ul className="flex flex-col w-full gap-6 text-left">
                       {itens.map(({ link, text }, index) => {
-                        return (
-                          <li key={index} className="uppercase w-full">
-                            <a
-                              href={link}
-                              rel="noopener noreferrer"
-                              target={text === "whitepaper" ? "_blank" : ""}
-                            >
+                        if (text === "whitepaper") {
+                          return (
+                            <li key={index} className="uppercase w-full">
                               <a
-                                onClick={() => {
-                                  setIsNavOpen(false);
-                                  setIsNavOn(false);
-                                }}
-                                className="text-slate-800 font-normal text-2xl tracking-wide block"
+                                href={link}
+                                rel="noopener noreferrer"
+                                target={"_blank"}
+                                className=" hidden md:block"
                               >
-                                {text}
+                                <a
+                                  onClick={() => {
+                                    setIsNavOpen(false);
+                                    setIsNavOn(false);
+                                  }}
+                                  className="text-slate-800 font-normal text-2xl tracking-wide block"
+                                >
+                                  {text}
+                                </a>
                               </a>
-                            </a>
-                          </li>
-                        );
+                              <a
+                                href={link}
+                                download="Something-Legendary-Whitepaper.pdf"
+                                rel="noopener noreferrer"
+                                target={"_blank"}
+                                className=" block md:hidden"
+                              >
+                                <a
+                                  onClick={() => {
+                                    setIsNavOpen(false);
+                                    setIsNavOn(false);
+                                  }}
+                                  className="text-slate-800 font-normal text-2xl tracking-wide block"
+                                >
+                                  {text}
+                                </a>
+                              </a>
+                            </li>
+                          );
+                        } else {
+                          return (
+                            <li key={index} className="uppercase w-full">
+                              <a
+                                href={link}
+                                rel="noopener noreferrer"
+                                target={""}
+                                className=""
+                              >
+                                <a
+                                  onClick={() => {
+                                    setIsNavOpen(false);
+                                    setIsNavOn(false);
+                                  }}
+                                  className="text-slate-800 font-normal text-2xl tracking-wide block"
+                                >
+                                  {text}
+                                </a>
+                              </a>
+                            </li>
+                          );
+                        }
                       })}
                       <li>
                         <Link href="https://beta.somethinglegendary.io">
