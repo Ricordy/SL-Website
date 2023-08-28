@@ -32,7 +32,7 @@ interface HygraphPostProps {
   locale: string;
 }
 
-interface PostsProps {
+export interface PostsProps {
   posts: HygraphPostProps[];
 }
 

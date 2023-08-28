@@ -65,6 +65,7 @@ const Posts: FC<PostProps> = ({
   buttonMoreBgColor,
   className,
   contentPadding,
+  maxPosts,
 }) => {
   const { isAboveMd } = useBreakpoint("md");
 
@@ -109,15 +110,29 @@ const Posts: FC<PostProps> = ({
       <div className="hidden md:block">
         <div className="grid grid-cols-3 gap-6 w-full justify-between">
           {posts &&
-            posts.map((post) => (
-              <PostItem
-                key={post.slug}
-                title={post.basic?.title}
-                image={post.image?.url}
-                slug={post.slug}
-              >
-                {post.shortDescription?.html}
-              </PostItem>
+            posts.map((post, idx) => (
+              <div>
+                {maxPosts && idx < maxPosts && (
+                  <PostItem
+                    key={post.slug}
+                    title={post.basic?.title}
+                    image={post.image?.url}
+                    slug={post.slug}
+                  >
+                    {post.shortDescription?.html}
+                  </PostItem>
+                )}
+                {!maxPosts && (
+                  <PostItem
+                    key={post.slug}
+                    title={post.basic?.title}
+                    image={post.image?.url}
+                    slug={post.slug}
+                  >
+                    {post.shortDescription?.html}
+                  </PostItem>
+                )}
+              </div>
             ))}
         </div>
       </div>

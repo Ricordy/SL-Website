@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FC, useEffect, useRef } from "react";
-import { cn } from "../lib/utils";
+import { FC, useEffect, useRef, useState } from "react";
+import { cn, investmentABI } from "../lib/utils";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { ethers } from "ethers";
 
 // Import Swiper styles
 import "swiper/css";
@@ -17,7 +18,7 @@ interface CarouselItemProps {
   title: string;
   image: string;
   status: string;
-  completion: string;
+  totalInvestment: number;
   address: string;
 }
 
@@ -25,12 +26,40 @@ const CarouselItem = ({
   title,
   image,
   status,
-  completion,
+  totalInvestment,
   address,
 }: CarouselItemProps) => {
+  const [completion, setCompletion] = useState(0);
+  useEffect(() => {
+    const readBC = async () => {
+      try {
+        const provider = new ethers.JsonRpcProvider(
+          process.env.NEXT_PUBLIC_ALCHEMY_URL_ID
+        );
+        const contract = new ethers.Contract(address, investmentABI, provider);
+
+        let totalInvested = await contract.totalSupply();
+
+        console.log("Total invested: ", String(totalInvested));
+        setCompletion(
+          Number(
+            ((Number(totalInvested) / 10 ** 6 / totalInvestment) * 100).toFixed(
+              2
+            )
+          )
+        );
+      } catch (error) {
+        console.log("errouuuuu ", error, address);
+      }
+    };
+
+    readBC();
+    return () => {};
+  }, []);
+
   return (
     <Link
-      className="flex flex-col w-max max-w-[80vw]  rounded-md bg-progressBackground "
+      className="flex flex-col w-full max-w-[80vw]  rounded-md bg-progressBackground "
       href={`${process.env.NEXT_PUBLIC_PLATFORM_URL}/investment/${address}`}
     >
       <div className="cursor-pointer">
@@ -52,10 +81,14 @@ const CarouselItem = ({
           </div>
           <div className="flex z-0 absolute w-full min-h-[200px] bg-[url('../public/projects/car-gradient.svg')] bg-cover"></div>
         </div>
-        <div
-          className={`flex rounded-bl-md bg-progressHighlight h-3`}
-          style={{ width: `${completion}%` }}
-        ></div>
+        <div className="absolute bottom-0 left-0 z-10 flex h-3 w-full rounded-b-md bg-[#DCDCDC]">
+          <div
+            className={` rounded-bl-md bg-progressHighlight`}
+            style={{
+              width: `${completion}%`,
+            }}
+          ></div>
+        </div>
       </div>
     </Link>
   );
@@ -78,8 +111,8 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
             Our <span className="font-medium">ongoing</span> projects
           </h3>
           <p>
-            Made with love and a lot of passion for every detail, this is our
-            atual range of products.
+            Made with passion and a lot of attention to detail. Browse our
+            current range of products.
           </p>
           <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
             <a className="uppercase dark:border-primaryGreen dark:text-primaryGreen dark:hover:text-white dark:hover:bg-primaryGreen hover:text-white hover:bg-primaryGreen border-2 py-1 px-8 text-sm self-start rounded-md text-primaryGreen">
@@ -92,7 +125,7 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
           <Swiper
             modules={[Navigation, Pagination, A11y]}
             className="swiper"
-            spaceBetween={25}
+            spaceBetween={isAboveMd ? 35 : 0}
             centeredSlides={isAboveMd ? false : true}
             slidesPerView={isAboveMd ? 2 : 1}
             // pagination={{ clickable: true }}
@@ -117,10 +150,7 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
                   title={item.basicInvestment.car.basicInfo.title}
                   image={item.basicInvestment.car.basicInfo.cover.url}
                   status={item.basicInvestment.investmentStatus}
-                  completion={String(
-                    item.basicInvestment.totalInvested /
-                      item.basicInvestment.totalInvestment
-                  )}
+                  totalInvestment={item.basicInvestment.totalInvestment}
                   address={item.address}
                 />
               </SwiperSlide>

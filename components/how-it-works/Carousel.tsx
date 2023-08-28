@@ -27,7 +27,7 @@ export const CarouselItem = ({
         <Image src={icon} alt={title} width={64} height={40} />
         <h4 className="text-black uppercase text-xs font-semibold">{title}</h4>
         <p
-          className="text-center"
+          className="text-justify md:text-center"
           dangerouslySetInnerHTML={{ __html: description }}
         />
       </div>

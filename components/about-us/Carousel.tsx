@@ -30,7 +30,7 @@ const chiefsInfo = [
     title: "Chief Executive Officer",
     name: "João",
     lastName: "Fernandes",
-    image: "/chiefs/gonçalo2.svg",
+    image: "/chiefs/joao.jpg",
     description: `I'm a person with a variety of interests and experiences, but one thing that has always captivated me is classic cars. As an entrepreneur and investor, I've had the opportunity to establish successful companies in several industries, including architecture, restaurants, and real estate investments. I was also part of the team that founded a company in stem cells in the UK that was listed on the stock market. My passion for innovation has also led me to establish a web3 consulting company, where I can explore new and exciting ideas in the tech space.
 
 My extensive travels around the world and establishment of companies on four different continents have given me a global perspective and the ability to adapt to diverse cultures and markets. Additionally, as the honorary consul of Albania, I'm dedicated to public service and community engagement.

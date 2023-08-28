@@ -11,46 +11,51 @@ import Carousel from "../components/Carousel";
 import { HygraphPostProps, PostItemProps } from "../@types/post";
 import { GraphQLClient, gql } from "graphql-request";
 import FlyoutMenu from "~/components/Accordion2-0";
+import { PostsProps } from "./learn";
 
 export default function Home(props) {
-  const posts: HygraphPostProps[] = [
-    {
-      basic: {
-        title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      },
-      image: {
-        url: "/posts/post-1.jpg",
-      },
-      slug: "lorem-1",
-      description: {
-        html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
-      },
-    },
-    {
-      basic: {
-        title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      },
-      image: {
-        url: "/posts/post-2.jpg",
-      },
-      slug: "lorem-2",
-      description: {
-        html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
-      },
-    },
-    {
-      basic: {
-        title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-      },
-      image: {
-        url: "/posts/post-3.jpg",
-      },
-      slug: "lorem-3",
-      description: {
-        html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
-      },
-    },
-  ];
+  // const posts: HygraphPostProps[] = [
+  //   {
+  //     basic: {
+  //       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+  //     },
+  //     image: {
+  //       url: "/posts/post-1.jpg",
+  //     },
+  //     slug: "lorem-1",
+  //     description: {
+  //       html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
+  //     },
+  //   },
+  //   {
+  //     basic: {
+  //       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+  //     },
+  //     image: {
+  //       url: "/posts/post-2.jpg",
+  //     },
+  //     slug: "lorem-2",
+  //     description: {
+  //       html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
+  //     },
+  //   },
+  //   {
+  //     basic: {
+  //       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
+  //     },
+  //     image: {
+  //       url: "/posts/post-3.jpg",
+  //     },
+  //     slug: "lorem-3",
+  //     description: {
+  //       html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
+  //     },
+  //   },
+  // ];
+
+  const { posts } = props;
+
+  console.log("posts", posts);
 
   return (
     <>
@@ -62,9 +67,11 @@ export default function Home(props) {
       <div className="flex flex-col bg-white gap-8 md:gap-[132px]">
         <HighlightContent
           overlap={true}
-          title={<h3 className="uppercase">Your dream project,</h3>}
+          title={
+            <h3 className="uppercase px-6 md:px-0">Your dream project,</h3>
+          }
           subtitle={
-            <h3 className=" text-primaryGreen uppercase tracking-widest">
+            <h3 className=" text-primaryGreen uppercase tracking-widest px-6 md:px-0">
               without leaving home.
             </h3>
           }
@@ -73,12 +80,13 @@ export default function Home(props) {
           buttonLabel="About Us"
         >
           <p className="text-ogBlack md:max-w-[500px] p-6 md:p-0 text-justify md:text-left">
-            The opportunity to travel across borders, we know it doesn&apos;t
-            seem real but imagine the process of restoring a classic directly
-            from your sofa in the living room, accompanying this restoration and
-            still having the chance to profit from it.{" "}
+            The project of a lifetime, all accomplished from the comfort of your
+            couch. We understand it may seem unreal to restore a classic car
+            without setting foot in a garage or to follow the entire restoration
+            process from the comfort of your own home while still profiting from
+            it.{" "}
             <span className=" font-medium">
-              That&apos;s what we do, with distinction.
+              But that&apos;s precisely what we do, with distinction.
             </span>
           </p>
         </HighlightContent>
@@ -101,23 +109,26 @@ export default function Home(props) {
             reverse={true}
           >
             <p className="text-ogBlack  md:max-w-[500px] p-6 md:p-0 text-justify md:text-left">
-              Imagine following the entire process of restoring the classic of
-              your dreams live from the workshop where all the magic happens!
-              Restoring a classic car is a labor of love that requires skill,
-              patience, and dedication and we want you to{" "}
-              <span className="font-medium">feel it at your place</span>.
+              Follow the entire process of restoring the classic of your dreams
+              live from the workshop where all the magic happens! Restoring a
+              classic car is a labor of love that requires skill, patience, and
+              dedication and we want you to embrace it{" "}
+              <span className="font-medium">
+                where you&apos;re most comfortable
+              </span>
+              .
             </p>
           </HighlightContent>
         </div>
         <div className=" block md:hidden">
           <HighlightContent
             title={
-              <h3 className=" text-black text-3xl uppercase tracking-widest">
+              <h3 className=" text-black text-3xl uppercase tracking-widest px-6">
                 The <span className="text-primaryGreen">only digital</span>
               </h3>
             }
             subtitle={
-              <h3 className="text-black text-3xl uppercase tracking-widest">
+              <h3 className="text-black text-3xl uppercase tracking-widest px-6">
                 <span className="text-primaryGreen">workshop</span> in the
                 world!
               </h3>
@@ -126,24 +137,27 @@ export default function Home(props) {
             buttonLink="/how-it-works"
             buttonLabel="How it works"
           >
-            <p className="text-ogBlack  p-6  ">
-              Imagine following the entire process of restoring the classic of
-              your dreams live from the workshop where all the magic happens!
-              Restoring a classic car is a labor of love that requires skill,
-              patience, and dedication and we want you to{" "}
-              <span className="font-medium">feel it at your place</span>.
+            <p className="text-ogBlack  md:max-w-[500px] p-6 md:p-0 text-justify md:text-left">
+              Follow the entire process of restoring the classic of your dreams
+              live from the workshop where all the magic happens! Restoring a
+              classic car is a labor of love that requires skill, patience, and
+              dedication and we want you to embrace it{" "}
+              <span className="font-medium">
+                where you&apos;re most comfortable
+              </span>
+              .
             </p>
           </HighlightContent>
         </div>
 
         <HighlightContent
           title={
-            <h3 className=" text-black text-3xl uppercase tracking-widest">
-              The <span className="text-primaryGreen">only risk</span> is on the
+            <h3 className=" text-black text-3xl uppercase tracking-widest px-6 md:px-0">
+              <span className="text-primaryGreen">Flaws?</span> Only on the{" "}
+              <br />
+              car&apos;s <span className="text-primaryGreen">paintwork</span> .
               <br className="hidden md:block" />{" "}
-              <span className=" text-black text-3xl uppercase tracking-widest">
-                car&apos;s paintwork!
-              </span>
+              <span className=" text-black text-3xl uppercase tracking-widest"></span>
             </h3>
           }
           image="/media/home-3.jpg"
@@ -154,10 +168,11 @@ export default function Home(props) {
             And even that is covered by the ACP!
           </p>
           <p className="text-ogBlack  md:max-w-[500px] p-6 md:p-0 text-justify md:text-left ">
-            Classic cars have a timeless appeal and a limited supply, which
-            means that their value may appreciate over time. Additionally,
-            classic cars can be enjoyed and used while they appreciate in value,
-            which is not always the case with other types of investments.
+            Classic cars have a timeless appeal and a limited supply. This
+            scarcity contributes to the possibility of their value increasing
+            over time. And, the fact that they offer both the pleasure of use
+            and the potential for appreciation is a combination not often found
+            in other investment avenues.
           </p>
         </HighlightContent>
       </div>
@@ -229,9 +244,8 @@ export default function Home(props) {
               </h3>
               <div className="flex flex-col self-start flex-1 justify-between">
                 <p className="text-ogBlack font-light text-center">
-                  Connect your wallet!
-                  <br />
-                  Launch the app, connect wallet choose your legendary classic
+                  Launch the app, connect your wallet and choose your legendary
+                  classic.
                 </p>
                 <p className="text-ogBlack font-light text-center">
                   Don&apos;t have wallet?
@@ -276,8 +290,7 @@ export default function Home(props) {
             </h3>
             <div className="flex flex-col self-start flex-1 justify-between">
               <p className="text-ogBlack text-center">
-                Choose your legendary classic for something more than just
-                watching someone do it for you!
+                Select the legendary project that you see yourself in.
               </p>
             </div>
           </div>
@@ -332,6 +345,7 @@ export default function Home(props) {
           buttonMoreLink="/learn"
           buttonMoreText="See More"
           className="md:py-[132px] py-16"
+          maxPosts={3}
         />
       </div>
 
@@ -398,6 +412,28 @@ export async function getStaticProps({ locale }) {
     `
   );
 
+  const { posts }: PostsProps = await hygraph.request(
+    gql`
+      query MyQuery {
+        posts {
+          id
+          slug
+          basic {
+            title
+          }
+          shortDescription {
+            html
+          }
+          image {
+            url
+          }
+          postCategory
+          locale
+        }
+      }
+    `
+  );
+
   return {
     props: {
       // ...(await serverSideTranslations(locale, [
@@ -409,6 +445,7 @@ export async function getStaticProps({ locale }) {
       //   "newsletter",
       //   "about-us",
       // ])),
+      posts,
       investments,
       // Will be passed to the page component as props
     },

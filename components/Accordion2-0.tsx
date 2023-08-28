@@ -10,21 +10,20 @@ function classNames(...classes) {
 const solutions = [
   {
     name: "01. We buy the old",
-    description: `After a constant market analysis for the best classic, we go
-                  to the source of the question to buy the car in its current
-                  condition. Today&apos;s rust is tomorrow&apos;s gold!`,
+    description: `After conducting thorough market analysis to identify the best classics, we proceed to approach the original source for purchasing vehicles in their current condition. Today&apos;s rust is tomorrow&apos;s gold!`,
+
     href: "#",
   },
   {
     name: "02. We restore the classic",
     description:
-      "Mollit eu laboris ullamco eiusmod sit ad aliquip quis. Duis mollit irure sint dolor adipisicing. Ullamco do eiusmod duis eu nulla sint. Proident amet excepteur laborum deserunt sunt Lorem ex elit ut ut qui qui laboris velit minim. Ex amet do anim do in consequat aliquip elit aute proident. Anim culpa veniam eu consectetur dolor velit nostrud laboris. Exercitation non ad excepteur et deserunt reprehenderit exercitation quis labore veniam labore non velit. Est proident exercitation ex non laborum cillum commodo non dolore eu ad. Occaecat enim elit non exercitation fugiat ipsum officia proident officia ex minim consectetur. Pariatur in aute irure consectetur sit culpa eiusmod dolore Lorem.Get all of your questions answered in our forums of contact support.",
+      "We start disassembling the car, removing all components and parts that require restoration. The parts are then cleaned, repaired, or replaced as necessary. Once the car is fully assembled, it's time for the final touch-up and testing.",
     href: "#",
   },
   {
     name: "03. We share the profits",
     description:
-      "Mollit eu laboris ullamco eiusmod sit ad aliquip quis. Duis mollit irure sint dolor adipisicing. Ullamco do eiusmod duis eu nulla sint. Proident amet excepteur laborum deserunt sunt Lorem ex elit ut ut qui qui laboris velit minim. Ex amet do anim do in consequat aliquip elit aute proident. Anim culpa veniam eu consectetur dolor velit nostrud laboris. Exercitation non ad excepteur et deserunt reprehenderit exercitation quis labore veniam labore non velit. Est proident exercitation ex non laborum cillum commodo non dolore eu ad. Occaecat enim elit non exercitation fugiat ipsum officia proident officia ex minim consectetur. Pariatur in aute irure consectetur sit culpa eiusmod dolore Lorem.Get all of your questions answered in our forums of contact support.",
+      "The evaluation of the profits is simple and based on numbers and data. We evaluate the amount spent versus the return on the sale and apply the percentage due proportional to the value of your investment.",
     href: "#",
   },
 ];

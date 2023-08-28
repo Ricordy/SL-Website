@@ -57,9 +57,7 @@ const AboutUs = (props) => {
     <div className="">
       <div className="text-center flex w-full gap-12 md:gap-[132px] mx-auto  items-center flex-col max-w-[1210px]">
         <div className="flex flex-col w-full items-center pt-[52px] gap-4">
-          <h3 className="font-light text-4xl uppercase">
-            A Legendary Oil Change!
-          </h3>
+          <h3 className="font-light text-4xl uppercase">About us</h3>
           <h5 className="uppercase text-2xl font-medium">
             Know what&apos;s under the hood
           </h5>
@@ -70,17 +68,16 @@ const AboutUs = (props) => {
           <div className="flex flex-col px-6 md:px-0 w-screen self-center text-left gap-8  max-w-md items-start justify-center">
             <h3 className="uppercase">How we became something.</h3>
             <p className="text-left">
-              The real deal was like, João invested in classic cars on a
-              personal basis and formed friendships with the owner of True
-              Legend, João Dias. Gonçalo was a financial mediator and the
-              suggestion to invest in classic cars was conditioned by the volume
-              of initial investment (
-              <span className="font-medium">
-                financial power and market know-how
-              </span>
-              ) and this catapulted to the creation of a service that could
-              offer the target with less resources (time, money or knowledge)
-              the opportunity to participate in an exclusive project!
+              It all started when three acquaintances realized they could do
+              something legendary together. João has invested in classic cars
+              for years, and all his experience comes with a lot of know-how and
+              do's and dont&apos;s. His investments led him to João Dias, owner
+              of True Legend, an established garage and well-known for being
+              specialists in classic's restoration. Gonçalo, the Web 3.0 expert,
+              recognized that investing in classic cars didn't need to follow
+              the traditional path. He saw the potential for a simpler approach,
+              one that didn't require a substantial initial investment or
+              extensive hours of dedication.
             </p>
           </div>
         </section>
@@ -114,7 +111,7 @@ const AboutUs = (props) => {
               <h3 className="text-2xl uppercase">Commitment</h3>
               <p className="text-center">
                 100% safe investment, we value our community above everything
-                else and the word of something legendary is the core business of
+                else and the word of Something Legendary is the core business of
                 our project.
               </p>
             </div>
@@ -135,7 +132,7 @@ const AboutUs = (props) => {
               believe in safety?
             </h3>
           }
-          subtitle="Imagine that our security tools are like a state-of-the-art safe. In our case, you don't need to imagine, they really are."
+          subtitle="Security is one of our priorities, and one of the ways we ensure this is by making sure our tools are state-of-the-art."
           // linkLabel="Security Measures"
           // linkUrl="/security"
           image="bg-[url('/banners/about-safety.jpg')]"

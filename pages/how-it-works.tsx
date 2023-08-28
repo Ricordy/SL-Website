@@ -69,10 +69,8 @@ const HowItWorks = () => {
         content: (
           <>
             <p>
-              The user clicks on launch App and enters the platform, then clicks
-              on connect wallet for which he must have one to be able to
-              connect, if not, redirect to create one. Don&apos;t know how to
-              create one?
+              Launch the app, enter the platform, connect your wallet and start
+              investing.
             </p>
             <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
@@ -91,11 +89,11 @@ const HowItWorks = () => {
         content: (
           <>
             <p>
-              You&apos;re already connected and now you can view all over the
-              platform! To be able to interact with it and start investing, you
-              have to buy the entry ticket (NFT). After completing this process,
-              you&apos;re now part of the Something Legendary community and can
-              invest in your dream classic car.
+              Now you can browse the platform. To be able to interact with it
+              and start investing, you must first buy an entry ticket (NFT).
+              After completing this process, you&apos;re now part of the
+              Something Legendary community and can now invest in your dream
+              classic car.
             </p>
             <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
@@ -114,10 +112,11 @@ const HowItWorks = () => {
         content: (
           <>
             <p>
-              Now that you have visibility on the ON GOING projects, it remains
-              to choose which project you want to be part of and the amount you
-              want to invest. Choose wisely, don&apos;t let your personal tastes
-              influence your margins... or do, its your choice.
+              Now that you have access to the Ongoing Projects, the next step is
+              to select the project you wish to join and determine the amount
+              you'd like to invest. Make your decision thoughtfully, considering
+              the potential impact on your returns. Or choose a car you like...
+              it&apos;s up to you!
             </p>
             <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
@@ -136,10 +135,10 @@ const HowItWorks = () => {
         content: (
           <>
             <p>
-              Have you enjoyed the trip yet? Then it&apos;s time to withdraw
-              your investment funds! We hope that the entire follow-up of the
-              process has been to your liking. If you really liked the
-              destination, get ready to choose another one.
+              Have you had a good time on the trip? If you have, it's time to
+              take out your investment funds! We hope you've been pleased with
+              how everything's been going. And if you really enjoyed the
+              destination, get ready to pick another one.
             </p>
             <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">

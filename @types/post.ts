@@ -11,6 +11,7 @@ export type PostProps = {
   buttonMoreBgColor?: string;
   className?: string;
   contentPadding?: boolean;
+  maxPosts?: number;
 };
 export type PostItemProps = {
   image: string;
