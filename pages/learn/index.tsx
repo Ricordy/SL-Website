@@ -320,7 +320,7 @@ const Learn = (props: PostsProps) => {
           height={505}
           subtitle="Do you already have everything you need to start daydreaming? 
 So relax and press the pedal."
-          linkLabel="Go to app"
+          linkLabel="Launch app"
           linkUrl="https://beta.somethinglegendary.io"
           image="bg-[url('/banners/learn-header.jpg')]"
           contentPadding={true}

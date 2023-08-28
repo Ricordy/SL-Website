@@ -309,7 +309,7 @@ export default function Home(props) {
 
               <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
                 <a className="text-slate-100 text-center uppercase border-2 hover:bg-white dark:hover:bg-white hover:text-black dark:hover:text-black text-xs border-slate-100 rounded-md px-8 py-1 self-center">
-                  Go to app
+                  Launch app
                 </a>
               </Link>
             </div>
@@ -361,7 +361,7 @@ export default function Home(props) {
         titleClassName="text-white"
         subtitle="Do you already have everything you need to start daydreaming? 
 So relax and press the pedal."
-        linkLabel="Go to app"
+        linkLabel="Launch app"
         linkUrl="https://beta.somethinglegendary.io"
         image="bg-[url('/banners/ready-for-a-classic-investment.jpg')]"
       />

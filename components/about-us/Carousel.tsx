@@ -20,29 +20,28 @@ interface CarouselItemProps {
 
 const chiefsInfo = [
   {
-    title: "Chief of Finantial Office",
+    title: "Chief Financial Officer",
     name: "Gonçalo",
     lastName: "Severino",
-    image: "/chiefs/Gonçalo.svg",
-    description: `Gonçalo Severino, formação em gestão. Desde cedo, senti que o ensino escolar não era suficiente para atingir a alta performance no mundo supersónico em que vivemos. Isso motivou-me pessoalmente a ingressar no mundo económico e financeiro para realmente compreender e aprender como funciona uma das vertentes mais importantes da sociedade de hoje em dia. Isso acabou por me levar ao mercado de ações aos 18 anos. Cedo ganhei interesse pelo mercado de Criptomoedas e, posteriormente, de NFTs. Decidi que não queria ser mais um peixe no mar e a minha grande preocupação no primeiro ano não foi ganhar dinheiro, mas sim entender realmente como funciona. Quando ainda estava no meu segundo ano de faculdade, comecei a prestar serviços de consultoria a empresários individuais e a algumas empresas, nomeadamente agências de publicidade e marketing. No início de 2022, comecei a trabalhar com o meu atual sócio onde formamos uma empresa (Web 360 Labs) de prestação de serviços 360º em tudo o que toca à Web 3.0 (blockchain, criptomoedas, NFTs), desde o aconselhamento legal e financeiro, ao desenvolvimento "hands-on" informático e tudo o que toca na criação de marca, marketing e definição do modelo de negócio. O nosso objetivo é transformar ideias em produtos prontos para o consumidor final.`,
+    image: "/chiefs/gonçalo3.jpg",
+    description: `Gonçalo Severino, managment graduate, started to delve into finance and economy by the time he was 18. Driven by a passion for the world of finances, he found his way into learning more about the stock market. 
+His intrigue extended to cryptocurrencies and NFTs, areas where he aimed to stand out rather than blend in. While still in university, he began consulting for individual entrepreneurs and enterprises, within advertising and marketing. In early 2022, he co-founded Web 360 Labs, a Web 3.0 firm. Their services span legal and financial guidance, practical IT development, branding, marketing, and business model shaping—ultimately converting concepts into consumer-ready products.`,
   },
   {
     title: "Chief Executive Officer",
     name: "João",
     lastName: "Fernandes",
     image: "/chiefs/joao.jpg",
-    description: `I'm a person with a variety of interests and experiences, but one thing that has always captivated me is classic cars. As an entrepreneur and investor, I've had the opportunity to establish successful companies in several industries, including architecture, restaurants, and real estate investments. I was also part of the team that founded a company in stem cells in the UK that was listed on the stock market. My passion for innovation has also led me to establish a web3 consulting company, where I can explore new and exciting ideas in the tech space.
-
-My extensive travels around the world and establishment of companies on four different continents have given me a global perspective and the ability to adapt to diverse cultures and markets. Additionally, as the honorary consul of Albania, I'm dedicated to public service and community engagement.
-
-However, it's my love for investing in and restoring classic cars that lead me to create Something Legendary.  With my unique combination of expertise in classic cars and web3 technology, I believe I can bring fresh ideas and new approaches to the classic car industry. Ultimately, my goal is to make a positive impact on the world and leave a lasting legacy through my work.`,
+    description: `João is a businessman of diverse passions, he's always been interested in classic cars. As an accomplished entrepreneur and investor, he's spearheaded successful ventures spanning architecture, restaurants, real estate, and even co-founded a UK-listed stem cell company. His Web3 consulting endeavor reflects their inclination for tech innovation.
+The extensive global travels and business ventures have fostered adaptability to diverse markets and cultures. Serving as Albania's honorary consul emphasizes the commitment to community engagement.
+However, it's his passion for restoring classic cars that ignited the creation of Something Legendary. By merging their classic car proficiency with Web3 technology, they aspire to revolutionize the industry, leaving a potent, positive legacy on a global scale.`,
   },
   {
-    title: "BOSS of repairs",
+    title: "Classic cars especialist",
     name: "João",
     lastName: "Dias",
     image: "/chiefs/gonçalo3.jpg",
-    description: `João Dias, formação de engenharia, 32 anos, nos últimos 15 ligado e no meio dos carros desportivos e clássicos. Com formação feita e experiência ganha entre oficinas de restauro, colecionadores, corridas e concursos, foi chefe de oficina com apenas 22 anos liderando uma equipa de 17 "mestres" do restauro pelo conhecimento, gosto e capacidade de fazer acontecer. Em 2016 cria a True Legend e destaca-se pela organização, critério e qualidade. Vários prémios de restauro ganhos em Portugal e Alemanha, presença nos mais importantes eventos internacionais, projectos de restauro muito especiais e visão das possibilidades de investimento que o mercado tem para oferecer.`,
+    description: `João Dias, an engineering enthusiast, boasts an impressive 32-year journey, with the last 15 years passionately dedicated to the realms of sports and classic cars. His expertise is a fusion of formal training and hands-on experience gleaned from restoration workshops, collectors' networks, races, and competitions. A feat worth noting is his ascendancy to workshop manager at the young age of 22, overseeing a team of 17 restoration "maestros" celebrated for their expertise, refined taste, and adeptness in overcoming challenges. Through his remarkable journey, João continues to leave an indelible mark in the world of automotive restoration, embodying the very essence of skill, passion, and accomplishment.`,
   },
 ];
 
@@ -57,7 +56,7 @@ const CarouselItem = ({
     <div className="flex md:flex-row w-full flex-col md:w-[850px] md:gap-12 md:rounded-md">
       <div
         className={cn(
-          "flex w-[400px] md:w-1/2 items-center justify-center rounded-md bg-cover relative md:flex-row flex-col gap-3 ",
+          "flex w-[400px] md:w-1/2 items-center justify-center align-top rounded-md bg-cover relative md:flex-row flex-col gap-3 ",
           image
         )}
       >
@@ -69,7 +68,7 @@ const CarouselItem = ({
           alt="Gonçalo Severino"
         />
       </div>
-      <div className="flex flex-col md:justify-start w-full md:items-start md:w-1/2 pt-[52px] px-6 md:px-0 ">
+      <div className="flex flex-col md:justify-start w-full md:items-start md:w-1/2  px-6 md:px-0 ">
         <div className="text-tabInactive flex uppercase">{title}</div>
         <h3 className="uppercase pb-8 flex w-full gap-1 justify-start ">
           <span className="text-primaryGreen ">{name}</span>

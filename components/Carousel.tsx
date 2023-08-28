@@ -116,7 +116,7 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
           </p>
           <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
             <a className="uppercase dark:border-primaryGreen dark:text-primaryGreen dark:hover:text-white dark:hover:bg-primaryGreen hover:text-white hover:bg-primaryGreen border-2 py-1 px-8 text-sm self-start rounded-md text-primaryGreen">
-              Go to app
+              Launch app
             </a>
           </Link>
         </div>

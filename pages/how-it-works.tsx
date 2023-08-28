@@ -74,7 +74,7 @@ const HowItWorks = () => {
             </p>
             <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
-                Go to app
+                Launch app
               </a>
             </Link>
           </>
@@ -97,7 +97,7 @@ const HowItWorks = () => {
             </p>
             <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
-                Go to app
+                Launch app
               </a>
             </Link>
           </>
@@ -120,7 +120,7 @@ const HowItWorks = () => {
             </p>
             <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
-                Go to app
+                Launch app
               </a>
             </Link>
           </>
@@ -142,7 +142,7 @@ const HowItWorks = () => {
             </p>
             <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
-                Go to app
+                Launch app
               </a>
             </Link>
           </>
@@ -305,8 +305,8 @@ const HowItWorks = () => {
           >
             <p className="text-ogBlack md:max-w-[500px] p-6 md:p-0 text-justify md:text-left ">
               Have you considered the possibility of monitoring the project in
-              real time? We know it didn&apos;t, because until today it
-              hadn&apos;t been done yet! Something offers you the possibility to
+              real time? We know you haven&apos;t, because until today it
+              hasn&apos;t been done yet! Something offers you the possibility to
               follow the entire restoration directly from our garage! You are
               part of our restoration and we want you to give your opinion on
               each step taken.
@@ -329,8 +329,8 @@ const HowItWorks = () => {
                 If you thought you were alone in this world, we introduce you to
                 thousands of people interested in the world of classics whose
                 vision of the process is similar to yours. The passion for the
-                classics has never been so close and we are open to any
-                enthusiast whose opinion deserves to be shared.
+                classics has never been so close, and we are open to any
+                enthusiast deserving of having their opinion shared.
               </p>
             </HighlightContent>
           </div>
@@ -395,7 +395,7 @@ const HowItWorks = () => {
             Feel like you’re
 already part of it?"
           subtitle="So don't waste any more time and start living the classics experience now."
-          linkLabel="Go to app"
+          linkLabel="Launch app"
           linkUrl="https://beta.somethinglegendary.io"
           image="bg-[url('/banners/ready-for-a-classic-investment.jpg')]"
         />

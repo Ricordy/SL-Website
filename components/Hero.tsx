@@ -24,7 +24,7 @@ function Hero(props) {
         </p>
         <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
           <a className="text-black bg-white text-center uppercase border-2 text-xs border-slate-100 rounded-md px-8 py-1 self-start">
-            Go to App
+            Launch App
           </a>
         </Link>
       </div>
