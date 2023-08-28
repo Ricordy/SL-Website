@@ -56,7 +56,7 @@ const AboutUs = (props) => {
   return (
     <div className="">
       <div className="text-center flex w-full gap-12 md:gap-[132px] mx-auto  items-center flex-col max-w-[1210px]">
-        <div className="flex flex-col w-full items-center pt-[52px] gap-4">
+        <div className="flex flex-col w-full items-center pt-[52px] gap-4 p-6">
           <h3 className="font-light text-4xl uppercase">About us</h3>
           <h5 className="uppercase text-2xl font-medium">
             Know what&apos;s under the hood
