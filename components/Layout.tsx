@@ -9,9 +9,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
-        <title>
-          Something Legendary | It is in the solitude that legends are born
-        </title>
+        <title>Something Legendary</title>
         <meta
           name="description"
           content="Somenthing Legendary: It is in the solitude that legends are born."
