@@ -358,9 +358,9 @@ const HowItWorks = () => {
           <HighlightContent
             title={
               <h3 className="text-3xl uppercase tracking-widest md:max-w-[500px] p-6 md:p-0  md:text-left">
-                The distance that{" "}
+                The distance that <br />
                 <span className=" text-primaryGreen ">unites us</span>, from
-                digital to physycal events.
+                digital <br /> to physycal events.
               </h3>
             }
             image="/media/home-3.jpg"
