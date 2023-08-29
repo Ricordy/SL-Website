@@ -327,7 +327,7 @@ const HowItWorks = () => {
           </div>
         </section>
       </section>
-      <section className="py-[52px]  mx-auto md:hidden block self-center text-black text-center">
+      <section className="py-[52px]  mx-auto md:hidden block self-center text-black text-center ">
         <Carousel id="12" slidesPerView={1} spaceBetween={0} />
       </section>
       <section className="py-[52px] w-full max-w-[1210px] mx-auto hidden md:block">

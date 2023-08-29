@@ -77,13 +77,14 @@ const Posts: FC<PostProps> = ({
         contentPadding ? "px-24" : ""
       )}
     >
-      <div className="flex w-full pb-[72px] items-center relative justify-between">
+      <div className="flex w-full pb-[72px] items-center relative justify-between ">
         <h3
-          className={`text-black flex-1 font-medium  text-3xl uppercase ${
+          className={`text-black flex font-medium  text-3xl uppercase ${
             titleCentered ? "text-center" : ""
           }`}
         >
-          {title}
+          <div className=" absolute w-full ">{title}</div>
+
           {buttonMoreLink && buttonMoreText && (
             <Link href={buttonMoreLink}>
               <a
