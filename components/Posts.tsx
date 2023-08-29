@@ -149,11 +149,11 @@ const Posts: FC<PostProps> = ({
               centeredSlides={true}
               pagination={{
                 clickable: true,
-                el: `.swiper-pagination-4`,
+                el: `.swiper-pagination-6000`,
               }}
               navigation={{
-                nextEl: `.swiper-next-4`,
-                prevEl: `.swiper-prev-4`,
+                nextEl: `.swiper-next-6000`,
+                prevEl: `.swiper-prev-6000`,
               }}
               updateOnWindowResize
               observer
@@ -177,7 +177,7 @@ const Posts: FC<PostProps> = ({
           </div>
         </div>
         <div className="flex gap-6 justify-center items-center mx-auto">
-          <div className={`flex relative swiper-prev-4`}>
+          <div className={`flex relative swiper-prev-6000`}>
             <Image
               src="/icons/pagination-prev.svg"
               width={20}
@@ -186,9 +186,9 @@ const Posts: FC<PostProps> = ({
             />
           </div>
           <div
-            className={`flex justify-center items-center gap-1 text-black swiper-pagination-2`}
+            className={`flex justify-center items-center gap-1 text-black swiper-pagination-6000`}
           />
-          <div className={`flex relative swiper-next-4`}>
+          <div className={`flex relative swiper-next-6000`}>
             <Image
               src="/icons/pagination-next.svg"
               width={20}
