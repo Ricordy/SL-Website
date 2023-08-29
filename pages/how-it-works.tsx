@@ -231,7 +231,7 @@ const HowItWorks = () => {
             </Tab.Group>
           </div>
 
-          <div className="bg-white  rounded-md md:p-[52px] shadow-md md:hidden block pb-[32px]">
+          <div className="bg-white   rounded-md md:p-[52px] shadow-md md:hidden flex flex-col gap-3 pb-[32px]">
             <div className="k max-w-[100vw] w-screen  swiper-wrapper ">
               <Swiper
                 modules={[Navigation, Pagination, A11y]}
