@@ -69,12 +69,12 @@ const HowItWorks = () => {
         image: "/media/about-1.jpg",
         content: (
           <>
-            <p>
+            <p className="pb-10">
               Launch the app, enter the platform, connect your wallet and start
               investing.
             </p>
             <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
-              <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
+              <a className="text-white  bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
                 Launch app
               </a>
             </Link>
@@ -89,7 +89,7 @@ const HowItWorks = () => {
         image: "/media/about-1.jpg",
         content: (
           <>
-            <p>
+            <p className="pb-10">
               Now you can browse the platform. To be able to interact with it
               and start investing, you must first buy an entry ticket (NFT).
               After completing this process, you&apos;re now part of the
@@ -112,7 +112,7 @@ const HowItWorks = () => {
         image: "/media/about-1.jpg",
         content: (
           <>
-            <p>
+            <p className="pb-10">
               Now that you have access to the Ongoing Projects, the next step is
               to select the project you wish to join and determine the amount
               you&apos;d like to invest. Make your decision thoughtfully,
@@ -135,7 +135,7 @@ const HowItWorks = () => {
         image: "/media/about-1.jpg",
         content: (
           <>
-            <p>
+            <p className="pb-10">
               Have you had a good time on the trip? If you have, it&apos;s time
               to withdraw your investment funds! We hope you&apos;ve been
               pleased with how everything&apos;s been going. And if you really
@@ -231,7 +231,7 @@ const HowItWorks = () => {
             </Tab.Group>
           </div>
 
-          <div className="bg-white   rounded-md md:p-[52px] shadow-md md:hidden flex flex-col gap-3 pb-[32px]">
+          <div className="bg-white   rounded-md md:p-[52px] shadow-md md:hidden flex flex-col gap-10 pb-[32px]">
             <div className="k max-w-[100vw] w-screen  swiper-wrapper ">
               <Swiper
                 modules={[Navigation, Pagination, A11y]}
@@ -259,10 +259,10 @@ const HowItWorks = () => {
                         <div key={post.id} className="relative rounded-md p-3 ">
                           <section className="flex flex-col-reverse gap-24 w-full mt-[52px] ">
                             <div className="flex flex-col gap-8  max-w-md items-start justify-center">
-                              <h3 className="uppercase">
+                              <h3 className="uppercase text-left">
                                 {`0${idx + 1}.`} {post.title}
                               </h3>
-                              {post.content}
+                              <div className="text-justify">{post.content}</div>
                             </div>
                             <Image
                               alt={post.title}
@@ -316,7 +316,7 @@ const HowItWorks = () => {
           <h3 className="text-black text-4xl uppercase md:text-start text-center">
             Know our process
           </h3>
-          <p className="text-black px-4 md:px-0">
+          <p className="text-black px-4 md:px-0 text-center">
             The most important rules manual to achieve the dream.
           </p>
         </div>

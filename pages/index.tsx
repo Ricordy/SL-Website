@@ -13,6 +13,8 @@ import { GraphQLClient, gql } from "graphql-request";
 import FlyoutMenu from "~/components/Accordion2-0";
 import { PostsProps } from "./learn";
 
+import "swiper/css";
+
 export default function Home(props) {
   // const posts: HygraphPostProps[] = [
   //   {

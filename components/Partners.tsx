@@ -61,6 +61,7 @@ const Partners = ({
               observer
               observeParents
               initialSlide={0}
+
               // loop={true}
             >
               <SwiperSlide className="w-[400px]">
