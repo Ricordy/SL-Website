@@ -84,7 +84,7 @@ const AboutUs = (props) => {
         <Partners title="ENTITIES THAT TRUST US" theme="white" />
       </div>
       <div className="flex flex-col gap-12 md:gap-[132px] md:py-[132px]">
-        <Carousel id="1" />
+        <Carousel id="7000" />
         <TrophyCarousel id="3" items={props.investments} />
       </div>
       <div className="flex flex-col md:w-full md:gap-[132px] md:mx-auto   md:items-center md:max-w-[1210px]">

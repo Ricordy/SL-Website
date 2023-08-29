@@ -251,7 +251,6 @@ const HowItWorks = () => {
                 observer
                 observeParents
                 initialSlide={0}
-                loop
               >
                 {Object.values(categories).map((posts, idx) => (
                   <SwiperSlide>
