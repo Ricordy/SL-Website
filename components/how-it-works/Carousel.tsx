@@ -130,7 +130,9 @@ const Carousel: FC<CarouselProps> = ({
         </div>
       </div>
       <div className="flex gap-6 justify-center items-center  w-1/3 mx-auto">
-        <div className={`flex relative swiper-prev-${id}`}>
+        <div
+          className={`flex md:relative absolute left-1/4  swiper-prev-${id}`}
+        >
           <Image
             src="/icons/pagination-prev.svg"
             width={20}
@@ -141,7 +143,9 @@ const Carousel: FC<CarouselProps> = ({
         <div
           className={`flex justify-center items-center gap-1 text-black swiper-pagination-${id}`}
         />
-        <div className={`flex relative swiper-next-${id}`}>
+        <div
+          className={`flex md:relative absolute  right-1/4 swiper-next-${id}`}
+        >
           <Image
             src="/icons/pagination-next.svg"
             width={20}
