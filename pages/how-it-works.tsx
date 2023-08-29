@@ -17,9 +17,10 @@ import { HygraphPostProps, PostItemProps } from "../@types/post";
 import Navbar from "../components/Navbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import { Carousel as Slider } from "antd";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
 
 const HowItWorks = () => {
   const posts: HygraphPostProps[] = [
@@ -230,38 +231,81 @@ const HowItWorks = () => {
             </Tab.Group>
           </div>
 
-          <div className="bg-white  rounded-md md:p-[52px] shadow-md md:hidden block max-w-[414px] w-screen">
-            <Slider className="pb-6">
-              {Object.values(categories).map((posts, idx) => (
-                <div key={idx}>
-                  {posts.map((post) => (
-                    <div key={post.id} className="relative rounded-md p-3 ">
-                      <section className="flex flex-col-reverse gap-24 w-full mt-[52px] ">
-                        <div className="flex flex-col gap-8  max-w-md items-start justify-center">
-                          <h3 className="uppercase">
-                            {`0${idx + 1}.`} {post.title}
-                          </h3>
-                          {post.content}
-                        </div>
-                        <Image
-                          alt={post.title}
-                          src={post.image}
-                          width={592}
-                          height={394}
-                        />
-                      </section>
+          <div className="bg-white  rounded-md md:p-[52px] shadow-md md:hidden block pb-[32px]">
+            <div className="k max-w-[100vw] w-screen  swiper-wrapper ">
+              <Swiper
+                modules={[Navigation, Pagination, A11y]}
+                className="swiper w-full"
+                spaceBetween={0}
+                centeredSlides={true}
+                slidesPerView={"auto"}
+                pagination={{
+                  clickable: true,
+                  el: `.swiper-pagination-${5000}`,
+                }}
+                navigation={{
+                  nextEl: `.swiper-next-${5000}`,
+                  prevEl: `.swiper-prev-${5000}`,
+                }}
+                updateOnWindowResize
+                observer
+                observeParents
+                initialSlide={0}
+              >
+                {Object.values(categories).map((posts, idx) => (
+                  <SwiperSlide>
+                    <div key={idx} className="w-screen  px-6">
+                      {posts.map((post) => (
+                        <div key={post.id} className="relative rounded-md p-3 ">
+                          <section className="flex flex-col-reverse gap-24 w-full mt-[52px] ">
+                            <div className="flex flex-col gap-8  max-w-md items-start justify-center">
+                              <h3 className="uppercase">
+                                {`0${idx + 1}.`} {post.title}
+                              </h3>
+                              {post.content}
+                            </div>
+                            <Image
+                              alt={post.title}
+                              src={post.image}
+                              width={592}
+                              height={394}
+                            />
+                          </section>
 
-                      {/* <a
+                          {/* <a
                           href="#"
                           className={classNames(
                             "absolute inset-0 rounded-md",
                           )}
                         /> */}
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              ))}
-            </Slider>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+            <div className="flex gap-6 justify-center items-center  w-1/3 mx-auto  ">
+              <div className={`flex absolute left-1/4 swiper-prev-${5000}  `}>
+                <Image
+                  src="/icons/pagination-prev.svg"
+                  width={20}
+                  height={15}
+                  alt="Previous"
+                />
+              </div>
+              <div
+                className={`flex justify-center items-center gap-1 text-black swiper-pagination-${5000}`}
+              />
+              <div className={`flex absolute right-1/4 swiper-next-${5000}`}>
+                <Image
+                  src="/icons/pagination-next.svg"
+                  width={20}
+                  height={15}
+                  alt="Next"
+                />
+              </div>
+            </div>
           </div>
         </section>
         <div className="bg-black/70 w-full absolute h-[816px] z-0" />
