@@ -253,7 +253,7 @@ const HowItWorks = () => {
                 initialSlide={0}
               >
                 {Object.values(categories).map((posts, idx) => (
-                  <SwiperSlide>
+                  <SwiperSlide key={idx}>
                     <div key={idx} className="w-screen  px-6">
                       {posts.map((post) => (
                         <div key={post.id} className="relative rounded-md p-3 ">

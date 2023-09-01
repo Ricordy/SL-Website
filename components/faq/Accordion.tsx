@@ -65,7 +65,12 @@ const Accordion: FC<AccordionProps> = ({ className }) => {
   return (
     <div className={cn("flex flex-col w-2/3 mt-12", className)}>
       {FAQItems.map((item, index) => (
-        <Disclosure as="div" className="mt-2" defaultOpen={index === 0}>
+        <Disclosure
+          as="div"
+          className="mt-2"
+          defaultOpen={index === 0}
+          key={index}
+        >
           {({ open }) => (
             <>
               <Disclosure.Button
