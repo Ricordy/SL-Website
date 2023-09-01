@@ -26,6 +26,40 @@ const FAQItems = [
     title: `03. How can I get a Something Legendary Membership Card?`,
     description: `Access to the platform is exclusive to Something Legendary Membership Card holders. You can acquire the card through the platform's registration process.`,
   },
+  {
+    title: `04. What kind of cars can I invest in?`,
+    description: `Something Legendary offers a selection of classic cars with detailed technical data and valuation insights.`,
+  },
+  {
+    title: `05. What is the expected profit margin for investors?`,
+    description: `Profit margins for investors range from 12% to 20%, depending on the investment level.`,
+  },
+  {
+    title: `06. What are PUZZLE NFTs and LEVEL NFTs?`,
+    description: ` - PUZZLE NFTs are awarded for every $5000 investment (Level 1) and can be collected to unlock LEVEL NFTs.
+   - LEVEL NFTs provide access to higher-value investments, increased returns, and exclusive events while retaining access to previous levels.
+`,
+  },
+  {
+    title: `07. How do I assemble the PUZZLE NFTs and progress to LEVEL NFTs?`,
+    description: `Collect 10 distinct PUZZLE NFTs to complete your current level and exchange them for the next LEVEL NFT.`,
+  },
+  {
+    title: `08. Can I access previous levels or investments after progressing to a higher level?`,
+    description: `Yes, you maintain access to previous levels and can continue to invest in them.`,
+  },
+  {
+    title: `09. Is Something Legendary open to international investors?`,
+    description: ` Yes, Something Legendary is open to investors from around the world.`,
+  },
+  {
+    title: `10. How can I stay updated on my investments and the restoration process?`,
+    description: `Something Legendary provides real-time visual updates through photos and videos on the platform.`,
+  },
+  {
+    title: `11. How can I stay updated on my investments and the restoration process?`,
+    description: `The platform is designed to initiate sales early in the restoration process to minimize delays. However, if a sale isn't successful, the platform will address the situation transparently with investors.`,
+  },
 ];
 const Accordion: FC<AccordionProps> = ({ className }) => {
   return (
