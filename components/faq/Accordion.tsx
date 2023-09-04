@@ -15,11 +15,11 @@ const FAQItems = [
   },
   {
     title: "02. How does Something Legendary work?",
-    description: ` - Investors acquire a Something Legendary Membership Card to access the platform. 
-   - With the Membership Card, investors choose a classic car for investment.
-   - They invest in stablecoin (USDC/USDT) for predictability.
-   - When 80% of required funds are secured, the platform purchases and restores the car, providing real-time updates.
-   - Upon successful sale, profits are distributed to investors in stablecoin format.
+    description: ` Investors acquire a Something Legendary Membership Card to access the platform. 
+   With the Membership Card, investors choose a classic car for investment.
+   They invest in stablecoin (USDC/USDT) for predictability.
+    When 80% of required funds are secured, the platform purchases and restores the car, providing real-time updates.
+    Upon successful sale, profits are distributed to investors in stablecoin format.
 `,
   },
   {
@@ -36,8 +36,8 @@ const FAQItems = [
   },
   {
     title: `06. What are PUZZLE NFTs and LEVEL NFTs?`,
-    description: ` - PUZZLE NFTs are awarded for every $5000 investment (Level 1) and can be collected to unlock LEVEL NFTs.
-   - LEVEL NFTs provide access to higher-value investments, increased returns, and exclusive events while retaining access to previous levels.
+    description: `  PUZZLE NFTs are awarded for every $5000 investment (Level 1) and can be collected to unlock LEVEL NFTs.
+LEVEL NFTs provide access to higher-value investments, increased returns, and exclusive events while retaining access to previous levels.
 `,
   },
   {
@@ -74,13 +74,15 @@ const Accordion: FC<AccordionProps> = ({ className }) => {
           {({ open }) => (
             <>
               <Disclosure.Button
-                className={`flex w-full justify-between px-4 py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-primaryGreen focus-visible:ring-opacity-75 border-b border-b-contactBackground ${
-                  open ? "text-primaryGreen" : "text-faqInactive"
-                }`}
+                className={`flex w-full justify-between px-4 py-8 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-primaryGreen focus-visible:ring-opacity-75 border-b border-b-contactBackground `}
               >
-                <span className="font-normal uppercase text-xl">
+                <h3
+                  className={`font-normal  text-xl ${
+                    open ? "text-primaryGreen" : "text-faqInactive"
+                  }`}
+                >
                   {item.title}
-                </span>
+                </h3>
                 <ChevronUpIcon
                   className={`${
                     open
@@ -89,8 +91,10 @@ const Accordion: FC<AccordionProps> = ({ className }) => {
                   } h-5 w-5 `}
                 />
               </Disclosure.Button>
-              <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500 max-w-3xl">
-                {item.description}
+              <Disclosure.Panel className="px-4 pt-4 pb-2  max-w-3xl">
+                <h3 className="font-normal  text-sm text-gray-500 ">
+                  {item.description}
+                </h3>
               </Disclosure.Panel>
             </>
           )}

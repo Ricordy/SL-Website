@@ -75,7 +75,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
     },
     {
       link: "/faq",
-      text: t("faqs"),
+      text: t("faq"),
     },
     {
       link: "/contact-us",
