@@ -7,13 +7,14 @@ import Link from "next/link";
 import Accordion from "../components/Accordion";
 import Posts from "../components/Posts";
 import Banner from "../components/Banner";
-import Carousel from "../components/Carousel";
+
 import { HygraphPostProps, PostItemProps } from "../@types/post";
 import { GraphQLClient, gql } from "graphql-request";
 import FlyoutMenu from "~/components/Accordion2-0";
 import { PostsProps } from "./learn";
 
 import "swiper/css";
+import Carousel from "~/components/Carousel";
 
 export default function Home({ posts, investments }) {
   return (
@@ -294,7 +295,9 @@ export default function Home({ posts, investments }) {
         contentPadding={true}
         certificates={true}
       />
+
       <Carousel id="1" className="md:my-[132px]" items={investments} />
+
       <FlyoutMenu className={" pb-[132px] md:pb-0 "} />
       <div className="hidden md:block">
         <Posts

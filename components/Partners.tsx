@@ -33,12 +33,6 @@ const Partners = ({
       height: "200px",
     },
     {
-      name: "CERTIK",
-      logo: "certik.png",
-      width: "180px",
-      height: "100px",
-    },
-    {
       name: "CMVM",
       logo: "cmvm.png",
       width: "200px",
