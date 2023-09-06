@@ -92,7 +92,7 @@ const Accordion: FC<AccordionProps> = ({ className }) => {
                 />
               </Disclosure.Button>
               <Disclosure.Panel className="px-4 pt-4 pb-2  max-w-3xl">
-                <h3 className="font-normal  text-sm text-gray-500 ">
+                <h3 className="font-normal  text-[16px] text-justify text-[#757C79] ">
                   {item.description}
                 </h3>
               </Disclosure.Panel>
