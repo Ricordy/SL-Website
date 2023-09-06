@@ -9,17 +9,66 @@ import { useBreakpoint } from "~/hooks/useBreakpoints";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-// or only core styles
-// import "@splidejs/react-splide/css/core";
+
+interface PartnerItemProps {
+  name: string;
+  logo: string;
+  width: string;
+  height: string;
+}
 
 const Partners = ({
   title = "Partners who dream with us.",
   theme = "black",
   className,
-  posts,
 }: PartnerProps) => {
   const { t } = useTranslation("hero");
   const { isAboveMd } = useBreakpoint("md");
+
+  const allPartners: PartnerItemProps[] = [
+    {
+      name: "ACP",
+      logo: "acp.png",
+      width: "200px",
+      height: "200px",
+    },
+    {
+      name: "CERTIK",
+      logo: "certik.png",
+      width: "180px",
+      height: "100px",
+    },
+    {
+      name: "CMVM",
+      logo: "cmvm.png",
+      width: "200px",
+      height: "200px",
+    },
+    {
+      name: "INNOVARISK",
+      logo: "innovarisk.png",
+      width: "200px",
+      height: "200px",
+    },
+    {
+      name: "Portugal FINLAB",
+      logo: "portugal-finlab.png",
+      width: "200px",
+      height: "200px",
+    },
+    {
+      name: "Razão Automóvel",
+      logo: "razao-automovel.png",
+      width: "200px",
+      height: "200px",
+    },
+    {
+      name: "True Legend",
+      logo: "true-legend.png",
+      width: "200px",
+      height: "200px",
+    },
+  ];
 
   return (
     <section
@@ -39,7 +88,12 @@ const Partners = ({
         >
           {title}
         </h3>
-        <div className="flex flex-col  w-full md:hidden gap-8">
+        <div
+          className={cn(
+            "flex flex-col  w-full md:hidden gap-8",
+            theme == "black" ? "black" : ""
+          )}
+        >
           <div className="flex w-full swiper-wrapper ">
             <Swiper
               modules={[Navigation, Pagination, A11y]}
@@ -64,109 +118,26 @@ const Partners = ({
 
               // loop={true}
             >
-              <SwiperSlide className="w-[400px]">
-                <div
-                  className={cn(
-                    "flex  h-[200px] w-[200px]",
-                    theme == "black" ? "bg-dreamBlack" : "bg-white"
-                  )}
-                >
-                  <Image
-                    src="/brand/bosch.svg"
-                    alt="Bosch"
-                    // width={149}
-                    // height={36}
-                    className="w-[149px]"
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="w-full">
-                <div
-                  className={cn(
-                    "h-[200px] w-[200px]",
-                    theme == "black" ? "bg-dreamBlack" : "bg-white"
-                  )}
-                >
-                  <Image
-                    src="/brand/kodak.svg"
-                    alt="Kodak"
-                    layout="fill"
-                    objectFit="contain"
-                    // width={64}
-                    // height={76}
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="w-full">
-                <div
-                  className={cn(
-                    "h-[200px] w-[200px]",
-                    theme == "black" ? "bg-dreamBlack" : "bg-white"
-                  )}
-                >
-                  <Image
-                    src="/brand/porsche.svg"
-                    alt="Porshce"
-                    // width={149}
-                    // height={36}
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="w-full">
-                <div
-                  className={cn(
-                    "h-[200px] w-[200px]",
-                    theme == "black" ? "bg-dreamBlack" : "bg-white"
-                  )}
-                >
-                  <Image
-                    src="/brand/stihl.svg"
-                    alt="Stihl"
-                    // width={149}
-                    // height={36}
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="w-full">
-                <div
-                  className={cn(
-                    "h-[200px] w-[200px]",
-                    theme == "black" ? "bg-dreamBlack" : "bg-white"
-                  )}
-                >
-                  <Image
-                    src="/brand/wolkswagen.svg"
-                    alt="Wolkswagen"
-                    // width={60}
-                    // height={60}
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="w-full">
-                <div
-                  className={cn(
-                    "h-[200px] w-[200px]",
-                    theme == "black" ? "bg-dreamBlack" : "bg-white"
-                  )}
-                >
-                  <Image
-                    src="/brand/zeizz.svg"
-                    alt="Zeizz"
-                    // width={60}
-                    // height={60}
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
-              </SwiperSlide>
+              {allPartners.map((partner) => (
+                <SwiperSlide className="w-[400px]">
+                  <div
+                    className={cn(
+                      "flex  h-[200px] w-[200px]",
+                      theme == "black" ? "bg-dreamBlack" : "bg-white"
+                    )}
+                  >
+                    <Image
+                      src={`/partners/${theme == "black" ? "grey/" : ""}${
+                        partner.logo
+                      }`}
+                      alt={partner.name}
+                      className="w-[150px]"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
           <div className="flex gap-6 justify-center items-center  md:w-1/5 mx-auto">
@@ -215,23 +186,17 @@ const Partners = ({
           </div>
         </div>
 
-        <div className="hidden md:flex md:flex-row flex-col items-center gap-24 justify-between">
-          <Image src="/brand/bosch.svg" alt="Bosch" width={149} height={36} />
-          <Image src="/brand/kodak.svg" alt="Kodak" width={64} height={76} />
-          <Image
-            src="/brand/porsche.svg"
-            alt="Porshce"
-            width={149}
-            height={36}
-          />
-          <Image src="/brand/stihl.svg" alt="Stihl" width={149} height={36} />
-          <Image
-            src="/brand/wolkswagen.svg"
-            alt="Wolkswagen"
-            width={60}
-            height={60}
-          />
-          <Image src="/brand/zeizz.svg" alt="Zeizz" width={72} height={72} />
+        <div className="hidden md:flex md:flex-row px-6 flex-col items-center gap-12 justify-evenly ">
+          {allPartners.map((partner) => (
+            <Image
+              src={`/partners/${theme == "black" ? "grey/" : ""}${
+                partner.logo
+              }`}
+              alt={partner.name}
+              width={partner.width}
+              height={partner.height}
+            />
+          ))}
         </div>
       </div>
     </section>

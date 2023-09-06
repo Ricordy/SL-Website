@@ -16,14 +16,16 @@ function Footer() {
 
   return (
     <footer className="w-full py-8 md:pt-[72px] bg-black flex flex-col mb-1">
-      <div className="mx-auto max-w-screen-lg w-full items-start justify-between flex gap-6 border-b md:border-white pb-6 ">
+      <div className="mx-auto md:flex-row flex-col md:px-0 px-6 max-w-screen-lg w-full items-start justify-between flex gap-6 border-b md:border-white pb-6 ">
         <div className="flex gap-6 flex-col w-[280px] justify-between items-start">
           <Image src={LogoWhite} alt="Something Legendary Logo" />
 
-          <div className="flex gap-2 col-span-2 ">
+          <div className="flex gap-2">
             <Image src={Mail} alt="E-mail" />
             <Link href="mailto:info@somethinglegendary.com">
-              <a className="">info@somethinglegendary.com</a>
+              <a className=" text-xs font-thin tracking-widest">
+                info@somethinglegendary.com
+              </a>
             </Link>
           </div>
         </div>
@@ -77,7 +79,7 @@ function Footer() {
           </form>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-lg gap-2 py-4 mx-auto ">
+      <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-lg gap-6 md:gap-2 py-4 mx-auto ">
         <div className="flex gap-6">
           <Link href="/terms">
             <a className="font-light">Terms and conditions</a>

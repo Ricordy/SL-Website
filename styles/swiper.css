@@ -27,12 +27,20 @@
   color: #000;
   opacity: 1;
 } */
-
-.swiper-pagination-bullet-active {
-  color: #fff;
-  background: #000000 !important;
+.swiper-pagination-bullet {
+  background-color: #000;
 }
-
+.black .swiper-pagination-bullet {
+  background-color: #fff;
+}
+.swiper-pagination-bullet-active {
+  color: #ccc;
+  background: #000 !important;
+}
+.black .swiper-pagination-bullet-active {
+  color: #fff;
+  background: #fff !important;
+}
 .swiper-slide {
   text-align: center;
   font-size: 18px;
