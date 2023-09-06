@@ -238,12 +238,18 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                       })}
                       <li>
                         <Link href="https://beta.somethinglegendary.io">
-                          <Button
-                            variant="outline"
-                            className="md:hidden p-0 h-[30px] w-[151px] dark:border-primaryGreen dark:text-primaryGreen border-primaryGreen text-primaryGreen hover:bg-primaryGreen hover:text-white"
+                          <a
+                            className={`self-center md:hidden flex  p-0 h-[30px] w-[151px] text-center border-2 rounded-md items-center justify-center align-middle  dark:border-primaryGreen dark:text-primaryGreen border-primaryGreen text-primaryGreen bg-primaryGreen hover:text-white"
+
+                            `}
+                            href={
+                              process.env.NEXT_PUBLIC_PLATFORM_URL as string
+                            }
                           >
-                            Launch App
-                          </Button>
+                            <h5 className=" text-white font-normal text-sm uppercase tracking-normal">
+                              Launch App
+                            </h5>
+                          </a>
                         </Link>
                       </li>
                       <li>
