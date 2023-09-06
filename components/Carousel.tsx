@@ -109,9 +109,9 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
   const { isAboveMd } = useBreakpoint("md");
 
   return (
-    <section className={cn("flex flex-col gap-8 ", className)}>
+    <section className={cn("flex flex-col gap-8 md:ml-[209px]", className)}>
       <div className="flex md:flex-row flex-col gap-12">
-        {/* <div className="flex flex-col py-6 md:pt-[72px] gap-8 w-full md:px-0 px-6 md:w-2/6">
+        <div className="flex flex-col py-6 md:pt-[72px] gap-8 w-full md:px-0 px-6 md:w-2/6">
           <h3 className="uppercase font-light">
             Our <span className="font-medium">ongoing</span> projects
           </h3>
@@ -124,16 +124,15 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
               Launch app
             </a>
           </Link>
-        </div> */}
+        </div>
 
-        <div className=" w-full swiper-wrapper ">
+        <div className="flex overflow-hidden swiper-wrapper ">
           <Swiper
             modules={[Navigation, Pagination, A11y]}
-            className=" bg-blue-50 "
-            // spaceBetween={isAboveMd ? 35 : 0}
-            centeredSlides={true}
-            slidesPerView={"auto"}
-            // slidesPerView={isAboveMd ? 2 : "auto"}
+            className="swiper"
+            spaceBetween={isAboveMd ? 35 : 0}
+            centeredSlides={isAboveMd ? false : true}
+            slidesPerView={isAboveMd ? 2 : 1}
             // pagination={{ clickable: true }}
             // navigation={true}
             pagination={{
@@ -151,16 +150,15 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
             // loop={true}
           >
             {items.map((item, index) => (
-              <SwiperSlide key={index} className="">
-                <div className="bg-red-500 w-40">{index}</div>
-                {/* <CarouselItem
+              <SwiperSlide key={index} className="w-20">
+                <CarouselItem
                   className="w-20 bg-red-100"
                   title={item.basicInvestment.car.basicInfo.title}
                   image={item.basicInvestment.car.basicInfo.cover.url}
                   status={item.basicInvestment.investmentStatus}
                   totalInvestment={item.basicInvestment.totalInvestment}
                   address={item.address}
-                /> */}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
