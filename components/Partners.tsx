@@ -119,7 +119,7 @@ const Partners = ({
               // loop={true}
             >
               {allPartners.map((partner) => (
-                <SwiperSlide className="w-[400px]">
+                <SwiperSlide key={partner.name} className="w-[400px]">
                   <div
                     className={cn(
                       "flex  h-[200px] w-[200px]",
@@ -189,6 +189,7 @@ const Partners = ({
         <div className="hidden md:flex md:flex-row px-6 flex-col items-center gap-12 justify-evenly ">
           {allPartners.map((partner) => (
             <Image
+              key={partner.name}
               src={`/partners/${theme == "black" ? "grey/" : ""}${
                 partner.logo
               }`}
