@@ -1,9 +1,3 @@
-import { FiTwitter } from "react-icons/fi";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { GoMail } from "react-icons/go";
-import { TbBrandDiscord } from "react-icons/tb";
-import { BsMedium } from "react-icons/bs";
-import { AiOutlineYoutube } from "react-icons/ai";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import LogoWhite from "../public/logo-white.svg";
@@ -13,7 +7,6 @@ import Instagram from "../public/icons/instagram1.svg";
 import Twitter from "../public/icons/twitter1.svg";
 import Medium from "../public/icons/medium.svg";
 import Mail from "../public/icons/mail.svg";
-import Phone from "../public/icons/phone.svg";
 
 import Image from "next/image";
 import { Button } from "./Button";
@@ -23,21 +16,19 @@ function Footer() {
 
   return (
     <footer className="w-full py-8 md:pt-[72px] bg-black flex flex-col mb-1">
-      <div className="mx-auto md:px-0 px-6 max-w-screen-lg w-full items-start flex flex-col md:flex-row justify-evenly border-b md:border-white pb-6 gap-6 md:gap-0 ">
-        <div className="flex text-sm flex-col font-normal justify-center items-start gap-2 ">
+      <div className="mx-auto max-w-screen-lg w-full items-start justify-between flex gap-6 border-b md:border-white pb-6 ">
+        <div className="flex gap-6 flex-col w-[280px] justify-between items-start">
           <Image src={LogoWhite} alt="Something Legendary Logo" />
-          <div className="flex gap-2 mt-11 ">
+
+          <div className="flex gap-2 col-span-2 ">
             <Image src={Mail} alt="E-mail" />
             <Link href="mailto:info@somethinglegendary.com">
               <a className="">info@somethinglegendary.com</a>
             </Link>
           </div>
-          {/* <div className="flex gap-2">
-            <Image src={Phone} alt="Phone" />
-            <span className="">+381 9999-9999</span>
-          </div> */}
         </div>
-        <div className="flex flex-col gap-2 w-fit min-w-[20%] font-light ">
+
+        <div className="flex w-[150px] flex-col gap-2 font-light ">
           <h3 className="text-base font-semibold uppercase text-white">
             {t("How it works")}
           </h3>
@@ -48,7 +39,8 @@ function Footer() {
             <a className="">{t("How it works")}</a>
           </Link>
         </div>
-        <div className="flex flex-col gap-2 w-fit min-w-[20%] font-light ">
+
+        <div className="flex w-[120px] flex-col gap-2 font-light ">
           <h3 className="text-base font-semibold text-white uppercase">
             {t("Learn")}
           </h3>
@@ -57,14 +49,13 @@ function Footer() {
           <Link href="/help/how-to-invest">How to invest?</Link>
           <Link href="/help/news">News</Link>
         </div>
-        <div className="flex flex-col gap-8 text-base w-fit min-w-[20%] uppercase font-semibold ">
+        <div className="flex w-[100px] flex-col gap-8 text-base uppercase font-semibold ">
           <h3 className="text-base font-semibold text-white">
             {t("About Us")}
           </h3>
           <Link href="/whitepaper">{t("Whitepaper")}</Link>
-          {/* <Link href="/security">{t("Security")}</Link> */}
         </div>
-        <div className="flex flex-col gap-2 w-fit min-w-[20%] font-light ">
+        <div className="flex flex-col w-[320px] gap-2 font-light ">
           <h3 className="text-base font-semibold uppercase text-white">
             {t("Newsletter")}
           </h3>
@@ -75,7 +66,7 @@ function Footer() {
               placeholder="Your e-mail"
               name="email"
               id="email"
-              className="p-2 mb-4 text-xs rounded-md"
+              className="p-2 mb-4 w-full text-xs rounded-md"
             />
             <Button
               className="self-end w-full border-white hover:text-black text-white hover:bg-white"

@@ -268,11 +268,11 @@ export default function Home(props) {
               <h3 className="text-black text-2xl text-center">
                 Buy your
                 <br />
-                entry ticket
+                Membership card
               </h3>
               <div className="flex flex-col self-start flex-1 justify-between">
                 <p className="text-ogBlack text-center">
-                  Ready to become legendary? Buy your entry ticket!
+                  Ready to become a legendary? Buy your Membership card!
                 </p>
 
                 <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
