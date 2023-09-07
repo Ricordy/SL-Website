@@ -178,8 +178,6 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                             <li key={index} className="uppercase w-full">
                               <a
                                 href={link}
-                                rel="noopener noreferrer"
-                                download="something-legendary-white-paper.pdf"
                                 target={"_blank"}
                                 className=" hidden md:block"
                               >
