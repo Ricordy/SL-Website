@@ -119,16 +119,14 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
             <div className="flex flex-col">
               <div className="flex gap-10 justify-center items-center">
                 <a
-                  className={`self-center hidden md:flex border-white text-white p-0 h-[30px] w-[151px] text-center border-2 rounded-md items-center justify-center align-middle   ${
+                  className={`self-center hidden md:flex border-white text-white p-0 h-[30px] w-[151px] text-center border-2 rounded-md items-center justify-center align-middle uppercase font-normal text-sm  tracking-normal   ${
                     isNavOn || !transparentNavRoutes.includes(router.route)
-                      ? "dark:border-primaryGreen dark:text-primaryGreen border-primaryGreen text-primaryGreen hover:bg-primaryGreen hover:text-white"
+                      ? "dark:border-primaryGreen dark:text-primaryGreen border-primaryGreen text-primaryGold hover:bg-primaryGreen hover:text-white "
                       : ""
                   }`}
                   href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}
                 >
-                  <h5 className=" text-white font-normal text-sm uppercase tracking-normal">
-                    Launch App
-                  </h5>
+                  Launch App
                 </a>
                 <button
                   className="border-none uppercase  font-semibold leading-none rounded-md"
