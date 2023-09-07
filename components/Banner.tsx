@@ -90,36 +90,37 @@ const Banner: FC<BannerProps> = ({
         />
       </section>
       {certificates && (
-        <div className="flex items-center md:px-0 px-6 justify-around w-full  mx-auto py-12 bg-slate-50">
+        <div className="flex items-center gap-6 rounded-b-lg px-6 justify-evenly w-full  mx-auto bg-slate-50">
+          <Image
+            src="/certificates/acp.png"
+            alt="Automóvel Club de Portugal"
+            objectFit="contain"
+            width={100}
+            height={100}
+            className=""
+          />
+
           <Image
             src="/certificates/cmvm.png"
-            alt="cmvm"
-            width={235}
-            height={91}
+            alt="CMVM"
+            objectFit="contain"
+            width={200}
+            height={200}
           />
+
           <Image
-            src="/certificates/no-whales.svg"
-            alt="No Whales"
-            width={235}
-            height={91}
+            src="/certificates/innovarisk.png"
+            alt="innovarisk"
+            objectFit="contain"
+            width={200}
+            height={200}
           />
           <Image
             src="/certificates/portugal-finlab.png"
             alt="Portugal FinLab"
-            width={149}
-            height={51}
-          />
-          <Image
-            src="/certificates/acp.png"
-            alt="Automóvel Club de Portugal"
-            width={123}
-            height={75}
-          />
-          <Image
-            src="/certificates/innovarisk.png"
-            alt="innovarisk"
-            width={123}
-            height={75}
+            objectFit="contain"
+            width={200}
+            height={200}
           />
         </div>
       )}

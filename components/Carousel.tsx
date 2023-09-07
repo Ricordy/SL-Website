@@ -20,6 +20,7 @@ interface CarouselItemProps {
   status: string;
   totalInvestment: number;
   address: string;
+  className?: string;
 }
 
 const CarouselItem = ({
@@ -28,6 +29,7 @@ const CarouselItem = ({
   status,
   totalInvestment,
   address,
+  className,
 }: CarouselItemProps) => {
   const [completion, setCompletion] = useState(0);
   useEffect(() => {
@@ -59,7 +61,10 @@ const CarouselItem = ({
 
   return (
     <Link
-      className="flex flex-col w-full max-w-[80vw]  rounded-md bg-progressBackground "
+      className={cn(
+        "flex flex-col w-full max-w-[80vw]  rounded-md bg-progressBackground ",
+        className
+      )}
       href={`${process.env.NEXT_PUBLIC_PLATFORM_URL}/investment/${address}`}
     >
       <div className="cursor-pointer">
@@ -145,8 +150,9 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
             // loop={true}
           >
             {items.map((item, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className="w-20">
                 <CarouselItem
+                  className="w-20 bg-red-100"
                   title={item.basicInvestment.car.basicInfo.title}
                   image={item.basicInvestment.car.basicInfo.cover.url}
                   status={item.basicInvestment.investmentStatus}

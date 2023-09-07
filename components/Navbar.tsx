@@ -179,6 +179,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                               <a
                                 href={link}
                                 rel="noopener noreferrer"
+                                download="something-legendary-white-paper.pdf"
                                 target={"_blank"}
                                 className=" hidden md:block"
                               >

@@ -7,64 +7,22 @@ import Link from "next/link";
 import Accordion from "../components/Accordion";
 import Posts from "../components/Posts";
 import Banner from "../components/Banner";
-import Carousel from "../components/Carousel";
+
 import { HygraphPostProps, PostItemProps } from "../@types/post";
 import { GraphQLClient, gql } from "graphql-request";
 import FlyoutMenu from "~/components/Accordion2-0";
 import { PostsProps } from "./learn";
 
 import "swiper/css";
+import Carousel from "~/components/Carousel";
 
-export default function Home(props) {
-  // const posts: HygraphPostProps[] = [
-  //   {
-  //     basic: {
-  //       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-  //     },
-  //     image: {
-  //       url: "/posts/post-1.jpg",
-  //     },
-  //     slug: "lorem-1",
-  //     description: {
-  //       html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
-  //     },
-  //   },
-  //   {
-  //     basic: {
-  //       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-  //     },
-  //     image: {
-  //       url: "/posts/post-2.jpg",
-  //     },
-  //     slug: "lorem-2",
-  //     description: {
-  //       html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
-  //     },
-  //   },
-  //   {
-  //     basic: {
-  //       title: "Lorem Ipsum Dolor sit amet elit eiusmod",
-  //     },
-  //     image: {
-  //       url: "/posts/post-3.jpg",
-  //     },
-  //     slug: "lorem-3",
-  //     description: {
-  //       html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
-  //     },
-  //   },
-  // ];
-
-  const { posts } = props;
-
-  console.log("posts", posts);
-
+export default function Home({ posts, investments }) {
   return (
     <>
       <div className="flex flex-col bg-dreamBlack gap-28 md:gap-[132px]">
         <Hero />
       </div>
-      <Partners className="pb-20 md:pb-[202px]" posts={posts} />
+      <Partners className="pb-20 md:pb-[202px]" />
 
       <div className="flex flex-col bg-white gap-8 md:gap-[132px]">
         <HighlightContent
@@ -268,11 +226,11 @@ export default function Home(props) {
               <h3 className="text-black text-2xl text-center">
                 Buy your
                 <br />
-                entry ticket
+                Membership card
               </h3>
               <div className="flex flex-col self-start flex-1 justify-between">
                 <p className="text-ogBlack text-center">
-                  Ready to become legendary? Buy your entry ticket!
+                  Ready to become a legendary? Buy your Membership card!
                 </p>
 
                 <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
@@ -332,12 +290,14 @@ export default function Home(props) {
         subtitle="We have the seat belt of a racing car."
         // linkUrl="/safe-investment"
         // linkLabel="Know more"
-        height={408}
+
         image="bg-[url('/banners/safe-travel.jpg')]"
         contentPadding={true}
         certificates={true}
       />
-      <Carousel id="1" className="md:my-[132px]" items={props.investments} />
+
+      <Carousel id="1" className="md:my-[132px]" items={investments} />
+
       <FlyoutMenu className={" pb-[132px] md:pb-0 "} />
       <div className="hidden md:block">
         <Posts
