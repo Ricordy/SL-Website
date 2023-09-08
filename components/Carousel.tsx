@@ -61,17 +61,16 @@ const CarouselItem = ({
 
   return (
     <Link
-      className={cn(
-        "flex flex-col w-full max-w-[80vw]  rounded-md bg-progressBackground ",
-        className
-      )}
+      className={cn("flex flex-col w-full  bg-progressBackground ", className)}
       href={`${process.env.NEXT_PUBLIC_PLATFORM_URL}/investment/${address}`}
     >
-      <div className="cursor-pointer">
+      <div
+        className="cursor-pointer w-[320px] md:w-[360px]  min-h-[394px] relative px-6 flex rounded-t-md rounded-b-lg bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${image})` }}
+      >
         <div
-          style={{ backgroundImage: `url(${image})` }}
           className={cn(
-            "flex flex-col justify-end items-center min-h-[394px] rounded-t-md  bg-cover relative gap-3 w-[416px]"
+            "flex flex-col  justify-end items-center  w-full  gap-3  "
           )}
         >
           <h4 className="z-10 uppercase text-3xl">{title}</h4>
@@ -84,11 +83,14 @@ const CarouselItem = ({
             </div>
             <div className="flex ">Progress: {completion}%</div>
           </div>
-          <div className="flex z-0 absolute w-full min-h-[200px] bg-[url('../public/projects/car-gradient.svg')] bg-cover"></div>
+          <div className="flex z-0 absolute w-full min-h-[200px] rounded-b-lg bg-[url('../public/projects/car-gradient.svg')] bg-cover"></div>
         </div>
         <div className="absolute bottom-0 left-0 z-10 flex h-3 w-full rounded-b-md bg-[#DCDCDC]">
           <div
-            className={` rounded-bl-md bg-progressHighlight`}
+            className={cn(
+              " bg-progressHighlight",
+              completion == 100 ? "rounded-b-md" : "rounded-bl-md"
+            )}
             style={{
               width: `${completion}%`,
             }}
@@ -110,8 +112,8 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
 
   return (
     <section className={cn("flex flex-col gap-8 md:ml-[209px]", className)}>
-      <div className="flex md:flex-row flex-col gap-12">
-        <div className="flex flex-col py-6 md:pt-[72px] gap-8 w-full md:px-0 px-6 md:w-2/6">
+      <div className="flex md:flex-row flex-col gap-12 w-full">
+        <div className="flex flex-col py-6 md:pt-[72px] gap-8 w-full  md:px-0 px-6 ">
           <h3 className="uppercase font-light">
             Our <span className="font-medium">ongoing</span> projects
           </h3>
@@ -126,13 +128,14 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
           </Link>
         </div>
 
-        <div className="flex overflow-hidden swiper-wrapper ">
+        <div className="flex flex-col gap-6 max-w-3xl swiper-wrapper">
           <Swiper
             modules={[Navigation, Pagination, A11y]}
-            className="swiper"
-            spaceBetween={isAboveMd ? 35 : 0}
-            centeredSlides={isAboveMd ? false : true}
-            slidesPerView={isAboveMd ? 2 : 1}
+            className="swiper "
+            spaceBetween={35}
+            centeredSlides={true}
+            slidesPerGroupSkip={2}
+            slidesPerView={isAboveMd ? 2 : "auto"}
             // pagination={{ clickable: true }}
             // navigation={true}
             pagination={{
@@ -150,9 +153,8 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
             // loop={true}
           >
             {items.map((item, index) => (
-              <SwiperSlide key={index} className="w-20">
+              <SwiperSlide key={index} className="">
                 <CarouselItem
-                  className="w-20 bg-red-100"
                   title={item.basicInvestment.car.basicInfo.title}
                   image={item.basicInvestment.car.basicInfo.cover.url}
                   status={item.basicInvestment.investmentStatus}
@@ -162,27 +164,27 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
-      </div>
-      <div className="flex gap-6 justify-center items-center  w-1/3 mx-auto">
-        <div className={`flex relative swiper-prev-${id}`}>
-          <Image
-            src="/icons/pagination-prev.svg"
-            width={20}
-            height={15}
-            alt="Previous"
-          />
-        </div>
-        <div
-          className={`flex justify-center items-center gap-1 text-black swiper-pagination-${id}`}
-        />
-        <div className={`flex relative swiper-next-${id}`}>
-          <Image
-            src="/icons/pagination-next.svg"
-            width={20}
-            height={15}
-            alt="Next"
-          />
+          <div className="flex gap-6 justify-center items-center  md:w-1/3 mx-auto">
+            <div className={`flex relative swiper-prev-${id}`}>
+              <Image
+                src="/icons/pagination-prev.svg"
+                width={20}
+                height={15}
+                alt="Previous"
+              />
+            </div>
+            <div
+              className={`flex justify-center items-center gap-1 text-black swiper-pagination-${id}`}
+            />
+            <div className={`flex relative swiper-next-${id}`}>
+              <Image
+                src="/icons/pagination-next.svg"
+                width={20}
+                height={15}
+                alt="Next"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
