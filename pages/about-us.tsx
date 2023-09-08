@@ -55,7 +55,7 @@ const AboutUs = (props) => {
   ];
   return (
     <div className="">
-      <div className="text-center flex w-full gap-12 md:gap-[132px] mx-auto  items-center flex-col max-w-[1210px]">
+      <div className="text-center flex w-full gap-12 md:gap-[132px]  mx-auto  items-center flex-col max-w-[1210px]">
         <div className="flex flex-col w-full items-center pt-[52px] gap-4 p-6">
           <h3 className="font-light text-4xl uppercase">About us</h3>
           <h5 className="uppercase text-2xl font-medium">
@@ -87,7 +87,7 @@ const AboutUs = (props) => {
         <Carousel id="7000" />
         <TrophyCarousel id="3" items={props.investments} />
       </div>
-      <div className="flex flex-col md:w-full md:gap-[132px] md:mx-auto   md:items-center md:max-w-[1210px]">
+      <div className="flex flex-col md:w-full md:gap-[132px]  md:mx-auto   md:items-center md:max-w-[1210px]">
         <section className="flex flex-col justify-end py-12 md:py-[132px] pb-24 md:rounded-lg items-center gap-[52px] relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-no-repeat bg-center ">
           <div className="flex flex-col gap-3">
             <h3 className="text-white text-4xl uppercase text-center tracking-widest">
@@ -149,7 +149,7 @@ const AboutUs = (props) => {
           posts={posts}
           title="Learn more"
           titleCentered={true}
-          className="mb-[132px]"
+          className="mb-[132px] mt-12 md:mt-0"
         />
       </div>
 
