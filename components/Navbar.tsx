@@ -176,38 +176,29 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                         if (text === "whitepaper") {
                           return (
                             <li key={index} className="uppercase w-full">
-                              <a
+                              <Link
                                 href={link}
-                                target={"_blank"}
-                                className=" hidden md:block"
+                                target="_blank"
+                                className="text-slate-800 font-normal text-2xl tracking-wide hidden md:block"
+                                onClick={() => {
+                                  setIsNavOpen(false);
+                                  setIsNavOn(false);
+                                }}
                               >
-                                <a
-                                  onClick={() => {
-                                    setIsNavOpen(false);
-                                    setIsNavOn(false);
-                                  }}
-                                  className="text-slate-800 font-normal text-2xl tracking-wide block"
-                                >
-                                  {text}
-                                </a>
-                              </a>
-                              <a
+                                {text}desktop
+                              </Link>
+                              <Link
                                 href={link}
                                 download="Something-Legendary-Whitepaper.pdf"
-                                rel="noopener noreferrer"
-                                target={"_blank"}
-                                className=" block md:hidden"
+                                target="_blank"
+                                className="text-slate-800 font-normal text-2xl tracking-wide block md:hidden"
+                                onClick={() => {
+                                  setIsNavOpen(false);
+                                  setIsNavOn(false);
+                                }}
                               >
-                                <a
-                                  onClick={() => {
-                                    setIsNavOpen(false);
-                                    setIsNavOn(false);
-                                  }}
-                                  className="text-slate-800 font-normal text-2xl tracking-wide block"
-                                >
-                                  {text}
-                                </a>
-                              </a>
+                                {text} mobile
+                              </Link>
                             </li>
                           );
                         } else {
