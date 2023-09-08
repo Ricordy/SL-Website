@@ -63,7 +63,12 @@ LEVEL NFTs provide access to higher-value investments, increased returns, and ex
 ];
 const Accordion: FC<AccordionProps> = ({ className }) => {
   return (
-    <div className={cn("flex flex-col w-2/3 mt-12", className)}>
+    <div
+      className={cn(
+        "flex flex-col md:w-2/3 w-full px-6 md:px-0 mt-12",
+        className
+      )}
+    >
       {FAQItems.map((item, index) => (
         <Disclosure
           as="div"
@@ -92,9 +97,9 @@ const Accordion: FC<AccordionProps> = ({ className }) => {
                 />
               </Disclosure.Button>
               <Disclosure.Panel className="px-4 pt-4 pb-2  max-w-3xl">
-                <h3 className="font-normal  text-[16px] text-justify text-[#757C79] ">
+                <p className="font-thin  text-[16px] text-justify text-[#757C79] ">
                   {item.description}
-                </h3>
+                </p>
               </Disclosure.Panel>
             </>
           )}

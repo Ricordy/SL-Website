@@ -23,7 +23,7 @@ const Contact: FC<ContactProps> = ({ title = "Contact Us", className }) => {
       )}
     >
       <div className="max-w-screen-lg  mx-auto w-full flex md:flex-row flex-col gap-12">
-        <div className="flex w-3/5 flex-col gap-6">
+        <div className="flex md:w-3/5 w-full flex-col gap-6">
           <h2 className="text-3xl uppercase text-black">{title}</h2>
           <div className="flex flex-col gap-6">
             {/* <div className="flex gap-3">
