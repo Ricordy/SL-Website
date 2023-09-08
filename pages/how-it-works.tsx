@@ -82,16 +82,16 @@ const HowItWorks = () => {
         ),
       },
     ],
-    "02. Buy an entry NFT": [
+    "02. Buy a Membership Card": [
       {
         id: 1,
-        title: "Buy an entry NFT",
+        title: "Buy a Membership Card",
         image: "/media/about-1.jpg",
         content: (
           <>
             <p className="pb-10">
               Now you can browse the platform. To be able to interact with it
-              and start investing, you must first buy an entry ticket (NFT).
+              and start investing, you must first buy a membership card (NFT).
               After completing this process, you&apos;re now part of the
               Something Legendary community and can now invest in your dream
               classic car.
