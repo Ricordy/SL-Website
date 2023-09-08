@@ -204,7 +204,7 @@ const HowItWorks = () => {
                       {posts.map((post) => (
                         <li key={post.id} className="relative rounded-md p-3">
                           <section className="flex gap-24 w-full mt-[52px]">
-                            <div className="flex flex-col gap-8 w-1/3 max-w-md items-start justify-center">
+                            <div className="flex flex-col gap-8 w-1/3  items-start justify-center">
                               <h3 className="uppercase">{post.title}</h3>
                               {post.content}
                             </div>
@@ -258,7 +258,7 @@ const HowItWorks = () => {
                       {posts.map((post) => (
                         <div key={post.id} className="relative rounded-md p-3 ">
                           <section className="flex flex-col-reverse gap-24 w-full mt-[52px] ">
-                            <div className="flex flex-col gap-8  max-w-md items-start justify-center">
+                            <div className="flex flex-col gap-8   items-start justify-center">
                               <h3 className="uppercase text-left">
                                 {`0${idx + 1}.`} {post.title}
                               </h3>
@@ -269,6 +269,7 @@ const HowItWorks = () => {
                               src={post.image}
                               width={592}
                               height={394}
+                              className=" rounded-md"
                             />
                           </section>
 
