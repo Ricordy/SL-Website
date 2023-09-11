@@ -21,6 +21,7 @@ const Partners = ({
   title = "Partners who dream with us.",
   theme = "black",
   className,
+  logoGray,
 }: PartnerProps) => {
   const { t } = useTranslation("hero");
   const { isAboveMd } = useBreakpoint("md");
@@ -184,7 +185,7 @@ const Partners = ({
           {allPartners.map((partner) => (
             <Image
               key={partner.name}
-              src={`/partners/${theme == "black" ? "grey/" : ""}${
+              src={`/partners/${theme == "black" || logoGray ? "grey/" : ""}${
                 partner.logo
               }`}
               alt={partner.name}

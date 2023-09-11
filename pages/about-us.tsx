@@ -81,7 +81,7 @@ const AboutUs = (props) => {
             </p>
           </div>
         </section>
-        <Partners title="ENTITIES THAT TRUST US" theme="white" />
+        <Partners title="ENTITIES THAT TRUST US" theme="gray" logoGray />
       </div>
       <div className="flex flex-col gap-12 md:gap-[132px] md:py-[132px]">
         <Carousel id="7000" />
