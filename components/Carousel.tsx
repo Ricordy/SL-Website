@@ -115,11 +115,12 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
       <div className="flex md:flex-row flex-col gap-12 w-full">
         <div className="flex flex-col py-6 md:pt-[72px] gap-8 w-full  md:px-0 px-6 ">
           <h3 className="uppercase font-light">
-            Our <span className="font-medium">ongoing</span> projects
+            Our <span className="font-medium">ongoing</span>
+            <br className="hidden md:block" /> projects
           </h3>
           <p>
-            Made with love and a lot of passion for every detail, this is our
-            atual range of products.
+            Made with passion and a lot of attention to detail. Browse our
+            current range of products.
           </p>
           <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
             <a className="uppercase dark:border-primaryGreen dark:text-primaryGreen dark:hover:text-white dark:hover:bg-primaryGreen hover:text-white hover:bg-primaryGreen border-2 py-1 px-8 text-sm self-start rounded-md text-primaryGreen">
