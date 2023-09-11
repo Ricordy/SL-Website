@@ -32,32 +32,32 @@ const CarouselItem = ({
   className,
 }: CarouselItemProps) => {
   const [completion, setCompletion] = useState(0);
-  useEffect(() => {
-    const readBC = async () => {
-      try {
-        const provider = new ethers.JsonRpcProvider(
-          process.env.NEXT_PUBLIC_ALCHEMY_URL_ID
-        );
-        const contract = new ethers.Contract(address, investmentABI, provider);
+  // useEffect(() => {
+  //   const readBC = async () => {
+  //     try {
+  //       const provider = new ethers.JsonRpcProvider(
+  //         process.env.NEXT_PUBLIC_ALCHEMY_URL_ID
+  //       );
+  //       const contract = new ethers.Contract(address, investmentABI, provider);
 
-        let totalInvested = await contract.totalSupply();
+  //       let totalInvested = await contract.totalSupply();
 
-        console.log("Total invested: ", String(totalInvested));
-        setCompletion(
-          Number(
-            ((Number(totalInvested) / 10 ** 6 / totalInvestment) * 100).toFixed(
-              2
-            )
-          )
-        );
-      } catch (error) {
-        console.log("errouuuuu ", error, address);
-      }
-    };
+  //       console.log("Total invested: ", String(totalInvested));
+  //       setCompletion(
+  //         Number(
+  //           ((Number(totalInvested) / 10 ** 6 / totalInvestment) * 100).toFixed(
+  //             2
+  //           )
+  //         )
+  //       );
+  //     } catch (error) {
+  //       console.log("errouuuuu ", error, address);
+  //     }
+  //   };
 
-    readBC();
-    return () => {};
-  }, []);
+  //   readBC();
+  //   return () => {};
+  // }, []);
 
   return (
     <Link
@@ -149,7 +149,7 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
             updateOnWindowResize
             observer
             observeParents
-            initialSlide={0}
+            initialSlide={1}
             // loop={true}
           >
             {items.map((item, index) => (
@@ -165,7 +165,9 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
             ))}
           </Swiper>
           <div className="flex gap-6 justify-center items-center  md:w-1/3 mx-auto">
-            <div className={`flex relative swiper-prev-${id}`}>
+            <div
+              className={`flex relative disabled:bg-red-200 swiper-prev-${id}`}
+            >
               <Image
                 src="/icons/pagination-prev.svg"
                 width={20}
