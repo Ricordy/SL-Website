@@ -92,20 +92,19 @@ const Banner: FC<BannerProps> = ({
       {certificates && (
         <div className="flex items-center gap-6 rounded-b-lg px-6 justify-evenly w-full  mx-auto bg-slate-50">
           <Image
-            src="/certificates/acp.png"
-            alt="Automóvel Club de Portugal"
-            objectFit="contain"
-            width={100}
-            height={100}
-            className=""
-          />
-
-          <Image
             src="/certificates/cmvm.png"
             alt="CMVM"
             objectFit="contain"
             width={200}
             height={200}
+          />
+          <Image
+            src="/certificates/acp.png"
+            alt="Automóvel Club de Portugal"
+            objectFit="contain"
+            width={200}
+            height={200}
+            className=""
           />
 
           <Image
