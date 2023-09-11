@@ -14,7 +14,7 @@ export default function Layout({ children }) {
           name="description"
           content="Somenthing Legendary: It is in the solitude that legends are born."
         />
-        <link rel="icon" href="/favicon2.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       {!transparentNavRoutes.includes(router.route) && <Navbar />}
       <main className="bg-white max-w-[1440px] mx-auto">{children}</main>
