@@ -63,6 +63,16 @@
   flex-shrink: 100 !important;
   width: 100%;
 }
+.swiper-button-next, .swiper-button-prev {
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+}
+    
+.swiper-button-disabled {
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.5s ease-in-out;
+}
 
 /* .swiper-slide:nth-child(2n) {
   width: 40%;
