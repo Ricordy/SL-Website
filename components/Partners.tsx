@@ -27,14 +27,14 @@ const Partners = ({
 
   const allPartners: PartnerItemProps[] = [
     {
-      name: "ACP",
-      logo: "acp.png",
+      name: "CMVM",
+      logo: "cmvm.png",
       width: "200px",
       height: "200px",
     },
     {
-      name: "CMVM",
-      logo: "cmvm.png",
+      name: "ACP",
+      logo: "acp.png",
       width: "200px",
       height: "200px",
     },
@@ -51,14 +51,14 @@ const Partners = ({
       height: "200px",
     },
     {
-      name: "Razão Automóvel",
-      logo: "razao-automovel.png",
+      name: "True Legend",
+      logo: "true-legend.png",
       width: "200px",
       height: "200px",
     },
     {
-      name: "True Legend",
-      logo: "true-legend.png",
+      name: "Razão Automóvel",
+      logo: "razao-automovel.png",
       width: "200px",
       height: "200px",
     },
