@@ -91,10 +91,9 @@ const HowItWorks = () => {
           <>
             <p className="pb-10">
               Now you can browse the platform. To be able to interact with it
-              and start investing, you must first buy a Membership Card.
-              After completing this process, you&apos;re now part of the
-              Something Legendary community and can now invest in your dream
-              classic car.
+              and start investing, you must first buy a Membership Card. After
+              completing this process, you&apos;re now part of the Something
+              Legendary community and can now invest in your dream classic car.
             </p>
             <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
               <a className="text-white bg-black dark:hover:bg-white dark:hover:text-black text-center uppercase border-2 text-xs border-black rounded-md px-8 py-1 self-start">
@@ -170,7 +169,10 @@ const HowItWorks = () => {
             </p>
           </div>
         </div>
-        <section className="relative z-20 max-w-[1210px] mx-auto">
+        <section
+          id="stepsSection"
+          className="relative z-20 max-w-[1210px] mx-auto "
+        >
           <div className="bg-white  rounded-md p-[52px] shadow-md md:block hidden">
             <Tab.Group>
               <Tab.List className="flex">
@@ -312,7 +314,10 @@ const HowItWorks = () => {
         <div className="bg-black/70 w-full absolute h-[816px] z-0" />
       </section>
 
-      <section className="w-full max-w-[1210px] pt-24 mx-auto flex flex-col items-center gap-6">
+      <section
+        id="knowProcess"
+        className="w-full max-w-[1210px] pt-24 mx-auto flex flex-col items-center gap-6 "
+      >
         <div className="flex flex-col items-center gap-4  pb-8">
           <h3 className="text-black text-4xl uppercase md:text-start text-center">
             Know our process

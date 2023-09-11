@@ -83,12 +83,18 @@ const AboutUs = (props) => {
         </section>
         <Partners title="ENTITIES THAT TRUST US" theme="gray" logoGray />
       </div>
-      <div className="flex flex-col gap-12 md:gap-[132px] md:py-[132px]">
+      <div
+        id="chiefs"
+        className="flex flex-col gap-12 md:gap-[132px] md:py-[132px]"
+      >
         <Carousel id="7000" />
         <TrophyCarousel id="3" items={props.investments} />
       </div>
       <div className="flex flex-col md:w-full md:gap-[132px]  md:mx-auto   md:items-center md:max-w-[1210px]">
-        <section className="flex flex-col justify-end py-12 md:py-[132px] pb-24 md:rounded-lg items-center gap-[52px] relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-no-repeat bg-center ">
+        <section
+          id="values"
+          className="flex flex-col justify-end py-12 md:py-[132px] pb-24 md:rounded-lg items-center gap-[52px] relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-no-repeat bg-center "
+        >
           <div className="flex flex-col gap-3">
             <h3 className="text-white text-4xl uppercase text-center tracking-widest">
               Our values are like

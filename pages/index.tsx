@@ -22,7 +22,9 @@ export default function Home({ posts, investments }) {
       <div className="flex flex-col bg-dreamBlack gap-28 md:gap-[132px]">
         <Hero />
       </div>
-      <Partners className="pb-20 md:pb-[202px]" />
+      <section id="partners">
+        <Partners className="pb-20 md:pb-[202px]" />
+      </section>
 
       <div className="flex flex-col bg-white gap-8 md:gap-[132px]">
         <HighlightContent
@@ -276,25 +278,27 @@ export default function Home({ posts, investments }) {
           </div>
         </div>
       </section>
-      <Banner
-        rounded={true}
-        className="md:my-[132px] max-w-screen-lg"
-        title={
-          <h3 className="uppercase text-white">
-            Safe travel,
-            <br />
-            safe investment
-          </h3>
-        }
-        titleClassName="text-white uppercase"
-        subtitle="We have the seat belt of a racing car."
-        // linkUrl="/safe-investment"
-        // linkLabel="Know more"
+      <section id="security">
+        <Banner
+          rounded={true}
+          className="md:my-[132px] max-w-screen-lg"
+          title={
+            <h3 className="uppercase text-white">
+              Safe travel,
+              <br />
+              safe investment
+            </h3>
+          }
+          titleClassName="text-white uppercase"
+          subtitle="We have the seat belt of a racing car."
+          // linkUrl="/safe-investment"
+          // linkLabel="Know more"
 
-        image="bg-[url('/banners/safe-travel.jpg')]"
-        contentPadding={true}
-        certificates={true}
-      />
+          image="bg-[url('/banners/safe-travel.jpg')]"
+          contentPadding={true}
+          certificates={true}
+        />
+      </section>
 
       <Carousel id="1" className="md:my-[132px]" items={investments} />
 
