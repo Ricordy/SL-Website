@@ -76,7 +76,7 @@ const Partners = ({
         <h3
           id="partners-heading"
           className={cn(
-            "text-xl md:text-2xl uppercase px-2 md:px-0",
+            "text-xl text-center md:text-2xl uppercase px-6 md:px-0",
             theme == "black" ? "text-white" : "text-primaryGrey"
           )}
         >

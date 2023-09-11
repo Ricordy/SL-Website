@@ -184,12 +184,12 @@ export default function Home({ posts, investments }) {
         </div>
       </section>
       <section className="flex max-w-screen-lg mx-auto  flex-col justify-center items-center gap-8">
-        <h3 className="text-black font-medium text-3xl text-center uppercase">
+        <h3 className="text-black  md:px-0 px-6 font-medium text-3xl text-center uppercase">
           How to invest in <span className=" font-thin">something</span>
           <br />
           called <span className="font-thin">legendary</span>.
         </h3>
-        <p className="text-ogBlack">
+        <p className="text-ogBlack md:px-0 px-6">
           It&apos;s easy. In just 4 steps you start earn your profits.
         </p>
         <div className="flex flex-col md:flex-row gap-3 mt-0 md:mt-[52px] flex-1 relative">
