@@ -115,7 +115,8 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
       <div className="flex md:flex-row flex-col gap-12 w-full">
         <div className="flex flex-col py-6 md:pt-[72px] gap-8 w-full  md:px-0 px-6 ">
           <h3 className="uppercase font-light">
-            Our <span className="font-medium">ongoing</span> projects
+            Our <span className="font-medium">ongoing</span>
+            <br className="hidden md:block" /> projects
           </h3>
           <p>
             Made with passion and a lot of attention to detail. Browse our
