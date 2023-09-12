@@ -77,7 +77,7 @@ export default function FlyoutMenu({ className }) {
       <div className="flex flex-col pt-16 md:pt-[52px] w-full gap-8 md:gap-[52px] px-6 md:px-0">
         <div className="flex flex-col">
           <h3 className="uppercase font-light">Living the dream</h3>
-          <h3 className="uppercase">Making money from it</h3>
+          <h3 className="uppercase">Making money from it.</h3>
         </div>
         <div className="w-full max-w-md rounded-2xl">
           {solutions.map((solution, index) => {
