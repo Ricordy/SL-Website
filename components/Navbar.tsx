@@ -175,21 +175,19 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                       {itens.map(({ link, text }, index) => {
                         if (text === "whitepaper") {
                           return (
-                            <li key={index} className="uppercase w-full">
-                              <Link
+                            <li key={index} className="uppercase w-full ">
+                              <a
                                 href={link}
                                 target="_blank"
-                                className=" hidden md:block"
+                                className=" text-slate-800 font-normal text-2xl tracking-wide hidden md:block"
                                 onClick={() => {
                                   setIsNavOpen(false);
                                   setIsNavOn(false);
                                 }}
                               >
-                                <div className="text-slate-800 font-normal text-2xl tracking-wide ">
-                                  {text}
-                                </div>
-                              </Link>
-                              <Link
+                                {text}
+                              </a>
+                              <a
                                 href={link}
                                 download="Something-Legendary-Whitepaper.pdf"
                                 target="_blank"
@@ -200,7 +198,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                                 }}
                               >
                                 {text}
-                              </Link>
+                              </a>
                             </li>
                           );
                         } else {
