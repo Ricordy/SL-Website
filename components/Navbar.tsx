@@ -179,6 +179,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                               <a
                                 href={link}
                                 target="_blank"
+                                rel="noreferrer"
                                 className=" text-slate-800 font-normal text-2xl tracking-wide hidden md:block"
                                 onClick={() => {
                                   setIsNavOpen(false);
@@ -191,6 +192,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                                 href={link}
                                 download="Something-Legendary-Whitepaper.pdf"
                                 target="_blank"
+                                rel="noreferrer"
                                 className="text-slate-800 font-normal text-2xl tracking-wide block md:hidden"
                                 onClick={() => {
                                   setIsNavOpen(false);
