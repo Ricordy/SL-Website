@@ -179,13 +179,15 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                               <Link
                                 href={link}
                                 target="_blank"
-                                className="text-slate-800 font-normal text-2xl tracking-wide hidden md:block"
+                                className=" hidden md:block"
                                 onClick={() => {
                                   setIsNavOpen(false);
                                   setIsNavOn(false);
                                 }}
                               >
-                                {text}desktop
+                                <div className="text-slate-800 font-normal text-2xl tracking-wide ">
+                                  {text}
+                                </div>
                               </Link>
                               <Link
                                 href={link}
@@ -197,7 +199,7 @@ const Navbar: FC<NavBarProps> = ({ className }) => {
                                   setIsNavOn(false);
                                 }}
                               >
-                                {text} mobile
+                                {text}
                               </Link>
                             </li>
                           );
