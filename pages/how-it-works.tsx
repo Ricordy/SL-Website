@@ -272,7 +272,6 @@ const HowItWorks = () => {
                               width={592}
                               height={394}
                               className=" rounded-md"
-                            
                             />
                           </section>
 
@@ -327,7 +326,7 @@ const HowItWorks = () => {
             The most important rules manual to achieve the dream.
           </p>
         </div>
-        <section className="flex w-full relative justify-center bg-[url('/headers/about.jpg')] bg-cover bg-right bg-no-repeat min-h-[530px]">
+        <section className="flex w-full relative justify-center bg-[url('/headers/knowour.jpg')] bg-cover bg-right bg-no-repeat min-h-[530px]">
           <div className="absolute z-10 self-center">
             {/* <Image alt="Play" src={Play} /> */}
           </div>
@@ -352,7 +351,7 @@ const HowItWorks = () => {
                 the process <span className="text-primaryGreen">24/7</span>.
               </h3>
             }
-            image="/media/home-1.jpg"
+            image="/media/wt1.jpg"
           >
             <p className="text-ogBlack md:max-w-[500px] p-6 md:p-0 text-justify md:text-left ">
               Have you considered the possibility of monitoring the project in
@@ -373,7 +372,7 @@ const HowItWorks = () => {
                   is waiting for you.
                 </h3>
               }
-              image="/media/home-2.jpg"
+              image="/media/wt2.jpg"
               reverse={true}
             >
               <p className="text-ogBlack md:max-w-[500px] p-6 md:p-0 text-justify md:text-left  ">
@@ -395,7 +394,7 @@ const HowItWorks = () => {
                   is waiting for you.
                 </h3>
               }
-              image="/media/home-2.jpg"
+              image="/media/wt2.jpg"
             >
               <p className="text-ogBlack md:max-w-[500px] p-6 md:p-0 text-justify md:text-left">
                 If you thought you were alone in this world, we introduce you to
@@ -414,7 +413,7 @@ const HowItWorks = () => {
                 digital <br /> to physycal events.
               </h3>
             }
-            image="/media/home-3.jpg"
+            image="/media/wt3.jpg"
           >
             <p className="text-ogBlack md:max-w-[500px] p-6 md:p-0 text-justify md:text-left">
               We are closer than you might think, we travel the world in the
