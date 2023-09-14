@@ -146,7 +146,6 @@ const Learn = (props: PostsProps) => {
     ),
     Investment: posts.filter((post) => post.postCategory == "Investment"),
     Cars: posts.filter((post) => post.postCategory == "cars"),
-    News: posts.filter((post) => post.postCategory == "news"),
   });
 
   const [currentSwiper, setcurrentSwiper] = useState(0);
