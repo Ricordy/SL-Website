@@ -142,9 +142,7 @@ const Learn = (props: PostsProps) => {
 
   let [categories] = useState({
     "All Content": posts,
-    "For Beginners": posts.filter(
-      (post) => post.postCategory == "beginners"
-    ),
+    "For Beginners": posts.filter((post) => post.postCategory == "beginners"),
     Investment: posts.filter((post) => post.postCategory == "investments"),
     Cars: posts.filter((post) => post.postCategory == "cars"),
   });
@@ -529,7 +527,7 @@ export async function getStaticProps({ locale, params }) {
         posts {
           id
           slug
-          linkp
+          link
           basic {
             title
           }
