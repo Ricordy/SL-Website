@@ -24,6 +24,10 @@ footer .content {
   display: none;
 }
 
+img {
+  object-fit: cover;
+}
+
 
 .showMenuNav {
   @apply bg-slate-900;

@@ -66,7 +66,7 @@ const HowItWorks = () => {
       {
         id: 1,
         title: "Launch the App",
-        image: "/media/about-1.jpg",
+        image: "/media/how1.jpg",
         content: (
           <>
             <p className="pb-10">
@@ -86,7 +86,7 @@ const HowItWorks = () => {
       {
         id: 1,
         title: "Buy a Membership Card",
-        image: "/media/about-1.jpg",
+        image: "/media/how2.jpg",
         content: (
           <>
             <p className="pb-10">
@@ -108,7 +108,7 @@ const HowItWorks = () => {
       {
         id: 1,
         title: "Select a project",
-        image: "/media/about-1.jpg",
+        image: "/media/how3.jpg",
         content: (
           <>
             <p className="pb-10">
@@ -131,7 +131,7 @@ const HowItWorks = () => {
       {
         id: 1,
         title: "Withdraw investment",
-        image: "/media/about-1.jpg",
+        image: "/media/how4.jpg",
         content: (
           <>
             <p className="pb-10">
@@ -207,7 +207,7 @@ const HowItWorks = () => {
                         <li key={post.id} className="relative rounded-md p-3">
                           <section className="flex gap-24 w-full mt-[52px]">
                             <div className="flex flex-col gap-8 w-1/3  items-start justify-center">
-                              <h3 className="uppercase">{post.title}</h3>
+                              <h3 className="uppercase">{post.title} </h3>
                               {post.content}
                             </div>
                             <Image
@@ -272,6 +272,7 @@ const HowItWorks = () => {
                               width={592}
                               height={394}
                               className=" rounded-md"
+                            
                             />
                           </section>
 

@@ -529,7 +529,7 @@ export async function getStaticProps({ locale, params }) {
         posts {
           id
           slug
-          link
+          linkp
           basic {
             title
           }
