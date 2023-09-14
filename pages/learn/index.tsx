@@ -143,9 +143,9 @@ const Learn = (props: PostsProps) => {
   let [categories] = useState({
     "All Content": posts,
     "For Beginners": posts.filter(
-      (post) => post.postCategory == "For Beginners"
+      (post) => post.postCategory == "beginners"
     ),
-    Investment: posts.filter((post) => post.postCategory == "Investment"),
+    Investment: posts.filter((post) => post.postCategory == "investments"),
     Cars: posts.filter((post) => post.postCategory == "cars"),
   });
 
