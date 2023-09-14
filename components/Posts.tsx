@@ -40,7 +40,7 @@ export const PostItem: FC<PostItemProps> = ({
 
         <Link href={link ? link : `/learn/${slug}`}>
           <a className="text-primaryGreen hidden md:block pt-2 text-center uppercase border-b-2 text-xs border-b-primaryGreen py-1 self-start">
-            Know more {link ? "hello" : "sem link"}
+            Know more
           </a>
         </Link>
       </div>
