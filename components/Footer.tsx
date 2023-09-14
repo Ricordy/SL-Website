@@ -58,7 +58,25 @@ function Footer() {
           <Link href="/about-us#values">Our value</Link>
         </div>
         <div className="flex w-[120px] flex-col gap-8 text-base uppercase font-semibold ">
-          <Link href="/whitepaper">{t("Whitepaper")}</Link>
+          <div className="uppercase w-full ">
+            <a
+              href={"/Something-Legendary-Whitepaper.pdf"}
+              target="_blank"
+              rel="noreferrer"
+              className=" hidden md:block"
+            >
+              Whitepaper
+            </a>
+            <a
+              href={"/Something-Legendary-Whitepaper.pdf"}
+              download="Something-Legendary-Whitepaper.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className=" block md:hidden"
+            >
+              Whitepaper
+            </a>
+          </div>
           <Link href="/#partners">{t("Our partners")}</Link>
           <Link href="/#security">{t("Security")}</Link>
         </div>
