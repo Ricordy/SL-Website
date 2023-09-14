@@ -16,6 +16,7 @@ export const PostItem: FC<PostItemProps> = ({
   title,
   children,
   slug,
+  link,
 }) => {
   const purifiedChildren = () => ({
     __html: DOMPurify.sanitize(children as string),
@@ -37,14 +38,14 @@ export const PostItem: FC<PostItemProps> = ({
           dangerouslySetInnerHTML={purifiedChildren()}
         ></div>
 
-        <Link href={`/learn/${slug}`}>
+        <Link href={link ? link : `/learn/${slug}`}>
           <a className="text-primaryGreen hidden md:block pt-2 text-center uppercase border-b-2 text-xs border-b-primaryGreen py-1 self-start">
-            Know more
+            Know more {link ? "hello" : "sem link"}
           </a>
         </Link>
       </div>
       <a
-        href={`/learn/${slug}`}
+        href={link ? link : `/learn/${slug}`}
         className={cn(
           "absolute inset-0 rounded-md",
           "ring-blue-400 focus:z-10 focus:outline-none focus:ring-2"

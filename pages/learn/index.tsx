@@ -30,6 +30,7 @@ interface HygraphPostProps {
   };
   postCategory: string;
   locale: string;
+  link: string;
 }
 
 export interface PostsProps {
@@ -227,6 +228,7 @@ const Learn = (props: PostsProps) => {
                               10 + idx
                             }`}
                           />
+
                           <div
                             className={`flex relative swiper-next-${10 + idx}`}
                           >
@@ -419,6 +421,7 @@ So relax and press the pedal."
                                             title={posti.basic.title}
                                             slug={posti.slug}
                                             key={idx}
+                                            link={posti.link}
                                           >
                                             {posti.shortDescription.html}
                                           </PostItem>
@@ -526,6 +529,7 @@ export async function getStaticProps({ locale, params }) {
         posts {
           id
           slug
+          link
           basic {
             title
           }
@@ -541,6 +545,9 @@ export async function getStaticProps({ locale, params }) {
       }
     `
   );
+
+  console.log("posts", posts);
+
   return {
     props: {
       posts,

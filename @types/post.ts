@@ -19,6 +19,7 @@ export type PostItemProps = {
   slug: string;
   category?: string;
   children: string;
+  link?: string;
 };
 
 export type HygraphPostProps = {
