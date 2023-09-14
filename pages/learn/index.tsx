@@ -544,8 +544,6 @@ export async function getStaticProps({ locale, params }) {
     `
   );
 
-  console.log("posts", posts);
-
   return {
     props: {
       posts,

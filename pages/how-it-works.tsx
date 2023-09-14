@@ -13,7 +13,7 @@ import Carousel, {
   items,
 } from "../components/how-it-works/Carousel";
 import { classNames } from "../lib/utils";
-import { HygraphPostProps, PostItemProps } from "../@types/post";
+import { HygraphPostProps, PostItemProps, PostsProps } from "../@types/post";
 import Navbar from "../components/Navbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
@@ -21,8 +21,9 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import { GraphQLClient, gql } from "graphql-request";
 
-const HowItWorks = () => {
+const HowItWorks = (props: any) => {
   const posts: HygraphPostProps[] = [
     {
       basic: {
@@ -84,7 +85,7 @@ const HowItWorks = () => {
     ],
     "02. Buy a Membership Card": [
       {
-        id: 1,
+        id: 2,
         title: "Buy a Membership Card",
         image: "/media/how2.jpg",
         content: (
@@ -106,7 +107,7 @@ const HowItWorks = () => {
     ],
     "03. Select a project": [
       {
-        id: 1,
+        id: 3,
         title: "Select a project",
         image: "/media/how3.jpg",
         content: (
@@ -129,7 +130,7 @@ const HowItWorks = () => {
     ],
     "04. Withdraw investment": [
       {
-        id: 1,
+        id: 4,
         title: "Withdraw investment",
         image: "/media/how4.jpg",
         content: (
@@ -215,6 +216,7 @@ const HowItWorks = () => {
                               src={post.image}
                               width={592}
                               height={394}
+                              className={`next-image-${post.id}`}
                             />
                           </section>
 
@@ -428,17 +430,17 @@ const HowItWorks = () => {
           </HighlightContent>
         </div>
       </section>
-      <Posts
-        className="py-24"
-        title="Learn More"
-        titleCentered={true}
-        posts={posts}
-        buttonMoreLink="/learn"
-        buttonMoreText="See More"
-        buttonMoreTextColor="text-black hover:text-white"
-        buttonMoreBorderColor="border-black"
-        buttonMoreBgColor="hover:bg-black"
-      />
+      <div className="hidden md:block">
+        <Posts
+          posts={props.posts}
+          title="Learn more"
+          titleCentered={true}
+          buttonMoreLink="/learn"
+          buttonMoreText="See More"
+          className="md:py-[132px] py-16"
+          maxPosts={3}
+        />
+      </div>
       <div className=" hidden md:block">
         <Banner
           title="
@@ -455,3 +457,40 @@ already part of it?"
 };
 
 export default HowItWorks;
+
+export async function getStaticProps({ locale, params }) {
+  const hygraph = new GraphQLClient(process.env.HYGRAPH_READ_ONLY_KEY, {
+    headers: {
+      Authorization: process.env.HYGRAPH_BEARER,
+    },
+  });
+
+  const { posts }: PostsProps = await hygraph.request(
+    gql`
+      query MyQuery {
+        posts {
+          id
+          slug
+          link
+          basic {
+            title
+          }
+          shortDescription {
+            html
+          }
+          image {
+            url
+          }
+          postCategory
+          locale
+        }
+      }
+    `
+  );
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}
