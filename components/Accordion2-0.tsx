@@ -32,7 +32,7 @@ export default function FlyoutMenu({ className }) {
   // make accordions close when one is opened.
   const AccordionRefs = useRef([]); // store accordion buttons as Refs
   const [currentAccordion, setCurrentAccordion] = useState(0); // set the current
-  const images = ["living1.jpg", "/car-1.png", "/living-the-dream.jpg"];
+  const images = ["living1.jpg", "living2.jpg", "/living-the-dream.jpg"];
   function closeCurrent(e) {
     const button = e.target.closest("button"); // get the button
     const buttonParent = button.parentElement.parentElement; // get the buttons parent (<dt> tag here)

@@ -33,10 +33,10 @@ export const PostItem: FC<PostItemProps> = ({
       />
       <div className="flex flex-col w-full gap-2">
         <h3 className="text-2xl text-black text-left">{title}</h3>
-        <div
+        {/* <div
           className="text-white text-left"
           dangerouslySetInnerHTML={purifiedChildren()}
-        ></div>
+        ></div> */}
 
         <Link href={link ? link : `/learn/${slug}`}>
           <a className="text-primaryGreen hidden md:block pt-2 text-center uppercase border-b-2 text-xs border-b-primaryGreen py-1 self-start">

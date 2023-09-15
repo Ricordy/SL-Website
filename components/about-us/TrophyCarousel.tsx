@@ -80,7 +80,6 @@ interface CarouselProps {
 
 const TrophyCarousel: FC<CarouselProps> = ({ id, className, items }) => {
   const [currentSwiper, setcurrentSwiper] = useState(0);
-  // console.log(items);
 
   return (
     <section
