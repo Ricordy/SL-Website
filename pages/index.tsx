@@ -237,7 +237,7 @@ export default function Home({ posts, investments }) {
 
                 <Link href={process.env.NEXT_PUBLIC_PLATFORM_URL as string}>
                   <a className="text-primaryGreen md:mt-0 mt-6 text-center uppercase border-b-2 border-primaryGreen self-center text-xs font-medium tracking-wide">
-                    Buy it
+                    Buy now
                   </a>
                 </Link>
               </div>
