@@ -9,7 +9,7 @@ import Banner from "../components/Banner";
 import Posts from "../components/Posts";
 import Carousel from "@/components/about-us/Carousel";
 import Contact from "../components/Contact";
-import { PostItemProps, HygraphPostProps } from "../@types/post";
+import { PostItemProps, HygraphPostProps, PostsProps } from "../@types/post";
 import TrophyCarousel from "~/components/about-us/TrophyCarousel";
 import Slider from "~/components/about-us/Slider";
 import { GraphQLClient, gql } from "graphql-request";
@@ -152,10 +152,11 @@ const AboutUs = (props) => {
           buttonMoreTextColor="text-black hover:text-white"
           buttonMoreBorderColor="border-black"
           buttonMoreBgColor="hover:bg-black"
-          posts={posts}
+          posts={props.posts}
           title="Learn more"
           titleCentered={true}
           className="mb-[132px] mt-12 md:mt-0"
+          maxPosts={3}
         />
       </div>
 
@@ -205,11 +206,35 @@ export async function getStaticProps({ locale }) {
       }
     `
   );
+
+  const { posts }: PostsProps = await hygraph.request(
+    gql`
+      query MyQuery {
+        posts {
+          id
+          slug
+          link
+          basic {
+            title
+          }
+          shortDescription {
+            html
+          }
+          image {
+            url
+          }
+          postCategory
+          locale
+        }
+      }
+    `
+  );
   // console.log("investments", investments);
 
   return {
     props: {
       investments,
+      posts,
       // Will be passed to the page component as props
     },
   };

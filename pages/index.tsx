@@ -330,6 +330,7 @@ If so, relax and press the pedal."
         linkLabel="Launch app"
         linkUrl="https://beta.somethinglegendary.io"
         image="bg-[url('/banners/ready-for-a-classic-investment.jpg')]"
+        
       />
     </>
   );
