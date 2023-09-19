@@ -92,7 +92,7 @@ const Partners = ({
           <div className="flex w-full swiper-wrapper ">
             <Swiper
               modules={[Navigation, Pagination, A11y]}
-              className="swiper w-full"
+              className="swiper w-full "
               spaceBetween={30}
               slidesPerView="auto"
               // watchOverflow={true}
