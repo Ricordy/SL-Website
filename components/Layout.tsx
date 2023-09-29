@@ -9,11 +9,21 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
+
+
+
+
         <title>Something Legendary</title>
         <meta
           name="description"
           content="Somenthing Legendary: It is in the solitude that legends are born."
         />
+        <meta
+          name="facebook-domain-verification"
+          content="nq6zlcsumkvh9qc7o5vb5si6v8zmpk"
+        />
+
+        
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {!transparentNavRoutes.includes(router.route) && <Navbar />}

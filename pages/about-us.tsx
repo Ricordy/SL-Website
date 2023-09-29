@@ -9,7 +9,7 @@ import Banner from "../components/Banner";
 import Posts from "../components/Posts";
 import Carousel from "@/components/about-us/Carousel";
 import Contact from "../components/Contact";
-import { PostItemProps, HygraphPostProps } from "../@types/post";
+import { PostItemProps, HygraphPostProps, PostsProps } from "../@types/post";
 import TrophyCarousel from "~/components/about-us/TrophyCarousel";
 import Slider from "~/components/about-us/Slider";
 import { GraphQLClient, gql } from "graphql-request";
@@ -90,12 +90,12 @@ const AboutUs = (props) => {
         <Carousel id="7000" />
         <TrophyCarousel id="3" items={props.investments} />
       </div>
-      <div className="flex flex-col md:w-full md:gap-[132px]  md:mx-auto   md:items-center md:max-w-[1210px]">
+      <div className="flex flex-col w-full md:gap-[132px]  md:mx-auto   md:items-center md:max-w-[1210px]">
         <section
           id="values"
-          className="flex flex-col justify-end py-12 md:py-[132px] pb-24 md:rounded-lg items-center gap-[52px] relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-no-repeat bg-center "
+          className="flex flex-col justify-end py-12 md:py-[132px] pb-24 md:rounded-lg items-center gap-[52px] relative bg-[url('../public/media/about-2.jpg')] bg-cover bg-no-repeat bg-center px-6 "
         >
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3  ">
             <h3 className="text-white text-4xl uppercase text-center tracking-widest">
               Our values are like
               <br />
@@ -105,15 +105,15 @@ const AboutUs = (props) => {
               They&apos;re made to be unbroken and forever loyal.
             </h5>
           </div>
-          <div className="flex md:flex-row flex-col gap-6 justify-around px-16">
-            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 p-8 items-center">
+          <div className="flex md:flex-row flex-col gap-6 justify-around md:px-16 ">
+            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 md:p-8 p-3 items-center ">
               <h3 className="text-2xl uppercase">Transparency</h3>
               <p className="text-center">
                 We walk side by side with our investors and share the dream in
                 real time so that every detail of the process counts.
               </p>
             </div>
-            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 p-8 items-center">
+            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 md:p-8 p-3 items-center">
               <h3 className="text-2xl uppercase">Commitment</h3>
               <p className="text-center">
                 100% safe investment, we value our community above everything
@@ -121,7 +121,7 @@ const AboutUs = (props) => {
                 our project.
               </p>
             </div>
-            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 p-8 items-center">
+            <div className="flex flex-col rounded-md sm:w-1/3 bg-white gap-4 md:p-8 p-3 items-center">
               <h3 className="text-2xl uppercase">Quality</h3>
               <p className="text-center">
                 We only work with the best partners, whether they are workshop
@@ -152,10 +152,11 @@ const AboutUs = (props) => {
           buttonMoreTextColor="text-black hover:text-white"
           buttonMoreBorderColor="border-black"
           buttonMoreBgColor="hover:bg-black"
-          posts={posts}
+          posts={props.posts}
           title="Learn more"
           titleCentered={true}
           className="mb-[132px] mt-12 md:mt-0"
+          maxPosts={3}
         />
       </div>
 
@@ -205,11 +206,35 @@ export async function getStaticProps({ locale }) {
       }
     `
   );
+
+  const { posts }: PostsProps = await hygraph.request(
+    gql`
+      query MyQuery {
+        posts {
+          id
+          slug
+          link
+          basic {
+            title
+          }
+          shortDescription {
+            html
+          }
+          image {
+            url
+          }
+          postCategory
+          locale
+        }
+      }
+    `
+  );
   // console.log("investments", investments);
 
   return {
     props: {
       investments,
+      posts,
       // Will be passed to the page component as props
     },
   };
