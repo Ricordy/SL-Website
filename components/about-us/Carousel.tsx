@@ -23,7 +23,7 @@ const chiefsInfo = [
     title: "Chief Financial Officer",
     name: "Gonçalo",
     lastName: "Severino",
-    image: "/chiefs/gonçalo3.jpg",
+    image: "/chiefs/gonçalo.jpg",
     description: `Gonçalo Severino, managment graduate, started to delve into finance and economy by the time he was 18. Driven by a passion for the world of finances, he found his way into learning more about the stock market. 
 His intrigue extended to cryptocurrencies and NFTs, areas where he aimed to stand out rather than blend in. While still in university, he began consulting for individual entrepreneurs and enterprises, within advertising and marketing. In early 2022, he co-founded Web 360 Labs, a Web 3.0 firm. Their services span legal and financial guidance, practical IT development, branding, marketing, and business model shaping—ultimately converting concepts into consumer-ready products.`,
   },
@@ -40,7 +40,7 @@ However, it's his passion for restoring classic cars that ignited the creation o
     title: "Classic cars especialist",
     name: "João",
     lastName: "Dias",
-    image: "/chiefs/gonçalo3.jpg",
+    image: "/chiefs/JoaoDias.jpg",
     description: `João Dias, an engineering enthusiast, boasts an impressive 32-year journey, with the last 15 years passionately dedicated to the realms of sports and classic cars. His expertise is a fusion of formal training and hands-on experience gleaned from restoration workshops, collectors' networks, races, and competitions. A feat worth noting is his ascendancy to workshop manager at the young age of 22, overseeing a team of 17 restoration "maestros" celebrated for their expertise, refined taste, and adeptness in overcoming challenges. Through his remarkable journey, João continues to leave an indelible mark in the world of automotive restoration, embodying the very essence of skill, passion, and accomplishment.`,
   },
 ];
