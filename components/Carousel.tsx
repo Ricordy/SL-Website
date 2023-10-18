@@ -42,8 +42,6 @@ const CarouselItem = ({
         const contract = new ethers.Contract(address, investmentABI, provider);
 
         let totalInvested = await contract.totalSupply();
-
-        console.log("Total invested: ", String(totalInvested));
         setCompletion(
           Number(
             ((Number(totalInvested) / 10 ** 6 / totalInvestment) * 100).toFixed(
@@ -51,9 +49,7 @@ const CarouselItem = ({
             )
           )
         );
-      } catch (error) {
-        console.log("errouuuuu ", error, address);
-      }
+      } catch (error) {}
     };
 
     readBC();
