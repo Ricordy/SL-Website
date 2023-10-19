@@ -12,7 +12,7 @@ import { ethers } from "ethers";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useBreakpoint } from "~/hooks/useBreakpoints";
-// import "swiper/css/navigation";
+import "swiper/css/navigation";
 
 interface CarouselItemProps {
   title: string;
@@ -32,32 +32,29 @@ const CarouselItem = ({
   className,
 }: CarouselItemProps) => {
   const [completion, setCompletion] = useState(0);
-  // useEffect(() => {
-  //   const readBC = async () => {
-  //     try {
-  //       const provider = new ethers.JsonRpcProvider(
-  //         process.env.NEXT_PUBLIC_ALCHEMY_URL_ID
-  //       );
-  //       const contract = new ethers.Contract(address, investmentABI, provider);
+  console.log("Completion: ", String(completion));
+  useEffect(() => {
+    const readBC = async () => {
+      try {
+        const provider = new ethers.JsonRpcProvider(
+          process.env.NEXT_PUBLIC_ALCHEMY_URL_ID
+        );
+        const contract = new ethers.Contract(address, investmentABI, provider);
 
-  //       let totalInvested = await contract.totalSupply();
+        let totalInvested = await contract.totalSupply();
+        setCompletion(
+          Number(
+            ((Number(totalInvested) / 10 ** 6 / totalInvestment) * 100).toFixed(
+              2
+            )
+          )
+        );
+      } catch (error) {}
+    };
 
-  //       console.log("Total invested: ", String(totalInvested));
-  //       setCompletion(
-  //         Number(
-  //           ((Number(totalInvested) / 10 ** 6 / totalInvestment) * 100).toFixed(
-  //             2
-  //           )
-  //         )
-  //       );
-  //     } catch (error) {
-  //       console.log("errouuuuu ", error, address);
-  //     }
-  //   };
-
-  //   readBC();
-  //   return () => {};
-  // }, []);
+    readBC();
+    return () => {};
+  }, []);
 
   return (
     <Link
@@ -141,12 +138,14 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
             // navigation={true}
             pagination={{
               clickable: true,
-              el: `.swiper-pagination-${id}`,
+              //el: `.swiper-pagination-${id}`,
+              dynamicBullets: true,
             }}
-            navigation={{
-              nextEl: `.swiper-next-${id}`,
-              prevEl: `.swiper-prev-${id}`,
-            }}
+            // navigation={{
+            //   nextEl: `.swiper-next-${id}`,
+            //   prevEl: `.swiper-prev-${id}`,
+            // }}
+            navigation
             updateOnWindowResize
             observer
             observeParents
@@ -165,7 +164,7 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="flex gap-6 justify-center items-center  md:w-1/3 mx-auto">
+          {/* <div className="flex gap-6 justify-center items-center  md:w-1/3 mx-auto">
             <div
               className={`flex relative disabled:bg-red-200 swiper-prev-${id}`}
             >
@@ -187,7 +186,7 @@ const Carousel: FC<CarouselProps> = ({ id, className, items }) => {
                 alt="Next"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
