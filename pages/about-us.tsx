@@ -88,7 +88,7 @@ const AboutUs = (props) => {
         className="flex flex-col gap-12 md:gap-[132px] md:py-[132px]"
       >
         <Carousel id="7000" />
-        <TrophyCarousel id="3" items={props.investments} />
+        {/* <TrophyCarousel id="3" items={props.investments} /> */}
       </div>
       <div className="flex flex-col w-full md:gap-[132px]  md:mx-auto   md:items-center md:max-w-[1210px]">
         <section
@@ -177,35 +177,35 @@ export async function getStaticProps({ locale }) {
     },
   });
 
-  const { investments }: any = await hygraph.request(
-    gql`
-      query ActiveInvestments {
-        investments(
-          orderBy: createdAt_DESC
-          where: { basicInvestment: { investmentStatus: Finished } }
-        ) {
-          id
-          address
-          finalProfitRate
-          soldBy
-          soldText {
-            html
-          }
-          basicInvestment {
-            car {
-              year
-              basicInfo {
-                title
-                cover {
-                  url
-                }
-              }
-            }
-          }
-        }
-      }
-    `
-  );
+  // const { investments }: any = await hygraph.request(
+  //   gql`
+  //     query ActiveInvestments {
+  //       investments(
+  //         orderBy: createdAt_DESC
+  //         where: { basicInvestment: { investmentStatus: Finished } }
+  //       ) {
+  //         id
+  //         address
+  //         finalProfitRate
+  //         soldBy
+  //         soldText {
+  //           html
+  //         }
+  //         basicInvestment {
+  //           car {
+  //             year
+  //             basicInfo {
+  //               title
+  //               cover {
+  //                 url
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `
+  // );
 
   const { posts }: PostsProps = await hygraph.request(
     gql`
@@ -233,7 +233,7 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      investments,
+      //investments,
       posts,
       // Will be passed to the page component as props
     },
